@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Internal Portal · Landing Pages</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f4f4;
+      font-family: system-ui, -apple-system, 'Segoe UI', 'Inter', 'Helvetica Neue', sans-serif;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      color: #0f172a;
+    }
+
+    /* main container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* header area */
+    .header {
+      margin-bottom: 2.5rem;
+      text-align: left;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #1e293b, #2d3a4f);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.01em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .header h1::before {
+      font-size: 1.9rem;
+      background: none;
+      -webkit-background-clip: unset;
+      color: #2c3e66;
+    }
+
+    /* filter bar */
+    .filter-section {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex: 2;
+      min-width: 200px;
+    }
+
+    .filter-group input {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 2rem;
+      font-size: 0.95rem;
+      background: #ffffff;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      outline: none;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.02);
+    }
+
+    .filter-group input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+    }
+
+    .clear-btn {
+      background: #f4f4f4;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: #334155;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .clear-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .stats {
+      font-size: 0.85rem;
+      background: #6a132c;
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      color: white;
+      font-weight: 500;
+    }
+
+    /* grid cards */
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.25rem;
+      padding: 1.25rem 1.2rem;
+      transition: all 0.25s ease;
+      border: 1px solid #e9eef3;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #cbd5e1;
+      box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.12);
+      background: #fefefe;
+    }
+
+    .card-title {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .card-title a {
+      text-decoration: none;
+      color: #0f3b6f;
+      font-weight: 600;
+      transition: color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card-title a:hover {
+      color: #2563eb;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .card-title a::after {
+      content: "↗";
+      font-size: 0.85rem;
+      font-weight: 400;
+      transition: transform 0.1s;
+      display: inline-block;
+    }
+
+    .card-title a:hover::after {
+      transform: translate(2px, -2px);
+    }
+
+    .url-meta {
+      background: #f8fafc;
+      border-radius: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      margin: 0.75rem 0 0.25rem 0;
+      font-size: 0.75rem;
+      font-family: 'SF Mono', 'Menlo', monospace;
+      color: #334155;
+      border: 1px solid #eef2f6;
+      word-break: break-all;
+      display: inline-block;
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    .url-meta::before {
+      content: "📁 ";
+      font-family: system-ui;
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
+
+    .card-footer {
+      margin-top: 0.9rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      background: #840132;
+      padding: 0.2rem 0.65rem;
+      border-radius: 1rem;
+      color: white;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: white;
+      border-radius: 2rem;
+      margin-top: 1rem;
+      border: 1px dashed #cbd5e1;
+      color: #840132;
+    }
+
+    .empty-state p {
+      font-size: 1rem;
+    }
+
+    hr {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem;
+      }
+      .filter-section {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-group {
+        width: 100%;
+      }
+      .stats {
+        text-align: center;
+      }
+      .card-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>Internal workspace · page index</h1>
+  </div>
+
+  <div class="filter-section">
+    <div class="filter-group">
+      <input type="text" id="filterInput" placeholder="🔍 Filter pages by name..." autocomplete="off">
+      <button class="clear-btn" id="clearFilterBtn">Clear</button>
+    </div>
+    <div class="stats" id="statsCounter">— pages</div>
+  </div>
+
+  <div id="pagesGrid" class="pages-grid">
+    <!-- dynamic cards injected here -->
+  </div>
+</div>
+
+<script>
+  // --------------------------------------------------------------
+  // 📌 EDIT THIS ARRAY: add / remove / modify your internal pages
+  //    Each item: { name: "Page Title", url: "relative/path.html" }
+  // --------------------------------------------------------------
+  const pages = [
+    { name: "🚧 OEP Design Thinking - Apply", url: "GR-OEP-Apply.html" },
+    { name: "🚧 MBA - Apply", url: "GR-MBA-Apply.html" },
+    { name: "✅ MBA - Thank You", url: "GR-MBA-ThankYou-Apply.html" },
+  ];
+
+  // ----- DO NOT EDIT BELOW (unless you need advanced behavior) -----
+  // but feel free to customize styles or filter logic
+
+  let currentFilter = "";
+
+  const gridContainer = document.getElementById("pagesGrid");
+  const filterInput = document.getElementById("filterInput");
+  const clearBtn = document.getElementById("clearFilterBtn");
+  const statsSpan = document.getElementById("statsCounter");
+
+  // Helper: create a card element for a single page
+  function createCard(page) {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    // title section with link
+    const titleDiv = document.createElement("div");
+    titleDiv.className = "card-title";
+
+    const link = document.createElement("a");
+    link.href = page.url;
+    // internal same tab (standard navigation)
+    link.setAttribute("target", "_self");
+    link.textContent = page.name;
+    // optional: add tiny data attribute for debugging
+    link.setAttribute("data-internal", "true");
+
+    titleDiv.appendChild(link);
+
+    // url meta display (nice to see the path)
+    const urlSpan = document.createElement("div");
+    urlSpan.className = "url-meta";
+    urlSpan.textContent = page.url;
+
+    // optional badge / footer
+    const footerDiv = document.createElement("div");
+    footerDiv.className = "card-footer";
+    const badgeSpan = document.createElement("span");
+    badgeSpan.className = "badge";
+    badgeSpan.textContent = "internal page";
+    footerDiv.appendChild(badgeSpan);
+
+    card.appendChild(titleDiv);
+    card.appendChild(urlSpan);
+    card.appendChild(footerDiv);
+
+    return card;
+  }
+
+  // render filtered list based on currentFilter
+  function renderPages() {
+    // filter pages (case-insensitive, match by name)
+    let filtered = pages;
+    if (currentFilter.trim() !== "") {
+      const lowerFilter = currentFilter.toLowerCase();
+      filtered = pages.filter(page => 
+        page.name.toLowerCase().includes(lowerFilter)
+      );
+    }
+
+    // update stats text
+    const total = pages.length;
+    const visible = filtered.length;
+    if (visible === total) {
+      statsSpan.textContent = `📄 ${total} page${total !== 1 ? 's' : ''}`;
+    } else {
+      statsSpan.textContent = `🔍 ${visible} of ${total} page${total !== 1 ? 's' : ''}`;
+    }
+
+    // clear grid container
+    gridContainer.innerHTML = "";
+
+    if (filtered.length === 0) {
+      // empty state
+      const emptyDiv = document.createElement("div");
+      emptyDiv.className = "empty-state";
+      emptyDiv.innerHTML = `
+        <p>✨ No matching pages found</p>
+        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Try a different filter or clear the search</p>
+      `;
+      gridContainer.appendChild(emptyDiv);
+      return;
+    }
+
+    // create and append cards using DocumentFragment for performance
+    const fragment = document.createDocumentFragment();
+    filtered.forEach(page => {
+      fragment.appendChild(createCard(page));
+    });
+    gridContainer.appendChild(fragment);
+  }
+
+  // event: filter input change
+  function onFilterInput(e) {
+    currentFilter = e.target.value;
+    renderPages();
+  }
+
+  // clear filter input and reset
+  function clearFilter() {
+    filterInput.value = "";
+    currentFilter = "";
+    renderPages();
+    // optional: bring focus back to input
+    filterInput.focus();
+  }
+
+  // initial load and event binding
+  function init() {
+    renderPages();
+    filterInput.addEventListener("input", onFilterInput);
+    clearBtn.addEventListener("click", clearFilter);
+    // optional: small instruction in console (non-intrusive)
+    console.log("✅ Internal page index ready — edit the 'pages' array to customize your links");
+  }
+
+  init();
+</script>
+</body>
+</html>

@@ -23,14 +23,6 @@
   pointer-events: none;
 }
 
-.container {
-  position: relative;
-  z-index: 2;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 3.5rem 2rem 2rem;
-}
-
 /* ----- logo ----- */
 .logo {
   margin-bottom: 2.5rem;
@@ -70,16 +62,6 @@
     flex-direction: column;
     justify-content: flex-end;
   }
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  font-weight: 600;
-  line-height: 1;
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  text-transform: uppercase;
 }
 
 .hero-subtitle {
@@ -305,10 +287,6 @@
     padding: 1.2rem 1.5rem;
   }
 
-  .hero-content h1 {
-    font-size: 2.3rem;
-  }
-
   .button-group {
     flex-direction: column;
     width: 100%;
@@ -322,10 +300,6 @@
 }
 
 @media (max-width: 550px) {
-  .hero-content h1 {
-    font-size: 1.9rem;
-  }
-
   .info-card h3 {
     font-size: 1.4rem;
   }
