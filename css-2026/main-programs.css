@@ -23,6 +23,10 @@
   pointer-events: none;
 }
 
+.brochure .page-wrapper::before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 /* ----- logo ----- */
 .logo {
   margin-bottom: 2.5rem;
@@ -89,6 +93,10 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.brochure .form-card {
+  background: var(--color-primary-dark);
+}
+
 .form-group {
   margin-bottom: 1rem;
 }
@@ -113,8 +121,18 @@
   margin-top: 3px;
 }
 
+.brochure .form-card input,
+.brochure .form-card select,
+.brochure .form-card textarea {
+  background: unset;
+}
+
 .form-card input:focus {
   box-shadow: 0 0 0 2px rgba(0, 51, 102, 0.5);
+}
+
+.brochure .form-card input:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9);
 }
 
 /* MBA submit button (white background, dark text) */
