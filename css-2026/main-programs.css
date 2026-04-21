@@ -60,7 +60,7 @@
 
 @media (min-width: 900px) {
   .hero-content {
-    padding-bottom: 135px;
+    padding-bottom: 180px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -90,6 +90,9 @@
   padding: 1.8rem 1.8rem 2rem;
   box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  height: fit-content;
+  align-self: end;
+  margin-bottom: 3rem;
 }
 
 .brochure .form-card {
