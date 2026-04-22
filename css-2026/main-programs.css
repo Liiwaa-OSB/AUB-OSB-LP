@@ -200,7 +200,7 @@
 }
 
 /* ----- THANK YOU PAGE STYLES (MBA only) ----- */
-.mba-thank-you-page .page-wrapper::before {
+.main-program-thank-you-page .page-wrapper::before {
   background: rgba(0, 0, 0, 0.5);
 }
 
