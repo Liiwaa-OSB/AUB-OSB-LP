@@ -261,7 +261,7 @@
 
 <div class="container">
   <div class="header">
-    <h1>Internal workspace · page index</h1>
+    <h1>Internal workspace · OSB NEW Landing Pages</h1>
   </div>
 
   <div class="filter-section">
@@ -287,6 +287,8 @@
     { name: "✅ MBA - Apply", url: "GR-MBA-Apply.html" },
     { name: "⚠️ MBA - Brochure", url: "GR-MBA-Brochure.html" },
     { name: "✅ MBA - Thank You", url: "GR-MBA-ThankYou-Apply.html" },
+    { name: "🚧 MFIN - Apply", url: "GR-MFIN-Apply.html" },
+    { name: "🚧 MFIN - Brochure", url: "GR-MFIN-Brochure.html" },
     { name: "🚧 EMBA - Apply", url: "EMBA-Web-Apply.html" },
 
 
@@ -315,7 +317,7 @@
     const link = document.createElement("a");
     link.href = page.url;
     // internal same tab (standard navigation)
-    link.setAttribute("target", "_self");
+    link.setAttribute("target", "_blank");
     link.textContent = page.name;
     // optional: add tiny data attribute for debugging
     link.setAttribute("data-internal", "true");
