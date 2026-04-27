@@ -99,6 +99,15 @@
   background: var(--color-primary-dark);
 }
 
+.form-card__title {
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
 .form-group {
   margin-bottom: 1rem;
 }

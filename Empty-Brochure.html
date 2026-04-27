@@ -14,16 +14,9 @@
 	<link rel="stylesheet" href="css-2026/main.css">
 	<link rel="stylesheet" href="css-2026/main-programs.css">
 
-
-
-
 	<style>
 		.page-wrapper {
-			background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("images-2026/AUB-OSB-[Lii-ProgAcr]-bg.jpg") no-repeat center top/cover fixed;
-		}
-
-		.brochure .form-card {
-			background: rgba(106, 19, 44, 0.7);
+			background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.35)), url("images-2026/AUB-OSB-[Lii-ProgAcr]-bg.jpg") no-repeat center top/cover fixed;
 		}
 	</style>
 
@@ -71,8 +64,7 @@
 				</div>
 
 				<div class="form-card">
-					<span class="contact100-form-title"
-						style="display: block; text-align: center; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.25rem;">Download
+					<span class="form-card__title">Download
 						Brochure</span>
 					<span class="contac100-form-subtitle"
 						style="display: block; text-align: center; margin-bottom: 1.5rem; opacity: 0.9;">Fill the form
@@ -85,7 +77,7 @@
 						<!-- Salesforce hidden fields (original + dummy fields to satisfy validatorv2.js) -->
 						<input type="hidden" name="oid" value="00D0Y000001Xrwc">
 						<input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000S0gqAAC">
+						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="Lii-Val-Salesforce Campaign ID">
 						<input type="hidden" id="member_status" name="member_status" value="Interested">
 						<input type="hidden" name="lead_source" id="lead_source" value="Website">
 						<input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure [Lii-ProgAcr]">
@@ -152,6 +144,7 @@
 				<div class="info-card">
 					<h3>Program Overview</h3>
 					<ul class="bullet-list">
+						<!-- Lii - Check These Fields -->
 						<li><i class="fa-regular fa-clock"></i> Available in full-time or part-time</li>
 						<li><i class="fas fa-chalkboard-user"></i> Taught by world-renowned professors</li>
 						<li><i class="fas fa-code-branch"></i> Cutting edge, customizable curriculum</li>
@@ -161,6 +154,7 @@
 				<div class="info-card">
 					<h3>Main Admission Requirements</h3>
 					<ul class="bullet-list">
+						<!-- Lii - Check These Fields -->
 						<li><i class="fas fa-graduation-cap"></i> Bachelor's Degree</li>
 						<li><i class="fas fa-language"></i> Fluent in Written and Spoken English</li>
 						<li><i class="fas fa-file-alt"></i> Complete online application</li>
@@ -203,6 +197,7 @@
 			return decodeURIComponent(results[2].replace(/\+/g, ' '));
 		}
 		var source = getParameterByName('source');
+		var type = getParameterByName('type'); // not used!
 		var campaign = getParameterByName('campaign');
 
 		switch (source) {

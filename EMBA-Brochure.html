@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
-	<title>AUB OSB | MBA Brochure</title>
+	<title>AUB OSB | EMBA Brochure</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="css-2026/util.css">
@@ -14,16 +14,9 @@
 	<link rel="stylesheet" href="css-2026/main.css">
 	<link rel="stylesheet" href="css-2026/main-programs.css">
 
-
-
-
 	<style>
 		.page-wrapper {
-			background: url("images-2026/AUB-OSB-MBA-bg.jpg") no-repeat center top/cover fixed;
-		}
-
-		.brochure .form-card {
-			background: rgba(106, 19, 44, 0.7);
+			background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.35)), url("images-2026/AUB-OSB-EMBA-bg.jpg") no-repeat center top/cover fixed;
 		}
 	</style>
 
@@ -56,16 +49,17 @@
 					</div>
 					<div class="hero-content">
 						<h1>
-							Master's in<br>
-							Business<br>
-							Administration
+							The Suliman S. Olayan<br>
+							School of Business<br>
+							Executive MBA
 						</h1>
 						<div class="hero-subtitle">
-							Advance Your Career with Us
-						</div>
+							An immersive strategy and leadership experience offering you the tools to maximize your
+							impact in increasingly complex business environments globally, while broadening your
+							perspective within your industry. </div>
 						<div class="button-group" style="margin-top: 2rem;">
 							<a href="https://www.aub.edu.lb/osb" class="btn-primary" target="_blank">Visit Website</a>
-							<a href="GR-MBA-Apply.html" class="btn-outline">Apply Now</a>
+							<a href="GR-EMBA-Apply.html" class="btn-outline">Apply Now</a>
 						</div>
 					</div>
 				</div>
@@ -84,10 +78,10 @@
 						<!-- Salesforce hidden fields (original + dummy fields to satisfy validatorv2.js) -->
 						<input type="hidden" name="oid" value="00D0Y000001Xrwc">
 						<input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000S0gqAAC">
+						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000RybeAAC">
 						<input type="hidden" id="member_status" name="member_status" value="Interested">
 						<input type="hidden" name="lead_source" id="lead_source" value="Website">
-						<input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure MBA">
+						<input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure EMBA">
 						<input type="hidden" name="country_code" id="country_code" value="LB">
 						<input type="hidden" name="campaign" id="campaign" value="">
 						<input type="hidden" name="rating" id="rating" value="Cold">
@@ -103,7 +97,7 @@
 						<input type="hidden" name="00N0Y00000QGksE" id="00N0Y00000QGksE" value="N/A">
 						<!-- retURL points to PDF -->
 						<input type="hidden" name="retURL"
-							value="https://www.aub.edu.lb/osb/MBA/Documents/MBAbrochure.pdf">
+							value="https://www.aub.edu.lb/osb/EMBA/Documents/EMBA%20Factsheet.pdf">
 
 						<!-- Form fields -->
 						<div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
@@ -152,6 +146,7 @@
 				<div class="info-card">
 					<h3>Program Overview</h3>
 					<ul class="bullet-list">
+						<!-- Lii - Check These Fields -->
 						<li><i class="fa-regular fa-clock"></i> Available in full-time or part-time</li>
 						<li><i class="fas fa-chalkboard-user"></i> Taught by world-renowned professors</li>
 						<li><i class="fas fa-code-branch"></i> Cutting edge, customizable curriculum</li>
@@ -161,6 +156,7 @@
 				<div class="info-card">
 					<h3>Main Admission Requirements</h3>
 					<ul class="bullet-list">
+						<!-- Lii - Check These Fields -->
 						<li><i class="fas fa-graduation-cap"></i> Bachelor's Degree</li>
 						<li><i class="fas fa-language"></i> Fluent in Written and Spoken English</li>
 						<li><i class="fas fa-file-alt"></i> Complete online application</li>
@@ -203,16 +199,17 @@
 			return decodeURIComponent(results[2].replace(/\+/g, ' '));
 		}
 		var source = getParameterByName('source');
+		var type = getParameterByName('type'); // not used!
 		var campaign = getParameterByName('campaign');
 
 		switch (source) {
-			case "fb": var sourcetxt = "Social Media"; var sourcelbl = "Fb - Brochure MBA"; break;
-			case "insta": var sourcetxt = "Social Media"; var sourcelbl = "Insta - Brochure MBA"; break;
-			case "tw": var sourcetxt = "Social Media"; var sourcelbl = "Tw - Brochure MBA"; break;
-			case "lin": var sourcetxt = "Social Media"; var sourcelbl = "Lin - Brochure MBA"; break;
-			case "gs": var sourcetxt = "Google Ads"; var sourcelbl = "Search - Brochure MBA"; break;
-			case "mail": var sourcetxt = "Mailchimp"; var sourcelbl = "Brochure MBA"; break;
-			default: var sourcetxt = "Website"; var sourcelbl = "Brochure MBA"; break;
+			case "fb": var sourcetxt = "Social Media"; var sourcelbl = "Fb - Brochure EMBA"; break;
+			case "insta": var sourcetxt = "Social Media"; var sourcelbl = "Insta - Brochure EMBA"; break;
+			case "tw": var sourcetxt = "Social Media"; var sourcelbl = "Tw - Brochure EMBA"; break;
+			case "lin": var sourcetxt = "Social Media"; var sourcelbl = "Lin - Brochure EMBA"; break;
+			case "gs": var sourcetxt = "Google Ads"; var sourcelbl = "Search - Brochure EMBA"; break;
+			case "mail": var sourcetxt = "Mailchimp"; var sourcelbl = "Brochure EMBA"; break;
+			default: var sourcetxt = "Website"; var sourcelbl = "Brochure EMBA"; break;
 		}
 		switch (campaign) {
 			case "uae": var campaigntxt = "AE"; break;
@@ -227,6 +224,13 @@
 		$('#lead_source').val(sourcetxt);
 		$('#00N0Y00000QGkma').val(sourcelbl);
 		$('#country_code').val(campaigntxt);
+
+		// Lii - this is only here - Does this override the campaign from URL?
+		if (userTimeZone) {
+			const timezone = ct.getTimezone(userTimeZone);
+			// console.log(timezone.countries[0]);
+			$('#country_code').val(timezone.countries[0]);
+		} 
 	</script>
 </body>
 

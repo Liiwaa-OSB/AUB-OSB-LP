@@ -1,29 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-	<title>Master's in Finance</title>
-	<link rel="stylesheet" href="css-2026/main.css" />
-	<link rel="stylesheet" href="css-2026/main-programs.css" />
-	<link rel="canonical" href="https://www.aub.edu.lb/osb/Landing/GR-MFIN-Brochure.html" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+	<title>AUB OSB | MFIN Brochure</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="css-2026/util.css">
+	<link rel="stylesheet" href="build-2026/css/intlTelInput.css">
+
+	<link rel="stylesheet" href="css-2026/main.css">
+	<link rel="stylesheet" href="css-2026/main-programs.css">
+
 	<style>
 		.page-wrapper {
-			background: url("images-2026/AUB-OSB-MFIN-bg.jpg") no-repeat center top/cover fixed;
+			background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.35)), url("images-2026/AUB-OSB-MFIN-bg.jpg") no-repeat center center/cover fixed;
 		}
 	</style>
+
+	<!-- jQuery and Validation -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+	<!-- Libraries -->
+	<script src="build-2026/js/intlTelInput.js"></script>
 	<script src="js/mailchimp-subscribe.js"></script>
 	<script src="js/validatorv2.js"></script>
-
+	<script src="js/phonescript-oct-2024.js"></script>
 
 	<script>
-		var mcurl = 'https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=f23012f246';
-	</script>
-	<script>
+		var mcurl = 'https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3';
 		function GoogleConversion() { }
 	</script>
 </head>
@@ -31,9 +38,7 @@
 <body class="brochure">
 	<div class="page-wrapper">
 		<div class="container">
-			<!-- Two-column layout (identical to MFIN Apply page) -->
 			<div class="grid-2cols">
-				<!-- LEFT COLUMN: Logo + Hero Content -->
 				<div class="left-col">
 					<div class="logo">
 						<a href="https://www.aub.edu.lb/osb" style="text-decoration: none">
@@ -44,170 +49,143 @@
 					</div>
 					<div class="hero-content">
 						<h1>
-							Master's in<br>
-							Business <br>
-							Administration
+							Leading the<br>
+							Future of<br>
+							Finance
 						</h1>
 						<div class="hero-subtitle">
 							Advance Your Career with Us
 						</div>
-						<!-- Optional button group (similar to apply page but with brochure CTA) -->
 						<div class="button-group" style="margin-top: 2rem;">
 							<a href="https://www.aub.edu.lb/osb" class="btn-primary" target="_blank">Visit Website</a>
-							<a href="GR-MFIN-Apply.html" class="btn-outline" id="dummyBrochureLink"
-								style="cursor: pointer;">Apply Now</a>
+							<a href="GR-MFIN-Apply.html" class="btn-outline">Apply Now</a>
 						</div>
 					</div>
 				</div>
 
-				<!-- RIGHT COLUMN: FORM CARD (identical styling to apply page) -->
 				<div class="form-card">
-					<span class="contact100-form-title"
-						style="display: block; text-align: center; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.25rem;">Download
+					<span class="form-card__title">Download
 						Brochure</span>
 					<span class="contac100-form-subtitle"
 						style="display: block; text-align: center; margin-bottom: 1.5rem; opacity: 0.9;">Fill the form
 						to get instant access</span>
 
-					<!-- SALESFORCE WEB-TO-LEAD FORM - all original fields & hidden values preserved -->
 					<form class="contact100-form validate-form" id="myform"
 						action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
 						name="myform" novalidate="novalidate">
-						<div class="form-group">
 
-							<!-- Code for Sales Force-->
+						<!-- Salesforce hidden fields (original + dummy fields to satisfy validatorv2.js) -->
+						<input type="hidden" name="oid" value="00D0Y000001Xrwc">
+						<input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
+						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000FEGvAAO">
+						<input type="hidden" id="member_status" name="member_status" value="Interested">
+						<input type="hidden" name="lead_source" id="lead_source" value="Website">
+						<input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure MFIN">
+						<input type="hidden" name="country_code" id="country_code" value="LB">
+						<input type="hidden" name="campaign" id="campaign" value="">
+						<input type="hidden" name="rating" id="rating" value="Cold">
+						<input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Work Email">
+						<input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Work Phone">
+						<!-- Hidden phone field used by phonescript -->
+						<input type="hidden" name="00N0Y00000RODqu" id="00N0Y00000RODqu" value="">
+						<!-- Dummy fields to satisfy validatorv2.js rules -->
+						<input type="hidden" name="00N0Y00000QGklm" id="00N0Y00000QGklm" value="N/A">
+						<input type="hidden" name="title" id="title" value="N/A">
+						<input type="hidden" name="00N0Y00000QGkuK" id="00N0Y00000QGkuK" value="0">
+						<input type="hidden" name="00N0Y00000QGkrV" id="00N0Y00000QGkrV" value="N/A">
+						<input type="hidden" name="00N0Y00000QGksE" id="00N0Y00000QGksE" value="N/A">
+						<!-- retURL points to PDF -->
+						<input type="hidden" name="retURL" value="https://www.aub.edu.lb/osb/Documents/MFIN18.pdf">
 
+						<!-- Form fields -->
+						<div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
+							<span class="label-input100">First Name *</span>
+							<input class="input100" id="first_name" maxlength="40" name="first_name" required
+								placeholder="First Name" type="text">
+						</div>
 
-							<input type="hidden" name="oid" value="00D0Y000001Xrwc">
-							<input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-							<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000FEGvAAO">
-							<input type="hidden" id="member_status" name="member_status" value="Interested">
+						<div class="wrap-input100 validate-input form-group" data-validate="Last Name is required">
+							<span class="label-input100">Last Name *</span>
+							<input class="input100" id="last_name" maxlength="80" placeholder="Last Name" required
+								name="last_name" type="text">
+						</div>
 
-							<!-- Lead Source:-->
-							<input type=hidden name="lead_source" id="lead_source" value="Website">
-							<input type=hidden name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure MFIN">
+						<div class="wrap-input100 validate-input form-group" data-validate="Valid email is required">
+							<span class="label-input100">Email *</span>
+							<input class="input100" placeholder="Email" id="email" maxlength="80" required
+								name="00N0Y00000QGl8W" type="text">
+						</div>
 
-							<input type="hidden" name="rating" id="rating" value="Cold">
-							<input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Work Email">
-							<input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Work Phone">
+						<div class="wrap-input100 validate-input form-group" data-validate="Phone number is required">
+							<span class="label-input100">Phone *</span>
+							<input class="input100" id="phone" name="intphone" type="tel" required>
+						</div>
 
-							<input type="hidden" name="retURL" value="https://www.aub.edu.lb/osb/Documents/MFIN18.pdf">
+						<div class="wrap-input100 validate-input form-group" data-validate="Company name is required">
+							<span class="label-input100">Company *</span>
+							<input class="input100" id="employer" placeholder="Company" maxlength="40" required
+								name="00N0Y00000QGku0" type="text">
+						</div>
 
-							<!-- Code for sales force ends-->
-							<!-- First Name -->
-							<div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
-								<span class="label-input100">First Name *</span>
-								<input class="input100" id="first_name" maxlength="40" name="first_name" required
-									placeholder="First Name" size="20" type="text">
-								<span class="focus-input100"></span>
+						<div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">
+							By submitting, you agree to receive communications from AUB OSB.
+						</div>
+
+						<div class="container-contact100-form-btn">
+							<div class="wrap-contact100-form-btn">
+								<button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">DOWNLOAD
+									BROCHURE</button>
 							</div>
-
-							<!-- Last Name -->
-							<div class="wrap-input100 validate-input form-group" data-validate="Last Name is required">
-								<span class="label-input100">Last Name *</span>
-								<input class="input100" id="last_name" maxlength="80" placeholder="Last Name" required
-									name="last_name" size="20" type="text">
-								<span class="focus-input100"></span>
-							</div>
-
-							<!-- Email (Salesforce field: 00N0Y00000QGl8W) -->
-							<div class="wrap-input100 validate-input form-group"
-								data-validate="Valid email is required: ex@abc.xyz">
-								<span class="label-input100">Email *</span>
-								<input class="input100" placeholder="Email" id="email" maxlength="80" required
-									name="00N0Y00000QGl8W" size="20" type="text">
-								<span class="focus-input100"></span>
-							</div>
-
-							<!-- Phone (intlTelInput enabled, same as original) -->
-							<div class="wrap-input100 validate-input form-group"
-								data-validate="Phone number is required">
-								<span class="label-input100">Phone *</span>
-								<input class="input100" id="phone" name="intphone" type="tel" required>
-								<span class="focus-input100"></span>
-							</div>
-							<!-- lii - name was 00N0Y00000RODqu -->
-
-							<!-- HTML for company begins
-				<div class="wrap-input100 validate-input" data-validate="Company name is required">
-					<span class="label-input100">Company</span>
-					<input class="input100" id="employer" placeholder="Company" maxlength="40"required  name="00N0Y00000QGku0" size="20" type="text">
-					<span class="asterisk_input">*</span>
-					<span class="focus-input100"></span>
-				</div>
- HTML for company ends -->
-
-							<div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">
-								By submitting, you agree to receive communications from AUB OSB.
-							</div>
-							<!-- Submit button (styled as btn-submit, matching apply page white/dark style) -->
-							<div class="container-contact100-form-btn">
-								<div class="wrap-contact100-form-btn">
-									<button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">
-										DOWNLOAD BROCHURE
-									</button>
-								</div>
-							</div>
+						</div>
 					</form>
 				</div>
 			</div>
-		</div>
 
-		<!-- TWO INFO CARDS (identical structure to MBA Apply page, content adapted from original brochure) -->
-		<div class="cards-row">
-			<!-- Card 1: Program Overview -->
-			<div class="info-card">
-				<h3>Program Overview</h3>
-				<ul class="bullet-list">
-					<li><i class="fa-regular fa-clock"></i> Available in full-time or part-time</li>
-					<li><i class="fas fa-chalkboard-user"></i> Taught by world-renowned professors</li>
-					<li><i class="fas fa-code-branch"></i> Cutting edge, customizable curriculum</li>
-					<li><i class="fas fa-globe"></i> Admission to international alumni network</li>
-				</ul>
-			</div>
-			<!-- Card 2: Admission Requirements (as per original brochure text) -->
-			<div class="info-card">
-				<h3>Main Admission Requirements</h3>
-				<ul class="bullet-list">
-					<li><i class="fas fa-graduation-cap"></i> Bachelor's Degree</li>
-					<li><i class="fas fa-language"></i> Fluent in Written and Spoken English</li>
-					<li><i class="fas fa-file-alt"></i> Complete online application</li>
-				</ul>
+			<div class="cards-row">
+				<div class="info-card">
+					<h3>Program Overview</h3>
+					<ul class="bullet-list">
+						<!-- Lii - Check These Fields -->
+						<li><i class="fa-regular fa-clock"></i> Available in full-time or part-time</li>
+						<li><i class="fas fa-chalkboard-user"></i> Taught by world-renowned professors</li>
+						<li><i class="fas fa-code-branch"></i> Cutting edge, customizable curriculum</li>
+						<li><i class="fas fa-globe"></i> Admission to international alumni network</li>
+					</ul>
+				</div>
+				<div class="info-card">
+					<h3>Main Admission Requirements</h3>
+					<ul class="bullet-list">
+						<!-- Lii - Check These Fields -->
+						<li><i class="fas fa-graduation-cap"></i> Bachelor's Degree</li>
+						<li><i class="fas fa-language"></i> Fluent in Written and Spoken English</li>
+						<li><i class="fas fa-file-alt"></i> Complete online application</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
-	</div>
 
-	<!-- Small script to ensure intlTelInput initializes on the phone field (same behavior as original) -->
 	<footer class="footer">
 		<div class="footer-inner">
-			<div class="footer-legal">
-				By submitting this form you are undertaking that the information
-				provided is accurate. You are also consenting to processing of your
-				information for the specified purpose in accordance with relevant data
-				protection laws. The University will maintain confidentiality of the
-				personal information. The information may be used by the University to
-				communicate with you and inform you about our programs and higher
-				education offerings.
-			</div>
-			<div class="copyright">
-				©2026 American University of Beirut, OSB All Rights Reserved
-			</div>
+			<div class="footer-legal">By submitting this form you are undertaking that the information provided is
+				accurate. You are also consenting to processing of your information for the specified purpose in
+				accordance with relevant data protection laws. The University will maintain confidentiality of the
+				personal information. The information may be used by the University to communicate with you and inform
+				you about our programs and higher education offerings.</div>
+			<div class="copyright">©2026 American University of Beirut, OSB All Rights Reserved</div>
 			<div class="social-icons">
-				<a target="_blank" href="https://www.facebook.com/OSBAUB/" aria-label="Facebook"><i
-						class="fab fa-facebook-f"></i></a>
-				<a target="_blank" href="https://twitter.com/aubosb" aria-label="Twitter"><i
-						class="fab fa-twitter"></i></a>
-				<a target="_blank" href="https://www.linkedin.com/company/aub-suliman-s-olayan-school-of-business-osb-/"
-					aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-				<a target="_blank" href="https://www.instagram.com/osb_aub/" aria-label="Instagram"><i
-						class="fab fa-instagram"></i></a>
-				<a target="_blank" href="https://www.youtube.com/AUBatLebanon" aria-label="YouTube"><i
-						class="fab fa-youtube"></i></a>
+				<a target="_blank" href="https://www.facebook.com/OSBAUB/"><i class="fab fa-facebook-f"></i></a>
+				<a target="_blank" href="https://twitter.com/aubosb"><i class="fab fa-twitter"></i></a>
+				<a target="_blank"
+					href="https://www.linkedin.com/company/aub-suliman-s-olayan-school-of-business-osb-/"><i
+						class="fab fa-linkedin-in"></i></a>
+				<a target="_blank" href="https://www.instagram.com/osb_aub/"><i class="fab fa-instagram"></i></a>
+				<a target="_blank" href="https://www.youtube.com/AUBatLebanon"><i class="fab fa-youtube"></i></a>
 			</div>
 		</div>
 	</footer>
 
+	<!-- Source/campaign tracking -->
 	<script>
 		function getParameterByName(name, url) {
 			if (!url) url = window.location.href;
@@ -220,50 +198,31 @@
 			return decodeURIComponent(results[2].replace(/\+/g, ' '));
 		}
 		var source = getParameterByName('source');
-		var type = getParameterByName('type');
-
-
-
+		var type = getParameterByName('type'); // not used!
+		var campaign = getParameterByName('campaign');
 
 		switch (source) {
-			case "fb":
-				var sourcetxt = "Social Media";
-				var sourcelbl = "Fb - Brochure MFIN";
-				break;
-
-			case "insta":
-				var sourcetxt = "Social Media";
-				var sourcelbl = "Insta - Brochure MFIN";
-				break;
-
-			case "tw":
-				var sourcetxt = "Social Media";
-				var sourcelbl = "TW - Brochure MFIN";
-				break;
-
-			case "lin":
-				var sourcetxt = "Social Media";
-				var sourcelbl = "Lin - Brochure MFIN";
-				break;
-
-			case "gs":
-				var sourcetxt = "Google Ads";
-				var sourcelbl = "Search - Brochure MFIN";
-				break;
-
-			case "mail":
-				var sourcetxt = "Mailchimp";
-				var sourcelbl = "Brochure MFIN";
-				break;
-
-			default:
-				var sourcetxt = "Website";
-				var sourcelbl = "Brochure MFIN";
-				break;
+			case "fb": var sourcetxt = "Social Media"; var sourcelbl = "Fb - Brochure MFIN"; break;
+			case "insta": var sourcetxt = "Social Media"; var sourcelbl = "Insta - Brochure MFIN"; break;
+			case "tw": var sourcetxt = "Social Media"; var sourcelbl = "Tw - Brochure MFIN"; break;
+			case "lin": var sourcetxt = "Social Media"; var sourcelbl = "Lin - Brochure MFIN"; break;
+			case "gs": var sourcetxt = "Google Ads"; var sourcelbl = "Search - Brochure MFIN"; break;
+			case "mail": var sourcetxt = "Mailchimp"; var sourcelbl = "Brochure MFIN"; break;
+			default: var sourcetxt = "Website"; var sourcelbl = "Brochure MFIN"; break;
+		}
+		switch (campaign) {
+			case "uae": var campaigntxt = "AE"; break;
+			case "ksa": var campaigntxt = "SA"; break;
+			case "kwt": var campaigntxt = "KW"; break;
+			case "qat": var campaigntxt = "QA"; break;
+			case "jor": var campaigntxt = "JO"; break;
+			case "nyc": var campaigntxt = "US"; break;
+			case "fra": var campaigntxt = "FR"; break;
+			default: var campaigntxt = "LB"; break;
 		}
 		$('#lead_source').val(sourcetxt);
 		$('#00N0Y00000QGkma').val(sourcelbl);
-
+		$('#country_code').val(campaigntxt);
 	</script>
 </body>
 
