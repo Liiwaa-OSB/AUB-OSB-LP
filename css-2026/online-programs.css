@@ -17,10 +17,6 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images-2026/AUB-OSB-OEP-design-thinking.jpg');
-    background-position: center;
-    background-size: cover;
-    background-size: cover;
     pointer-events: none;
     z-index: 0;
 }
@@ -168,8 +164,6 @@
     font-size: 1.7rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
-    border-left: 4px solid var(--color-primary);
-    padding-left: 1rem;
 }
 
 .bullet-list-modern {
