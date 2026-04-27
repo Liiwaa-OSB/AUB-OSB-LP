@@ -82,6 +82,10 @@
     margin-bottom: 0;
 }
 
+.form-grid-brochure .form-group {
+    margin-top: 1rem;
+}
+
 .form-group label {
     display: block;
     font-size: 0.75rem;
