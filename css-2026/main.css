@@ -205,6 +205,14 @@ select.error {
   color: white;
 }
 
+.iti__country-list .iti__country-name {
+    color: #000 !important;
+}
+
+.iti__selected-flag {
+  max-height: 40px;
+}
+
 /* responsive adjustments (common) */
 @media (max-width: 850px) {
 

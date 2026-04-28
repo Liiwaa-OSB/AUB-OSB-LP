@@ -236,7 +236,7 @@
 }
 
 .thankyou-card {
-  max-width: 700px;
+  max-width: min(100%, 700px);
   margin-bottom: 50px;
 }
 
