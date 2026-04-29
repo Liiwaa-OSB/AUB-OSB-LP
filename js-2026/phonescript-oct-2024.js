@@ -21,7 +21,7 @@ $(document).ready(function(){
       // placeholderNumberType: "MOBILE",
        preferredCountries: ['lb'],
         separateDialCode: true,
-      utilsScript: "build-2026/js-2026/utils.js",
+      utilsScript: "build-2026/js/utils.js",
     });
 
 
