@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -84,7 +83,6 @@
         function GoogleConversion() { }
     </script>
 </head>
-
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
@@ -121,86 +119,112 @@
 
                         <!-- Salesforce hidden fields -->
                         <input type="hidden" name="oid" value="00D0Y000001Xrwc">
-                        <div class="form-group">
-                            <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-                            <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000S0gqAAC">
-                            <input type="hidden" id="member_status" name="member_status" value="Interested">
-                            <input type="hidden" name="lead_source" id="lead_source" value="Website">
-                            <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Apply MBA">
-                            <input type="hidden" name="00N0Y00000QGku0" id="employer" value="N/A">
-                            <input type="hidden" name="rating" id="rating" value="Cold">
-                            <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Work Email">
-                            <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Work Phone">
-                            <input type="hidden" name="description" id="description" value="">
-                            <input type="hidden" name="retURL"
-                                value="https://www.aub.edu.lb/osb/Landing/GR-MBA-ThankYou-Apply.html">
+                        <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
+                        <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000S0gqAAC">
+                        <input type="hidden" id="member_status" name="member_status" value="Interested">
+                        <input type="hidden" name="lead_source" id="lead_source" value="Website">
+                        <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Apply MBA">
+                        <input type="hidden" name="rating" id="rating" value="Cold">
+                        <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Work Email">
+                        <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Work Phone">
+                        <!-- description will be dynamically concatenated with new fields -->
+                        <input type="hidden" name="description" id="description" value="Concated text">
+                        <input type="hidden" name="retURL"
+                            value="https://www.aub.edu.lb/osb/Landing/GR-MBA-ThankYou-Web.html">
 
-                            <!-- Visible fields -->
-                            <div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
-                                <span class="label-input100">First Name *</span>
-                                <input class="input100" id="first_name" maxlength="40" name="first_name" required
-                                    placeholder="First Name" type="text">
-                            </div>
+                        <!-- EXISTING FIELDS -->
+                        <div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
+                            <span class="label-input100">First Name *</span>
+                            <input class="input100" id="first_name" maxlength="40" name="first_name" required
+                                placeholder="First Name" size="20" type="text">
+                            <span class="focus-input100"></span>
+                        </div>
 
-                            <div class="wrap-input100 validate-input form-group" data-validate="Last Name is required">
-                                <span class="label-input100">Last Name *</span>
-                                <input class="input100" id="last_name" maxlength="80" placeholder="Last Name" required
-                                    name="last_name" type="text">
-                            </div>
+                        <div class="wrap-input100 validate-input form-group" data-validate="Last Name is required">
+                            <span class="label-input100">Last Name *</span>
+                            <input class="input100" id="last_name" maxlength="80" placeholder="Last Name" required
+                                name="last_name" size="20" type="text">
+                            <span class="focus-input100"></span>
+                        </div>
 
-                            <div class="wrap-input100 validate-input form-group"
-                                data-validate="Valid email is required">
-                                <span class="label-input100">Email *</span>
-                                <input class="input100" placeholder="Email" id="email" maxlength="80" required
-                                    name="00N0Y00000QGl8W" type="text">
-                            </div>
+                        <div class="wrap-input100 validate-input form-group"
+                            data-validate="Valid email is required: ex@abc.xyz">
+                            <span class="label-input100">Email *</span>
+                            <input class="input100" placeholder="Email" id="email" maxlength="80" required
+                                name="00N0Y00000QGl8W" size="20" type="text">
+                            <span class="focus-input100"></span>
+                        </div>
 
-                            <div class="wrap-input100 validate-input form-group"
-                                data-validate="Phone number is required">
-                                <span class="label-input100">Mobile Number *</span>
-                                <input class="input100" id="phone" name="intphone" type="tel" pattern="[0-9]*" required>
-                            </div>
+                        <div class="wrap-input100 validate-input form-group"
+                            data-validate="Phone number is required">
+                            <span class="label-input100">Phone *</span>
+                            <input class="input100" placeholder="Phone" id="phone" maxlength="40" required
+                                name="00N0Y00000RODqu" size="20" type="text">
+                            <span class="focus-input100"></span>
+                        </div>
 
-                            <div class="wrap-input100 validate-input form-group"
-                                data-validate="Country of Residence is required">
-                                <span class="label-input100">Country of Residence *</span>
-                                <input class="input100" id="country_code" placeholder="Country" maxlength="40" required
-                                    name="country_code" type="text">
-                            </div>
+                        <div class="wrap-input100 validate-input form-group" data-validate="Company name is required">
+                            <span class="label-input100">Company *</span>
+                            <input class="input100" id="employer" placeholder="Company" maxlength="40" required
+                                name="00N0Y00000QGku0" size="20" type="text">
+                            <span class="focus-input100"></span>
+                        </div>
 
-                            <div class="wrap-input100 validate-input form-group"
-                                data-validate="University Major is required">
-                                <span class="label-input100">University Major *</span>
-                                <input class="input100" id="major" placeholder="Major" maxlength="40" required
-                                    name="major" type="text">
-                            </div>
+                        <!-- === NEW FIELDS (NOT IN SALESFORCE, WILL BE CONCATENATED INTO DESCRIPTION) === -->
+                        <!-- Country of Residence -->
+                        <div class="wrap-input100 validate-input form-group" data-validate="Country of Residence is required">
+                            <span class="label-input100">Country of Residence *</span>
+                            <input class="input100" id="country_residence" name="country_residence" required
+                                placeholder="e.g., Lebanon, USA, UAE" type="text">
+                            <span class="focus-input100"></span>
+                        </div>
 
-                            <div class="wrap-input100 validate-input form-group" data-validate="University is required">
-                                <span class="label-input100">University *</span>
-                                <input class="input100" id="university" placeholder="University" maxlength="40" required
-                                    name="university" type="text">
-                            </div>
+                        <!-- University -->
+                        <div class="wrap-input100 validate-input form-group" data-validate="University is required">
+                            <span class="label-input100">University *</span>
+                            <input class="input100" id="university" name="university" required
+                                placeholder="Your undergraduate university" type="text">
+                            <span class="focus-input100"></span>
+                        </div>
 
-                            <div class="wrap-input100 validate-input form-group"
-                                data-validate="Years of Experience is required">
-                                <span class="label-input100">Years of Experience *</span>
-                                <input class="input100" id="years_of_experience" placeholder="# of years" maxlength="40"
-                                    required name="years_of_experience" type="number">
-                            </div>
+                        <!-- University Major -->
+                        <div class="wrap-input100 validate-input form-group" data-validate="Major is required">
+                            <span class="label-input100">University Major *</span>
+                            <input class="input100" id="major" name="major" required
+                                placeholder="e.g., Business, Engineering, Economics" type="text">
+                            <span class="focus-input100"></span>
+                        </div>
 
-                            <div class="wrap-input100 validate-input form-group"
-                                data-validate="How did you hear about us? is required">
-                                <span class="label-input100">How did you hear about us? *</span>
-                                <input class="input100" id="how_did_you_hear" placeholder="" maxlength="40" required
-                                    name="how_did_you_hear" type="text">
-                            </div>
+                        <!-- Years of Experience (number) -->
+                        <div class="wrap-input100 validate-input form-group" data-validate="Years of experience is required (numeric)">
+                            <span class="label-input100">Years of Experience *</span>
+                            <input class="input100" id="years_experience" name="years_experience" required
+                                placeholder="Number of years" type="number" min="0" step="1">
+                            <span class="focus-input100"></span>
+                        </div>
 
-                            <div class="container-contact100-form-btn">
-                                <div class="wrap-contact100-form-btn">
-                                    <button class="btn btn-submit" type="submit" name="submitbtn"
-                                        id="submitbtn">SUBMIT</button>
-                                </div>
+                        <!-- How did you hear about us? Dropdown -->
+                        <div class="wrap-input100 validate-input form-group" data-validate="Please select an option">
+                            <span class="label-input100">How did you hear about us? *</span>
+                            <select class="input100" id="hear_about" name="hear_about" required>
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="Social Media (Facebook, Instagram, LinkedIn, Twitter)">Social Media (Facebook, Instagram, LinkedIn, Twitter)</option>
+                                <option value="Google Search / Ads">Google Search / Ads</option>
+                                <option value="Email / Newsletter">Email / Newsletter</option>
+                                <option value="AUB Website">AUB Website</option>
+                                <option value="Event / Webinar">Event / Webinar</option>
+                                <option value="Friend / Colleague">Friend / Colleague</option>
+                                <option value="Alumni Referral">Alumni Referral</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="container-contact100-form-btn">
+                            <div class="wrap-contact100-form-btn">
+                                <button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">SUBMIT</button>
                             </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -238,47 +262,14 @@
             <div class="social-icons">
                 <a target="_blank" href="https://www.facebook.com/OSBAUB/"><i class="fab fa-facebook-f"></i></a>
                 <a target="_blank" href="https://twitter.com/aubosb"><i class="fab fa-twitter"></i></a>
-                <a target="_blank"
-                    href="https://www.linkedin.com/company/aub-suliman-s-olayan-school-of-business-osb-/"><i
-                        class="fab fa-linkedin-in"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/company/aub-suliman-s-olayan-school-of-business-osb-/"><i class="fab fa-linkedin-in"></i></a>
                 <a target="_blank" href="https://www.instagram.com/osb_aub/"><i class="fab fa-instagram"></i></a>
                 <a target="_blank" href="https://www.youtube.com/AUBatLebanon"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- Patch to set the description field before Salesforce submission (keeps all existing validation logic) -->
-    <script>
-        $(document).ready(function () {
-            // Wait for validatorv2.js to initialise validation on the form
-            var $form = $("#myform");
-            var validator = $form.data("validator");
-            if (validator && validator.settings) {
-                var originalSubmitHandler = validator.settings.submitHandler;
-                validator.settings.submitHandler = function (form) {
-                    // Concatenate the four fields into the description hidden field
-                    var majorVal = $('#major').val().trim();
-                    var universityVal = $('#university').val().trim();
-                    var yearsVal = $('#years_of_experience').val().trim();
-                    var hearVal = $('#how_did_you_hear').val().trim();
-                    var descriptionText = "Major: " + majorVal +
-                        ", University: " + universityVal +
-                        ", Years_of_Experience: " + yearsVal +
-                        ", How_Did_You_Hear: " + hearVal;
-                    $('#description').val(descriptionText);
-
-                    // Call the original submitHandler (which handles Mailchimp and Salesforce)
-                    if (originalSubmitHandler) {
-                        originalSubmitHandler.call(this, form);
-                    } else {
-                        form.submit();
-                    }
-                };
-            }
-        });
-    </script>
-
-    <!-- Dynamic lead source tracking (reads URL parameters) -->
+    <!-- Script to handle source parameters (original) -->
     <script>
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
@@ -328,6 +319,111 @@
         $("#lead_source").val(sourcetxt);
         $("#00N0Y00000QGkma").val(sourcelbl);
     </script>
-</body>
 
+    <!-- INTEGRATION: Extend validation rules and concatenate new fields into description -->
+    <script>
+        $(document).ready(function () {
+            // Get the existing validator instance (initialized by validatorv2.js)
+            var form = $('#myform');
+            var validator = form.validate(); // retrieves existing validator or creates new (but existing one already there)
+            
+            // If validator exists, add rules & messages for the new fields without overriding existing ones
+            if (validator && validator.settings) {
+                // Extend rules
+                validator.settings.rules = $.extend({}, validator.settings.rules, {
+                    country_residence: { required: true },
+                    university: { required: true },
+                    major: { required: true },
+                    years_experience: { required: true, number: true, min: 0 },
+                    hear_about: { required: true }
+                });
+                // Extend messages
+                validator.settings.messages = $.extend({}, validator.settings.messages, {
+                    country_residence: { required: "Please enter your country of residence" },
+                    university: { required: "Please enter your university name" },
+                    major: { required: "Please enter your major" },
+                    years_experience: { required: "Please enter your years of experience", number: "Please enter a valid number", min: "Years cannot be negative" },
+                    hear_about: { required: "Please select how you heard about us" }
+                });
+            } else {
+                // Fallback: if validator not initialized yet (unlikely), initialize with base + new rules
+                form.validate({
+                    rules: {
+                        first_name: "required",
+                        last_name: "required",
+                        email: { required: true, email: true },
+                        phone: "required",
+                        employer: "required",
+                        country_residence: "required",
+                        university: "required",
+                        major: "required",
+                        years_experience: { required: true, number: true, min: 0 },
+                        hear_about: "required"
+                    },
+                    messages: {
+                        country_residence: "Please enter your country of residence",
+                        university: "Please enter your university",
+                        major: "Please enter your major",
+                        years_experience: { required: "Enter years of experience", number: "Must be numeric" },
+                        hear_about: "Please select how you heard about us"
+                    }
+                });
+            }
+
+            // Add submit handler to concatenate new fields into description BEFORE Salesforce submission
+            form.on('submit', function (e) {
+                // Validate the form (triggers all validation including new fields)
+                if (!form.valid()) {
+                    // If invalid, prevent submission and let validation errors display
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Gather values from new fields
+                var country = $('#country_residence').val().trim();
+                var university = $('#university').val().trim();
+                var major = $('#major').val().trim();
+                var yearsExp = $('#years_experience').val().trim();
+                var hearAbout = $('#hear_about').val();
+                
+                // Build descriptive string that will be stored in Salesforce 'description' field
+                var concatDescription = "Country of Residence: " + country +
+                                        " | University: " + university +
+                                        " | Major: " + major +
+                                        " | Years of Experience: " + yearsExp +
+                                        " | How did you hear about us: " + hearAbout;
+                
+                // Also include any existing hidden description original value if needed (keep additional context)
+                var originalDesc = $('#description').val();
+                if (originalDesc && originalDesc !== "Concated text") {
+                    concatDescription = concatDescription + " | Additional: " + originalDesc;
+                }
+                
+                // Set the concatenated string into the hidden description field
+                $('#description').val(concatDescription);
+                
+                // Allow form to proceed to Salesforce WebToLead
+                return true;
+            });
+            
+            // Optional: ensure that number field doesn't allow negative values visually
+            $('#years_experience').on('change keyup', function() {
+                var val = parseInt($(this).val(), 10);
+                if (val < 0 || isNaN(val)) $(this).val('');
+            });
+        });
+    </script>
+
+    <!-- Ensure that the existing phone script and intlTelInput work properly -->
+    <script>
+        // Re-run phone initializer if needed; original phonescript-oct-2024.js already handles this on load.
+        // We just make sure no conflict.
+        if (typeof intlTelInput !== 'undefined' && $('#phone').length) {
+            // Prevent re-initialization if already done by phonescript
+            if (!$('#phone').hasClass('iti__phone')) {
+                // If not initialized already, we could init, but original script does it.
+            }
+        }
+    </script>
+</body>
 </html>
