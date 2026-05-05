@@ -31,7 +31,7 @@
     <script src="build-2026/js/intlTelInput.js"></script>
     <script src="js-2026/mailchimp-subscribe.js"></script>
     <script src="js-2026/apply-validator.js"></script>
-    <script src="js-2026/phonescript-oct-2024.js"></script>
+    <script src="js-2026/phonescript.js"></script>
 
     <!-- Mailchimp endpoint (same as MBA) -->
     <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";</script>
@@ -228,7 +228,7 @@
 <script>
     $(window).on('load', function () {
         if (typeof intlTelInput !== 'undefined' && $("#phone").length && !$("#phone").data("intlTelInput")) {
-            // phonescript-oct-2024 should have initialized, but if not, basic init
+            // phonescript should have initialized, but if not, basic init
             $("#phone").intlTelInput({
                 preferredCountries: ["lb", "ae", "sa", "qa", "kw", "us", "uk"],
                 separateDialCode: true,

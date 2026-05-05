@@ -35,7 +35,7 @@
 
     <!-- MBA validation core & phone handler -->
     <script src="js-2026/apply-validator.js"></script>
-    <script src="js-2026/phonescript-oct-2024.js"></script>
+    <script src="js-2026/phonescript.js"></script>
 
     <!-- Google Tag Manager (consistent with MBA tracking) -->
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "GTM-KZDZDJJ");</script>
@@ -286,11 +286,11 @@
         $("#00N0Y00000QGkma").val(sourcelbl);
     </script>
 
-    <!-- Ensure international telephone plugin works flawlessly (already initialized by phonescript-oct-2024 but we trigger if needed) -->
+    <!-- Ensure international telephone plugin works flawlessly (already initialized by phonescript but we trigger if needed) -->
     <script>
         $(window).on('load', function () {
             if (typeof intlTelInput !== 'undefined' && $("#phone").length && !$("#phone").data("intlTelInput")) {
-                // fallback if phonescript didn't init (phonescript-oct-2024 should handle)
+                // fallback if phonescript didn't init (phonescript should handle)
                 console.log("IntlTelInput ready");
             }
         });
