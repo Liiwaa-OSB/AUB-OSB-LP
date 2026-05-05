@@ -96,7 +96,7 @@
 }
 
 .brochure .form-card {
-  background: var(--color-primary-dark);
+  background: rgba(106, 19, 44, 0.7);
 }
 
 .form-card__title {
