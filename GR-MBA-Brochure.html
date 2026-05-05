@@ -74,15 +74,15 @@
 
 						<!-- Salesforce hidden fields (only required ones) -->
 						<input type="hidden" name="oid" value="00D0Y000001Xrwc">
-						<input type="hidden" id="recordType" name="recordType" value="0120Y000000yimDQAQ">
+						<input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
 						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000o9UrjIAE">
 						<input type="hidden" id="member_status" name="member_status" value="Interested">
 						<input type="hidden" name="lead_source" id="lead_source" value="Website">
 						<input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure MBA">
 						<input type="hidden" name="country_code" id="country_code" value="LB">
 						<input type="hidden" name="rating" id="rating" value="Cold">
-						<input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Work Email">
-						<input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Work Phone">
+						<input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
+						<input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
 						<!-- retURL points to PDF -->
 						<input type="hidden" name="retURL"
 							value="https://www.aub.edu.lb/osb/MBA/Documents/MBAbrochure.pdf">
@@ -102,14 +102,13 @@
 
 						<div class="wrap-input100 validate-input form-group" data-validate="Valid email is required">
 							<span class="label-input100">Email *</span>
-							<input class="input100" placeholder="Email" id="email" maxlength="80" name="00N0Y00000QGl8W"
+							<input class="input100" placeholder="Email" id="email" maxlength="80" name="00N0Y00000QGklI"
 								type="text">
 						</div>
 
 						<div class="wrap-input100 validate-input form-group" data-validate="Phone number is required">
 							<span class="label-input100">Phone *</span>
-							<!-- Changed: name now matches Salesforce custom field ID -->
-							<input class="input100" id="phone" name="00N0Y00000RODqu" type="tel">
+							<input class="input100" placeholder="Phone" id="phone" maxlength="40" required type="text">
 						</div>
 
 						<div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to

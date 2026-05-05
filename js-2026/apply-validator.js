@@ -1,5 +1,3 @@
-// apply-validator.js - Clean, optimised version
-
 function setCookie(name, value, days) {
     const date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -33,7 +31,29 @@ $(document).ready(function () {
     if (localStorage.getItem("ls_last_name") != null) $('#last_name').val(localStorage.getItem("ls_last_name"));
     if (localStorage.getItem("ls_email") != null) $('#email').val(localStorage.getItem("ls_email"));
 
-    // Custom email validation
+    // Campaign override for country_code (must run after phonescript sets default)
+    function getCampaignParam() {
+        var url = window.location.href.toLowerCase();
+        var match = url.match(/[?&]campaign=([^&#]*)/i);
+        return match ? match[1] : null;
+    }
+    var campaign = getCampaignParam();
+    var campaignCountry = null;
+    switch (campaign) {
+        case "uae": campaignCountry = "AE"; break;
+        case "ksa": campaignCountry = "SA"; break;
+        case "kwt": campaignCountry = "KW"; break;
+        case "qat": campaignCountry = "QA"; break;
+        case "jor": campaignCountry = "JO"; break;
+        case "nyc": campaignCountry = "US"; break;
+        case "fra": campaignCountry = "FR"; break;
+        default: campaignCountry = null;
+    }
+    if (campaignCountry) {
+        $('#country_code').val(campaignCountry);
+    }
+    // If no campaign, country_code already set by phone selection (default = phone's country)
+
     $.validator.addMethod("customemail", function (value, element) {
         return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value);
     }, "Incorrect email address");
@@ -50,82 +70,65 @@ $(document).ready(function () {
             '00N0Y00000QGku0': { required: true },
             country_code: { required: true },
             'program': { required: true },
-            '00N0Y00000QGkuK': { required: true, digits: true },
+            '00N0Y00000QGkuK': { required: true, digits: true, min: 0 },  // years of experience
             '00N0Y00000QGl8W': { required: true, customemail: true },
             '00N0Y00000QGkrV': { required: true },
             '00N0Y00000QGksE': { required: true },
-            // Additional fields
             country_residence: { required: true },
             university: { required: true },
             major: { required: true },
-            years_experience: { required: true, number: true, min: 0 },
             hear_about: { required: true }
         },
         messages: {
-            country_residence: { required: "Please enter your country of residence" },
-            university: { required: "Please select or enter your university" },
-            major: { required: "Please enter your major" },
-            years_experience: { required: "Please enter your years of experience", number: "Please enter a valid number", min: "Years cannot be negative" },
-            hear_about: { required: "Please select how you heard about us" }
+            country_residence: "Please enter your country of residence",
+            university: "Please select or enter your university",
+            major: "Please enter your major",
+            '00N0Y00000QGkuK': { required: "Please enter your years of experience", digits: "Enter a number", min: "Cannot be negative" },
+            hear_about: "Please select how you heard about us"
         },
         submitHandler: function (form) {
             var $submitBtn = $('#submitbtn');
             if ($submitBtn.data('submitting')) return false;
             $submitBtn.data('submitting', true);
-
-            // Show loading overlay and disable form elements
             $('#loading-overlay').show();
             $submitBtn.prop('disabled', true).text('SUBMITTING...');
 
-            // Save to localStorage
             localStorage.setItem("ls_first_name", $('#first_name').val());
             localStorage.setItem("ls_last_name", $('#last_name').val());
             localStorage.setItem("ls_email", $('#email').val());
 
-            // Handle University "Other"
+            // Handle "Other" university
             var $uniSelect = $('#university');
             var universityValue = $uniSelect.val();
             if (universityValue === "Other") {
                 var otherUniversity = $('#UniversityOther').val().trim();
                 if (otherUniversity === "") {
-                    // Validation failed – re-enable and show error
                     $('#loading-overlay').hide();
                     $submitBtn.prop('disabled', false).text('SUBMIT');
                     $submitBtn.data('submitting', false);
                     alert("Please enter your university name.");
                     return false;
                 }
-                // Create a hidden input with the correct name and value, disable the select
-                $('<input>').attr({
-                    type: 'hidden',
-                    name: 'university',
-                    value: otherUniversity
-                }).appendTo('form');
+                $('<input>').attr({ type: 'hidden', name: 'university', value: otherUniversity }).appendTo('form');
                 $uniSelect.prop('disabled', true);
                 universityValue = otherUniversity;
             }
 
-            // Build description (concatenate extra fields)
+            // Build description – WITHOUT years of experience
             var concatDescription = "Country of Residence: " + $('#country_residence').val().trim() +
                 " | University: " + universityValue +
                 " | Major: " + $('#major').val().trim() +
-                " | Years of Experience: " + $('#years_experience').val().trim() +
                 " | How did you hear about us: " + $('#hear_about').val();
             $('#description').val(concatDescription);
 
-            // Mailchimp (non-blocking)
+            // Mailchimp (fire-and-forget)
             var email = $('#email').val();
             setCookie('useremail', email, 1);
             var fullName = $('#first_name').val() + ' ' + $('#last_name').val();
             var lastName = $('#last_name').val();
-            var prefix = '';
-            var honeyPot = 'b_643f74b5d97f671dfd188d733_2724d63912';
-            var url = mcurl;
-
-            if (url && url !== '') {
-                // Fire-and-forget Mailchimp subscription
-                mailchimpSubscribe(url, email, fullName, lastName, prefix, honeyPot, function (err) {
-                    if (err) console.warn("Mailchimp subscription failed:", err);
+            if (typeof mcurl !== 'undefined' && mcurl) {
+                mailchimpSubscribe(mcurl, email, fullName, lastName, '', 'b_643f74b5d97f671dfd188d733_2724d63912', function (err) {
+                    if (err) console.warn("Mailchimp error:", err);
                 });
             }
 
@@ -134,17 +137,12 @@ $(document).ready(function () {
         },
         errorElement: "em",
         errorPlacement: function (error, element) {
-            error.addClass("help-block");
-            if (element.prop("type") === "checkbox") {
-                error.insertAfter(element.parent("label"));
-            } else {
-                error.insertAfter(element);
-            }
+            error.addClass("help-block").insertAfter(element);
         },
-        highlight: function (element, errorClass, validClass) {
+        highlight: function (element) {
             $(element).parents(".val").addClass("has-error").removeClass("has-success");
         },
-        unhighlight: function (element, errorClass, validClass) {
+        unhighlight: function (element) {
             $(element).parents(".val").addClass("has-success").removeClass("has-error");
         }
     });
