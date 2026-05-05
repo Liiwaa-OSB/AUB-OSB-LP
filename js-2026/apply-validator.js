@@ -1,4 +1,4 @@
-// validatorv2.js - Clean, optimised version
+// apply-validator.js - Clean, optimised version
 
 function setCookie(name, value, days) {
     const date = new Date();
@@ -52,7 +52,6 @@ $(document).ready(function () {
             'program': { required: true },
             '00N0Y00000QGkuK': { required: true, digits: true },
             '00N0Y00000QGl8W': { required: true, customemail: true },
-            '00N0Y00000RODqu': { required: true },
             '00N0Y00000QGkrV': { required: true },
             '00N0Y00000QGksE': { required: true },
             // Additional fields
@@ -83,7 +82,7 @@ $(document).ready(function () {
             localStorage.setItem("ls_last_name", $('#last_name').val());
             localStorage.setItem("ls_email", $('#email').val());
 
-            // --- Handle University "Other" ---
+            // Handle University "Other"
             var $uniSelect = $('#university');
             var universityValue = $uniSelect.val();
             if (universityValue === "Other") {
@@ -102,7 +101,7 @@ $(document).ready(function () {
                     name: 'university',
                     value: otherUniversity
                 }).appendTo('form');
-                $uniSelect.prop('disabled', true); // so its value is not sent
+                $uniSelect.prop('disabled', true);
                 universityValue = otherUniversity;
             }
 
@@ -130,7 +129,7 @@ $(document).ready(function () {
                 });
             }
 
-            // Submit to Salesforce – use native DOM submit to bypass any jQuery handlers
+            // Submit to Salesforce
             form.submit();
         },
         errorElement: "em",

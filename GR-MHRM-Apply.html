@@ -30,7 +30,7 @@
 	<!-- Phone script (initialises intlTelInput and adds custom validation method) -->
 	<script src="js-2026/phonescript-oct-2024.js"></script>
 	<!-- Main validation and form handler (kept as is) -->
-	<script src="js-2026/validatorv2.js"></script>
+	<script src="js-2026/apply-validator.js"></script>
 
 	<!-- Google Tag Manager -->
 	<script>
@@ -72,7 +72,7 @@
 			src="https://www.facebook.com/tr?id=368598848515387&ev=PageView&noscript=1" /></noscript>
 	<!-- End Meta Pixel Code -->
 
-	<!-- Mailchimp endpoint URL (used by validatorv2.js) -->
+	<!-- Mailchimp endpoint URL (used by apply-validator.js) -->
 	<script>
 		var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";
 	</script>
@@ -284,7 +284,7 @@
 	<!-- Patch to set the description field before Salesforce submission (keeps all existing validation logic) -->
 	<script>
 		$(document).ready(function () {
-			// Wait for validatorv2.js to initialise the validation on the form
+			// Wait for apply-validator.js to initialise the validation on the form
 			// We need to override the submitHandler to first populate the description field.
 			// Get the existing validator instance.
 			var validator = $("#myform").data("validator");

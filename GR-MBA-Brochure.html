@@ -10,12 +10,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="css-2026/util.css">
 	<link rel="stylesheet" href="build-2026/css/intlTelInput.css">
-
 	<link rel="stylesheet" href="css-2026/main.css">
 	<link rel="stylesheet" href="css-2026/main-programs.css">
-
-
-
 
 	<style>
 		.page-wrapper {
@@ -29,8 +25,8 @@
 	<!-- Libraries -->
 	<script src="build-2026/js/intlTelInput.js"></script>
 	<script src="js-2026/mailchimp-subscribe.js"></script>
-	<script src="js-2026/validatorv2.js"></script>
 	<script src="js-2026/phonescript-oct-2024.js"></script>
+	<script src="js-2026/brochure-validator.js"></script>
 
 	<script>
 		var mcurl = 'https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3';
@@ -67,8 +63,7 @@
 				</div>
 
 				<div class="form-card">
-					<span class="form-card__title">Download
-						Brochure</span>
+					<span class="form-card__title">Download Brochure</span>
 					<span class="contac100-form-subtitle"
 						style="display: block; text-align: center; margin-bottom: 1.5rem; opacity: 0.9;">Fill the form
 						to get instant access</span>
@@ -77,26 +72,17 @@
 						action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
 						name="myform" novalidate="novalidate">
 
-						<!-- Salesforce hidden fields (original + dummy fields to satisfy validatorv2.js) -->
+						<!-- Salesforce hidden fields (only required ones) -->
 						<input type="hidden" name="oid" value="00D0Y000001Xrwc">
-						<input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000S0gqAAC">
+						<input type="hidden" id="recordType" name="recordType" value="0120Y000000yimDQAQ">
+						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000o9UrjIAE">
 						<input type="hidden" id="member_status" name="member_status" value="Interested">
 						<input type="hidden" name="lead_source" id="lead_source" value="Website">
 						<input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure MBA">
 						<input type="hidden" name="country_code" id="country_code" value="LB">
-						<input type="hidden" name="campaign" id="campaign" value="">
 						<input type="hidden" name="rating" id="rating" value="Cold">
 						<input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Work Email">
 						<input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Work Phone">
-						<!-- Hidden phone field used by phonescript -->
-						<input type="hidden" name="00N0Y00000RODqu" id="00N0Y00000RODqu" value="">
-						<!-- Dummy fields to satisfy validatorv2.js rules -->
-						<input type="hidden" name="00N0Y00000QGklm" id="00N0Y00000QGklm" value="N/A">
-						<input type="hidden" name="title" id="title" value="N/A">
-						<input type="hidden" name="00N0Y00000QGkuK" id="00N0Y00000QGkuK" value="0">
-						<input type="hidden" name="00N0Y00000QGkrV" id="00N0Y00000QGkrV" value="N/A">
-						<input type="hidden" name="00N0Y00000QGksE" id="00N0Y00000QGksE" value="N/A">
 						<!-- retURL points to PDF -->
 						<input type="hidden" name="retURL"
 							value="https://www.aub.edu.lb/osb/MBA/Documents/MBAbrochure.pdf">
@@ -104,31 +90,26 @@
 						<!-- Form fields -->
 						<div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
 							<span class="label-input100">First Name *</span>
-							<input class="input100" id="first_name" maxlength="40" name="first_name" required
+							<input class="input100" id="first_name" maxlength="40" name="first_name"
 								placeholder="First Name" type="text">
 						</div>
 
 						<div class="wrap-input100 validate-input form-group" data-validate="Last Name is required">
 							<span class="label-input100">Last Name *</span>
-							<input class="input100" id="last_name" maxlength="80" placeholder="Last Name" required
+							<input class="input100" id="last_name" maxlength="80" placeholder="Last Name"
 								name="last_name" type="text">
 						</div>
 
 						<div class="wrap-input100 validate-input form-group" data-validate="Valid email is required">
 							<span class="label-input100">Email *</span>
-							<input class="input100" placeholder="Email" id="email" maxlength="80" required
-								name="00N0Y00000QGl8W" type="text">
+							<input class="input100" placeholder="Email" id="email" maxlength="80" name="00N0Y00000QGl8W"
+								type="text">
 						</div>
 
 						<div class="wrap-input100 validate-input form-group" data-validate="Phone number is required">
 							<span class="label-input100">Phone *</span>
-							<input class="input100" id="phone" name="intphone" type="tel" pattern="[0-9]*" required>
-						</div>
-
-						<div class="wrap-input100 validate-input form-group" data-validate="Company name is required">
-							<span class="label-input100">Company *</span>
-							<input class="input100" id="employer" placeholder="Company" maxlength="40" required
-								name="00N0Y00000QGku0" type="text">
+							<!-- Changed: name now matches Salesforce custom field ID -->
+							<input class="input100" id="phone" name="00N0Y00000RODqu" type="tel">
 						</div>
 
 						<div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to
