@@ -90,6 +90,12 @@ select option {
   color: white;
 }
 
+button,
+a.btn-primary,
+a.btn-outline {
+  height: 52px;
+}
+
 /* ----- unified button base (shared properties) ----- */
 .btn,
 .btn-primary,
@@ -206,7 +212,7 @@ select.error {
 }
 
 .iti__country-list .iti__country-name {
-    color: #000 !important;
+  color: #000 !important;
 }
 
 .iti__selected-flag {

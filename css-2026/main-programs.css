@@ -23,7 +23,7 @@
 }
 
 .brochure .page-wrapper::before {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* ----- logo ----- */
@@ -32,10 +32,10 @@
 }
 
 .logo a {
-  text-decoration: none;
+  /* text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 12px; */
 }
 
 .logo-img img {
@@ -55,15 +55,16 @@
 /* left column: hero content bottom-aligned */
 .hero-content {
   display: block;
-  height: 100%;
+  height: calc(100% - 2.5rem - 85px);
 }
 
 @media (min-width: 900px) {
   .hero-content {
-    padding-bottom: 180px;
+    padding-bottom: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    /* height: 100%; */
   }
 }
 
@@ -78,8 +79,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 1.8rem;
-  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1px;
 }
 
 /* right column: form card */
