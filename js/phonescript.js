@@ -23,7 +23,7 @@ $(document).ready(function(){
         preferredCountries: [defaultCountry],
         initialCountry: defaultCountry,
         separateDialCode: true,
-        utilsScript: "build-2026/js/utils.js",
+        utilsScript: "build/js/utils.js",
     });
 
     // Remove name from visible input so only the hidden input submits
@@ -36,6 +36,8 @@ $(document).ready(function(){
     updateCountryCode();
     input.addEventListener("countrychange", updateCountryCode);
 
+    $("form").validate();
+
     // Phone validation
     var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
     $.validator.addMethod('Validphonenumber', function (value, element) {
@@ -44,6 +46,6 @@ $(document).ready(function(){
         return iti.isValidNumber();
     }, "Invalid Phone Number");
 
+    
     $("#phone").rules("add", { Validphonenumber: true });
-    $("#phone").rules("remove", "validPhoneNumber");
 });

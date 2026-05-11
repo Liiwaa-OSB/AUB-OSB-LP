@@ -12,14 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Core CSS (MBA validation structure + OEP styling) -->
-    <link rel="stylesheet" type="text/css" href="css-2026/util.css">
-    <link rel="stylesheet" href="build-2026/css/intlTelInput.css">
-    <link rel="stylesheet" href="css-2026/main.css">
-    <link rel="stylesheet" href="css-2026/online-programs.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" href="build/css/intlTelInput.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/online-programs.css">
 
      <style>
         .hero-banner::before {
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images-2026/AUB-OSB-OEP-Family-Business-governance.jpg');
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/AUB-OSB-OEP-Family-Business-governance.jpg');
             background-position: center;
             background-size: cover;
         }
@@ -28,10 +28,10 @@
     <!-- Core scripts (order identical to MBA brochure) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-    <script src="build-2026/js/intlTelInput.js"></script>
-    <script src="js-2026/mailchimp-subscribe.js"></script>
-    <script src="js-2026/apply-validator.js"></script>
-    <script src="js-2026/phonescript.js"></script>
+    <script src="build/js/intlTelInput.js"></script>
+    <script src="js/mailchimp-subscribe.js"></script>
+    <script src="js/apply-validator.js"></script>
+    <script src="js/phonescript.js"></script>
 
     <!-- Mailchimp endpoint (same as MBA) -->
     <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";</script>
@@ -48,7 +48,7 @@
     <div class="container">
         <div class="banner-logo">
             <a href="#" style="text-decoration: none;">
-                <img src="images-2026/AUB-OSB-Logo-White.png" alt="AUB OSB Logo" onerror="this.src='https://placehold.co/200x70?text=AUB+OSB'">
+                <img src="images/AUB-OSB-Logo-White.png" alt="AUB OSB Logo" onerror="this.src='https://placehold.co/200x70?text=AUB+OSB'">
             </a>
         </div>
         <div class="banner-content">
@@ -232,7 +232,7 @@
             $("#phone").intlTelInput({
                 preferredCountries: ["lb", "ae", "sa", "qa", "kw", "us", "uk"],
                 separateDialCode: true,
-                utilsScript: "build-2026/js/utils.js"
+                utilsScript: "build/js/utils.js"
             });
         }
     });
