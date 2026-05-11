@@ -19,7 +19,7 @@ $(document).ready(function(){
     var input = document.querySelector("#phone");
     var iti = window.intlTelInput(input, {
         excludeCountries: ["il"],
-        hiddenInput: "00N0Y00000RODqu",
+        hiddenInput: "00N0Y00000QGl8g",
         preferredCountries: [defaultCountry],
         initialCountry: defaultCountry,
         separateDialCode: true,

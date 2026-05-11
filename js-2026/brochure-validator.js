@@ -25,13 +25,13 @@
                 first_name: { required: true },
                 last_name: { required: true },
                 "00N0Y00000QGl8W": { required: true, customemail: true }, //email
-                "00N0Y00000RODqu": { required: true } //phone
+                "00N0Y00000QGl8g": { required: true } //phone
             },
             messages: {
                 first_name: "First Name is required",
                 last_name: "Last Name is required",
                 "00N0Y00000QGl8W": "Valid email is required",
-                "00N0Y00000RODqu": "Phone number is required"
+                "00N0Y00000QGl8g": "Phone number is required"
             },
             submitHandler: function (form) {
                 var $btn = $('#submitbtn');
