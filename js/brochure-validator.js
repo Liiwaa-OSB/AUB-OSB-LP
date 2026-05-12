@@ -1,67 +1,154 @@
-// brochure-validator.js - Simple, dedicated validator for brochure pages
-(function ($) {
-    "use strict";
+// brochure-validator.js
 
-    function setCookie(name, value, days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        document.cookie = name + "=" + value + ";expires=" + date.toUTCString() + ";domain=.aub.edu.lb;path=/;SameSite=Lax;Secure";
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";domain=.aub.edu.lb;path=/;SameSite=Lax;Secure";
+}
+
+$(document).ready(function () {
+    var $form = $('#myform');
+    var $firstName = $('#first_name');
+    var $lastName = $('#last_name');
+    var $email = $('#email');
+    var $phone = $('#phone');
+    var $submitBtn = $('#submitbtn');
+
+    // Create a unique error span for each field (avoid duplication)
+    function createErrorContainer($input) {
+        var $formGroup = $input.closest('.form-group');
+        // Remove any existing custom error
+        $formGroup.find('.custom-error').remove();
+        var $target = $input.next('.focus-input100').length ? $input.next('.focus-input100') : $input;
+        var $errorSpan = $('<span class="error help-block"></span>');
+        $errorSpan.insertAfter($target);
+        return $errorSpan;
     }
 
-    $(document).ready(function () {
-        // Restore from localStorage
-        if (localStorage.getItem("ls_first_name")) $('#first_name').val(localStorage.getItem("ls_first_name"));
-        if (localStorage.getItem("ls_last_name")) $('#last_name').val(localStorage.getItem("ls_last_name"));
-        if (localStorage.getItem("ls_email")) $('#email').val(localStorage.getItem("ls_email"));
+    var $firstNameError = createErrorContainer($firstName);
+    var $lastNameError = createErrorContainer($lastName);
+    var $emailError = createErrorContainer($email);
+    var $phoneError = createErrorContainer($phone);
 
-        // Custom email validation
-        $.validator.addMethod("customemail", function (value) {
-            return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value);
-        }, "Incorrect email address");
+    function setError($errorSpan, message) {
+        $errorSpan.text(message).show();
+        $errorSpan.closest('.form-group').addClass('has-error');
+    }
 
-        // Validate only the fields present on brochure page
-         $("#myform").validate({
-            rules: {
-                first_name: { required: true },
-                last_name: { required: true },
-                "00N0Y00000QGl8W": { required: true, customemail: true }, //email
-                "00N0Y00000QGl8g": { required: true } //phone
-            },
-            messages: {
-                first_name: "First Name is required",
-                last_name: "Last Name is required",
-                "00N0Y00000QGl8W": "Valid email is required",
-                "00N0Y00000QGl8g": "Phone number is required"
-            },
-            submitHandler: function (form) {
-                var $btn = $('#submitbtn');
-                if ($btn.data('submitting')) return false;
-                $btn.data('submitting', true);
-                $('#loading-overlay').show();
-                $btn.prop('disabled', true).text('SUBMITTING...');
+    function clearError($errorSpan) {
+        $errorSpan.text('').hide();
+        $errorSpan.closest('.form-group').removeClass('has-error');
+    }
 
-                // Save to localStorage
-                localStorage.setItem("ls_first_name", $('#first_name').val());
-                localStorage.setItem("ls_last_name", $('#last_name').val());
-                localStorage.setItem("ls_email", $('#email').val());
+    // Restore from localStorage
+    if (localStorage.getItem("ls_first_name")) $firstName.val(localStorage.getItem("ls_first_name"));
+    if (localStorage.getItem("ls_last_name")) $lastName.val(localStorage.getItem("ls_last_name"));
+    if (localStorage.getItem("ls_email")) $email.val(localStorage.getItem("ls_email"));
 
-                // Mailchimp (non-blocking)
-                var email = $('#email').val();
-                setCookie('useremail', email, 1);
-                if (typeof mcurl !== 'undefined' && mcurl) {
-                    var fullName = $('#first_name').val() + ' ' + $('#last_name').val();
-                    mailchimpSubscribe(mcurl, email, fullName, $('#last_name').val(), '', 'b_643f74b5d97f671dfd188d733_2724d63912', function (err) {
-                        if (err) console.warn("Mailchimp error:", err);
-                    });
-                }
+    function isValidEmail(email) {
+        return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email);
+    }
 
-                // Submit to Salesforce
-                form.submit();
-            },
-            errorPlacement: function (error, element) {
-                error.addClass("help-block");
-                error.insertAfter(element);
+    function isValidPhone() {
+        var input = document.querySelector("#phone");
+        var iti = window.intlTelInputGlobals ? window.intlTelInputGlobals.getInstance(input) : null;
+        if (iti && typeof iti.isValidNumber === 'function') {
+            return iti.isValidNumber();
+        }
+        return $.trim($phone.val()) !== '';
+    }
+
+    function validateField(field, errorSpan) {
+        var val = $.trim(field.val());
+        var isValid = true;
+        var errorMsg = '';
+
+        if (field.is($firstName)) {
+            if (val === '') {
+                isValid = false;
+                errorMsg = 'First Name is required';
             }
-        });
+        } 
+        else if (field.is($lastName)) {
+            if (val === '') {
+                isValid = false;
+                errorMsg = 'Last Name is required';
+            }
+        }
+        else if (field.is($email)) {
+            if (val === '') {
+                isValid = false;
+                errorMsg = 'Email is required';
+            } else if (!isValidEmail(val)) {
+                isValid = false;
+                errorMsg = 'Please enter a valid email address (e.g., name@example.com)';
+            }
+        }
+        else if (field.is($phone)) {
+            if (val === '') {
+                isValid = false;
+                errorMsg = 'Phone number is required';
+            } else if (!isValidPhone()) {
+                isValid = false;
+                errorMsg = 'Please enter a valid phone number (including country code)';
+            }
+        }
+
+        if (!isValid) {
+            setError(errorSpan, errorMsg);
+        } else {
+            clearError(errorSpan);
+        }
+        return isValid;
+    }
+
+    function validateForm() {
+        var isValid = true;
+        isValid = validateField($firstName, $firstNameError) && isValid;
+        isValid = validateField($lastName, $lastNameError) && isValid;
+        isValid = validateField($email, $emailError) && isValid;
+        isValid = validateField($phone, $phoneError) && isValid;
+        return isValid;
+    }
+
+    // Live validation on input/change
+    $firstName.on('input', function() { validateField($firstName, $firstNameError); });
+    $lastName.on('input', function() { validateField($lastName, $lastNameError); });
+    $email.on('input', function() { validateField($email, $emailError); });
+    $phone.on('input', function() { validateField($phone, $phoneError); });
+    $phone.on('countrychange', function() { validateField($phone, $phoneError); });
+
+    $form.on('submit', function(e) {
+        e.preventDefault();
+
+        if (!validateForm()) {
+            var firstError = $('.has-error').first();
+            if (firstError.length) {
+                $('html, body').animate({ scrollTop: firstError.offset().top - 100 }, 200);
+            }
+            return false;
+        }
+
+        if ($submitBtn.data('submitting')) return false;
+        $submitBtn.data('submitting', true);
+        $('#loading-overlay').show();
+        $submitBtn.prop('disabled', true).text('DOWNLOADING...');
+
+        localStorage.setItem("ls_first_name", $firstName.val());
+        localStorage.setItem("ls_last_name", $lastName.val());
+        localStorage.setItem("ls_email", $email.val());
+
+        var email = $email.val();
+        setCookie('useremail', email, 1);
+        var fullName = $firstName.val() + ' ' + $lastName.val();
+        var lastName = $lastName.val();
+        if (typeof mcurl !== 'undefined' && mcurl) {
+            mailchimpSubscribe(mcurl, email, fullName, lastName, '', 'b_643f74b5d97f671dfd188d733_2724d63912', function (err) {
+                if (err) console.warn("Mailchimp error:", err);
+            });
+        }
+
+        $form.get(0).submit();
     });
-})(jQuery);
+});

@@ -39,7 +39,7 @@ $(document).ready(function(){
     $("form").validate();
 
     // Phone validation
-    var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+    var errorMap = ["Invalid number. ", "Invalid country code. ", "Too short. ", "Too long. ", "Invalid number. "];
     $.validator.addMethod('Validphonenumber', function (value, element) {
         var errorCode = iti.getValidationError();
         $.validator.messages.Validphonenumber = errorMap[errorCode] || "Invalid number";
