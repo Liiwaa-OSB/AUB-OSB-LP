@@ -5,55 +5,22 @@
   const osbRow = document.querySelector(".nav-osb");
   const bodyEl = document.body;
 
-  // --- Helper: update sticky state based on exact combined height of top sections
-  function updateSticky() {
-    if (!mainHeader || !osbRow) return;
-
-    // Force Chrome to recalculate layout
-    const utilityHeight = utilityBar ? utilityBar.getBoundingClientRect().height : 0;
-    const mainHeaderHeight = mainHeader.getBoundingClientRect().height;
-    const totalTopHeight = utilityHeight + mainHeaderHeight;
-
-    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    const shouldStick = scrollY > totalTopHeight;
-
-    if (shouldStick) {
-      if (!bodyEl.classList.contains("nav-scrolled")) {
-        bodyEl.classList.add("nav-scrolled");
-        // Force reflow for Chrome
-        void bodyEl.offsetHeight;
-        const osbHeight = osbRow.getBoundingClientRect().height;
-        bodyEl.style.paddingTop = osbHeight + "px";
-      } else {
-        const osbHeight = osbRow.getBoundingClientRect().height;
-        bodyEl.style.paddingTop = osbHeight + "px";
-      }
-    } else {
-      if (bodyEl.classList.contains("nav-scrolled")) {
-        bodyEl.classList.remove("nav-scrolled");
-        bodyEl.style.paddingTop = "";
-      }
-    }
-  }
-
   // Use requestAnimationFrame for smoother scrolling in Chrome
   let ticking = false;
-  function onScroll() {
-    if (!ticking) {
-      requestAnimationFrame(function () {
-        updateSticky();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }
+  // function onScroll() {
+  //   if (!ticking) {
+  //     requestAnimationFrame(function () {
+  //       ticking = false;
+  //     });
+  //     ticking = true;
+  //   }
+  // }
 
   // --- Debounced resize listener
   let resizeTimer;
   function handleResize() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      updateSticky();
       // Force mobile menu to recalculate if open
       if (overlay && overlay.classList.contains("open")) {
         const mobileContent = overlay.querySelector(".mobile-menu-sections");
@@ -68,13 +35,9 @@
   }
 
   // --- Event binding with Chrome compatibility
-  window.addEventListener("scroll", onScroll, { passive: true });
+  // window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", handleResize);
   
-  // Initial call with slight delay for Chrome to calculate properly
-  setTimeout(updateSticky, 100);
-  updateSticky();
-
   // --- Mobile overlay toggle
   const burger = document.getElementById("burgerBtn");
   const overlay = document.getElementById("mobileOverlay");

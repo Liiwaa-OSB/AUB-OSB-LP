@@ -127,7 +127,7 @@ body {
 }
 
 .nav-item {
-  position: relative;
+  /* position: relative; */
 }
 
 .nav-item > button {
@@ -340,7 +340,7 @@ body {
 }
 
 /* ---------- STICKY BEHAVIOR (fixed OSB bar) ---------- */
-body.nav-scrolled .nav-utility,
+/* body.nav-scrolled .nav-utility,
 body.nav-scrolled .nav-main-header {
   transform: translateY(-100%);
 }
@@ -376,7 +376,6 @@ body.nav-scrolled .nav-osb-logo img {
   width: auto;
 }
 
-/* dropdowns stay readable when OSB is sticky */
 body.nav-scrolled .nav-osb .osb-dropdown {
   background: white;
 }
@@ -386,7 +385,7 @@ body.nav-scrolled .nav-osb .osb-dropdown a {
 }
 body.nav-scrolled .nav-osb .osb-dropdown a:hover {
   color: var(--color-primary-dark);
-}
+} */
 
 /* ---------- MOBILE BURGER & OVERLAY ---------- */
 .nav-mobile-btn {
@@ -545,28 +544,24 @@ body.menu-open {
 
 @media (max-width: 1023px) {
   /* On mobile, when scrolled, make the main header fixed at top */
-  body.nav-scrolled .nav-main-header {
+  /* body.nav-scrolled .nav-main-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    transform: none; /* override any transform from desktop */
+    transform: none;
   }
-  /* Add padding to body to prevent content jump when header becomes fixed */
   body.nav-scrolled {
-    padding-top: 70px; /* adjust to match your main header height */
+    padding-top: 70px;
   }
-  /* Ensure the utility bar stays hidden (it's already hidden on mobile) */
-  /* Ensure OSB row remains hidden and not sticky */
   body.nav-scrolled .nav-osb {
     position: relative;
     top: auto;
     background-color: var(--color-bg-light);
     box-shadow: none;
   }
-  /* Keep OSB logo hidden even if scrolled class is present */
   body.nav-scrolled .nav-osb-logo {
     display: none !important;
-  }
+  } */
 }
