@@ -1,0 +1,2498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EQUIS Accreditation — AUB Business Education</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            color: #000;
+            background: #fff;
+            line-height: 1.6;
+            padding-top: 0 !important;
+        }
+
+        /* ===== DESIGN TOKENS ===== */
+        :root {
+            --color-primary: #840132;
+            --color-primary-dark: #6a132c;
+
+            --white: #FFFFFF;
+
+            --color-text-muted: #515151;
+            --color-bg-light: #f9fafb;
+            --color-border-light: #dadbdb;
+            --color-gray-bg: #808080;
+            --color-dark-gray: #434444;
+            --color-dark-gray-rgb: 67, 68, 68;
+
+            --font-family-base: "Roboto", sans-serif;
+            --spacing-unit: 1rem;
+            --container-max-width: 1280px;
+            --border-radius: 4px;
+
+            /* Font sizes - mobile first */
+            --hero-title-size: 32px;
+            --hero-subtitle-size: 18px;
+            --section-title-size: 24px;
+            --body-font-size: 16px;
+        }
+
+        @media (min-width: 768px) {
+            :root {
+                --hero-title-size: 36px;
+                --hero-subtitle-size: 24px;
+                --section-title-size: 32px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            :root {
+                --hero-title-size: 48px;
+                --hero-subtitle-size: 28px;
+                --section-title-size: 36px;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(132, 1, 50, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid var(--navy);
+            transition: box-shadow 0.3s;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            height: 64px;
+        }
+
+        .nav-logo {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        .nav-logo span {
+            font-weight: 400;
+            text-transform: none;
+            opacity: 0.85;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 0.4rem 0.7rem;
+            border-radius: 4px;
+            transition: all 0.25s;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%), url("./images/AUB-Bird-eye-view.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* This creates the "stretch" effect without distorting */
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(20, 45, 102, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(20, 45, 102, 0.15) 0%, transparent 50%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, var(--color-primary-dark), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 50px;
+            color: var(--white);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 1rem;
+            line-height: 1.8;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-stat {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 500;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--white);
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero-cta:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-tagline {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            color: rgba(255, 255, 255, 0.35);
+            font-style: italic;
+            font-weight: 300;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        /* ─── ACCREDITATION BAR (EQUIS + AACSB + BSIS) ─── */
+        .accred-bar {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .accred-bar-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .accred-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            transition: opacity 0.3s;
+            min-width: 140px;
+        }
+
+        .accred-item:hover {
+            opacity: 0.75;
+        }
+
+        .accred-item svg {
+            margin-bottom: 0.25rem;
+        }
+
+        .accred-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 1.5px;
+        }
+
+        .accred-sub {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .accred-divider {
+            width: 1px;
+            height: 60px;
+            background: #E5E7EB;
+        }
+
+        /* ─── SECTIONS ─── */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            color: var(--color-primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            color: var(--color-primary);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-intro {
+            font-size: 1.1rem;
+            color: var(--mid-gray);
+            max-width: 700px;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        /* ─── MILESTONE CARDS ─── */
+        .milestone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .milestone-card {
+            background: var(--white);
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .milestone-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--color-primary);
+            transform: scaleX(0);
+            transition: transform 0.35s;
+        }
+
+        .milestone-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(132, 1, 50, 0.1);
+        }
+
+        .milestone-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .milestone-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--color-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .milestone-sub {
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .milestone-desc {
+            font-size: 0.92rem;
+            color: var(--mid-gray);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* ─── JOURNEY (dark — Berytus Red) ─── */
+        .journey {
+            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+            color: var(--white);
+        }
+
+        .journey .section-label {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .journey .section-title {
+            color: var(--white);
+        }
+
+        .journey .section-intro {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .journey-body {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .journey-body p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .journey-body strong {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        /* ─── STANDARD ─── */
+        .standard-text {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--mid-gray);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .pillar-card {
+            perspective: 600px;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .pillar-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .pillar-card:hover .pillar-inner {
+            transform: rotateY(180deg);
+        }
+
+        .pillar-front,
+        .pillar-back {
+            position: absolute;
+            inset: 0;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.75rem;
+        }
+
+        .pillar-front {
+            background: var(--cream);
+            border: 1px solid #E5E7EB;
+        }
+
+        .pillar-front h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .pillar-front .pillar-hint {
+            font-size: 0.75rem;
+            color: var(--mid-gray);
+            margin-top: 0.75rem;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .pillar-back {
+            background: var(--color-primary);
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+
+        .pillar-back p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* ─── TWO SHORES ─── */
+        .shores {
+            background: var(--cream);
+        }
+
+        .shores-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .shore-panel {
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            position: relative;
+            transition: all 0.4s;
+            overflow: hidden;
+        }
+
+        .shore-panel:first-child {
+            background: var(--color-primary);
+        }
+
+        .shore-panel:last-child {
+            background: var(--navy);
+        }
+
+        .shore-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .shore-img-placeholder {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shore-panel:first-child .shore-img-placeholder {
+            background: linear-gradient(135deg, #6b0128 0%, #a8234f 50%, #840132 100%);
+        }
+
+        .shore-panel:last-child .shore-img-placeholder {
+            background: linear-gradient(135deg, #0f2250 0%, #345199 50%, #142D66 100%);
+        }
+
+        .shore-img-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.03) 48%, rgba(255, 255, 255, 0.03) 52%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.03) 48%, rgba(255, 255, 255, 0.03) 52%, transparent 52%);
+            background-size: 30px 30px;
+        }
+
+        .shore-img-placeholder .campus-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            opacity: 0.4;
+        }
+
+        .shore-info {
+            padding: 2rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            flex: 1;
+        }
+
+        .shore-location {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .shore-school {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .shores-quote {
+            font-size: 1.2rem;
+            color: var(--color-primary);
+            line-height: 1.7;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .shores-tagline {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* over-ride */
+        /* two shores */
+    .shores {
+      background: var(--color-bg-light);
+    }
+
+    .shores-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+
+    .shore-panel {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-primary);
+    }
+
+    .shore-panel:last-child {
+      background: var(--color-primary-dark);
+    }
+
+    .shore-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background: #ddd;
+    }
+
+    .shore-info {
+      padding: 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    .shore-location {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+
+    .shore-school {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+
+    
+
+
+        /* ─── WHAT THIS MEANS ─── */
+        .perspectives-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .perspective-card {
+            display: grid;
+            grid-template-columns: 4px 1fr;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .perspective-card:hover {
+            box-shadow: 0 8px 30px rgba(132, 1, 50, 0.08);
+            transform: translateX(4px);
+        }
+
+        .perspective-bar {
+            background: var(--color-primary);
+        }
+
+        .perspective-body {
+            padding: 2rem 2.5rem;
+        }
+
+        .perspective-for {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .perspective-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            color: var(--black);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .perspective-text {
+            font-size: 0.95rem;
+            color: var(--mid-gray);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .perspective-quote {
+            margin-top: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--cream);
+            border-radius: 6px;
+            font-style: italic;
+            font-size: 0.88rem;
+            color: var(--mid-gray);
+            font-weight: 300;
+        }
+
+        /* ─── HORIZONTAL TIMELINE ─── */
+        .timeline-section {
+            background: var(--cream);
+            overflow: hidden;
+        }
+
+        .h-timeline-wrapper {
+            overflow-x: auto;
+            padding-bottom: 1.5rem;
+            margin-top: 2rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-primary) var(--light-gray);
+        }
+
+        .h-timeline-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .h-timeline-wrapper::-webkit-scrollbar-track {
+            background: var(--light-gray);
+            border-radius: 3px;
+        }
+
+        .h-timeline-wrapper::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 3px;
+        }
+
+        .h-timeline {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            min-width: max-content;
+            padding: 2rem 2rem 2rem 0;
+        }
+
+        .h-timeline::before {
+            content: '';
+            position: absolute;
+            top: 48px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--color-primary), var(--navy));
+        }
+
+        .h-timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 180px;
+            max-width: 200px;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .h-timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: 3px solid var(--cream);
+            position: relative;
+            z-index: 1;
+            margin-top: 41px;
+            flex-shrink: 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .h-timeline-item:hover .h-timeline-dot {
+            transform: scale(1.3);
+            box-shadow: 0 0 0 4px rgba(132, 1, 50, 0.15);
+        }
+
+        .h-timeline-item:last-child .h-timeline-dot {
+            background: var(--navy);
+            width: 20px;
+            height: 20px;
+            margin-top: 39px;
+            box-shadow: 0 0 0 4px rgba(20, 45, 102, 0.15);
+        }
+
+        .h-timeline-year {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 0;
+            height: 36px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .h-timeline-content {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .h-timeline-label {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 0.82rem;
+            margin-bottom: 0.35rem;
+            line-height: 1.3;
+        }
+
+        .h-timeline-desc {
+            font-size: 0.8rem;
+            color: var(--mid-gray);
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .h-timeline-scroll-hint {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--mid-gray);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* ─── VOICES ─── */
+        /* .voice-featured {
+            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+            border-radius: 12px;
+            padding: 3rem;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        } */
+
+        .voice-play {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 2rem;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .voice-play:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* .voice-featured h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        } */
+
+        /* .voice-featured p {
+            font-size: 0.95rem;
+            opacity: 0.75;
+            font-weight: 300;
+        } */
+
+        .voices-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .voice-card {
+            background: var(--white);
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .voice-card.voice-card-wide {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: linear-gradient(135deg, #f9f5f7, #fff);
+            border: 1px solid rgba(132, 1, 50, 0.12);
+        }
+
+        .voice-card:hover {
+            box-shadow: 0 8px 25px rgba(132, 1, 50, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .voice-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: var(--color-primary);
+        }
+
+        .voice-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            color: var(--black);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .voice-card .voice-role {
+            font-size: 0.8rem;
+            color: var(--mid-gray);
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+        }
+
+        .voice-card .voice-quote {
+            font-size: 0.88rem;
+            color: var(--mid-gray);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .voice-btn {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border: 1px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .voice-btn:hover {
+            background: var(--color-primary);
+            color: var(--white);
+        }
+
+        /* ─── WHATS NEXT ─── */
+        .next {
+            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .next .section-label {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .next .section-title {
+            color: var(--white);
+        }
+
+        .next-body {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 650px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-btn {
+            display: block;
+            padding: 1.1rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: var(--white);
+            color: var(--color-primary);
+            border-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn.primary {
+            background: var(--white);
+            border-color: var(--white);
+            color: var(--color-primary);
+        }
+
+        .cta-btn.primary:hover {
+            background: var(--navy);
+            color: var(--white);
+            border-color: var(--navy);
+        }
+
+
+
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: var(--color-primary);
+                padding: 1rem;
+                gap: 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .shores-split {
+                grid-template-columns: 1fr;
+            }
+
+            /* .voice-featured {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+            } */
+
+            .voices-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .voice-card.voice-card-wide {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            section {
+                padding: 4rem 1.25rem;
+            }
+
+            .hero {
+                padding: 5rem 1.5rem 3rem;
+            }
+
+            .accred-bar-inner {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .accred-divider {
+                width: 60px;
+                height: 1px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+</head>
+
+<body>
+    <div class="nav">
+        <!-- UTILITY BAR (desktop only) -->
+        <div class="nav-utility">
+            <div class="nav-utility-container">
+                <a href="/Pages/AZ.aspx" class="nav-utility-link">A - Z</a><span class="nav-utility-separator">|</span>
+                <a href="/Search/Pages/People.aspx" class="nav-utility-link">Find People</a><span
+                    class="nav-utility-separator">|</span>
+                <a href="https://aubmc.org.lb/" class="nav-utility-link" target="_blank">AUBMC</a><span
+                    class="nav-utility-separator">|</span>
+                <a href="/libraries" class="nav-utility-link">Libraries</a><span class="nav-utility-separator">|</span>
+                <a href="/Employment" class="nav-utility-link">Jobs</a><span class="nav-utility-separator">|</span>
+                <a href="http://alumni.aub.edu.lb/s/1716/start.aspx?gid=2&pgid=61" class="nav-utility-link"
+                    target="_blank">Alumni</a><span class="nav-utility-separator">|</span>
+                <a href="https://online.aub.edu.lb" class="nav-utility-link" target="_blank">AUB Online</a><span
+                    class="nav-utility-separator">|</span>
+                <a href="https://www.aubmed.ac.cy/" class="nav-utility-link" target="_blank">AUB – Mediterraneo</a><span
+                    class="nav-utility-separator">|</span>
+                <a href="https://myaubhealth.aubmc.org.lb/mychartprd/Authentication/Login" class="nav-utility-link"
+                    target="_blank">Telehealth</a><span class="nav-utility-separator">|</span>
+                <a href="/advancement/Development/Pages/HowToMakeAGift.aspx" class="nav-utility-link">Give</a>
+            </div>
+        </div>
+
+        <!-- MAIN HEADER (logo + desktop mega + burger) -->
+        <div class="nav-main-header" id="mainHeader">
+            <div class="nav-main-container">
+                <div class="nav-logo">
+                    <a href="https://www.aub.edu.lb/osb/Pages/default.aspx">
+                        <img src="images/AUB+OSB-Merged-Logo-white.png" alt="AUB OSB Logo" />
+                    </a>
+                </div>
+                <!-- Desktop mega menu (updated with full JSON structure) -->
+                <div class="nav-desktop">
+                    <!-- About AUB -->
+                    <div class="nav-item">
+                        <button>
+                            About AUB<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="nav-mega">
+                            <h4>About AUB</h4>
+                            <div class="nav-mega-grid">
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="/AboutUs/Pages/default.aspx">Overview</a>
+                                        </li>
+                                        <li>
+                                            <a href="/aboutus/Pages/history.aspx">History</a>
+                                        </li>
+                                        <li>
+                                            <a href="/aboutus/Pages/mission.aspx">Mission and Vision</a>
+                                        </li>
+                                        <li>
+                                            <a href="/aboutus/Pages/facts.aspx">Facts and Figures</a>
+                                        </li>
+                                        <li><a href="/President/oeo-titleix">Title IX</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="/AboutUs/Pages/leadership.aspx">AUB Leadership</a>
+                                        </li>
+                                        <li>
+                                            <a href="/president">Office of the President</a>
+                                        </li>
+                                        <li><a href="/nyo">New York Office</a></li>
+                                        <li><a href="/maingate">The MainGate Magazine</a></li>
+                                        <li>
+                                            <a href="/advancement">Office of Advancement</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li><a href="/aboutus/Pages/campus.aspx">Campus</a></li>
+                                        <li>
+                                            <a href="/aboutus/Pages/beirut-lb.aspx">About Beirut and Lebanon</a>
+                                        </li>
+                                        <li><a href="/accreditation">Accreditation</a></li>
+                                        <li>
+                                            <a href="https://150.aub.edu.lb/" target="_blank">AUB 150</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Academics -->
+                    <div class="nav-item">
+                        <button>
+                            Academics<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="nav-mega">
+                            <h4>ACADEMICS</h4>
+                            <div class="nav-mega-grid">
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="/academics/Pages/faculties.aspx">Faculties</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Pages/AZ.aspx">Departments and Centers</a>
+                                        </li>
+                                        <li>
+                                            <a href="/academics/pages/majors_programs.aspx">Majors and Programs</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www-banner.aub.edu.lb/pls/weba/bwckctlg.p_disp_dyn_ctlg"
+                                                target="_blank">Search
+                                                for a Course</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="/theinstitute">Institute for Academic Innovation and
+                                                Development</a>
+                                        </li>
+                                        <li><a href="/graduatecouncil">Graduate Council</a></li>
+                                        <li>
+                                            <a href="/generaleducation">General Education Program</a>
+                                        </li>
+                                        <li>
+                                            <a href="/oip">Office of International Programs</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li><a href="/provost">Office of the Provost</a></li>
+                                        <li>
+                                            <a href="/registrar">Office of the Registrar</a>
+                                        </li>
+                                        <li><a href="/libraries">Libraries</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Admissions -->
+                    <div class="nav-item">
+                        <button>
+                            Admissions<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="nav-mega">
+                            <h4>ADMISSIONS</h4>
+                            <div class="nav-mega-grid">
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li><a href="/admissions">Admissions</a></li>
+                                        <li><a href="/faid">Financial Aid</a></li>
+                                        <li>
+                                            <a href="http://www.aub.edu.lb/admissions/Pages/TC/index.html"
+                                                target="_blank">Tuition and Fees
+                                                Calculator</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.aub.edu.lb/admissions/applications/Pages/SpecialVisiting.aspx"
+                                                target="_blank">Visiting Student</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="/faid/Pages/Scholarships.aspx">Scholarships</a>
+                                        </li>
+                                        <li>
+                                            <a href="/lead">LEAD scholarship opportunities</a>
+                                        </li>
+                                        <li><a href="/sao">Office of Student Affairs</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="/academics/pages/majors_programs.aspx">Majors and Programs</a>
+                                        </li>
+                                        <li><a href="/graduatecouncil">Graduate Council</a></li>
+                                        <li>
+                                            <a href="/oip">Office of International Programs</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Research -->
+                    <div class="nav-item">
+                        <button>
+                            Research<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="nav-mega">
+                            <h4>Research</h4>
+                            <div class="nav-mega-grid">
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li><a href="/research">Office of Research</a></li>
+                                        <li>
+                                            <a href="/Pages/ResearchbyFaculty.aspx">Research by Faculty/School</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Pages/ResearchCenters.aspx">Interfaculty Research Centers</a>
+                                        </li>
+                                        <li><a href="/urb">University Research Board</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="/Pages/ResearchSupport.aspx">Research Funding</a>
+                                        </li>
+                                        <li>
+                                            <a href="/urb/Pages/Researchintegrity.aspx">Research Integrity</a>
+                                        </li>
+                                        <li>
+                                            <a href="/irb">Human Research Protection Program / Institutional
+                                                Review Board</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="/MRVP">Medical Research Volunteer Program</a>
+                                        </li>
+                                        <li>
+                                            <a href="/provost/urvp">Undergraduate Research Volunteer Program</a>
+                                        </li>
+                                        <li>
+                                            <a href="/articles/Pages/research.aspx">Research News</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Outreach -->
+                    <div class="nav-item">
+                        <button>
+                            Outreach<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="nav-mega">
+                            <h4>Outreach</h4>
+                            <div class="nav-mega-grid">
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li><a href="/CCE">Community Engagement</a></li>
+                                        <li>
+                                            <a href="/Neighborhood">Neighborhood Initiative</a>
+                                        </li>
+                                        <li>
+                                            <a href="/natureconservation">Nature Conservation</a>
+                                        </li>
+                                        <li><a href="/seniors">University for Seniors</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li><a href="/ifi">Issam Fares Institute</a></li>
+                                        <li>
+                                            <a href="https://sites.aub.edu.lb/ipark/" target="_blank">iPark</a>
+                                        </li>
+                                        <li><a href="/k2p">Knowledge to Policy Center</a></li>
+                                        <li>
+                                            <a href="/masri_institute">The Munib and Angela Masri Institute of Energy
+                                                and
+                                                Natural Resources</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="https://www.aub.edu.lb/hub/Pages/default.aspx" target="_blank">AI
+                                                Hub</a>
+                                        </li>
+                                        <li>
+                                            <a href="/fafs/esdu">Environment and Sustainable Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://ghi.aub.edu.lb/" target="_blank">Global Health
+                                                Institute</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Boldly Campaign -->
+                    <div class="nav-item">
+                        <button>
+                            Boldly Campaign<svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="nav-mega">
+                            <h4>Boldly Campaign</h4>
+                            <div class="nav-mega-grid">
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="http://boldly.aub.edu.lb/" target="_blank">Campaign Overview</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://boldly.aub.edu.lb/impact-stories/" target="_blank">Impact
+                                                Stories</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="http://boldly.aub.edu.lb/campaign-objectives/"
+                                                target="_blank">Campaign Objectives</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://boldly.aub.edu.lb/ways-to-support/" target="_blank">Ways to
+                                                Support</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nav-mega-column">
+                                    <ul class="nav-mega-links">
+                                        <li>
+                                            <a href="http://boldly.aub.edu.lb/#funding-v2" target="_blank">Campaign
+                                                Progress</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://secureca.imodules.com/s/1716/interior.aspx?sid=1716&gid=2&pgid=618&cid=2462"
+                                                target="_blank">Join the Campaign</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="nav-mobile-btn" id="burgerBtn" aria-label="Menu">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- OSB ROW (third level, becomes sticky) updated with provided nav-osb structure -->
+        <div class="nav-osb" id="osbRow">
+            <div class="nav-osb-container">
+                <div class="nav-osb-logo">
+                    <a href="/"><img src="images/AUB+OSB-Merged-Logo-white.png" alt="AUB OSB Logo" /></a>
+                </div>
+                <div class="nav-osb-links">
+                    <ul class="osb-nav">
+                        <!-- About OSB with dropdown -->
+                        <li class="osb-nav-item has-dropdown">
+                            <a href="#" id="about-osb-link">About OSB</a>
+                            <ul class="osb-dropdown">
+                                <li>
+                                    <a href="/osb/about/Pages/Meet-the-Dean.aspx" id="meet-the-dean">Meet the Dean</a>
+                                </li>
+                                <li>
+                                    <a href="/osb/about/Pages/default.aspx" id="mission-and-vision">Mission And
+                                        Vision</a>
+                                </li>
+                                <li>
+                                    <a href="/osb/about/Pages/Olayan-.aspx" id="about-suliman-saleh-olayan">About
+                                        Suliman Saleh Olayan</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.aub.edu.lb/osb/Pages/advisoryboard.aspx" target="_blank"
+                                        id="international-advisory-board">International Advisory Board</a>
+                                </li>
+                                <li>
+                                    <a href="/osb/about/Pages/Global-Recognition-.aspx"
+                                        id="global-recognitions-labels">Global
+                                        Recognitions & Labels</a>
+                                </li>
+                                <li>
+                                    <a href="/osb/about/Pages/Governance.aspx" id="governance">Governance</a>
+                                </li>
+                                <li>
+                                    <a href="/osb/about/Pages/recources.aspx" id="faculty-staff-resources">Faculty and
+                                        Staff Resources</a>
+                                </li>
+                                <li>
+                                    <a href="/osb/125/Pages/default.aspx" target="_blank" id="osb-125">OSB 125</a>
+                                </li>
+                                <li>
+                                    <a href="https://sites.aub.edu.lb/osb2029/" target="_blank"
+                                        id="osb-strategic-plan-2029">OSB Strategic
+                                        Plan 2029</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.aub.edu.lb/osb/about/Pages/Employment.aspx" target="_blank"
+                                        id="job-opportunities">Job Opportunities</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Academic Programs with dropdown -->
+                        <li class="osb-nav-item has-dropdown">
+                            <a href="#" id="academic-programs-link">Academic Programs</a>
+                            <ul class="osb-dropdown">
+                                <li>
+                                    <a href="/osb/UndergradProgram" target="_blank"
+                                        id="undergraduate-program">Undergraduate Program</a>
+                                </li>
+                                <li>
+                                    <a href="/osb/Pages/SpecializedMasters.aspx" target="_blank"
+                                        id="specialized-masters">Specialized
+                                        Masters</a>
+                                </li>
+                                <li>
+                                    <a href="/osb/MBA" target="_blank" id="mba">MBA</a>
+                                </li>
+                                <li>
+                                    <a href="/osb/OMBA/Pages/default.aspx" target="_blank" id="mba-online">MBA
+                                        Online</a>
+                                </li>
+                                <li>
+                                    <a href="/osb/EMBA" target="_blank" id="executive-mba">Executive MBA</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Executive Education (external link + dropdown) -->
+                        <li class="osb-nav-item has-dropdown">
+                            <!-- lii replace href below -->
+                            <!-- href="https://www.aub.edu.lb/osb/executiveeducation/Pages/default.aspx" -->
+                            <a href="https://liiwaa-osb.github.io\AUB-OSB-OEP\index.html" target="_blank"
+                                id="executive-education-link">Executive Education</a>
+                            <ul class="osb-dropdown">
+                                <li>
+                                    <!-- lii replcae href -->
+                                    <!-- /osb/executive-education/OEP -->
+                                    <a href="https://liiwaa-osb.github.io\AUB-OSB-OEP\open-enrollment-programs\index.html"
+                                        target="_blank" id="open-enrollment-programs">Open Enrollment Programs</a>
+                                </li>
+                                <li>
+                                    <!-- lii - replace href -->
+                                    <a href="https://liiwaa-osb.github.io\AUB-OSB-OEP\custom-programs\index.html"
+                                        target="_blank" id="customized-programs">Customized Programs</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- OSB Online with dropdown -->
+                        <li class="osb-nav-item has-dropdown">
+                            <a href="#" id="osb-online-link">OSB Online</a>
+                            <ul class="osb-dropdown">
+                                <li>
+                                    <a href="https://www.aub.edu.lb/online/Entrepreneurship-Innovation-online-diploma/Pages/default.aspx"
+                                        target="_blank" id="entrepreneurship-innovation-online-diploma">Entrepreneurship
+                                        & Innovation Online
+                                        Graduate
+                                        Professional Diploma</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.aub.edu.lb/osb/online/combating-trade-based-financial-crime-certificate/Pages/default.aspx"
+                                        target="_blank" id="combating-trade-based-financial-crime-certificate">Combating
+                                        Trade-Based
+                                        Financial Crime Online
+                                        Certificate</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.aub.edu.lb/osb/online/strategic_branding/Pages/default.aspx"
+                                        target="_blank" id="strategic-branding-digital-era-diploma">Strategic Branding
+                                        in the Digital Era Online Diploma</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.aub.edu.lb/osb/online/investment-analysis-modern-portfolio-management/Pages/default.aspx"
+                                        target="_blank"
+                                        id="investment-analysis-modern-portfolio-management-diploma">Investment Analysis
+                                        and
+                                        Modern Portfolio Management
+                                        Online Graduate Professional Diploma</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Faculty -->
+                        <li class="osb-nav-item">
+                            <a href="/osb/Pages/Faculty.aspx" id="faculty">Faculty</a>
+                        </li>
+                        <!-- Research -->
+                        <li class="osb-nav-item">
+                            <a href="https://www.aub.edu.lb/osb/facultyresearch/Pages/default.aspx" target="_blank"
+                                id="research">Research</a>
+                        </li>
+                        <!-- News -->
+                        <li class="osb-nav-item">
+                            <a href="https://www.aub.edu.lb/osb/news/Pages/default.aspx" id="news">News</a>
+                        </li>
+                        <!-- OSB Impacts -->
+                        <li class="osb-nav-item">
+                            <a href="https://www.aub.edu.lb/osb/impact/Pages/default.aspx" target="_blank"
+                                id="osb-impacts">OSB
+                                Impacts</a>
+                        </li>
+                        <!-- "Recent" hidden item (present but not shown visually) -->
+                        <li class="osb-nav-item" style="display: none">
+                            <a href="/osb" id="recent">Recent</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-mobile-overlay" id="mobileOverlay">
+        <div class="mobile-overlay-header">
+            <div class="mobile-logo">
+                <img src="images/AUB+OSB-Merged-Logo-white.png" alt="AUB" />
+            </div>
+            <button class="mobile-close-btn" id="closeOverlayBtn">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu-sections">
+            <div class="mobile-section">
+                <div class="mobile-section-title">Quick Links</div>
+                <div class="mobile-utility-grid" id="mobileUtilityGrid"></div>
+            </div>
+            <div class="mobile-section">
+                <div class="mobile-section-title">Main Navigation</div>
+                <div id="mobileMainNav"></div>
+            </div>
+            <div class="mobile-section">
+                <div class="mobile-section-title">OSB School</div>
+                <div id="mobileOsbNav"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">EQUIS Accredited &bull; 2026</div>
+            <h1>First in Lebanon. <br>First in Cyprus.<br><em>Now EQUIS-Accredited.</em></h1>
+            <p class="hero-sub">Business Education at AUB now holds two global accreditation crowns — AACSB and EQUIS —
+                across both shores of the Mediterranean.</p>
+            <p class="hero-stat">One of only five EQUIS-accredited business education communities in the MENA region.
+            </p>
+            <a href="#milestone" class="hero-cta">Explore The Milestone</a>
+        </div>
+        <div class="hero-tagline">One sea. Two shores. Two global accreditation crowns.</div>
+    </section>
+
+    <!-- ACCREDITATION LOGOS BAR (EQUIS + AACSB + BSIS) — placed right before Milestones -->
+    <div class="accred-bar">
+        <div class="accred-bar-inner">
+
+            <!-- EQUIS Accredited (links to EFMD per publicity guidelines) -->
+            <a href="https://efmdglobal.org/accreditations/business-schools/equis/" target="_blank" rel="noopener"
+                class="accred-item" title="EQUIS Accredited — EFMD">
+                <svg width="80" height="55" viewBox="0 0 80 55" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="52" cy="12" r="5.5" fill="#9B2743" />
+                    <circle cx="64" cy="6" r="4" fill="#D9D9D6" />
+                    <circle cx="69" cy="17" r="3.5" fill="#D9D9D6" />
+                    <circle cx="42" cy="5" r="3.5" fill="#D9D9D6" />
+                    <circle cx="57" cy="2" r="3" fill="#D9D9D6" />
+                    <circle cx="66" cy="24" r="2.5" fill="#D9D9D6" />
+                    <line x1="52" y1="12" x2="64" y2="6" stroke="#D9D9D6" stroke-width="1" />
+                    <line x1="52" y1="12" x2="69" y2="17" stroke="#D9D9D6" stroke-width="1" />
+                    <line x1="52" y1="12" x2="42" y2="5" stroke="#D9D9D6" stroke-width="1" />
+                    <line x1="52" y1="12" x2="57" y2="2" stroke="#D9D9D6" stroke-width="1" />
+                    <line x1="64" y1="6" x2="57" y2="2" stroke="#D9D9D6" stroke-width="0.5" />
+                    <line x1="64" y1="6" x2="69" y2="17" stroke="#D9D9D6" stroke-width="0.5" />
+                    <line x1="69" y1="17" x2="66" y2="24" stroke="#D9D9D6" stroke-width="0.5" />
+                    <text x="3" y="38" font-family="Montserrat, sans-serif" font-weight="800" font-size="15"
+                        fill="#9B2743" font-style="italic">EQUIS</text>
+                    <text x="3" y="50" font-family="Montserrat, sans-serif" font-weight="600" font-size="6.5"
+                        fill="#54585A" letter-spacing="3">ACCREDITED</text>
+                </svg>
+            </a>
+
+            <div class="accred-divider"></div>
+
+            <!-- AACSB Accredited (based on official logo) -->
+            <a href="https://www.aacsb.edu/" target="_blank" rel="noopener" class="accred-item"
+                title="AACSB Accredited">
+                <svg width="160" height="50" viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Geometric square mark -->
+                    <polygon points="20,4 36,4 36,20 20,20" fill="#3B8C8C" />
+                    <polygon points="4,4 20,4 20,20 4,20" fill="#007A7A" />
+                    <polygon points="4,20 20,20 20,36 4,36" fill="#8DB600" />
+                    <polygon points="20,20 36,20 36,36 20,36" fill="#5A7A00" />
+                    <!-- Rotated inner diamond cutout effect -->
+                    <polygon points="20,8 32,20 20,32 8,20" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="0.5" />
+                    <!-- AACSB text -->
+                    <text x="44" y="22" font-family="Montserrat, sans-serif" font-weight="800" font-size="18"
+                        fill="#007A7A" letter-spacing="1">AACSB</text>
+                    <text x="44" y="36" font-family="Montserrat, sans-serif" font-weight="700" font-size="11"
+                        fill="#3B8C8C" letter-spacing="0.5">ACCREDITED</text>
+                </svg>
+            </a>
+
+            <div class="accred-divider"></div>
+
+            <!-- BSIS Impact Label (based on official logo) -->
+            <a href="https://www.efmdglobal.org/accreditations-assessments/business-schools/bsis/" target="_blank"
+                rel="noopener" class="accred-item" title="EFMD BSIS Impact Labelled">
+                <svg width="120" height="50" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Concentric circle icon -->
+                    <circle cx="14" cy="14" r="13" fill="#54585A" />
+                    <circle cx="14" cy="14" r="10" fill="#2E8B2E" />
+                    <circle cx="14" cy="14" r="7" fill="#8DB600" />
+                    <circle cx="14" cy="14" r="4" fill="#C5D63D" />
+                    <!-- BSIS text -->
+                    <text x="32" y="20" font-family="Montserrat, sans-serif" font-weight="800" font-size="18"
+                        fill="#54585A" letter-spacing="1">BSIS</text>
+                    <!-- Green line -->
+                    <line x1="3" y1="30" x2="103" y2="30" stroke="#2E7D32" stroke-width="2" />
+                    <!-- IMPACT text -->
+                    <text x="3" y="45" font-family="Montserrat, sans-serif" font-weight="800" font-size="16"
+                        fill="#2E7D32" letter-spacing="2">IMPACT</text>
+                    <!-- Bottom green line -->
+                    <line x1="3" y1="48" x2="103" y2="48" stroke="#2E7D32" stroke-width="2" />
+                </svg>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- 1. THE MILESTONE -->
+    <section id="milestone">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">The Milestone</div>
+                <h2 class="section-title">A Milestone, in Four Numbers</h2>
+            </div>
+            <div class="milestone-grid">
+                <div class="milestone-card reveal">
+                    <div class="milestone-num">2</div>
+                    <div class="milestone-sub">Dual Crowns</div>
+                    <div class="milestone-desc">Global accreditation crowns held simultaneously: AACSB and EQUIS.</div>
+                </div>
+                <div class="milestone-card reveal">
+                    <div class="milestone-num">1<sup>st</sup></div>
+                    <div class="milestone-sub">In Lebanon</div>
+                    <div class="milestone-desc">The first business school in Lebanon to earn EQUIS accreditation.</div>
+                </div>
+                <div class="milestone-card reveal">
+                    <div class="milestone-num">1<sup>st</sup></div>
+                    <div class="milestone-sub">In Cyprus</div>
+                    <div class="milestone-desc">The first business education institution in Cyprus to earn EQUIS
+                        accreditation.</div>
+                </div>
+                <div class="milestone-card reveal">
+                    <div class="milestone-num">5<sup>th</sup></div>
+                    <div class="milestone-sub">In MENA</div>
+                    <div class="milestone-desc">One of only five EQUIS-accredited business schools in the region.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. THE JOURNEY (flowchart removed) -->
+    <section id="journey" class="journey">
+        <div class="container">
+            <div class="reveal" style="text-align: center;">
+                <div class="section-label">The Journey</div>
+                <h2 class="section-title">What It Takes</h2>
+            </div>
+            <div class="journey-body reveal">
+                <p><strong>EQUIS accreditation is not simply received. It is earned.</strong></p>
+                <p>It follows years of self-assessment, evidence gathering, documentation, peer review, and dialogue
+                    with students, faculty, staff, alumni, employers, and partners.</p>
+                <p>For Business Education at AUB, the process brought together work across Beirut and Paphos,
+                    demonstrating not only what has been achieved, but how the schools continue to improve.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. THE STANDARD -->
+    <section id="standard">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">The Standard</div>
+                <h2 class="section-title">What EQUIS Is</h2>
+                <p class="standard-text">EFMD Quality Improvement System (EQUIS) accreditation is a globally recognised
+                    mark of excellence for business and management education. It involves a rigorous evaluation of
+                    institutions based on criteria such as academic programmes, faculty quality, research output, and
+                    student services. Achieving EQUIS accreditation demonstrates dedication to continuous improvement
+                    and adherence to global excellence standards. Its approach to quality assessment is rooted in
+                    respect to the diversity of institutional and cultural contexts. Beyond academic rigour, it
+                    emphasises international perspective, corporate relevance and ethical leadership. The accredited
+                    schools benefit from enhanced institutional reputation, attract seasoned faculty and students,
+                    foster academic partnerships and signal to employers that graduates possess a high standard of
+                    business education.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card reveal">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Strategy &amp; Governance</h4>
+                            <p class="pillar-hint">Hover to see evidence &#8594;</p>
+                        </div>
+                        <div class="pillar-back">
+                            <p>A connected strategic vision across Beirut and Paphos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Programs &amp; Student Experience</h4>
+                            <p class="pillar-hint">Hover to see evidence &#8594;</p>
+                        </div>
+                        <div class="pillar-back">
+                            <p>6-degree programs benchmarked against international peers and shaped by learning goals,
+                                student voice, and international benchmarking.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Faculty &amp; Research</h4>
+                            <p class="pillar-hint">Hover to see evidence &#8594;</p>
+                        </div>
+                        <div class="pillar-back">
+                            <p>Faculty that connect research, teaching, and practice.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Internationalization</h4>
+                            <p class="pillar-hint">Hover to see evidence &#8594;</p>
+                        </div>
+                        <div class="pillar-back">
+                            <p>A network of partner institutions across Europe, MENA, and beyond — and a faculty body
+                                that mirrors it.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Corporate Connections</h4>
+                            <p class="pillar-hint">Hover to see evidence &#8594;</p>
+                        </div>
+                        <div class="pillar-back">
+                            <p>Active partnerships with regional and international employers. Advisory boards drawn from
+                                MENA, Europe, and beyond.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Ethics, Responsibility &amp; Sustainability</h4>
+                            <p class="pillar-hint">Hover to see evidence &#8594;</p>
+                        </div>
+                        <div class="pillar-back">
+                            <p>A commitment to responsible leadership, societal contribution, and sustainable impact.
+                                BSIS-labeled in 2024.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Resources &amp; Operations</h4>
+                            <p class="pillar-hint">Hover to see evidence &#8594;</p>
+                        </div>
+                        <div class="pillar-back">
+                            <p>Academic and student support systems that enable quality across locations. Facilities,
+                                libraries, and student support built to international standard.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Impact &amp; Continuous Improvement</h4>
+                            <p class="pillar-hint">Hover to see evidence &#8594;</p>
+                        </div>
+                        <div class="pillar-back">
+                            <p>Leading in regional and international rankings. Evidence-based reflection, improvement,
+                                and contribution to the region and beyond.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ACROSS TWO SHORES (with campus image placeholders) -->
+    <section id="shores" class="shores">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">Two Shores</div>
+                <h2 class="section-title">Across Two Shores</h2>
+            </div>
+           <div class="shores-split reveal">
+        <div class="shore-panel"><img src="./images/AUB-OSB-Beirut.jpg" alt="OSB Beirut" class="shore-img"
+            onerror="this.src='https://placehold.co/800x500/840132/white?text=Beirut+Campus'">
+          <div class="shore-info">
+            <div class="shore-location">Beirut, Lebanon</div>
+            <div class="shore-school">Suliman S. Olayan<br>School of Business</div>
+          </div>
+        </div>
+        <div class="shore-panel"><img src="./images/AUB-Med-Pafos.jpg" alt="AUB Mediterraneo" class="shore-img"
+            onerror="this.src='https://placehold.co/800x500/6a132c/white?text=Paphos+Campus'">
+          <div class="shore-info">
+            <div class="shore-location">Paphos, Cyprus</div>
+            <div class="shore-school">Faculty of Business<br>AUB Mediterraneo</div>
+          </div>
+        </div>
+      </div>
+            <p class="shores-quote reveal">Across Beirut and Paphos, AUB's business education community is built on a
+                common academic vision. EQUIS accreditation recognizes the strength of this connection: two locations,
+                aligned around quality, relevance, impact, and internationally benchmarked standards.</p>
+            <p class="shores-tagline reveal">Rooted in the region. Connected across two shores. Benchmarked by the
+                world.</p>
+        </div>
+    </section>
+
+    <!-- 5. WHAT THIS MEANS -->
+    <section id="means">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">What It Means</div>
+                <h2 class="section-title">What This Means</h2>
+                <p class="section-intro">Six perspectives on what changed the day EQUIS arrived.</p>
+            </div>
+            <div class="perspectives-grid">
+                <div class="perspective-card reveal">
+                    <div class="perspective-bar"></div>
+                    <div class="perspective-body">
+                        <div class="perspective-for">For Students</div>
+                        <div class="perspective-title">Your Degree, Globally Benchmarked</div>
+                        <p class="perspective-text">EQUIS strengthens confidence in the education students receive. It
+                            signals that programs, learning experiences, faculty engagement, and student support have
+                            been reviewed against international standards.</p>
+                        <div class="perspective-quote">[Quote from a current student — 2 sentences, specific and
+                            unscripted.]</div>
+                    </div>
+                </div>
+                <div class="perspective-card reveal">
+                    <div class="perspective-bar"></div>
+                    <div class="perspective-body">
+                        <div class="perspective-for">For Faculty & Staff</div>
+                        <div class="perspective-title">Recognition for the Work</div>
+                        <p class="perspective-text">EQUIS recognizes the teaching, research, mentorship, engagement, and
+                            continuous improvement led by faculty & staff across the business education community. Not
+                            as a single achievement but rather as a confirmation.</p>
+                        <div class="perspective-quote">[Quote from a faculty member / staff.]</div>
+                    </div>
+                </div>
+                <div class="perspective-card reveal">
+                    <div class="perspective-bar"></div>
+                    <div class="perspective-body">
+                        <div class="perspective-for">For Alumni</div>
+                        <div class="perspective-title">A Stronger Name to Carry Forward</div>
+                        <p class="perspective-text">As AUB's business education reputation grows, alumni benefit from
+                            enhanced institutional visibility and international recognition.</p>
+                        <div class="perspective-quote">[Quote from a recent alum working internationally.]</div>
+                    </div>
+                </div>
+                <div class="perspective-card reveal">
+                    <div class="perspective-bar"></div>
+                    <div class="perspective-body">
+                        <div class="perspective-for">For Employers</div>
+                        <div class="perspective-title">Talent You Can Trust</div>
+                        <p class="perspective-text">Graduates from a school that meets the same standard as the most
+                            respected institutions in Europe and North America. Hired with confidence. Onboarded without
+                            surprise.</p>
+                        <div class="perspective-quote">[Quote from a real recruiter or partner.]</div>
+                    </div>
+                </div>
+                <div class="perspective-card reveal">
+                    <div class="perspective-bar"></div>
+                    <div class="perspective-body">
+                        <div class="perspective-for">For Parents</div>
+                        <div class="perspective-title">Confidence in the Choice</div>
+                        <p class="perspective-text">For parents and families, EQUIS offers added confidence that their
+                            children are studying in a business education environment recognized for quality, care, and
+                            international standards.</p>
+                        <div class="perspective-quote">[Quote from a parent of a current student.]</div>
+                    </div>
+                </div>
+                <div class="perspective-card reveal">
+                    <div class="perspective-bar"></div>
+                    <div class="perspective-body">
+                        <div class="perspective-for">For the Region</div>
+                        <div class="perspective-title">A Statement for Lebanon, Cyprus, and MENA</div>
+                        <p class="perspective-text">This milestone shows that business education built in the region can
+                            meet global standards while remaining connected to regional realities and needs.</p>
+                        <div class="perspective-quote">[Quote from a regional partner, employer, or government / EU
+                            figure.]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. THE PATH (horizontal timeline) -->
+    <section id="path" class="timeline-section">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">The Path</div>
+                <h2 class="section-title">Seventeen Years. Two Crowns.<br>One Continuous Commitment.</h2>
+            </div>
+            <div class="h-timeline-wrapper reveal">
+                <div class="h-timeline">
+                    <div class="h-timeline-item">
+                        <div class="h-timeline-year">2009</div>
+                        <div class="h-timeline-dot"></div>
+                        <div class="h-timeline-content">
+                            <div class="h-timeline-label">AACSB Earned</div>
+                            <div class="h-timeline-desc">The 100th business school outside the US to earn AACSB
+                                Accreditation.</div>
+                        </div>
+                    </div>
+                    <div class="h-timeline-item">
+                        <div class="h-timeline-year">2014</div>
+                        <div class="h-timeline-dot"></div>
+                        <div class="h-timeline-content">
+                            <div class="h-timeline-label">AACSB Reaffirmed</div>
+                            <div class="h-timeline-desc">The first five-year review confirms continued progress and
+                                commitment.</div>
+                        </div>
+                    </div>
+                    <div class="h-timeline-item">
+                        <div class="h-timeline-year">2019</div>
+                        <div class="h-timeline-dot"></div>
+                        <div class="h-timeline-content">
+                            <div class="h-timeline-label">AACSB Reaffirmed Through the Storm</div>
+                            <div class="h-timeline-desc">Reaffirmation arrives as Lebanon enters its deepest economic
+                                crisis. The standard does not change.</div>
+                        </div>
+                    </div>
+                    <div class="h-timeline-item">
+                        <div class="h-timeline-year">2024</div>
+                        <div class="h-timeline-dot"></div>
+                        <div class="h-timeline-content">
+                            <div class="h-timeline-label">EFMD BSIS Label Earned</div>
+                            <div class="h-timeline-desc">Independent recognition of OSB's social and economic impact on
+                                its community.</div>
+                        </div>
+                    </div>
+                    <div class="h-timeline-item">
+                        <div class="h-timeline-year">2025</div>
+                        <div class="h-timeline-dot"></div>
+                        <div class="h-timeline-content">
+                            <div class="h-timeline-label">AACSB Reaffirmed &amp; Extended</div>
+                            <div class="h-timeline-desc">Reaffirmation extended to business programs at FoB at AUB
+                                Mediterraneo in Paphos.</div>
+                        </div>
+                    </div>
+                    <div class="h-timeline-item">
+                        <div class="h-timeline-year">2026</div>
+                        <div class="h-timeline-dot"></div>
+                        <div class="h-timeline-content">
+                            <div class="h-timeline-label">EQUIS Earned</div>
+                            <div class="h-timeline-desc">A second global accreditation crown. The story continues.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="h-timeline-scroll-hint">Scroll to explore the full timeline &#8594;</p>
+        </div>
+    </section>
+
+    <!-- 7. THE PEOPLE -->
+    <style>
+        .voices-grid {
+            grid-template-columns: 1fr;
+        }
+
+        /* VOICES - redesigned: two video+text cards, all original quotes preserved */
+        .voices-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .voice-video-card {
+            background: white;
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: 0.25s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .voice-video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .voice-video-media {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            padding: 2rem 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        .voice-play {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            cursor: default;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .voice-video-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .voice-video-card .sub-text {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.85rem;
+        }
+    </style>
+    <section id="voices">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">The People</div>
+                <h2 class="section-title">Voices</h2>
+            </div>
+            <div class="voices-grid">
+                <div class="voice-video-card">
+                    <div class="voice-video-media">
+                        <div class="voice-play">▶</div>
+                        <h3>A Message from the President</h3>
+                        <div class="sub-text">On what this milestone means for the university and its mission.</div>
+                    </div>
+                </div>
+                <div class="voice-video-card">
+                    <div class="voice-video-media">
+                        <div class="voice-play">▶</div>
+                        <h3>The EQUIS Announcement</h3>
+                        <div class="sub-text">Watch the official announcement video from AUB Business Education.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="voices-cards">
+                <div class="voice-card reveal">
+                    <div class="voice-icon">&#128218;</div>
+                    <h4>Provost</h4>
+                    <p class="voice-role">On academic quality and institutional rigor</p>
+                    <p class="voice-quote">[Quote placeholder]</p>
+                    <a href="#" class="voice-btn">Read Perspective</a>
+                </div>
+                <div class="voice-card reveal">
+                    <div class="voice-icon">&#127979;</div>
+                    <h4>Dean of OSB</h4>
+                    <p class="voice-role">On what this means for the Suliman S. Olayan School of Business</p>
+                    <p class="voice-quote">[Quote placeholder]</p>
+                    <a href="#" class="voice-btn">Watch Message</a>
+                </div>
+                <div class="voice-card reveal">
+                    <div class="voice-icon">&#127979;</div>
+                    <h4>Dean of FoB</h4>
+                    <p class="voice-role">On what this means for the Faculty of Business in Cyprus</p>
+                    <p class="voice-quote">[Quote placeholder]</p>
+                    <a href="#" class="voice-btn">Watch Message</a>
+                </div>
+                <div class="voice-card reveal">
+                    <div class="voice-icon">&#9881;</div>
+                    <h4>Director of Strategic Initiatives and Continuous Improvement</h4>
+                    <p class="voice-role">On the work behind the accreditation achievement</p>
+                    <p class="voice-quote">[Quote placeholder]</p>
+                    <a href="#" class="voice-btn">Read Perspective</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. WHAT'S NEXT -->
+    <section id="next" class="next">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">What's Next</div>
+                <h2 class="section-title">The Standard We Now<br>Hold Ourselves To</h2>
+            </div>
+            <p class="next-body reveal">EQUIS is not a finish line. It is a benchmark — for every cohort, every program,
+                every research project, every partnership, and every graduate. The work continues across Beirut and
+                Paphos, with a renewed commitment to quality, relevance, responsibility, and impact.</p>
+            <div class="cta-grid reveal">
+                <a href="#" class="cta-btn primary">Apply to OSB Beirut</a>
+                <a href="#" class="cta-btn primary">Apply to FoB Cyprus</a>
+                <a href="#" class="cta-btn">Partner With Us</a>
+                <a href="#" class="cta-btn">Hire Our Graduates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__accred">
+                <img src="images/AUB-OSB-accreditations.png" alt="Accreditations" />
+            </div>
+            <div class="footer-grid">
+                <div class="footer-item">
+                    <h2 class="footer-item__title">Contact Us</h2>
+                    <p class="footer-item__text">
+                        For various questions, please try contacting us via social media
+                        first!
+                    </p>
+                    <a href="#" class="footer-item__link">read more</a>
+                </div>
+                <div class="footer-item">
+                    <h2 class="footer-item__title">Privacy Statement</h2>
+                    <p class="footer-item__text">
+                        We take data privacy seriously and adhere to all applicable data
+                        privacy laws and regulations.
+                    </p>
+                    <a href="#" class="footer-item__link">read more</a>
+                </div>
+                <div class="footer-item">
+                    <h2 class="footer-item__title">Copyright and Disclaimer</h2>
+                    <p class="footer-item__text">
+                        Written permission is needed to copy or disseminate all or part of
+                        the materials on the AUB website.
+                    </p>
+                    <a href="#" class="footer-item__link">read more</a>
+                </div>
+                <div class="footer-item">
+                    <h2 class="footer-item__title">
+                        Title IX, Non-Discrimination, and Anti-Discriminatory Harassment
+                    </h2>
+                    <p class="footer-item__text">
+                        AUB is committed to providing a safe and respectful environment to
+                        all members of its community.
+                    </p>
+                    <a href="#" class="footer-item__link">read more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-burgundy">
+            <div class="container footer-links-grid">
+                <div class="footer-links-column">
+                    <ul>
+                        <li><a href="/Pages/AZ.aspx">A-Z</a></li>
+                        <li><a href="/admissions/Pages/default.aspx">Admissions</a></li>
+                        <li>
+                            <a href="/admissions/applications/Pages/applications.aspx">Admissions Applications</a>
+                        </li>
+                        <li>
+                            <a href="/admissions/Pages/EnglishRequirements.aspx">Admissions English Requirements</a>
+                        </li>
+                        <li><a href="/Pages/AUBSIS.aspx">AUBSSI</a></li>
+                        <li>
+                            <a href="https://careers.aub.edu.lb/Login" target="_blank">Career Portal</a>
+                        </li>
+                        <li><a href="/comptroller">Comptroller</a></li>
+                        <li>
+                            <a href="https://lms.aub.edu.lb/" target="_blank">E-Learning</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <ul>
+                        <li><a href="/emergency">Emergency</a></li>
+                        <li><a href="/TestingCenter">AUB-EN</a></li>
+                        <li>
+                            <a href="/TestingCenter/Pages/aub-endresults.aspx">AUB-EN Results</a>
+                        </li>
+                        <li><a href="/academics/Pages/faculties.aspx">Faculties</a></li>
+                        <li><a href="/comptroller/Pages/Student.aspx">Fees</a></li>
+                        <li><a href="/faid">Financial Aid</a></li>
+                        <li><a href="/Search/Pages/People.aspx">Find People</a></li>
+                        <li><a href="/Employment">Jobs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-column">
+                    <ul>
+                        <li><a href="/libraries">Libraries</a></li>
+                        <li>
+                            <a href="/academics/Pages/majors_programs.aspx">Majors and Programs</a>
+                        </li>
+                        <li><a href="/comptroller/Pages/Payroll.aspx">Payroll</a></li>
+                        <li><a href="/registrar">Registrar</a></li>
+                        <li><a href="/faid/Pages/Scholarships.aspx">Scholarships</a></li>
+                        <li><a href="/search/Pages/default.aspx">Search</a></li>
+                        <li>
+                            <a href="https://www.aub.edu.lb/Pages/Webmail.aspx" target="_blank">Webmail</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <ul class="social-links">
+                <li>
+                    <a class="social-fb-icon" href="http://www.facebook.com/aub.edu.lb" target="_blank"
+                        aria-label="Facebook">&nbsp;</a>
+                </li>
+                <li>
+                    <a class="social-tw-icon" href="http://twitter.com/AUB_Lebanon" target="_blank"
+                        aria-label="Twitter">&nbsp;</a>
+                </li>
+                <li>
+                    <a class="social-in-icon" href="https://www.linkedin.com/company/american-university-of-beirut"
+                        target="_blank" aria-label="LinkedIn">&nbsp;</a>
+                </li>
+                <li>
+                    <a class="social-ig-icon" href="http://instagram.com/aub_lebanon" target="_blank"
+                        aria-label="Instagram">&nbsp;</a>
+                </li>
+                <li>
+                    <a class="social-yt-icon" href="https://www.youtube.com/aubatlebanon" target="_blank"
+                        aria-label="Youtube">&nbsp;</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => observer.observe(el));
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.querySelector('.nav-links')?.classList.remove('open');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
