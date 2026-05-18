@@ -692,173 +692,190 @@
     </div>
 
     <!-- HERO SECTION – 3‑SLIDE AUTO SLIDER -->
-<style>
-    .hero {
-        min-height: 78vh;
-        position: relative;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        padding: 7rem var(--space-md, 1.5rem) 5rem;
-    }
+    <style>
+        .hero {
+            min-height: 78vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 7rem var(--space-md, 1.5rem) 5rem;
+        }
 
-    /* Slider container */
-    .hero-slider {
-        position: absolute;
-        inset: 0;
-    }
+        /* Slider container */
+        .hero-slider {
+            position: absolute;
+            inset: 0;
+        }
 
-    /* Each slide */
-    .hero-slide {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        transition: opacity 1s ease-in-out;
-        opacity: 0;
-        z-index: 1;
-    }
-    .hero-slide.active {
-        opacity: 1;
-        z-index: 2;
-    }
-    /* Dark overlay gradient for better text contrast */
-    .hero-slide::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1;
-    }
+        /* Each slide */
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+            z-index: 1;
+        }
 
-    /* Content wrapper – above overlay */
-    .hero-content {
-        position: relative;
-        z-index: 3;
-        max-width: 980px;
-        margin: auto;
-        text-align: center;
-        color: var(--color-white, #fff);
-        transition: opacity 0.3s;
-    }
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
 
-    .hero-badge {
-        display: inline-flex;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 50px;
-        padding: 0.7rem 1.2rem;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        margin-bottom: 1.5rem;
-        background: transparent;
-    }
+        /* Dark overlay gradient for better text contrast */
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
 
-    .hero-title {
-        font-size: clamp(2.4rem, 7vw, 5rem);
-        font-weight: 800;
-        line-height: 1.1;
-        margin-bottom: 1rem;
-    }
+        /* Content wrapper – above overlay */
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 980px;
+            margin: auto;
+            text-align: center;
+            color: var(--color-white, #fff);
+            transition: opacity 0.3s;
+        }
 
-    .hero-title-top {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 1rem;
-        flex-wrap: wrap;
-    }
+        .hero-badge {
+            display: inline-flex;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50px;
+            padding: 0.7rem 1.2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            background: transparent;
+        }
 
-    .hero-title-small {
-        display: block;
-        font-size: clamp(1rem, 2vw, 1.5rem);
-        margin-top: 0.5rem;
-        color: rgba(255, 255, 255, 0.9);
-    }
+        .hero-title {
+            font-size: clamp(2.4rem, 7vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
 
-    .hero-sub {
-        max-width: 860px;
-        margin: 0 auto 1rem;
-        font-size: 1rem;
-        line-height: 1.4;
-    }
+        .hero-title-top {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
 
-    .hero-tagline {
-        font-weight: 600;
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
+        .hero-title-small {
+            display: block;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-top: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
 
-    .hero-cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem 2rem;
-        border-radius: 6px;
-        background: var(--color-white, #fff);
-        color: var(--color-primary, #840132);
-        font-weight: 800;
-        text-decoration: none;
-        transition: transform 0.2s;
-    }
-    .hero-cta:hover {
-        transform: translateY(-3px);
-    }
+        .hero-sub {
+            max-width: 860px;
+            margin: 0 auto 1rem;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
 
-    /* Slide 3 specific: center‑top alignment */
-    .hero-content.slide3-style {
-        /* display: flex;
+        .hero-tagline {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            background: var(--color-white, #fff);
+            color: var(--color-primary, #840132);
+            font-weight: 800;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Slide 3 specific: center‑top alignment */
+        .hero-content.slide3-style {
+            /* display: flex;
         flex-direction: column;
         justify-content: flex-start;
         padding-top: 5rem; */
-    }
-    .hero-content.slide3-style .hero-title {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        margin-bottom: 0.75rem;
-    }
-    .hero-content.slide3-style .hero-sub {
-        font-size: 1.1rem;
-        max-width: 700px;
-    }
-
-    @media (max-width: 768px) {
-        .hero {
-            min-height: 70vh;
-            padding-top: 5rem;
         }
-        .hero-title-top {
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
+
+        .hero-content.slide3-style .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 0.75rem;
         }
-        .hero-content.slide3-style {
-            padding-top: 3rem;
+
+        .hero-content.slide3-style .hero-sub {
+            font-size: 1.1rem;
+            max-width: 700px;
         }
-    }
-</style>
 
-<section class="hero">
-    <div class="hero-slider">
-        <!-- Slide 1: Beirut -->
-        <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.35)), url('./images/AUB-OSB-Beirut.jpg');"></div>
-        <!-- Slide 2: Paphos -->
-        <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.35)), url('./images/AUB-Med-Pafos.jpg');"></div>
-        <!-- Slide 3: EQUIS special background -->
-        <div class="hero-slide" style="background-image: url('./images/AUB-OSB-Equis-bg.jpg');"></div>
-    </div>
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 70vh;
+                padding-top: 5rem;
+            }
 
-    <div class="hero-content" id="heroContent">
-        <!-- dynamic content filled by JS -->
-    </div>
-</section>
+            .hero-title-top {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
 
-<script>
-    (function() {
-        // Slide data: background images + content for each slide
-        const slides = [
-            {   // Beirut
-                bgImage: "./images/AUB-OSB-Beirut.jpg",
-                content: `
+            .hero-content.slide3-style {
+                padding-top: 3rem;
+            }
+        }
+    </style>
+
+    <section class="hero">
+        <div class="hero-slider">
+            <!-- Slide 1: Beirut -->
+            <div class="hero-slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.015)), url('./images/AUB-OSB-Beirut.jpg');">
+            </div>
+            <!-- Slide 2: Paphos -->
+            <div class="hero-slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.015)), url('./images/AUB-Med-Pafos.jpg');">
+            </div>
+            <!-- Slide 3: EQUIS special background -->
+            <div class="hero-slide" style="background-image: url('./images/AUB-OSB-Equis-bg.jpg');"></div>
+        </div>
+        <style>
+            .hero-slide {
+                /* background-size: revert-layer; */
+      background-repeat: no-repeat;
+            }
+        </style>
+
+        <div class="hero-content" id="heroContent">
+            <!-- dynamic content filled by JS -->
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            // Slide data: background images + content for each slide
+            const slides = [
+                {   // Beirut
+                    bgImage: "./images/AUB-OSB-Beirut.jpg",
+                    content: `
                     <div class="hero-badge">EQUIS ACCREDITED • 2026</div>
                     <div class="hero-title">
                         <div class="hero-title-top">
@@ -875,10 +892,10 @@
                     </div>
                     <a href="#milestone" class="hero-cta">Explore the Milestone</a>
                 `
-            },
-            {   // Paphos
-                bgImage: "./images/AUB-Med-Pafos.jpg",
-                content: `
+                },
+                {   // Paphos
+                    bgImage: "./images/AUB-Med-Pafos.jpg",
+                    content: `
                     <div class="hero-badge">EQUIS ACCREDITED • 2026</div>
                     <div class="hero-title">
                         <div class="hero-title-top">
@@ -895,10 +912,10 @@
                     </div>
                     <a href="#milestone" class="hero-cta">Explore the Milestone</a>
                 `
-            },
-            {   // EQUIS special slide
-                bgImage: "./images/AUB-OSB-Equis-bg.jpg",
-                content: `
+                },
+                {   // EQUIS special slide
+                    bgImage: "./images/AUB-OSB-Equis-bg.jpg",
+                    content: `
                     <div class="hero-badge">EQUIS ACCREDITED • 2026</div>
                     <div class="hero-title">
                         Lebanon's 1st EQUIS-Accredited<br>Business School
@@ -910,61 +927,61 @@
                         <a href="#milestone" class="hero-cta">Discover the Journey</a>
                     </div>
                 `,
-                // special class to align content center-top
-                extraClass: "slide3-style"
-            }
-        ];
-
-        let currentSlide = 0;
-        const slideElements = document.querySelectorAll('.hero-slide');
-        const heroContentDiv = document.getElementById('heroContent');
-        let intervalId;
-
-        function updateSlide(index) {
-            // Update background images active class
-            slideElements.forEach((slide, i) => {
-                if (i === index) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
+                    // special class to align content center-top
+                    extraClass: "slide3-style"
                 }
-            });
-            // Update content
-            const slideData = slides[index];
-            heroContentDiv.innerHTML = slideData.content;
-            // Apply special class for slide 3
-            if (slideData.extraClass) {
-                heroContentDiv.classList.add(slideData.extraClass);
-            } else {
-                heroContentDiv.classList.remove('slide3-style');
+            ];
+
+            let currentSlide = 0;
+            const slideElements = document.querySelectorAll('.hero-slide');
+            const heroContentDiv = document.getElementById('heroContent');
+            let intervalId;
+
+            function updateSlide(index) {
+                // Update background images active class
+                slideElements.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+                // Update content
+                const slideData = slides[index];
+                heroContentDiv.innerHTML = slideData.content;
+                // Apply special class for slide 3
+                if (slideData.extraClass) {
+                    heroContentDiv.classList.add(slideData.extraClass);
+                } else {
+                    heroContentDiv.classList.remove('slide3-style');
+                }
             }
-        }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlide(currentSlide);
-        }
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlide(currentSlide);
+            }
 
-        // Start auto slider (6 seconds interval)
-        function startSlider() {
-            if (intervalId) clearInterval(intervalId);
-            intervalId = setInterval(nextSlide, 6000);
-        }
+            // Start auto slider (6 seconds interval)
+            function startSlider() {
+                if (intervalId) clearInterval(intervalId);
+                intervalId = setInterval(nextSlide, 6000);
+            }
 
-        // Pause on hover (optional but user‑friendly)
-        const heroSection = document.querySelector('.hero');
-        heroSection.addEventListener('mouseenter', () => {
-            if (intervalId) clearInterval(intervalId);
-        });
-        heroSection.addEventListener('mouseleave', () => {
+            // Pause on hover (optional but user‑friendly)
+            const heroSection = document.querySelector('.hero');
+            heroSection.addEventListener('mouseenter', () => {
+                if (intervalId) clearInterval(intervalId);
+            });
+            heroSection.addEventListener('mouseleave', () => {
+                startSlider();
+            });
+
+            // Initialise
+            updateSlide(0);
             startSlider();
-        });
-
-        // Initialise
-        updateSlide(0);
-        startSlider();
-    })();
-</script>
+        })();
+    </script>
 
     <!-- *********************** STICKY MENU *********************** -->
     <style>
@@ -1393,261 +1410,240 @@
     </section>
 
     <style>
-    /* ─── TWO SHORES (clean version) ─── */
-    .old-shores {
-        background: var(--cream, #f9fafb);
-    }
+        /* ─── TWO SHORES (clean version) ─── */
+        .old-shores {
+            background: var(--cream, #f9fafb);
+        }
 
-    .old-shores-split {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        border-radius: 12px;
-        overflow: hidden;
-        margin: 2rem 0;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    }
-
-    .old-shore-panel {
-        display: flex;
-        flex-direction: column;
-        min-height: 420px;
-        background: var(--color-primary);
-        transition: all 0.4s;
-    }
-
-    .old-shore-panel:last-child {
-        background: var(--color-primary-dark);
-    }
-
-    .old-shore-img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        display: block;
-        background: #2c3e50;
-    }
-
-    .old-shore-info {
-        padding: 2rem 2.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        flex: 1;
-    }
-
-    .old-shore-location {
-        font-size: 0.8rem;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        opacity: 0.8;
-        margin-bottom: 0.75rem;
-    }
-
-    .old-shore-school {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        line-height: 1.3;
-    }
-
-    @media (max-width: 768px) {
         .old-shores-split {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 2rem 0;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
-        .old-shore-info {
-            padding: 1.5rem;
-        }
-        .old-shore-school {
-            font-size: 1rem;
-        }
-    }
-</style>
 
-<!-- 4. ACROSS TWO SHORES (with looped videos) -->
-<section id="old-shores" class="old-shores">
-    <div class="container">
-        <div class="reveal">
-            <div class="section-label">Two Shores</div>
-            <h2 class="section-title">Across Two Shores</h2>
-        </div>
-        <div class="old-shores-split reveal">
-            <!-- Left panel: OSB Beirut -->
-            <div class="old-shore-panel">
-                <video 
-                    class="old-shore-img" 
-                    autoplay 
-                    loop 
-                    muted 
-                    playsinline
-                    poster="./images/AUB-OSB-Beirut.jpg"
-                >
-                    <source src="./videos/AUB-OSB.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="old-shore-info">
-                    <div class="old-shore-location">Beirut, Lebanon</div>
-                    <div class="old-shore-school">Suliman S. Olayan<br>School of Business</div>
+        .old-shore-panel {
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            background: var(--color-primary);
+            transition: all 0.4s;
+        }
+
+        .old-shore-panel:last-child {
+            background: var(--color-primary-dark);
+        }
+
+        .old-shore-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            background: #2c3e50;
+        }
+
+        .old-shore-info {
+            padding: 2rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            flex: 1;
+        }
+
+        .old-shore-location {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 0.75rem;
+        }
+
+        .old-shore-school {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 768px) {
+            .old-shores-split {
+                grid-template-columns: 1fr;
+            }
+
+            .old-shore-info {
+                padding: 1.5rem;
+            }
+
+            .old-shore-school {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <!-- 4. ACROSS TWO SHORES (with looped videos) -->
+    <section id="old-shores" class="old-shores">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">Two Shores</div>
+                <h2 class="section-title">Across Two Shores</h2>
+            </div>
+            <div class="old-shores-split reveal">
+                <!-- Left panel: OSB Beirut -->
+                <div class="old-shore-panel">
+                    <video class="old-shore-img" autoplay loop muted playsinline poster="./images/AUB-OSB-Beirut.jpg">
+                        <source src="./videos/AUB-OSB.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="old-shore-info">
+                        <div class="old-shore-location">Beirut, Lebanon</div>
+                        <div class="old-shore-school">Suliman S. Olayan<br>School of Business</div>
+                    </div>
+                </div>
+                <!-- Right panel: AUB Mediterraneo -->
+                <div class="old-shore-panel">
+                    <video class="old-shore-img" autoplay loop muted playsinline poster="./images/AUB-Med-Pafos.jpg">
+                        <source src="./videos/AUB-MED.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="old-shore-info">
+                        <div class="old-shore-location">Paphos, Cyprus</div>
+                        <div class="old-shore-school">Faculty of Business<br>AUB Mediterraneo</div>
+                    </div>
                 </div>
             </div>
-            <!-- Right panel: AUB Mediterraneo -->
-            <div class="old-shore-panel">
-                <video 
-                    class="old-shore-img" 
-                    autoplay 
-                    loop 
-                    muted 
-                    playsinline
-                    poster="./images/AUB-Med-Pafos.jpg"
-                >
-                    <source src="./videos/AUB-MED.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="old-shore-info">
-                    <div class="old-shore-location">Paphos, Cyprus</div>
-                    <div class="old-shore-school">Faculty of Business<br>AUB Mediterraneo</div>
-                </div>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- 4. TWO SHORES (clickable cards with looping videos) -->
-<style>
-    .shores-split {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-        margin: 2rem 0 1.5rem;
-    }
-
-    .shore-card {
-        display: block;
-        border-radius: 12px;
-        overflow: hidden;
-        transition: 0.25s;
-        border: 1px solid #E5E7EB;
-        background: white;
-        text-decoration: none;
-    }
-
-    .shore-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 30px rgba(132, 1, 50, 0.12);
-    }
-
-    .shore-img {
-        width: 100%;
-        height: 240px;
-        object-fit: cover;
-        background: #2c3e50;
-        display: block;
-    }
-
-    .shore-info {
-        padding: 1.8rem;
-        text-align: center;
-        background: var(--color-primary, #840132);
-        color: white;
-    }
-
-    .shore-card:last-child .shore-info {
-        background: var(--color-primary-dark, #6a132c);
-    }
-
-    .shore-location {
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        font-weight: 600;
-        opacity: 0.9;
-        margin-bottom: 0.3rem;
-    }
-
-    .shore-school {
-        font-family: var(--font-heading, 'Montserrat', sans-serif);
-        font-weight: 800;
-        font-size: 1.1rem;
-        line-height: 1.2;
-    }
-
-    .shores-quote {
-        font-size: 1.2rem;
-        color: var(--color-primary, #840132);
-        text-align: center;
-        max-width: 850px;
-        margin: 1rem auto 0.5rem;
-        font-weight: 500;
-        line-height: 1.2;
-    }
-
-    .shores-tagline {
-        text-align: center;
-        font-weight: 700;
-        color: var(--color-black, #000);
-        margin-top: 0.8rem;
-    }
-
-    @media (max-width: 768px) {
+    <style>
         .shores-split {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0 1.5rem;
         }
-        .shore-img {
-            height: 200px;
-        }
-    }
-</style>
 
-<section id="shores" style="background: #fef9f7;">
-    <div class="container">
-        <div class="section-label">Two Shores</div>
-        <h2 class="section-title">Across Two Shores</h2>
-        <div class="shores-split">
-            <!-- Card 1: OSB Beirut -->
-            <a href="https://www.aub.edu.lb/" target="_blank" class="shore-card">
-                <video 
-                    class="shore-img" 
-                    autoplay 
-                    loop 
-                    muted 
-                    playsinline
-                    poster="./images/AUB-OSB-Beirut.jpg"
-                >
-                    <source src="./videos/AUB-OSB.mp4" type="video/mp4">
-                    <!-- Fallback text/image if video not supported -->
-                    <img src="./images/AUB-OSB-Beirut.jpg" alt="Beirut Campus" style="width:100%;height:100%;object-fit:cover;">
-                </video>
-                <div class="shore-info">
-                    <div class="shore-location">Beirut, Lebanon</div>
-                    <div class="shore-school">Suliman S. Olayan School of Business</div>
-                </div>
-            </a>
-            <!-- Card 2: AUB Mediterraneo -->
-            <a href="https://www.aubmed.ac.cy/" target="_blank" class="shore-card">
-                <video 
-                    class="shore-img" 
-                    autoplay 
-                    loop 
-                    muted 
-                    playsinline
-                    poster="./images/AUB-Med-Pafos.jpg"
-                >
-                    <source src="./videos/AUB-MED.mp4" type="video/mp4">
-                    <img src="./images/AUB-Med-Pafos.jpg" alt="Paphos Campus" style="width:100%;height:100%;object-fit:cover;">
-                </video>
-                <div class="shore-info">
-                    <div class="shore-location">Paphos, Cyprus</div>
-                    <div class="shore-school">Faculty of Business • AUB Mediterraneo</div>
-                </div>
-            </a>
+        .shore-card {
+            display: block;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.25s;
+            border: 1px solid #E5E7EB;
+            background: white;
+            text-decoration: none;
+        }
+
+        .shore-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(132, 1, 50, 0.12);
+        }
+
+        .shore-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background: #2c3e50;
+            display: block;
+        }
+
+        .shore-info {
+            padding: 1.8rem;
+            text-align: center;
+            background: var(--color-primary, #840132);
+            color: white;
+        }
+
+        .shore-card:last-child .shore-info {
+            background: var(--color-primary-dark, #6a132c);
+        }
+
+        .shore-location {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 0.3rem;
+        }
+
+        .shore-school {
+            font-family: var(--font-heading, 'Montserrat', sans-serif);
+            font-weight: 800;
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+
+        .shores-quote {
+            font-size: 1.2rem;
+            color: var(--color-primary, #840132);
+            text-align: center;
+            max-width: 850px;
+            margin: 1rem auto 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .shores-tagline {
+            text-align: center;
+            font-weight: 700;
+            color: var(--color-black, #000);
+            margin-top: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .shores-split {
+                grid-template-columns: 1fr;
+            }
+
+            .shore-img {
+                height: 200px;
+            }
+        }
+    </style>
+
+    <section id="shores" style="background: #fef9f7;">
+        <div class="container">
+            <div class="section-label">Two Shores</div>
+            <h2 class="section-title">Across Two Shores</h2>
+            <div class="shores-split">
+                <!-- Card 1: OSB Beirut -->
+                <a href="https://www.aub.edu.lb/" target="_blank" class="shore-card">
+                    <video class="shore-img" autoplay loop muted playsinline poster="./images/AUB-OSB-Beirut.jpg">
+                        <source src="./videos/AUB-OSB.mp4" type="video/mp4">
+                        <!-- Fallback text/image if video not supported -->
+                        <img src="./images/AUB-OSB-Beirut.jpg" alt="Beirut Campus"
+                            style="width:100%;height:100%;object-fit:cover;">
+                    </video>
+                    <div class="shore-info">
+                        <div class="shore-location">Beirut, Lebanon</div>
+                        <div class="shore-school">Suliman S. Olayan School of Business</div>
+                    </div>
+                </a>
+                <!-- Card 2: AUB Mediterraneo -->
+                <a href="https://www.aubmed.ac.cy/" target="_blank" class="shore-card">
+                    <video class="shore-img" autoplay loop muted playsinline poster="./images/AUB-Med-Pafos.jpg">
+                        <source src="./videos/AUB-MED.mp4" type="video/mp4">
+                        <img src="./images/AUB-Med-Pafos.jpg" alt="Paphos Campus"
+                            style="width:100%;height:100%;object-fit:cover;">
+                    </video>
+                    <div class="shore-info">
+                        <div class="shore-location">Paphos, Cyprus</div>
+                        <div class="shore-school">Faculty of Business • AUB Mediterraneo</div>
+                    </div>
+                </a>
+            </div>
+            <p class="shores-quote">Across Beirut and Paphos, AUB's business education community is built on a common
+                academic vision. EQUIS accreditation recognizes the strength of this connection: two locations, aligned
+                around quality, relevance, impact, and internationally benchmarked standards.</p>
+            <p class="shores-tagline">Rooted in the region. Connected across two shores. Benchmarked by the world.</p>
         </div>
-        <p class="shores-quote">Across Beirut and Paphos, AUB's business education community is built on a common academic vision. EQUIS accreditation recognizes the strength of this connection: two locations, aligned around quality, relevance, impact, and internationally benchmarked standards.</p>
-        <p class="shores-tagline">Rooted in the region. Connected across two shores. Benchmarked by the world.</p>
-    </div>
-</section>
+    </section>
 
     <!-- 5. WHAT THIS MEANS: cards with images (not icons) -->
     <style>

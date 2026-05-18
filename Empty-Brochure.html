@@ -10,13 +10,12 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" href="build/css/intlTelInput.css">
-
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/main-programs.css">
 
 	<style>
 		.page-wrapper {
-			background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("images/AUB-OSB-[Lii-ProgAcr]-bg.jpg") no-repeat center top/cover fixed;
+			background: url("images/AUB-OSB-[Lii-ProgAcr]-brochure-bg.jpg") no-repeat center center/cover fixed;
 		}
 	</style>
 
@@ -26,16 +25,31 @@
 	<!-- Libraries -->
 	<script src="build/js/intlTelInput.js"></script>
 	<script src="js/mailchimp-subscribe.js"></script>
-	<script src="js/apply-validator.js"></script>
 	<script src="js/phonescript.js"></script>
+	<script src="js/brochure-validator.js"></script>
 
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- Mailchimp endpoint URL (used by brochure-validator.js) -->
 	<script>
-		var mcurl = 'https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3';
-		function GoogleConversion() { }
+		var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";
 	</script>
 </head>
 
 <body class="brochure">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
+			style="display: none; visibility: hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 	<div class="page-wrapper">
 		<div class="container">
 			<div class="grid-2cols">
@@ -43,15 +57,21 @@
 					<div class="logo">
 						<a href="https://www.aub.edu.lb/osb" style="text-decoration: none">
 							<div class="logo-img">
-								<img class="OSBLogo" src="images/AUB-OSB-Logo.png" alt="AUB OSB Logo">
+								<img class="OSBLogo" src="images/AUB-OSB-Logo-White.png" alt="AUB OSB Logo">
 							</div>
 						</a>
 					</div>
 					<div class="hero-content">
 						<h1>
-							Master's in Business<br>
-							Administration
-						</h1>
+                            Lii-TITLE
+                            <br />
+                            Lii-TITLE
+                        </h1>
+                        <div class="hero-subtitle">
+                            Lii-SUBTITLE
+                            <br />
+                            Lii-SUBTITLE
+                        </div>
 						<div class="button-group" style="margin-top: 2rem;">
 							<a href="https://www.aub.edu.lb/osb" class="btn-primary" target="_blank">Visit Website</a>
 							<a href="GR-[Lii-ProgAcr]-Apply.html" class="btn-outline">Apply Now</a>
@@ -60,8 +80,7 @@
 				</div>
 
 				<div class="form-card">
-					<span class="form-card__title">Download
-						Brochure</span>
+					<span class="form-card__title">Download Brochure</span>
 					<span class="contac100-form-subtitle"
 						style="display: block; text-align: center; margin-bottom: 1.5rem; opacity: 0.9;">Fill the form
 						to get instant access</span>
@@ -70,7 +89,7 @@
 						action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
 						name="myform" novalidate="novalidate">
 
-						<!-- Salesforce hidden fields (original + dummy fields to satisfy apply-validator.js) -->
+						<!-- Salesforce hidden fields (only required ones) -->
 						<input type="hidden" name="oid" value="00D0Y000001Xrwc">
 						<input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
 						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="Lii-Val-Salesforce Campaign ID">
@@ -78,49 +97,35 @@
 						<input type="hidden" name="lead_source" id="lead_source" value="Website">
 						<input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure [Lii-ProgAcr]">
 						<input type="hidden" name="country_code" id="country_code" value="LB">
-						<input type="hidden" name="campaign" id="campaign" value="">
 						<input type="hidden" name="rating" id="rating" value="Cold">
-						<input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Work Email">
-						<input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Work Phone">
-						<!-- Hidden phone field used by phonescript -->
-						<input type="hidden" name="00N0Y00000RODqu" id="00N0Y00000RODqu" value="">
-						<!-- Dummy fields to satisfy apply-validator.js rules -->
-						<input type="hidden" name="00N0Y00000QGklm" id="00N0Y00000QGklm" value="N/A">
-						<input type="hidden" name="title" id="title" value="N/A">
-						<input type="hidden" name="00N0Y00000QGkuK" id="00N0Y00000QGkuK" value="0">
-						<input type="hidden" name="00N0Y00000QGkrV" id="00N0Y00000QGkrV" value="N/A">
-						<input type="hidden" name="00N0Y00000QGksE" id="00N0Y00000QGksE" value="N/A">
-						<!-- retURL points to PDF -->
-						<input type="hidden" name="retURL" value="Lii - Val - Brochure PDF URL">
+						<input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
+						<input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
+f						<!-- retURL points to PDF -->
+						<input type="hidden" name="retURL"
+							value="Lii - Val - Brochure PDF URL">
 
 						<!-- Form fields -->
 						<div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
 							<span class="label-input100">First Name *</span>
-							<input class="input100" id="first_name" maxlength="40" name="first_name" required
+							<input class="input100" id="first_name" maxlength="40" name="first_name"
 								placeholder="First Name" type="text">
 						</div>
 
 						<div class="wrap-input100 validate-input form-group" data-validate="Last Name is required">
 							<span class="label-input100">Last Name *</span>
-							<input class="input100" id="last_name" maxlength="80" placeholder="Last Name" required
+							<input class="input100" id="last_name" maxlength="80" placeholder="Last Name"
 								name="last_name" type="text">
 						</div>
 
 						<div class="wrap-input100 validate-input form-group" data-validate="Valid email is required">
 							<span class="label-input100">Email *</span>
-							<input class="input100" placeholder="Email" id="email" maxlength="80" required
-								name="00N0Y00000QGl8W" type="text">
+							<input class="input100" placeholder="Email" id="email" maxlength="80" name="00N0Y00000QGklI"
+								type="text">
 						</div>
 
 						<div class="wrap-input100 validate-input form-group" data-validate="Phone number is required">
 							<span class="label-input100">Phone *</span>
-							<input class="input100" id="phone" name="intphone" type="tel" pattern="[0-9]*" required>
-						</div>
-
-						<div class="wrap-input100 validate-input form-group" data-validate="Company name is required">
-							<span class="label-input100">Company *</span>
-							<input class="input100" id="employer" placeholder="Company" maxlength="40" required
-								name="00N0Y00000QGku0" type="text">
+							<input class="input100" placeholder="Phone" id="phone" maxlength="40" required type="text">
 						</div>
 
 						<div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to
@@ -140,7 +145,6 @@
 				<div class="info-card">
 					<h3>Program Overview</h3>
 					<ul class="bullet-list">
-						<!-- Lii - Check These Fields -->
 						<li><i class="fa-regular fa-clock"></i> Available in full-time or part-time</li>
 						<li><i class="fas fa-chalkboard-user"></i> Taught by world-renowned professors</li>
 						<li><i class="fas fa-code-branch"></i> Cutting edge, customizable curriculum</li>
@@ -150,7 +154,6 @@
 				<div class="info-card">
 					<h3>Main Admission Requirements</h3>
 					<ul class="bullet-list">
-						<!-- Lii - Check These Fields -->
 						<li><i class="fas fa-graduation-cap"></i> Bachelor's Degree</li>
 						<li><i class="fas fa-language"></i> Fluent in Written and Spoken English</li>
 						<li><i class="fas fa-file-alt"></i> Complete online application</li>
@@ -180,44 +183,47 @@
 		</div>
 	</footer>
 
-	<!-- Source/campaign tracking -->
+	<!-- Script to handle source parameters (original) -->
 	<script>
 		function getParameterByName(name, url) {
 			if (!url) url = window.location.href;
 			url = url.toLowerCase();
-			name = name.replace(/[\[\]]/g, '\\$&');
-			var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
 				results = regex.exec(url);
 			if (!results) return null;
-			if (!results[2]) return '';
-			return decodeURIComponent(results[2].replace(/\+/g, ' '));
+			if (!results[2]) return "";
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
 		}
-		var source = getParameterByName('source');
-		var type = getParameterByName('type'); // not used!
-		var campaign = getParameterByName('campaign');
 
-		switch (source) {
-			case "fb": var sourcetxt = "Social Media"; var sourcelbl = "Fb - Brochure [Lii-ProgAcr]"; break;
-			case "insta": var sourcetxt = "Social Media"; var sourcelbl = "Insta - Brochure [Lii-ProgAcr]"; break;
-			case "tw": var sourcetxt = "Social Media"; var sourcelbl = "Tw - Brochure [Lii-ProgAcr]"; break;
-			case "lin": var sourcetxt = "Social Media"; var sourcelbl = "Lin - Brochure [Lii-ProgAcr]"; break;
-			case "gs": var sourcetxt = "Google Ads"; var sourcelbl = "Search - Brochure [Lii-ProgAcr]"; break;
-			case "mail": var sourcetxt = "Mailchimp"; var sourcelbl = "Brochure [Lii-ProgAcr]"; break;
-			default: var sourcetxt = "Website"; var sourcelbl = "Brochure [Lii-ProgAcr]"; break;
+		var utm_source = getParameterByName('source');
+		var utm_details = getParameterByName('utm_details');
+		var utm_campaign = getParameterByName('utm_campaign');
+		var utm_content = getParameterByName('utm_content');
+		var utm_placement = getParameterByName('utm_placement');
+		var utm_adsetname = getParameterByName('utm_adsetname');
+
+
+		if (utm_source != null) {
+			$('#lead_source').val(utm_source);
 		}
-		switch (campaign) {
-			case "uae": var campaigntxt = "AE"; break;
-			case "ksa": var campaigntxt = "SA"; break;
-			case "kwt": var campaigntxt = "KW"; break;
-			case "qat": var campaigntxt = "QA"; break;
-			case "jor": var campaigntxt = "JO"; break;
-			case "nyc": var campaigntxt = "US"; break;
-			case "fra": var campaigntxt = "FR"; break;
-			default: var campaigntxt = "LB"; break;
+
+		if (utm_details != null) {
+			$('#00N0Y00000QGkma').val(utm_details);
 		}
-		$('#lead_source').val(sourcetxt);
-		$('#00N0Y00000QGkma').val(sourcelbl);
-		$('#country_code').val(campaigntxt);
+		if (utm_campaign != null) {
+			$('#Campaign_Name').val(utm_campaign);
+		}
+		if (utm_content != null) {
+			$('#AD_Name').val(utm_content);
+		}
+
+		if (utm_placement != null) {
+			$('#00NP500000LohFU').val(utm_placement);
+		}
+		if (utm_adsetname != null) {
+			$('#00NP500000Oxk99').val(utm_adsetname);
+		}
 	</script>
 </body>
 
