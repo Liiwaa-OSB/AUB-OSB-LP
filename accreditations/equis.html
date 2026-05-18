@@ -7,7 +7,7 @@
     <title>EQUIS Accreditation — AUB Business Education</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;800&family=Montserrat:wght@300;400;600;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&family=Montserrat:wght@300;400;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/menu.css" />
@@ -113,8 +113,9 @@
 
         .section-title {
             font-family: var(--font-heading);
-            font-size: 2.8rem;
-            font-weight: 800;
+            font-size: 2.6rem;
+            text-transform: uppercase;
+            font-weight: 700;
             color: var(--color-primary);
             line-height: 1.2;
             margin-bottom: 0.5rem;
@@ -1581,117 +1582,6 @@ max-width:900px;
 
     </section>
 
-    <style>
-        /* ─── TWO SHORES (clean version) ─── */
-        .old-shores {
-            background: var(--cream, #f9fafb);
-        }
-
-        .old-shores-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            border-radius: 12px;
-            overflow: hidden;
-            margin: 2rem 0;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .old-shore-panel {
-            display: flex;
-            flex-direction: column;
-            min-height: 420px;
-            background: var(--color-primary);
-            transition: all 0.4s;
-        }
-
-        .old-shore-panel:last-child {
-            background: var(--color-primary-dark);
-        }
-
-        .old-shore-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-            background: #2c3e50;
-        }
-
-        .old-shore-info {
-            padding: 2rem 2.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            flex: 1;
-        }
-
-        .old-shore-location {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0.8;
-            margin-bottom: 0.75rem;
-        }
-
-        .old-shore-school {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        @media (max-width: 768px) {
-            .old-shores-split {
-                grid-template-columns: 1fr;
-            }
-
-            .old-shore-info {
-                padding: 1.5rem;
-            }
-
-            .old-shore-school {
-                font-size: 1rem;
-            }
-        }
-    </style>
-
-    <!-- 4. ACROSS TWO SHORES (with looped videos) -->
-    <section id="old-shores" class="old-shores">
-        <div class="container">
-            <div class="reveal">
-                <div class="section-label">Two Shores</div>
-                <h2 class="section-title">Across Two Shores</h2>
-            </div>
-            <div class="old-shores-split reveal">
-                <!-- Left panel: OSB Beirut -->
-                <div class="old-shore-panel">
-                    <video class="old-shore-img" autoplay loop muted playsinline poster="./images/AUB-OSB-Beirut.jpg">
-                        <source src="./videos/AUB-OSB.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="old-shore-info">
-                        <div class="old-shore-location">Beirut, Lebanon</div>
-                        <div class="old-shore-school">Suliman S. Olayan<br>School of Business</div>
-                    </div>
-                </div>
-                <!-- Right panel: AUB Mediterraneo -->
-                <div class="old-shore-panel">
-                    <video class="old-shore-img" autoplay loop muted playsinline poster="./images/AUB-Med-Pafos.jpg">
-                        <source src="./videos/AUB-MED.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="old-shore-info">
-                        <div class="old-shore-location">Paphos, Cyprus</div>
-                        <div class="old-shore-school">Faculty of Business<br>AUB Mediterraneo</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- 4. TWO SHORES (clickable cards with looping videos) -->
     <style>
@@ -1841,7 +1731,7 @@ max-width:900px;
 
         .perspective-img {
             width: 100%;
-            height: 140px;
+            height: 230px;
             background: var(--color-primary);
             object-fit: cover;
         }
@@ -1990,7 +1880,7 @@ max-width:900px;
             font-family: var(--font-heading);
             font-size: 1.3rem;
             font-weight: 800;
-            color: var(--color-primary);
+            color: var(--color-text);
             margin-bottom: 0.3rem;
         }
 
