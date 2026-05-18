@@ -91,7 +91,7 @@ $(document).ready(function () {
                 errorMsg = 'Phone number is required';
             } else if (!isValidPhone()) {
                 isValid = false;
-                errorMsg = 'Please enter a valid phone number (including country code)';
+                errorMsg = 'Please enter a valid phone number';
             }
         }
 

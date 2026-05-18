@@ -96,8 +96,58 @@
     margin-bottom: 0.35rem;
 }
 
+
+
+
+
+/* Ensure error messages appear correctly inside the overlapping card */
+.overlap-form-card .custom-error {
+    display: block;
+    font-size: 0.7rem;
+    color: #ffa0a0;
+    margin-top: 4px;
+}
+
+.overlap-form-card .form-group.has-error input,
+.overlap-form-card .form-group.has-error select {
+    border-color: #ff5e6e;
+}
+
+/* The .focus-input100 is needed by apply-validator.js to attach error spans */
+.focus-input100 {
+    display: block;
+    position: relative;
+}
+
+/* Fix centering of the two action buttons */
+.form-footer-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.8rem;
+    flex-wrap: wrap;
+}
+
+/* Ensure full-width fields in two-column grid work */
+.full-width-field {
+    grid-column: span 2;
+}
+
+@media (max-width: 850px) {
+    .full-width-field {
+        grid-column: span 1;
+    }
+}
+
+
+
+
 /* OEP submit button (full width, red background) */
 .container-form-btn {
+    text-align: center;
+}
+
+.wrap-contact100-form-btn {
     text-align: center;
 }
 

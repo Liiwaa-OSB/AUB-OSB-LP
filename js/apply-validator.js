@@ -104,7 +104,7 @@ $(document).ready(function() {
                 if (val === '') {
                     isValid = false; errorMsg = 'Phone number is required';
                 } else if (!isValidPhone()) {
-                    isValid = false; errorMsg = 'Please enter a valid phone number (including country code)';
+                    isValid = false; errorMsg = 'Please enter a valid phone number';
                 }
                 break;
             case 'company':
