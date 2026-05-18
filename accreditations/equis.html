@@ -720,6 +720,12 @@
             z-index: 1;
         }
 
+        .hero-slide.banner-slide {
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
         .hero-slide.active {
             opacity: 1;
             z-index: 2;
@@ -782,14 +788,16 @@
 
         .hero-sub {
             max-width: 860px;
-            margin: 0 auto 1rem;
+            /* margin: 0 auto 1rem; */
+            margin: 0 auto;
             line-height: 1.5;
-            font-size: 0.75rem;
+            font-size: 1.5rem;
         }
 
         .hero-tagline {
             font-weight: 600;
             margin-bottom: 2rem;
+            font-size: 1.5rem;
         }
 
         .hero-cta {
@@ -901,7 +909,7 @@ EQUIS Accredited • 2026
 <span>First in Cyprus.</span>
 </div>
 
-<span class="hero-title-small">
+<span class="">
 Now EQUIS-Accredited.
 </span>
 </div>
@@ -914,9 +922,6 @@ Business Education at AUB now holds two global accreditation crowns — AACSB an
 One sea. Two shores. Two global accreditation crowns.
 </div>
 
-<a href="#milestone" class="hero-cta">
-Explore the Milestone
-</a>
 `
                 },
 
@@ -1432,26 +1437,26 @@ Explore the Milestone
         </div>
     </section>
 
-    <!-- 3. STANDARD (flip cards, no hint text, only icon) -->
+    <!-- 3. STANDARD -->
     <style>
         .pillars-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
             margin-top: 2rem;
         }
 
         .pillar-card {
-            perspective: 600px;
-            height: 200px;
+            perspective: 1000px;
             cursor: pointer;
+            min-height: 220px;
         }
 
         .pillar-inner {
             position: relative;
             width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
+            height: 220px;
+            transition: transform .6s;
             transform-style: preserve-3d;
         }
 
@@ -1465,136 +1470,115 @@ Explore the Milestone
             inset: 0;
             border-radius: 10px;
             backface-visibility: hidden;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+
             padding: 1.5rem;
+            text-align: center;
         }
 
         .pillar-front {
             background: #fef9f7;
             border: 1px solid #E5E7EB;
-            text-align: center;
         }
 
         .pillar-front h4 {
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--color-primary);
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-top: .75rem;
+            line-height: 1.3;
         }
 
         .pillar-front i {
             font-size: 1.8rem;
             color: var(--color-primary);
-            margin-bottom: 0.5rem;
         }
 
         .pillar-back {
             background: var(--color-primary);
-            color: white;
+            color: #fff;
             transform: rotateY(180deg);
-            text-align: center;
         }
 
         .pillar-back p {
-            font-size: 0.9rem;
-            line-height: 1.2;
-            font-weight: 400;
+            font-size: .95rem;
+            line-height: 1.4;
+        }
+
+        /* Tablet */
+
+        @media(max-width:992px) {
+
+            .pillars-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* Mobile */
+
+        @media(max-width:768px) {
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pillar-card,
+            .pillar-inner {
+                height: 190px;
+            }
+
+            .pillar-front,
+            .pillar-back {
+                padding: 1rem;
+            }
+
+            .pillar-front h4 {
+                font-size: 1rem;
+            }
+
         }
     </style>
+
+
     <section id="standard">
+
         <div class="container">
-            <div class="section-label">The Standard</div>
-            <h2 class="section-title">What EQUIS Is</h2>
-            <p style="margin-bottom: 1.5rem; font-size:1rem; line-height:1.2; max-width: 900px;">EFMD Quality
-                Improvement System (EQUIS) accreditation is a globally recognised mark of excellence for business and
-                management education. It involves rigorous evaluation based on criteria such as academic programmes,
-                faculty quality, research output, internationalisation and corporate relevance.</p>
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <div class="pillar-inner">
-                        <div class="pillar-front"><i class="fas fa-chart-line"></i>
-                            <h4>Strategy & Governance</h4>
-                        </div>
-                        <div class="pillar-back">
-                            <p>A connected strategic vision across Beirut and Paphos.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-inner">
-                        <div class="pillar-front"><i class="fas fa-graduation-cap"></i>
-                            <h4>Programs & Student Exp.</h4>
-                        </div>
-                        <div class="pillar-back">
-                            <p>6-degree programs benchmarked internationally.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-inner">
-                        <div class="pillar-front"><i class="fas fa-chalkboard-user"></i>
-                            <h4>Faculty & Research</h4>
-                        </div>
-                        <div class="pillar-back">
-                            <p>Faculty bridging research, teaching, practice.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-inner">
-                        <div class="pillar-front"><i class="fas fa-globe"></i>
-                            <h4>Internationalization</h4>
-                        </div>
-                        <div class="pillar-back">
-                            <p>Network across Europe, MENA and beyond.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-inner">
-                        <div class="pillar-front"><i class="fas fa-handshake"></i>
-                            <h4>Corporate Connections</h4>
-                        </div>
-                        <div class="pillar-back">
-                            <p>Advisory boards drawn from MENA, Europe.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-inner">
-                        <div class="pillar-front"><i class="fas fa-leaf"></i>
-                            <h4>Ethics & Sustainability</h4>
-                        </div>
-                        <div class="pillar-back">
-                            <p>Responsible leadership, BSIS label 2024.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-inner">
-                        <div class="pillar-front"><i class="fas fa-building"></i>
-                            <h4>Resources & Ops</h4>
-                        </div>
-                        <div class="pillar-back">
-                            <p>International-standard facilities across two shores.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-inner">
-                        <div class="pillar-front"><i class="fas fa-chart-simple"></i>
-                            <h4>Impact & CI</h4>
-                        </div>
-                        <div class="pillar-back">
-                            <p>Evidence-based reflection, continuous improvement.</p>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="section-label">
+                The Standard
             </div>
+
+            <h2 class="section-title">
+                What EQUIS Is
+            </h2>
+
+            <p style="
+margin-bottom:1.5rem;
+font-size:1rem;
+line-height:1.4;
+max-width:900px;
+">
+
+                EFMD Quality Improvement System (EQUIS) accreditation is a globally recognised mark of excellence for
+                business and management education. It involves rigorous evaluation based on criteria such as academic
+                programmes, faculty quality, research output, internationalisation and corporate relevance.
+
+            </p>
+
+            <div class="pillars-grid">
+
+                <!-- keep your 8 cards exactly as-is -->
+
+            </div>
+
         </div>
+
     </section>
 
     <style>
@@ -1917,7 +1901,8 @@ Explore the Milestone
             <h2 class="section-title">What This Means</h2>
             <p style="margin-bottom: 0.5rem;">Six perspectives on what changed the day EQUIS arrived.</p>
             <div class="perspectives-grid">
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-STUDENTS.jpg" class="perspective-img" alt="student">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-STUDENTS.jpg" class="perspective-img"
+                        alt="student">
                     <div class="perspective-body">
                         <div class="perspective-for">For Students</div>
                         <div class="perspective-title">Your Degree, Globally Benchmarked</div>
@@ -1926,7 +1911,8 @@ Explore the Milestone
                         <div class="perspective-quote">“Knowing my degree meets global quality gives me an edge.”</div>
                     </div>
                 </div>
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-FACULTY.jpg" class="perspective-img" alt="faculty">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-FACULTY.jpg" class="perspective-img"
+                        alt="faculty">
                     <div class="perspective-body">
                         <div class="perspective-for">For Faculty & Staff</div>
                         <div class="perspective-title">Recognition for the Work</div>
@@ -1935,7 +1921,8 @@ Explore the Milestone
                         <div class="perspective-quote">“It validates our commitment to excellence.”</div>
                     </div>
                 </div>
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-ALUMNI.jpg" class="perspective-img" alt="alumni">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-ALUMNI.jpg" class="perspective-img"
+                        alt="alumni">
                     <div class="perspective-body">
                         <div class="perspective-for">For Alumni</div>
                         <div class="perspective-title">A Stronger Name to Carry Forward</div>
@@ -1943,7 +1930,8 @@ Explore the Milestone
                         <div class="perspective-quote">“Proud to see my alma mater achieving EQUIS.”</div>
                     </div>
                 </div>
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-EMPLOYER.jpg" class="perspective-img" alt="employers">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-EMPLOYER.jpg" class="perspective-img"
+                        alt="employers">
                     <div class="perspective-body">
                         <div class="perspective-for">For Employers</div>
                         <div class="perspective-title">Talent You Can Trust</div>
@@ -1951,7 +1939,8 @@ Explore the Milestone
                         <div class="perspective-quote">“We hire AUB graduates with full confidence.”</div>
                     </div>
                 </div>
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-PARENTS.jpg" class="perspective-img" alt="parents">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-PARENTS.jpg" class="perspective-img"
+                        alt="parents">
                     <div class="perspective-body">
                         <div class="perspective-for">For Parents</div>
                         <div class="perspective-title">Confidence in the Choice</div>
@@ -1959,7 +1948,8 @@ Explore the Milestone
                         <div class="perspective-quote">“A wise investment in our child’s future.”</div>
                     </div>
                 </div>
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-REGION.jpg" class="perspective-img" alt="region">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-REGION.jpg" class="perspective-img"
+                        alt="region">
                     <div class="perspective-body">
                         <div class="perspective-for">For the Region</div>
                         <div class="perspective-title">A Statement for Lebanon, Cyprus, and MENA</div>
@@ -2325,6 +2315,17 @@ Explore the Milestone
         .cta-btn:hover {
             background: white;
             color: var(--color-primary);
+        }
+
+        @media (max-width: 680px) {
+            .cta-grid {
+                max-width: 240px;
+                margin: auto;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
         }
     </style>
     <section id="next" class="next">
