@@ -691,7 +691,7 @@
         </div>
     </div>
 
-    <!-- HERO SECTION – 3‑SLIDE AUTO SLIDER -->
+    <!-- HERO SECTION -->
     <style>
         .hero {
             min-height: 78vh;
@@ -702,21 +702,21 @@
             padding: 7rem var(--space-md, 1.5rem) 5rem;
         }
 
-        /* Slider container */
+        /* Slider */
+
         .hero-slider {
             position: absolute;
             inset: 0;
         }
 
-        /* Each slide */
         .hero-slide {
             position: absolute;
             inset: 0;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            transition: opacity 1s ease-in-out;
             opacity: 0;
+            transition: opacity 1s ease-in-out;
             z-index: 1;
         }
 
@@ -725,36 +725,38 @@
             z-index: 2;
         }
 
-        /* Dark overlay gradient for better text contrast */
         .hero-slide::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
+            background: rgba(0, 0, 0, .45);
         }
 
-        /* Content wrapper – above overlay */
+        /* Remove overlay on banner slide */
+        .hero-slide.banner-slide::after {
+            display: none;
+        }
+
+        /* Content */
+
         .hero-content {
             position: relative;
             z-index: 3;
             max-width: 980px;
             margin: auto;
             text-align: center;
-            color: var(--color-white, #fff);
-            transition: opacity 0.3s;
+            color: #fff;
         }
 
         .hero-badge {
             display: inline-flex;
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, .25);
             border-radius: 50px;
-            padding: 0.7rem 1.2rem;
-            font-size: 0.75rem;
+            padding: .7rem 1.2rem;
+            font-size: .75rem;
             font-weight: 700;
             letter-spacing: 2px;
             margin-bottom: 1.5rem;
-            background: transparent;
         }
 
         .hero-title {
@@ -767,27 +769,25 @@
         .hero-title-top {
             display: flex;
             justify-content: center;
-            margin-bottom: 1rem;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .hero-title-small {
             display: block;
             font-size: clamp(1rem, 2vw, 1.5rem);
-            margin-top: 0.5rem;
-            color: rgba(255, 255, 255, 0.9);
+            margin-top: .5rem;
+            color: rgba(255, 255, 255, .9);
         }
 
         .hero-sub {
             max-width: 860px;
             margin: 0 auto 1rem;
-            font-size: 1rem;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .hero-tagline {
             font-weight: 600;
-            font-size: 1rem;
             margin-bottom: 2rem;
         }
 
@@ -797,36 +797,46 @@
             justify-content: center;
             padding: 1rem 2rem;
             border-radius: 6px;
-            background: var(--color-white, #fff);
+            background: #fff;
             color: var(--color-primary, #840132);
             font-weight: 800;
             text-decoration: none;
-            transition: transform 0.2s;
+            transition: .3s;
         }
 
         .hero-cta:hover {
             transform: translateY(-3px);
         }
 
-        /* Slide 3 specific: center‑top alignment */
-        .hero-content.slide3-style {
-            /* display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 5rem; */
+        /* dots */
+
+        .hero-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 5;
         }
 
-        .hero-content.slide3-style .hero-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 0.75rem;
+        .hero-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, .4);
+            cursor: pointer;
+            transition: .3s;
         }
 
-        .hero-content.slide3-style .hero-sub {
-            font-size: 1.1rem;
-            max-width: 700px;
+        .hero-dot.active {
+            background: #fff;
+            transform: scale(1.2);
         }
 
-        @media (max-width: 768px) {
+        @media(max-width:768px) {
+
             .hero {
                 min-height: 70vh;
                 padding-top: 5rem;
@@ -834,152 +844,226 @@
 
             .hero-title-top {
                 flex-direction: column;
-                align-items: center;
-                gap: 0.5rem;
+                gap: .4rem;
             }
 
-            .hero-content.slide3-style {
-                padding-top: 3rem;
-            }
         }
     </style>
 
-    <section class="hero">
-        <div class="hero-slider">
-            <!-- Slide 1: Beirut -->
-            <div class="hero-slide"
-                style="background-image: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.015)), url('./images/AUB-OSB-Beirut.jpg');">
-            </div>
-            <!-- Slide 2: Paphos -->
-            <div class="hero-slide"
-                style="background-image: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.015)), url('./images/AUB-Med-Pafos.jpg');">
-            </div>
-            <!-- Slide 3: EQUIS special background -->
-            <div class="hero-slide" style="background-image: url('./images/AUB-OSB-Equis-bg.jpg');"></div>
-        </div>
-        <style>
-            .hero-slide {
-                /* background-size: revert-layer; */
-      background-repeat: no-repeat;
-            }
-        </style>
 
-        <div class="hero-content" id="heroContent">
-            <!-- dynamic content filled by JS -->
+    <section class="hero">
+
+        <div class="hero-slider">
+
+            <!-- Slide 1 -->
+            <div class="hero-slide active" style="background-image:url('./images/AUB-OSB-Beirut.jpg')">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image:url('./images/AUB-Med-Pafos.jpg')">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide banner-slide" id="bannerSlide">
+            </div>
+
         </div>
+
+
+        <div class="hero-content" id="heroContent"></div>
+
+        <div class="hero-dots">
+            <button class="hero-dot active"></button>
+            <button class="hero-dot"></button>
+            <button class="hero-dot"></button>
+        </div>
+
     </section>
+
 
     <script>
         (function () {
-            // Slide data: background images + content for each slide
+
+            const heroContent = document.getElementById('heroContent');
+
             const slides = [
-                {   // Beirut
-                    bgImage: "./images/AUB-OSB-Beirut.jpg",
+
+                {
                     content: `
-                    <div class="hero-badge">EQUIS ACCREDITED • 2026</div>
-                    <div class="hero-title">
-                        <div class="hero-title-top">
-                            <span>First in Lebanon.</span>
-                            <span>First in Cyprus.</span>
-                        </div>
-                        <span class="hero-title-small">Now EQUIS-Accredited.</span>
-                    </div>
-                    <p class="hero-sub">
-                        Business Education at AUB now holds two global accreditation crowns — AACSB and EQUIS — across both shores of the Mediterranean.
-                    </p>
-                    <div class="hero-tagline">
-                        One sea. Two shores. Two global accreditation crowns.
-                    </div>
-                    <a href="#milestone" class="hero-cta">Explore the Milestone</a>
-                `
+<div class="hero-badge">
+EQUIS ACCREDITED • 2026
+</div>
+
+<div class="hero-title">
+<div class="hero-title-top">
+<span>First in Lebanon.</span>
+<span>First in Cyprus.</span>
+</div>
+
+<span class="hero-title-small">
+Now EQUIS-Accredited.
+</span>
+</div>
+
+<p class="hero-sub">
+Business Education at AUB now holds two global accreditation crowns — AACSB and EQUIS — across both shores of the Mediterranean.
+</p>
+
+<div class="hero-tagline">
+One sea. Two shores. Two global accreditation crowns.
+</div>
+
+<a href="#milestone" class="hero-cta">
+Explore the Milestone
+</a>
+`
                 },
-                {   // Paphos
-                    bgImage: "./images/AUB-Med-Pafos.jpg",
+
+                {
                     content: `
-                    <div class="hero-badge">EQUIS ACCREDITED • 2026</div>
-                    <div class="hero-title">
-                        <div class="hero-title-top">
-                            <span>First in Lebanon.</span>
-                            <span>First in Cyprus.</span>
-                        </div>
-                        <span class="hero-title-small">Now EQUIS-Accredited.</span>
-                    </div>
-                    <p class="hero-sub">
-                        Business Education at AUB now holds two global accreditation crowns — AACSB and EQUIS — across both shores of the Mediterranean.
-                    </p>
-                    <div class="hero-tagline">
-                        One sea. Two shores. Two global accreditation crowns.
-                    </div>
-                    <a href="#milestone" class="hero-cta">Explore the Milestone</a>
-                `
+<div class="hero-badge">
+EQUIS ACCREDITED • 2026
+</div>
+
+<div class="hero-title">
+<div class="hero-title-top">
+<span>First in Lebanon.</span>
+<span>First in Cyprus.</span>
+</div>
+
+<span class="hero-title-small">
+Now EQUIS-Accredited.
+</span>
+</div>
+
+<p class="hero-sub">
+Business Education at AUB now holds two global accreditation crowns — AACSB and EQUIS — across both shores of the Mediterranean.
+</p>
+
+<div class="hero-tagline">
+One sea. Two shores. Two global accreditation crowns.
+</div>
+
+<a href="#milestone" class="hero-cta">
+Explore the Milestone
+</a>
+`
                 },
-                {   // EQUIS special slide
-                    bgImage: "./images/AUB-OSB-Equis-bg.jpg",
-                    content: `
-                    <div class="hero-badge">EQUIS ACCREDITED • 2026</div>
-                    <div class="hero-title">
-                        Lebanon's 1st EQUIS-Accredited<br>Business School
-                    </div>
-                    <p class="hero-sub">
-                        Among less than 2% of business schools in the region to earn this distinction.
-                    </p>
-                    <div style="margin-top: 1.5rem;">
-                        <a href="#milestone" class="hero-cta">Discover the Journey</a>
-                    </div>
-                `,
-                    // special class to align content center-top
-                    extraClass: "slide3-style"
+
+                {
+                    content: ``
                 }
+
             ];
 
-            let currentSlide = 0;
-            const slideElements = document.querySelectorAll('.hero-slide');
-            const heroContentDiv = document.getElementById('heroContent');
-            let intervalId;
+            const slideEls = document.querySelectorAll(".hero-slide");
+            const dots = document.querySelectorAll(".hero-dot");
+
+            let current = 0;
+            let interval;
+
+
+            /* Responsive banner image */
+
+            function setBannerImage() {
+
+                const banner = document.getElementById("bannerSlide");
+
+                if (window.innerWidth <= 768) {
+
+                    banner.style.backgroundImage =
+                        "url('./images/AUB-OSB-Equis-Main-Banner-mobile.jpg')";
+
+                } else {
+
+                    banner.style.backgroundImage =
+                        "url('./images/AUB-OSB-Equis-Main-Banner.jpg')";
+
+                }
+
+            }
+
+            setBannerImage();
+
+            window.addEventListener(
+                'resize',
+                setBannerImage
+            );
+
 
             function updateSlide(index) {
-                // Update background images active class
-                slideElements.forEach((slide, i) => {
-                    if (i === index) {
-                        slide.classList.add('active');
-                    } else {
-                        slide.classList.remove('active');
-                    }
+
+                current = index;
+
+                /* slides */
+
+                slideEls.forEach((slide, i) => {
+                    slide.classList.toggle(
+                        'active',
+                        i === index
+                    );
                 });
-                // Update content
-                const slideData = slides[index];
-                heroContentDiv.innerHTML = slideData.content;
-                // Apply special class for slide 3
-                if (slideData.extraClass) {
-                    heroContentDiv.classList.add(slideData.extraClass);
-                } else {
-                    heroContentDiv.classList.remove('slide3-style');
-                }
+
+                /* dots */
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle(
+                        'active',
+                        i === index
+                    );
+                });
+
+                /* content */
+
+                heroContent.innerHTML =
+                    slides[index].content;
             }
+
 
             function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                updateSlide(currentSlide);
+
+                current =
+                    (current + 1)
+                    %
+                    slides.length;
+
+                updateSlide(current);
+
             }
 
-            // Start auto slider (6 seconds interval)
+
             function startSlider() {
-                if (intervalId) clearInterval(intervalId);
-                intervalId = setInterval(nextSlide, 6000);
+
+                clearInterval(interval);
+
+                interval =
+                    setInterval(
+                        nextSlide,
+                        6000
+                    );
+
             }
 
-            // Pause on hover (optional but user‑friendly)
-            const heroSection = document.querySelector('.hero');
-            heroSection.addEventListener('mouseenter', () => {
-                if (intervalId) clearInterval(intervalId);
-            });
-            heroSection.addEventListener('mouseleave', () => {
-                startSlider();
+            dots.forEach((dot, index) => {
+
+                dot.addEventListener(
+                    'click',
+                    () => {
+
+                        updateSlide(index);
+
+                        startSlider();
+
+                    }
+                );
+
             });
 
-            // Initialise
+
             updateSlide(0);
+
             startSlider();
+
         })();
     </script>
 
@@ -989,47 +1073,150 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: white;
+            background: #fff;
             border-bottom: 1px solid #eaeaea;
-            padding: 0.7rem 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .03);
+            padding: .8rem 0;
         }
 
         .menu-container {
             max-width: 1200px;
-            margin: 0 auto;
-            flex-wrap: wrap;
+            margin: auto;
+            display: flex;
             justify-content: center;
-            gap: 0.3rem 1rem;
+            align-items: center;
+            gap: .5rem;
+            padding: 0 1rem;
         }
 
+        /* buttons */
+
         .menu-btn {
-            font-size: 0.8rem;
+            flex-shrink: 0;
+            text-decoration: none;
+            font-size: .8rem;
             font-weight: 700;
-            padding: 0.5rem 1rem;
+            padding: .6rem 1rem;
             border-radius: 30px;
-            color: var(--color-primary);
-            transition: 0.2s;
+            color: var(--color-primary, #840132);
+            transition: .25s;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: .5px;
+            white-space: nowrap;
         }
 
         .menu-btn:hover {
+            background: rgba(var(--color-primary-rgb, 132, 1, 50), .06);
             color: black;
         }
+
+        /* active section support */
+        .menu-btn.active {
+            background: var(--color-primary, #840132);
+            color: white;
+        }
+
+
+        /* Mobile */
+        @media(max-width:768px) {
+
+            .equis-menu {
+                padding: .6rem 0;
+            }
+
+            .menu-container {
+                justify-content: flex-start;
+                overflow-x: auto;
+                overflow-y: hidden;
+                flex-wrap: nowrap;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                padding: 0 .75rem;
+            }
+
+            /* hide scrollbar */
+
+            .menu-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            .menu-container {
+                scrollbar-width: none;
+            }
+
+            .menu-btn {
+                font-size: .75rem;
+                padding: .55rem .9rem;
+            }
+
+        }
     </style>
+
+
     <div class="equis-menu">
+
         <div class="menu-container">
+
             <a href="#milestone" class="menu-btn">Milestone</a>
+
             <a href="#journey" class="menu-btn">Journey</a>
+
             <a href="#standard" class="menu-btn">EQUIS Standard</a>
+
             <a href="#shores" class="menu-btn">Two Shores</a>
+
             <a href="#means" class="menu-btn">What It Means</a>
+
             <a href="#path" class="menu-btn">Timeline</a>
+
             <a href="#voices" class="menu-btn">Voices</a>
+
             <a href="#next" class="menu-btn">Next Chapter</a>
+
         </div>
+
     </div>
+
+
+    <script>
+        (function () {
+
+            const sections = document.querySelectorAll("section[id]");
+            const menuLinks = document.querySelectorAll(".menu-btn");
+
+            window.addEventListener("scroll", () => {
+
+                let current = "";
+
+                sections.forEach(section => {
+
+                    const top =
+                        section.offsetTop - 150;
+
+                    if (pageYOffset >= top) {
+
+                        current = section.getAttribute("id");
+
+                    }
+
+                });
+
+                menuLinks.forEach(link => {
+
+                    link.classList.remove("active");
+
+                    if (
+                        link.getAttribute("href") === "#" + current
+                    ) {
+                        link.classList.add("active");
+                    }
+
+                });
+
+            });
+
+        })();
+    </script>
 
     <!-- LOGOS -->
     <style>
@@ -1069,13 +1256,13 @@
         }
     </style>
 
-    <div class="accred-bar">
+    <section class="accred-bar">
         <div class="accred-bar-inner">
             <div class="accred-item"><img src="./images/Equis-logo.png" alt="BSIS"></div>
             <div class="accred-item"><img src="./images/BSIS-logo.png" alt="AACSB"></div>
             <div class="accred-item"><img src="./images/AACSB-logo.png" alt="EQUIS"></div>
         </div>
-    </div>
+    </section>
 
 
     <!-- 1. MILESTONE (original hover effect) -->
