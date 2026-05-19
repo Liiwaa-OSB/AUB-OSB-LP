@@ -33,6 +33,7 @@
             --color-primary-dark: #6a132c;
             --color-white: #ffffff;
             --color-black: #000000;
+            --color-dark-bg: #727272;
             --color-text: #434444;
             --color-text-light: rgba(255, 255, 255, 0.82);
             --color-border: #dadbdb;
@@ -113,7 +114,7 @@
 
         .section-title {
             font-family: var(--font-heading);
-            font-size: 2.6rem;
+            font-size: 2.2rem;
             text-transform: uppercase;
             font-weight: 700;
             color: var(--color-primary);
@@ -130,8 +131,10 @@
             display: block;
         }
 
-        .no-italic {
-            font-style: normal;
+        @media(max-width:768px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
         }
     </style>
     <script src="./js/main.js" defer></script>
@@ -859,8 +862,6 @@
 
         }
     </style>
-
-
     <section class="hero">
 
         <div class="hero-slider">
@@ -889,8 +890,6 @@
         </div>
 
     </section>
-
-
     <script>
         (function () {
 
@@ -900,61 +899,59 @@
 
                 {
                     content: `
-<div class="hero-badge">
-EQUIS Accredited • 2026
-</div>
+                        <div class="hero-badge">
+                        EQUIS Accredited • 2026
+                        </div>
 
-<div class="hero-title">
-<div class="hero-title-top">
-<span>First in Lebanon.</span>
-<span>First in Cyprus.</span>
-</div>
+                        <div class="hero-title">
+                        <div class="hero-title-top">
+                        <span>First in Lebanon.</span>
+                        <span>First in Cyprus.</span>
+                        </div>
 
-<span class="">
-Now EQUIS-Accredited.
-</span>
-</div>
+                        <span class="">
+                        Now EQUIS-Accredited.
+                        </span>
+                        </div>
 
-<p class="hero-sub">
-Business Education at AUB now holds two global accreditation crowns — AACSB and EQUIS — across both shores of the Mediterranean.
-</p>
+                        <p class="hero-sub">
+                        Business Education at AUB now holds two global accreditation crowns — AACSB and EQUIS — across both shores of the Mediterranean.
+                        </p>
 
-<div class="hero-tagline">
-One sea. Two shores. Two global accreditation crowns.
-</div>
-
-`
+                        <div class="hero-tagline">
+                        One sea. Two shores. Two global accreditation crowns.
+                        </div>`
                 },
 
                 {
                     content: `
-<div class="hero-badge">
-EQUIS ACCREDITED • 2026
-</div>
+                        <div class="hero-badge">
+                        EQUIS ACCREDITED • 2026
+                        </div>
 
-<div class="hero-title">
-<div class="hero-title-top">
-<span>First in Lebanon.</span>
-<span>First in Cyprus.</span>
-</div>
+                        <div class="hero-title">
+                        <div class="hero-title-top">
+                        <span>First in Lebanon.</span>
+                        <span>First in Cyprus.</span>
+                        </div>
 
-<span class="hero-title-small">
-Now EQUIS-Accredited.
-</span>
-</div>
+                        <span class="hero-title-small">
+                        Now EQUIS-Accredited.
+                        </span>
+                        </div>
 
-<p class="hero-sub">
-Business Education at AUB now holds two global accreditation crowns — AACSB and EQUIS — across both shores of the Mediterranean.
-</p>
+                        <p class="hero-sub">
+                        Business Education at AUB now holds two global accreditation crowns — AACSB and EQUIS — across both shores of the Mediterranean.
+                        </p>
 
-<div class="hero-tagline">
-One sea. Two shores. Two global accreditation crowns.
-</div>
+                        <div class="hero-tagline">
+                        One sea. Two shores. Two global accreditation crowns.
+                        </div>
 
-<a href="#milestone" class="hero-cta">
-Explore the Milestone
-</a>
-`
+                        <a href="#milestone" class="hero-cta">
+                        Explore the Milestone
+                        </a>
+                        `
                 },
 
                 {
@@ -1084,8 +1081,10 @@ Explore the Milestone
             border-bottom: 1px solid #eaeaea;
             box-shadow: 0 2px 8px rgba(0, 0, 0, .03);
             padding: .8rem 0;
+            overflow-x: clip;
         }
 
+        /* Scrollable menu container */
         .menu-container {
             max-width: 1200px;
             margin: auto;
@@ -1094,10 +1093,43 @@ Explore the Milestone
             align-items: center;
             gap: .5rem;
             padding: 0 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+            /* Hide scrollbar for Firefox */
+            -webkit-overflow-scrolling: touch;
         }
 
-        /* buttons */
+        /* Hide scrollbar for Chrome/Safari */
+        .menu-container::-webkit-scrollbar {
+            display: none;
+        }
 
+        /* Right edge gradient overlay (fixed to outer div) */
+        .equis-menu::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            background: linear-gradient(to right, transparent, white);
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .equis-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            background: linear-gradient(to left, transparent, white);
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        /* Menu buttons */
         .menu-btn {
             flex-shrink: 0;
             text-decoration: none;
@@ -1113,42 +1145,24 @@ Explore the Milestone
         }
 
         .menu-btn:hover {
-            background: rgba(var(--color-primary-rgb, 132, 1, 50), .06);
+            background: #ededed;
             color: black;
         }
 
-        /* active section support */
         .menu-btn.active {
             background: var(--color-primary, #840132);
             color: white;
         }
 
-
-        /* Mobile */
-        @media(max-width:768px) {
-
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
             .equis-menu {
                 padding: .6rem 0;
             }
 
             .menu-container {
                 justify-content: flex-start;
-                overflow-x: auto;
-                overflow-y: hidden;
-                flex-wrap: nowrap;
-                scroll-behavior: smooth;
-                -webkit-overflow-scrolling: touch;
-                padding: 0 .75rem;
-            }
-
-            /* hide scrollbar */
-
-            .menu-container::-webkit-scrollbar {
-                display: none;
-            }
-
-            .menu-container {
-                scrollbar-width: none;
+                padding: 0 0.75rem;
             }
 
             .menu-btn {
@@ -1156,19 +1170,21 @@ Explore the Milestone
                 padding: .55rem .9rem;
             }
 
+            /* Keep gradients visible on mobile */
+            .equis-menu::after {
+                width: 40px;
+            }
         }
     </style>
-
-
     <div class="equis-menu">
 
         <div class="menu-container">
 
             <a href="#milestone" class="menu-btn">Milestone</a>
 
-            <a href="#journey" class="menu-btn">Journey</a>
-
             <a href="#standard" class="menu-btn">EQUIS Standard</a>
+
+            <a href="#journey" class="menu-btn">Journey</a>
 
             <a href="#shores" class="menu-btn">Two Shores</a>
 
@@ -1183,8 +1199,6 @@ Explore the Milestone
         </div>
 
     </div>
-
-
     <script>
         (function () {
 
@@ -1256,6 +1270,13 @@ Explore the Milestone
             object-fit: contain;
         }
 
+        .accred-tagline {
+            text-align: center;
+            font-weight: 700;
+            color: var(--color-black, #000);
+            margin-top: 0.8rem;
+        }
+
         @media (max-width: 768px) {
             .accred-bar-inner {
                 grid-template-columns: 1fr;
@@ -1268,6 +1289,10 @@ Explore the Milestone
             <div class="accred-item"><img src="./images/Equis-logo.png" alt="BSIS"></div>
             <div class="accred-item"><img src="./images/BSIS-logo.png" alt="AACSB"></div>
             <div class="accred-item"><img src="./images/AACSB-logo.png" alt="EQUIS"></div>
+        </div>
+        <div>
+            <p class="accred-tagline">Business Education at AUB now holds two global accreditation crowns — AACSB and
+                EQUIS — across both shores of the Mediterranean.</p>
         </div>
     </section>
 
@@ -1316,7 +1341,7 @@ Explore the Milestone
         .milestone-num {
             font-family: var(--font-heading);
             font-size: 3.5rem;
-            font-weight: 900;
+            font-weight: 800;
             color: var(--color-primary);
             line-height: 1;
             margin-bottom: 0.5rem;
@@ -1344,11 +1369,6 @@ Explore the Milestone
             <h2 class="section-title">A Milestone, in Four Numbers</h2>
             <div class="milestone-grid">
                 <div class="milestone-card">
-                    <div class="milestone-num">2</div>
-                    <div class="milestone-sub">Dual Crowns</div>
-                    <div class="milestone-desc">Global accreditation crowns held simultaneously: AACSB and EQUIS.</div>
-                </div>
-                <div class="milestone-card">
                     <div class="milestone-num">1<sup>st</sup></div>
                     <div class="milestone-sub">In Lebanon</div>
                     <div class="milestone-desc">The first business school in Lebanon to earn EQUIS accreditation.</div>
@@ -1360,6 +1380,11 @@ Explore the Milestone
                         accreditation.</div>
                 </div>
                 <div class="milestone-card">
+                    <div class="milestone-num">2<sup></sup></div>
+                    <div class="milestone-sub">Dual Crowns</div>
+                    <div class="milestone-desc">Global accreditation crowns held simultaneously: AACSB and EQUIS.</div>
+                </div>
+                <div class="milestone-card">
                     <div class="milestone-num">5<sup>th</sup></div>
                     <div class="milestone-sub">In MENA</div>
                     <div class="milestone-desc">One of only five EQUIS-accredited business schools in the region.</div>
@@ -1368,9 +1393,9 @@ Explore the Milestone
         </div>
     </section>
 
-    <!-- 2. JOURNEY (full width + bg image) -->
+    <!-- 1. EQUIS SECTION – with background image overlay (formerly journey style) -->
     <style>
-        .journey {
+        .equis {
             background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)), url("./images/AUB-OSB-Equis-What-It-Takes-BG.jpg");
             background-blend-mode: overlay;
             background-size: cover;
@@ -1378,68 +1403,27 @@ Explore the Milestone
             color: white;
         }
 
-        .journey-2 {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("./images/AUB-OSB-Equis-What-It-Takes-BG.jpg");
-            background-blend-mode: overlay;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .journey .container {
+        .equis .container {
             max-width: 100%;
             text-align: center;
         }
 
-        .journey .section-title {
+        .equis .section-title {
             color: white;
         }
 
-        .journey .section-label {
+        .equis .section-label {
             color: rgba(255, 255, 255, 0.7);
         }
 
-        .journey-body p {
-            font-size: 1rem;
-            color: white;
+        .equis .equis-description {
             max-width: 800px;
-            margin: 0 auto 0.8rem;
-            line-height: 1.2;
+            margin: 0 auto 1.5rem;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
-        .journey-body strong {
-            color: white;
-            font-weight: 800;
-        }
-    </style>
-    <section id="journey" class="journey">
-        <div class="container">
-            <div class="section-label">The Journey</div>
-            <h2 class="section-title">What It Takes</h2>
-            <div class="journey-body">
-                <p><strong>EQUIS accreditation is not simply received. It is earned.</strong></p>
-                <p>It follows years of self-assessment, evidence gathering, documentation, peer review, and dialogue
-                    with students, faculty, staff, alumni, employers, and partners.</p>
-                <p>For Business Education at AUB, the process brought together work across Beirut and Paphos,
-                    demonstrating not only what has been achieved, but how the schools continue to improve.</p>
-            </div>
-        </div>
-    </section>
-    <section id="journey" class="journey journey-2">
-        <div class="container">
-            <div class="section-label">The Journey</div>
-            <h2 class="section-title">What It Takes</h2>
-            <div class="journey-body">
-                <p><strong>EQUIS accreditation is not simply received. It is earned.</strong></p>
-                <p>It follows years of self-assessment, evidence gathering, documentation, peer review, and dialogue
-                    with students, faculty, staff, alumni, employers, and partners.</p>
-                <p>For Business Education at AUB, the process brought together work across Beirut and Paphos,
-                    demonstrating not only what has been achieved, but how the schools continue to improve.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. STANDARD -->
-    <style>
+        /* Pillars grid (same as before, but now inside equis) */
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1471,12 +1455,10 @@ Explore the Milestone
             inset: 0;
             border-radius: 10px;
             backface-visibility: hidden;
-
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-
             padding: 1.5rem;
             text-align: center;
         }
@@ -1510,21 +1492,14 @@ Explore the Milestone
             line-height: 1.4;
         }
 
-        /* Tablet */
-
-        @media(max-width:992px) {
-
+        /* Responsive */
+        @media (max-width: 992px) {
             .pillars-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
         }
 
-
-        /* Mobile */
-
-        @media(max-width:768px) {
-
+        @media (max-width: 768px) {
             .pillars-grid {
                 grid-template-columns: 1fr;
             }
@@ -1542,44 +1517,69 @@ Explore the Milestone
             .pillar-front h4 {
                 font-size: 1rem;
             }
-
         }
     </style>
 
-
-    <section id="standard">
-
+    <section id="equis" class="equis">
         <div class="container">
-
-            <div class="section-label">
-                The Standard
-            </div>
-
-            <h2 class="section-title">
-                What EQUIS Is
-            </h2>
-
-            <p style="
-margin-bottom:1.5rem;
-font-size:1rem;
-line-height:1.4;
-max-width:900px;
-">
-
+            <div class="section-label">The Standard</div>
+            <h2 class="section-title">What EQUIS Is</h2>
+            <div class="equis-description">
                 EFMD Quality Improvement System (EQUIS) accreditation is a globally recognised mark of excellence for
                 business and management education. It involves rigorous evaluation based on criteria such as academic
                 programmes, faculty quality, research output, internationalisation and corporate relevance.
-
-            </p>
-
-            <div class="pillars-grid">
-
-                <!-- keep your 8 cards exactly as-is -->
-
             </div>
-
+            <div class="pillars-grid">
+                <!-- Your 8 pillar cards go here -->
+            </div>
         </div>
+    </section>
 
+    <!-- 2. JOURNEY SECTION – clean white design, no image (formerly standard style) -->
+    <style>
+        .journey-clean {
+            background: #fff;
+            color: var(--color-text);
+        }
+
+        .journey-clean .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .journey-clean .section-label {
+            color: var(--color-black);
+        }
+
+        .journey-clean .section-title {
+            color: var(--color-primary);
+        }
+
+        .journey-clean .journey-text p {
+            font-size: 1rem;
+            line-height: 1.4;
+            max-width: 900px;
+            margin-bottom: 0.8rem;
+        }
+
+        .journey-clean .journey-text strong {
+            color: var(--color-primary);
+            font-weight: 800;
+        }
+    </style>
+
+    <section id="journey-clean" class="journey-clean">
+        <div class="container">
+            <div class="section-label">The Journey</div>
+            <h2 class="section-title">What It Takes</h2>
+            <div class="journey-text">
+                <p><strong>EQUIS accreditation is not simply received. It is earned.</strong></p>
+                <p>It follows years of self-assessment, evidence gathering, documentation, peer review, and dialogue
+                    with students, faculty, staff, alumni, employers, and partners.</p>
+                <p>For Business Education at AUB, the process brought together work across Beirut and Paphos,
+                    demonstrating not only what has been achieved, but how the schools continue to improve.</p>
+            </div>
+        </div>
     </section>
 
 
@@ -1642,20 +1642,9 @@ max-width:900px;
         }
 
         .shores-quote {
-            font-size: 1.2rem;
-            color: var(--color-primary, #840132);
-            text-align: center;
-            max-width: 850px;
-            margin: 1rem auto 0.5rem;
-            font-weight: 500;
-            line-height: 1.2;
-        }
-
-        .shores-tagline {
-            text-align: center;
-            font-weight: 700;
-            color: var(--color-black, #000);
-            margin-top: 0.8rem;
+            max-width: 800px;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         @media (max-width: 768px) {
@@ -1669,10 +1658,13 @@ max-width:900px;
         }
     </style>
 
-    <section id="shores" style="background: #fef9f7;">
+    <section id="shores" style="background: #ededed;">
         <div class="container">
             <div class="section-label">Two Shores</div>
-            <h2 class="section-title">Across Two Shores</h2>
+            <h2 class="section-title">Rooted in the region.<br />Recognized by the world.</h2>
+            <p class="shores-quote">Across Beirut and Paphos, AUB's business education community is built on a common
+                academic vision. EQUIS accreditation recognizes the strength of this connection: two locations, aligned
+                around quality, relevance, impact, and internationally benchmarked standards.</p>
             <div class="shores-split">
                 <!-- Card 1: OSB Beirut -->
                 <a href="https://www.aub.edu.lb/" target="_blank" class="shore-card">
@@ -1700,10 +1692,6 @@ max-width:900px;
                     </div>
                 </a>
             </div>
-            <p class="shores-quote">Across Beirut and Paphos, AUB's business education community is built on a common
-                academic vision. EQUIS accreditation recognizes the strength of this connection: two locations, aligned
-                around quality, relevance, impact, and internationally benchmarked standards.</p>
-            <p class="shores-tagline">Rooted in the region. Connected across two shores. Benchmarked by the world.</p>
         </div>
     </section>
 
@@ -1765,12 +1753,13 @@ max-width:900px;
         }
 
         .perspective-quote {
-            background: #f3f0ec;
+            background: #ededed;
             padding: 0.7rem;
             border-radius: 8px;
             font-size: 0.8rem;
             color: #000;
             font-weight: 500;
+            display: none;
         }
 
         @media (max-width: 900px) {
@@ -1788,8 +1777,8 @@ max-width:900px;
     <section id="means">
         <div class="container">
             <div class="section-label">What It Means</div>
-            <h2 class="section-title">What This Means</h2>
-            <p style="margin-bottom: 0.5rem;">Six perspectives on what changed the day EQUIS arrived.</p>
+            <h2 class="section-title" style="max-width: 750px;">Six perspectives on what changed the day EQUIS arrived.
+            </h2>
             <div class="perspectives-grid">
                 <div class="perspective-card"><img src="./images/AUB-OSB-Equis-STUDENTS.jpg" class="perspective-img"
                         alt="student">
@@ -2153,7 +2142,7 @@ max-width:900px;
     <!-- 8. WHAT'S NEXT (original button design) -->
     <style>
         .next {
-            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+            background: var(--color-dark-bg);
             color: white;
             text-align: center;
         }
@@ -2226,10 +2215,10 @@ max-width:900px;
                 research project, every partnership, and every graduate. The work continues across Beirut and Paphos,
                 with a renewed commitment to quality, relevance, responsibility, and impact.</p>
             <div class="cta-grid">
-                <a href="#" class="cta-btn primary">Apply to OSB Beirut</a>
-                <a href="#" class="cta-btn primary">Apply to FoB Cyprus</a>
+                <a href="https://www.aub.edu.lb/osb" class="cta-btn primary">Apply to OSB Beirut</a>
+                <a href="https://www.aub.edu.lb/osb" class="cta-btn primary">Apply to FoB Cyprus</a>
                 <a href="#" class="cta-btn">Partner With Us</a>
-                <a href="#" class="cta-btn">Hire Our Graduates</a>
+                <a href="https://www.aub.edu.lb/osb/CMS/Pages/default.aspx" class="cta-btn">Hire Our Graduates</a>
             </div>
         </div>
     </section>
