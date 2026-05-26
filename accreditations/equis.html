@@ -1263,27 +1263,16 @@
         }
     </style>
     <div class="equis-menu">
-
         <div class="menu-container">
-
-            <a href="#milestone" class="menu-btn">Milestone</a>
-
-            <a href="#standard" class="menu-btn">EQUIS Standard</a>
-
-            <a href="#journey" class="menu-btn">Journey</a>
-
+            <a href="#milestone" class="menu-btn">The Milestone</a>
+            <a href="#standard" class="menu-btn">The Standard</a>
+            <a href="#journey" class="menu-btn">The Journey</a>
             <a href="#shores" class="menu-btn">Two Shores</a>
-
-            <a href="#means" class="menu-btn">What It Means</a>
-
-            <a href="#path" class="menu-btn">Timeline</a>
-
-            <a href="#voices" class="menu-btn">Voices</a>
-
-            <a href="#next" class="menu-btn">Next Chapter</a>
-
+            <a href="#means" class="menu-btn">What it Means</a>
+            <a href="#path" class="menu-btn">The Path</a>
+            <a href="#voices" class="menu-btn">People</a>
+            <a href="#next" class="menu-btn">What's Next</a>
         </div>
-
     </div>
     <script>
         (function () {
@@ -1325,6 +1314,224 @@
         })();
     </script>
 
+    <style>
+        /* accreditation-section.css */
+        /* This CSS styles the accreditation section with a professional background,
+   centered typography, and a modern flexbox layout for the logos. */
+
+        /* --- Base & Reset (scoped to .accreditations to avoid conflicts) --- */
+        .accreditations {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .accreditations *,
+        .accreditations *::before,
+        .accreditations *::after {
+            box-sizing: inherit;
+        }
+
+        /* --- Section Styling --- */
+        .accreditations {
+            /* Background color - a clean, soft off-white with a hint of blue for a professional academic feel */
+            background-color: var(--color-primary);
+            /* Add a subtle gradient for depth */
+            background-image: linear-gradient(145deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+
+            /* Center all text content */
+            text-align: center;
+
+            /* Spacing for breathing room */
+            padding: 3rem 1.5rem;
+
+            /* Subtle border top for definition */
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+            /* Font family for the whole section */
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* --- Tagline / Text Styling --- */
+        .accreditations-tagline {
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            /* Center and add bottom margin */
+            font-size: 1.5rem;
+            line-height: 1.4;
+            font-weight: 500;
+            color: #FFF;
+            letter-spacing: -0.01em;
+        }
+
+        /* Make the accreditation names stand out */
+        .accreditations-tagline strong {
+            font-weight: 700;
+            color: #0f4c5c;
+            /* Deep teal for emphasis */
+            background: linear-gradient(135deg, #0f4c5c, #1a6b7c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        /* Responsive tagline font size */
+        @media (max-width: 640px) {
+            .accreditations-tagline {
+                font-size: 1.25rem;
+                line-height: 1.4;
+            }
+        }
+
+        /* --- Logos Container (Flexbox Layout) --- */
+        .accreditations-bar-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Individual Logo Card --- */
+        .accreditations-item {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 1rem 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.25s ease-in-out;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            backdrop-filter: blur(0px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* Hover effect for better interactivity & "good design" feel */
+        .accreditations-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+            border-color: rgba(15, 76, 92, 0.2);
+        }
+
+        /* Logo Image Styling */
+        .accreditations-item img {
+            display: block;
+            max-width: 160px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: opacity 0.2s ease;
+        }
+
+        /* Optional: subtle dim on hover? keep clean, but we already have lift. Keep image crisp */
+        .accreditations-item:hover img {
+            filter: brightness(1.01);
+        }
+
+        /* Label under each logo (added for clarity and design polish) */
+        .accreditation-name {
+            display: block;
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #4a627a;
+            border-top: 1px solid #e9edf2;
+            padding-top: 0.6rem;
+            width: 100%;
+            transition: color 0.2s ease;
+        }
+
+        .accreditations-item:hover .accreditation-name {
+            color: #0f4c5c;
+        }
+
+        /* --- Responsive Adjustments for Mobile --- */
+        @media (max-width: 640px) {
+            .accreditations {
+                padding: 2rem 1rem;
+            }
+
+            .accreditations-bar-inner {
+                gap: 1.25rem;
+            }
+
+            .accreditations-item {
+                padding: 0.75rem 1.25rem;
+                min-width: 140px;
+            }
+
+            .accreditations-item img {
+                max-width: 120px;
+                max-height: 60px;
+            }
+
+            .accreditation-name {
+                font-size: 0.7rem;
+                margin-top: 0.5rem;
+                padding-top: 0.4rem;
+            }
+        }
+
+        /* For very small devices, stack nicely */
+        @media (max-width: 480px) {
+            .accreditations-bar-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .accreditations-item {
+                width: 80%;
+                max-width: 260px;
+            }
+        }
+
+        /* Optional: Print styles */
+        @media print {
+            .accreditations {
+                background: #fff;
+                padding: 1rem;
+                border: none;
+            }
+
+            .accreditations-item {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+
+    <section class="accreditations">
+        <div class="accreditations-container">
+            <!-- tagline block -->
+            <div>
+                <p class="accreditations-tagline">
+                    Business Education at AUB now holds two global accreditation crowns,<br />
+                    AACSB and EQUIS, across both shores of the Mediterranean.
+                </p>
+            </div>
+
+            <!-- logos wrapper: two accreditation logos, arranged beautifully -->
+            <div class="accreditations-bar-inner">
+                <div class="accreditations-item">
+                    <img src="./images/Equis-logo.png"
+                        alt="EQUIS accreditation logo — global excellence in business education">
+                </div>
+                <div class="accreditations-item">
+                    <img src="./images/AACSB-logo.png"
+                        alt="AACSB International accreditation logo — gold standard in business schools">
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- LOGOS -->
@@ -1376,7 +1583,7 @@
         }
     </style>
 
-    <section class="accred-bar">
+    <!-- <section class="accred-bar">
         <div class="accred-bar-inner">
             <div class="accred-item"><img src="./images/Equis-logo.png" alt="BSIS"></div>
             <div class="accred-item"><img src="./images/BSIS-logo.png" alt="AACSB"></div>
@@ -1386,7 +1593,7 @@
             <p class="accred-tagline">Business Education at AUB now holds two global accreditation crowns,<br />
                 AACSB and EQUIS, across both shores of the Mediterranean.</p>
         </div>
-    </section>
+    </section> -->
 
 
     <!-- 1. MILESTONE (original hover effect) -->
@@ -1473,7 +1680,7 @@
                 </div>
                 <div class="milestone-card">
                     <div class="milestone-num">2<sup></sup></div>
-                    <div class="milestone-sub">Dual Crowns</div>
+                    <div class="milestone-sub">Accreditation Crowns</div>
                     <div class="milestone-desc">Global accreditation crowns held simultaneously: AACSB and EQUIS.</div>
                 </div>
                 <div class="milestone-card">
@@ -1521,6 +1728,9 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
             margin-top: 2rem;
+
+            max-width: var(--container-max);
+            margin: 2rem auto;
         }
 
         .pillar-card {
@@ -1622,7 +1832,92 @@
                 programmes, faculty quality, research output, internationalisation and corporate relevance.
             </div>
             <div class="pillars-grid">
-                <!-- Your 8 pillar cards go here -->
+                <div class="pillar-card reveal visible">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Strategy &amp; Governance</h4>
+                        </div>
+                        <div class="pillar-back">
+                            <p>A connected strategic vision across Beirut and Paphos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal visible">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Programs &amp; Student Experience</h4>
+                        </div>
+                        <div class="pillar-back">
+                            <p>6-degree programs benchmarked against international peers and shaped by learning goals,
+                                student voice, and international benchmarking.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal visible">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Faculty &amp; Research</h4>
+                        </div>
+                        <div class="pillar-back">
+                            <p>Faculty that connect research, teaching, and practice.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal visible">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Internationalization</h4>
+                        </div>
+                        <div class="pillar-back">
+                            <p>A network of partner institutions across Europe, MENA, and beyond — and a faculty body
+                                that mirrors it.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal visible">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Corporate Connections</h4>
+                        </div>
+                        <div class="pillar-back">
+                            <p>Active partnerships with regional and international employers. Advisory boards drawn from
+                                MENA, Europe, and beyond.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal visible">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Ethics, Responsibility &amp; Sustainability</h4>
+                        </div>
+                        <div class="pillar-back">
+                            <p>A commitment to responsible leadership, societal contribution, and sustainable impact.
+                                BSIS-labeled in 2024.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal visible">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Resources &amp; Operations</h4>
+                        </div>
+                        <div class="pillar-back">
+                            <p>Academic and student support systems that enable quality across locations. Facilities,
+                                libraries, and student support built to international standard.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pillar-card reveal visible">
+                    <div class="pillar-inner">
+                        <div class="pillar-front">
+                            <h4>Impact &amp; Continuous Improvement</h4>
+                        </div>
+                        <div class="pillar-back">
+                            <p>Leading in regional and international rankings. Evidence-based reflection, improvement,
+                                and contribution to the region and beyond.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1660,7 +1955,7 @@
         }
     </style>
 
-    <section id="journey-clean" class="journey-clean">
+    <section id="journey" class="journey-clean">
         <div class="container">
             <div class="section-label">The Journey</div>
             <h2 class="section-title">What It Takes</h2>
@@ -1723,7 +2018,7 @@
             letter-spacing: 2px;
             font-weight: 600;
             opacity: 0.9;
-            margin-bottom: 0.3rem;
+            margin: 0.3rem 0;
         }
 
         .shore-school {
@@ -1767,8 +2062,8 @@
                             style="width:100%;height:100%;object-fit:cover;">
                     </video>
                     <div class="shore-info">
-                        <div class="shore-location">Beirut, Lebanon</div>
                         <div class="shore-school">Suliman S. Olayan School of Business</div>
+                        <div class="shore-location">Beirut, Lebanon</div>
                     </div>
                 </a>
                 <!-- Card 2: AUB Mediterraneo -->
@@ -1779,8 +2074,8 @@
                             style="width:100%;height:100%;object-fit:cover;">
                     </video>
                     <div class="shore-info">
-                        <div class="shore-location">Paphos, Cyprus</div>
                         <div class="shore-school">Faculty of Business • AUB Mediterraneo</div>
+                        <div class="shore-location">Paphos, Cyprus</div>
                     </div>
                 </a>
             </div>
@@ -1872,61 +2167,74 @@
             <h2 class="section-title" style="max-width: 750px;">Six perspectives on what changed the day EQUIS arrived.
             </h2>
             <div class="perspectives-grid">
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-STUDENTS.jpg" class="perspective-img"
-                        alt="student">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-STUDENTS.jpg" class="perspective-img" alt="student">
                     <div class="perspective-body">
                         <div class="perspective-for">For Students</div>
                         <div class="perspective-title">Your Degree, Globally Benchmarked</div>
-                        <div class="perspective-text">EQUIS strengthens confidence in the education students receive.
-                        </div>
-                        <div class="perspective-quote">“Knowing my degree meets global quality gives me an edge.”</div>
+                        <div class="perspective-text">EQUIS strengthens confidence in the education students receive. It
+                            signals that programs, learning experiences, faculty engagement, and student support have
+                            been reviewed against international standards.</div>
+                        <div class="perspective-quote">[Quote from a current student — 2 sentences, specific and
+                            unscripted.]</div>
                     </div>
                 </div>
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-FACULTY.jpg" class="perspective-img"
-                        alt="faculty">
+
+                <div class="perspective-card">
+                    <img src="./images/AUB-OSB-Equis-FACULTY.jpg" class="perspective-img" alt="faculty and staff">
                     <div class="perspective-body">
-                        <div class="perspective-for">For Faculty & Staff</div>
+                        <div class="perspective-for">For Faculty &amp; Staff</div>
                         <div class="perspective-title">Recognition for the Work</div>
-                        <div class="perspective-text">EQUIS recognizes teaching, research, mentorship across the
-                            community.</div>
-                        <div class="perspective-quote">“It validates our commitment to excellence.”</div>
+                        <div class="perspective-text">EQUIS recognizes the teaching, research, mentorship, engagement,
+                            and continuous improvement led by faculty &amp; staff across the business education
+                            community. Not as a single achievement but rather as a confirmation.</div>
+                        <div class="perspective-quote">[Quote from a faculty member / staff.]</div>
                     </div>
                 </div>
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-ALUMNI.jpg" class="perspective-img"
-                        alt="alumni">
+
+                <div class="perspective-card">
+                    <img src="./images/AUB-OSB-Equis-ALUMNI.jpg" class="perspective-img" alt="alumni">
                     <div class="perspective-body">
                         <div class="perspective-for">For Alumni</div>
                         <div class="perspective-title">A Stronger Name to Carry Forward</div>
-                        <div class="perspective-text">Enhanced global visibility and reputation.</div>
-                        <div class="perspective-quote">“Proud to see my alma mater achieving EQUIS.”</div>
+                        <div class="perspective-text">As AUB's business education reputation grows, alumni benefit from
+                            enhanced institutional visibility and international recognition.</div>
+                        <div class="perspective-quote">[Quote from a recent alum working internationally.]</div>
                     </div>
                 </div>
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-EMPLOYER.jpg" class="perspective-img"
-                        alt="employers">
+
+                <div class="perspective-card">
+                    <img src="./images/AUB-OSB-Equis-EMPLOYER.jpg" class="perspective-img" alt="employers">
                     <div class="perspective-body">
                         <div class="perspective-for">For Employers</div>
                         <div class="perspective-title">Talent You Can Trust</div>
-                        <div class="perspective-text">Graduates from a school meeting top European standards.</div>
-                        <div class="perspective-quote">“We hire AUB graduates with full confidence.”</div>
+                        <div class="perspective-text">Graduates from a school that meets the same standard as the most
+                            respected institutions in Europe and North America. Hired with confidence. Onboarded without
+                            surprise.</div>
+                        <div class="perspective-quote">[Quote from a real recruiter or partner.]</div>
                     </div>
                 </div>
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-PARENTS.jpg" class="perspective-img"
-                        alt="parents">
+
+                <div class="perspective-card">
+                    <img src="./images/AUB-OSB-Equis-PARENTS.jpg" class="perspective-img" alt="parents">
                     <div class="perspective-body">
                         <div class="perspective-for">For Parents</div>
                         <div class="perspective-title">Confidence in the Choice</div>
-                        <div class="perspective-text">EQUIS adds assurance of quality and care.</div>
-                        <div class="perspective-quote">“A wise investment in our child’s future.”</div>
+                        <div class="perspective-text">For parents and families, EQUIS offers added confidence that their
+                            children are studying in a business education environment recognized for quality, care, and
+                            international standards.</div>
+                        <div class="perspective-quote">[Quote from a parent of a current student.]</div>
                     </div>
                 </div>
-                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-REGION.jpg" class="perspective-img"
-                        alt="region">
+
+                <div class="perspective-card">
+                    <img src="./images/AUB-OSB-Equis-REGION.jpg" class="perspective-img" alt="region">
                     <div class="perspective-body">
                         <div class="perspective-for">For the Region</div>
                         <div class="perspective-title">A Statement for Lebanon, Cyprus, and MENA</div>
-                        <div class="perspective-text">Business education meeting global standards while staying
-                            relevant.</div>
-                        <div class="perspective-quote">“A milestone for higher education in the Eastern Med.”</div>
+                        <div class="perspective-text">This milestone shows that business education built in the region
+                            can meet global standards while remaining connected to regional realities and needs.</div>
+                        <div class="perspective-quote">[Quote from a regional partner, employer, or government / EU
+                            figure.]</div>
                     </div>
                 </div>
             </div>
@@ -2290,7 +2598,7 @@
 
         @media (max-width: 680px) {
             .cta-grid {
-                max-width: 240px;
+                max-width: 260px;
                 margin: auto;
             }
 
