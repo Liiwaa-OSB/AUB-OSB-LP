@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
     <title>AUB OSB | Pricing Analytics Program - Brochure</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts (OEP refined typography) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Core CSS (MBA validation structure + OEP styling) -->
+    <!-- Core CSS -->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" href="build/css/intlTelInput.css">
     <link rel="stylesheet" href="css/main.css">
@@ -27,33 +27,29 @@
         }
     </style>
 
-    <!-- Core scripts (order identical to MBA brochure) -->
+    <!-- Scripts (only what is needed) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <!-- jQuery Validation Plugin is NOT loaded (to avoid conflict) -->
     <script src="build/js/intlTelInput.js"></script>
     <script src="js/mailchimp-subscribe.js"></script>
-    <script src="js/apply-validator.js"></script>
+    <script src="js/brochure-validator.js"></script>
     <script src="js/phonescript.js"></script>
 
-    <!-- Mailchimp endpoint (same as MBA) -->
+    <!-- Mailchimp endpoint -->
     <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";</script>
     <script>function GoogleConversion() { }</script>
 </head>
 
 <body>
-
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- OEP HERO BANNER (identical visual to OEP apply) -->
     <div class="hero-banner">
         <div class="container">
             <div class="banner-logo">
-                <a href="#" style="text-decoration: none;">
-                    <img src="images/AUB-OSB-Logo-White.png" alt="AUB OSB Logo"
-                        onerror="this.src='https://placehold.co/200x70?text=AUB+OSB'">
-                </a>
+                <a href="https://www.aub.edu.lb/osb"><img src="images/AUB-OSB-Logo-White.png" alt="AUB OSB Logo"
+                        onerror="this.src='https://placehold.co/200x70?text=AUB+OSB'"></a>
             </div>
             <div class="banner-content">
                 <h1>Pricing Analytics<br>Program Brochure</h1>
@@ -69,17 +65,15 @@
     </div>
 
     <div class="container">
-        <!-- OVERLAPPING CARD: Brochure download form (MBA brochure functionality + OEP design) -->
         <div class="overlap-form-card">
             <span class="form-card__title">Download Brochure</span>
-            <span class="contac100-form-subtitle">Fill in your details to get instant access to the program
+            <span class="form-card__subtitle">Fill in your details to get instant access to the program
                 brochure</span>
 
-            <form class="contact100-form validate-form" id="myform"
+            <form class="validate-form-modern" id="myform"
                 action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
                 name="myform" novalidate="novalidate">
-
-                <!-- Salesforce hidden fields (exactly as MBA brochure, with OEP-specific values) -->
+                <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
                 <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
                 <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000m0UfBIAU">
@@ -89,78 +83,78 @@
                 <input type="hidden" name="country_code" id="country_code" value="LB">
                 <input type="hidden" name="campaign" id="campaign" value="">
                 <input type="hidden" name="rating" id="rating" value="Cold">
-                <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Work Email">
-                <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Work Phone">
+                <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
+                <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
                 <input type="hidden" name="00N0Y00000RODqu" id="00N0Y00000RODqu" value="">
-                <!-- Dummy fields to satisfy apply-validator rules (MBA brochure pattern) -->
+                <!-- Dummy fields to satisfy Salesforce (not used in validation) -->
                 <input type="hidden" name="00N0Y00000QGklm" id="00N0Y00000QGklm" value="N/A">
                 <input type="hidden" name="title" id="title" value="N/A">
                 <input type="hidden" name="00N0Y00000QGkuK" id="00N0Y00000QGkuK" value="0">
                 <input type="hidden" name="00N0Y00000QGkrV" id="00N0Y00000QGkrV" value="N/A">
                 <input type="hidden" name="00N0Y00000QGksE" id="00N0Y00000QGksE" value="N/A">
                 <input type="hidden" name="description" id="description" value="">
-                <!-- retURL points to OEP brochure PDF (similar to MBA structure) -->
                 <input type="hidden" name="retURL"
-                    value="https://www.aub.edu.lb/osb/OEP/Documents/DesignThinkingBrochure.pdf">
-                <!-- Lii - Brochure Download Link - Maker -->
+                    value="https://www.aub.edu.lb/osb/OEP/Documents/[lii-brochure-link].pdf">
 
-                <!-- Form fields: First Name, Last Name, Email, Phone, Company (exactly as MBA brochure) -->
-                <div class="form-grid-brochure">
-                    <!-- First Name -->
-                    <div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
+                <!-- Form fields: 2-column grid, each with focus span for error placement -->
+                <div class="form-grid-modern-brochure">
+                    <div class="form-group full-width-field">
                         <span class="label-input100">First Name *</span>
-                        <input class="input100" id="first_name" maxlength="40" name="first_name" required
-                            placeholder="First Name" type="text">
+                        <input class="input100" id="first_name" name="first_name" maxlength="40"
+                            placeholder="First Name" type="text" required>
+                        <span class="focus-input100"></span>
                     </div>
-
-                    <!-- Last Name -->
-                    <div class="wrap-input100 validate-input form-group" data-validate="Last Name is required">
+                    <div class="form-group full-width-field">
                         <span class="label-input100">Last Name *</span>
-                        <input class="input100" id="last_name" maxlength="80" placeholder="Last Name" required
-                            name="last_name" type="text">
+                        <input class="input100" id="last_name" name="last_name" maxlength="80" placeholder="Last Name"
+                            type="text" required>
+                        <span class="focus-input100"></span>
                     </div>
-
-                    <!-- Email (Salesforce field 00N0Y00000QGl8W) -->
-                    <div class="wrap-input100 validate-input form-group" data-validate="Valid email is required">
+                    <div class="form-group full-width-field">
                         <span class="label-input100">Email *</span>
-                        <input class="input100" placeholder="Email" id="email" maxlength="80" required
-                            name="00N0Y00000QGl8W" type="text">
+                        <input class="input100" id="email" name="00N0Y00000QGklI" maxlength="80" placeholder="Email"
+                            type="email" required>
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="form-group full-width-field">
+                        <span class="label-input100">Mobile Number *</span>
+                        <input class="input100" id="phone" name="intphone" type="tel" required>
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="form-group full-width-field" style="grid-column: span 2;">
+                        <span class="label-input100">Company *</span>
+                        <input class="input100" id="employer" name="00N0Y00000QGku0" maxlength="40"
+                            placeholder="Company name" type="text" required>
+                        <span class="focus-input100"></span>
                     </div>
 
-                    <!-- Phone (intlTelInput integrated via phonescript) -->
-                    <div class="wrap-input100 validate-input form-group" data-validate="Phone number is required">
-                        <span class="label-input100">Phone *</span>
-                        <input class="input100" id="phone" name="intphone" type="tel" pattern="[0-9]*" required>
-                    </div>
-
-                    <!-- Company (employer field) -->
-                    <div class="wrap-input100 validate-input form-group full-width-field"
-                        data-validate="Company name is required">
-                        <span class="label-input100">Company / Organization *</span>
-                        <input class="input100" id="employer" placeholder="Company name" maxlength="40" required
-                            name="00N0Y00000QGku0" type="text">
-                    </div>
-                </div>
-
-                <div class="note-text" style="margin-top: 0.5rem;">By submitting, you agree to receive communications
-                    from AUB OSB.</div>
-
-                <div class="container-form-btn">
-                    <div class="wrap-contact100-form-btn">
-                        <button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">DOWNLOAD
-                            BROCHURE</button>
+                    <!-- Submit Button + Loading Overlay -->
+                    <div class="container-contact100-form-btn full-width-field">
+                        <div class="note-text" style="margin-top: 0.5rem;">By submitting, you agree to receive
+                            communications
+                            from AUB OSB.</div>
+                        <div class="wrap-contact100-form-btn">
+                            <button class="btn btn-submit" type="submit" id="submitbtn">DOWNLOAD BROCHURE</button>
+                        </div>
+                        <div id="loading-overlay" style="display: none; text-align: center; margin-top: 15px;">
+                            <i class="fas fa-spinner fa-pulse" style="font-size: 24px;"></i>
+                            <span>Submitting, please wait...</span>
+                        </div>
+                        <div class="note-text" style="margin-top: 1rem;">
+                            Your information is secure. An admissions advisor will contact you shortly.
+                        </div>
                     </div>
                 </div>
             </form>
 
-            <!-- Action buttons (Visit Website & Apply Now) consistent with OEP style -->
+            <!-- Action buttons (centered) -->
             <div class="form-footer-buttons">
                 <a href="https://www.aub.edu.lb/osb" class="btn-primary" target="_blank">Visit Website</a>
-                <a href="GR-OEP-Design-Thinking-Apply.html" class="btn-outline">Apply Now</a>
+                <a href="OEP-Design-Thinking-Apply.html" class="btn-outline">Apply Now</a>
             </div>
         </div>
 
-        <!-- INFO CARDS (OEP design, tailored to Pricing Analytics program) -->
+        <!-- Info cards -->
         <div class="cards-section">
             <div class="info-card-modern">
                 <h3>Program Highlights</h3>
@@ -183,18 +177,14 @@
         </div>
     </div>
 
-    <!-- FOOTER (identical to MBA / OEP) -->
     <footer class="footer">
         <div class="footer-inner">
-            <div class="footer-legal" style="font-size:0.8rem; margin-bottom:1rem;">
-                By submitting this form you are undertaking that the information provided is accurate. You are also
-                consenting to processing of your information for the specified purpose in accordance with relevant data
-                protection laws. The University will maintain confidentiality of the personal information. The
-                information may be used by the University to communicate with you and inform you about our programs and
-                higher education offerings.
-            </div>
-            <div class="copyright" style="margin-bottom:1rem;">©2026 American University of Beirut, OSB All Rights
-                Reserved</div>
+            <div class="footer-legal">By submitting this form you are undertaking that the information provided is
+                accurate. You are also consenting to processing of your information for the specified purpose in
+                accordance with relevant data protection laws. The University will maintain confidentiality of the
+                personal information. The information may be used by the University to communicate with you and inform
+                you about our programs and higher education offerings.</div>
+            <div class="copyright">©2026 American University of Beirut, OSB All Rights Reserved</div>
             <div class="social-icons">
                 <a target="_blank" href="https://www.facebook.com/OSBAUB/"><i class="fab fa-facebook-f"></i></a>
                 <a target="_blank" href="https://twitter.com/aubosb"><i class="fab fa-twitter"></i></a>
@@ -207,7 +197,6 @@
         </div>
     </footer>
 
-    <!-- Dynamic lead source & campaign tracking (MBA brochure pattern, adapted for OEP) -->
     <script>
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;

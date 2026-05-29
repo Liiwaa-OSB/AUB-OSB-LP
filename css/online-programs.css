@@ -68,10 +68,15 @@
     margin-top: 30px;
 }
 
-.form-grid-modern {
+.form-grid-modern-apply {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem 2.8rem;
+}
+
+.form-grid-modern-brochure {
+    display: grid;
+    grid-template-columns: 1fr 1fr; gap: 1rem
 }
 
 .full-width-field {
@@ -80,10 +85,6 @@
 
 .form-group {
     margin-bottom: 0;
-}
-
-.form-grid-brochure .form-group {
-    margin-top: 1rem;
 }
 
 .form-group label {
@@ -96,9 +97,19 @@
     margin-bottom: 0.35rem;
 }
 
+.form-card__title {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+}
 
-
-
+.form-card__subtitle {
+    display: block;
+    text-align: center;
+}
 
 /* Ensure error messages appear correctly inside the overlapping card */
 .overlap-form-card .custom-error {
@@ -139,7 +150,95 @@
     }
 }
 
+.separator {
+  width: 150px;
+  height: 2px;
+  background: white;
+  margin: 2rem auto 2rem auto;
+}
 
+.cta__contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .cta__contact-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.cta__contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .cta__contact-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.cta__contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background 0.2s, transform 0.2s;
+  backdrop-filter: blur(2px);
+}
+
+.cta__contact-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
+
+.cta__contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .cta__contact-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.cta__contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background 0.2s, transform 0.2s;
+  backdrop-filter: blur(2px);
+}
+
+.cta__contact-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
 
 
 /* OEP submit button (full width, red background) */
@@ -241,7 +340,7 @@
 
 /* OEP responsive */
 @media (max-width: 850px) {
-    .form-grid-modern {
+    .form-grid-modern-apply {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
