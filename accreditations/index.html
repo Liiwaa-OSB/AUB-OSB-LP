@@ -1263,46 +1263,60 @@
 
         .pillar-card {
             perspective: 1000px;
+            -webkit-perspective: 1000px;
             cursor: pointer;
             min-height: 170px;
         }
 
+        /* INNER */
         .pillar-inner {
             position: relative;
             width: 100%;
             height: 170px;
             transition: transform .6s;
+            -webkit-transition: -webkit-transform .6s;
             transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            will-change: transform;
         }
 
         .pillar-card:hover .pillar-inner {
             transform: rotateY(180deg);
         }
 
+        /* FRONT + BACK */
         .pillar-front,
         .pillar-back {
             position: absolute;
             inset: 0;
+
             border-radius: 10px;
-            backface-visibility: hidden;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
             padding: 1.5rem;
             text-align: center;
+
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
+        /* FRONT */
         .pillar-front {
             background: #fef9f7;
             border: 1px solid #E5E7EB;
+
+            transform: rotateY(0deg);
+            -webkit-transform: rotateY(0deg);
         }
 
         .pillar-front h4 {
             font-size: 1.2rem;
             color: var(--color-primary);
             font-weight: 700;
-            margin-top: .75rem;
             line-height: 1.1;
             text-transform: uppercase;
         }
@@ -1312,16 +1326,40 @@
             color: var(--color-primary);
         }
 
+        /* BACK */
         .pillar-back {
             background: var(--color-grey);
             color: #fff;
             transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
         }
 
         .pillar-back p {
             font-size: .95rem;
             line-height: 1.2;
         }
+
+        /* DESKTOP HOVER */
+        @media (hover: hover) {
+
+            .pillar-card:hover .pillar-inner {
+                transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
+            }
+
+        }
+
+        /* MOBILE / TOUCH */
+        @media (hover: none) {
+
+            .pillar-card.flipped .pillar-inner {
+                transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
+            }
+
+        }
+
+        /* RESPONSIVE */
 
         /* Responsive */
         @media (max-width: 992px) {
@@ -1450,6 +1488,17 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.querySelectorAll('.pillar-card').forEach(card => {
+            card.addEventListener('click', function () {
+                // touch devices only
+                if (window.matchMedia("(hover: none)").matches) {
+                    this.classList.toggle('flipped');
+                }
+            });
+        });
+    </script>
 
     <!-- 2. JOURNEY SECTION – clean white design, no image (formerly standard style) -->
     <style>
