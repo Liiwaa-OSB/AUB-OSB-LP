@@ -2104,6 +2104,7 @@
                     width: 80px;
                     height: 80px;
                     background: rgba(255, 255, 255, 0.2);
+                    background: black;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -2237,7 +2238,7 @@
             <!-- Distinguished Leadership Section -->
             <div class="distinguished-card">
                 <div class="distinguished-icon">
-                    <i class="fas fa-medal"></i>
+                    
                 </div>
                 <div class="distinguished-content">
                     <div class="distinguished-badge">President, AUB</div>
@@ -2262,7 +2263,7 @@
                 
 
                 <div class="voice-card">
-                    <i class="fas fa-university"></i>
+                    <i class="fas fa-minus"></i>
                     <h4>Dr. Zaher Dawy</h4>
                     <div class="voice-role">Provost</div>
                     <div class="voice-quote">“EQUIS accreditation is a seal of excellence for business education at AUB.
@@ -2274,7 +2275,7 @@
                 </div>
 
                 <div class="voice-card">
-                    <i class="fas fa-chalkboard"></i>
+                    <i class="fas fa-minus"></i>
                     <h4>Prof. Yusuf Sidani</h4>
                     <div class="voice-role">Dean, Suliman S. Olayan School of Business (Beirut)</div>
                     <div class="voice-quote">“EQUIS accreditation is a significant recognition of the quality,
@@ -2286,7 +2287,7 @@
                 </div>
 
                 <div class="voice-card">
-                    <i class="fas fa-ship"></i>
+                    <i class="fas fa-minus"></i>
                     <h4>Dr. Alain Daou</h4>
                     <div class="voice-role">Dean, Faculty of Business – AUB Mediterraneo (Paphos)</div>
                     <div class="voice-quote">“EQUIS accreditation marks a defining milestone for the Faculty of Business
@@ -2298,7 +2299,7 @@
                 </div>
 
                 <div class="voice-card">
-                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-minus"></i>
                     <h4>Abir Sinno</h4>
                     <div class="voice-role">Director, Strategic Initiatives & Continuous Improvement</div>
                     <div class="voice-quote">“Accreditation has value when it strengthens how an institution thinks,
@@ -2359,8 +2360,15 @@
             border-color: white;
             color: var(--color-primary);
         }
+        
+        .cta-btn.secondary {
+            background: white;
+            border-color: white;
+            color: Black;
+        }
 
-        .cta-btn.primary:hover {
+        .cta-btn.primary:hover,
+        .cta-btn.secondary:hover {
             background: var(--color-primary-dark);
             color: white;
             border-color: var(--color-primary-dark);
@@ -2393,8 +2401,8 @@
                 <a href="https://www.aub.edu.lb/osb" class="cta-btn primary" target="_blank">Apply to OSB Beirut</a>
                 <a href="https://www.aubmed.ac.cy/Pages/default.aspx" class="cta-btn primary" target="_blank">Apply to
                     FoB Cyprus</a>
-                <a href="mailto:osb@aub.edu.lb?subject=Partnership%20Inquiry" class="cta-btn">Partner With Us</a>
-                <a href="https://www.aub.edu.lb/osb/CMS/Pages/default.aspx" class="cta-btn" target="_blank">Hire Our
+                <a href="mailto:osb@aub.edu.lb?subject=Partnership%20Inquiry" class="cta-btn secondary">Partner With Us</a>
+                <a href="https://www.aub.edu.lb/osb/CMS/Pages/default.aspx" class="cta-btn secondary" target="_blank">Hire Our
                     Graduates</a>
             </div>
         </div>
