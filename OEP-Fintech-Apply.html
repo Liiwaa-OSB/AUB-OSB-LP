@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <title>AUB OSB | Fintech Certificate - Apply</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" href="build/css/intlTelInput.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/online-programs.css">
+
+    <!-- Additional minimal styles for validation errors (only what is missing) -->
+    <style>
+        .hero-banner::before {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/AUB-OSB-ONLINE-Fintech-banner.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+
+    <!-- Scripts – jQuery, then intlTelInput, then phonescript (modified), then validator, then university -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery Validation Plugin is REMOVED to avoid duplicate validation -->
+    <script src="js/mailchimp-subscribe.js"></script>
+    <script src="build/js/intlTelInput.js"></script>
+    <!-- Modified phonescript.js (see below – the line $("form").validate(); is commented out) -->
+    <script src="js/phonescript.js"></script>
+    <!-- Main validation and form handler (apply-validator.js) -->
+    <script src="js/apply-validator.js"></script>
+    <script src="js/universities.js"></script>
+    <script src="js/university-ui.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Mailchimp endpoint -->
+    <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";</script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="hero-banner">
+        <div class="container">
+            <div class="banner-logo">
+                <a href="https://www.aub.edu.lb/osb"><img src="images/AUB-OSB-Logo-White.png" alt="AUB OSB Logo"
+                        onerror="this.src='https://placehold.co/200x70?text=AUB+OSB'"></a>
+            </div>
+            <div class="banner-content">
+                <h1>Join the Fintech Certificate</h1>
+                <div class="hero-tagline">
+                    With today’s rapidly evolving customers’ needs, organizations are undergoing increased pressure to
+                    innovate and constantly adapt. The shift from a centrally dedicated innovation entity to a
+                    team-based, cross-functional effort requires fundamental changes to the traditional innovation
+                    mindset.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Overlapping form card – structured to work with apply-validator.js -->
+        <div class="overlap-form-card">
+            <form class="validate-form-modern" id="myform"
+                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
+                name="myform" novalidate="novalidate">
+
+                <!-- Salesforce hidden fields -->
+                <input type="hidden" name="oid" value="00D0Y000001Xrwc">
+                <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
+                <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="[Lii - fintch Campaign ID]">
+                <input type="hidden" id="member_status" name="member_status" value="Interested">
+                <input type="hidden" name="lead_source" id="lead_source" value="Website">
+                <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Apply Fintech">
+                <input type="hidden" name="00NP500000D37Bx" id="Campaign_Name" value="">
+                <input type="hidden" name="00NP500000D37IP" id="AD_Name" value="">
+                <input type="hidden" id="00NP500000LohFU" name="00NP500000LohFU" value="">
+                <input type="hidden" id="00NP500000Oxk99" name="00NP500000Oxk99" value="">
+                <input type="hidden" name="rating" id="rating" value="Cold">
+                <input type="hidden" name="country_code" id="country_code" value="LB">
+                <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
+                <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
+                <input type="hidden" name="description" id="description" value="">
+                <input type="hidden" name="retURL"
+                    value="https://www.aub.edu.lb/osb/Landing/Pages/OEP-Fintech-Apply-ThankYou.html">
+
+                <!-- Form fields – two-column grid, matching validator expectations -->
+                <div class="form-grid-modern-apply">
+                    <!-- First Name -->
+                    <div class="form-group">
+                        <span class="label-input100">First Name *</span>
+                        <input class="input100" id="first_name" name="first_name" maxlength="40"
+                            placeholder="First Name" type="text" required>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="form-group">
+                        <span class="label-input100">Last Name *</span>
+                        <input class="input100" id="last_name" name="last_name" maxlength="80" placeholder="Last Name"
+                            type="text" required>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <span class="label-input100">Email *</span>
+                        <input class="input100" id="email" name="00N0Y00000QGklI" maxlength="80" placeholder="Email"
+                            type="email" required>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <!-- Phone (intlTelInput) -->
+                    <div class="form-group">
+                        <span class="label-input100">Mobile Number *</span>
+                        <input class="input100" id="phone" maxlength="40" placeholder="Phone" type="text" required>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <!-- Company (Employer) – required by apply-validator.js -->
+                    <div class="form-group">
+                        <span class="label-input100">Company *</span>
+                        <input class="input100" id="employer" name="00N0Y00000QGku0" maxlength="40"
+                            placeholder="Company / Organization" type="text" required>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <!-- Country of Residence -->
+                    <div class="form-group">
+                        <span class="label-input100">Country of Residence *</span>
+                        <input class="input100" id="country_residence" name="country_residence"
+                            placeholder="e.g., Lebanon, USA, UAE" type="text" required>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <!-- University (select) -->
+                    <div class="form-group">
+                        <span class="label-input100">University *</span>
+                        <select id="university" name="university" class="input100" required></select>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <!-- University Major -->
+                    <div class="form-group">
+                        <span class="label-input100">University Major *</span>
+                        <input class="input100" id="major" name="major"
+                            placeholder="e.g., Business, Engineering, Economics" type="text" required>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <!-- Years of Experience -->
+                    <div class="form-group">
+                        <span class="label-input100">Years of Experience *</span>
+                        <input class="input100" id="years_experience" name="00N0Y00000QGkuK"
+                            placeholder="Number of years" type="number" min="0" step="1" required>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <!-- How did you hear about us? -->
+                    <div class="form-group">
+                        <span class="label-input100">How did you hear about us? *</span>
+                        <select id="hear_about" name="hear_about" class="input100" required>
+                            <option value="" disabled selected>-- Select --</option>
+                            <option value="Social Media (Facebook, Instagram, LinkedIn, Twitter)">Social Media
+                                (Facebook, Instagram, LinkedIn, Twitter)</option>
+                            <option value="Google Search / Ads">Google Search / Ads</option>
+                            <option value="Email / Newsletter">Email / Newsletter</option>
+                            <option value="AUB Website">AUB Website</option>
+                            <option value="Event / Webinar">Event / Webinar</option>
+                            <option value="Friend / Colleague">Friend / Colleague</option>
+                            <option value="Alumni Referral">Alumni Referral</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <!-- Submit Button + Loading Overlay -->
+                    <div class="container-contact100-form-btn full-width-field">
+                        <div class="wrap-contact100-form-btn">
+                            <button class="btn btn-submit" type="submit" id="submitbtn">SUBMIT</button>
+                        </div>
+                        <div id="loading-overlay" style="display: none; text-align: center; margin-top: 15px;">
+                            <i class="fas fa-spinner fa-pulse" style="font-size: 24px;"></i>
+                            <span>Submitting, please wait...</span>
+                        </div>
+                        <div class="note-text" style="margin-top: 1rem;">
+                            Your information is secure. An admissions advisor will contact you shortly.
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Action buttons (Visit Website / Download Brochure) – now centered via CSS -->
+            <div class="form-footer-buttons">
+                <a href="https://www.aub.edu.lb/osb" class="btn-primary" target="_blank">Visit Website</a>
+                <a href="OEP-Fintech-Brochure.html" class="btn-outline">Download Brochure</a>
+            </div>
+        </div>
+
+        <!-- Info cards -->
+        <div class="cards-section">
+            <div class="info-card-modern">
+                <h3>Program Overview</h3>
+                <ul class="bullet-list-modern">
+                    <li><i class="fa-regular fa-clock"></i> Flexible online format</li>
+                    <li><i class="fas fa-chalkboard-user"></i> Taught by world‑renowned professors</li>
+                    <li><i class="fas fa-code-branch"></i> Cutting‑edge Fintech Certificate curriculum</li>
+                    <li><i class="fas fa-globe"></i> Access to global alumni network</li>
+                </ul>
+            </div>
+            <div class="info-card-modern">
+                <h3>Main Admission Requirements</h3>
+                <ul class="bullet-list-modern">
+                    <li><i class="fas fa-graduation-cap"></i> Bachelor’s Degree with a good GPA</li>
+                    <li><i class="fas fa-briefcase"></i> Professional experience (preferred)</li>
+                    <li><i class="fas fa-chart-line"></i> Strong motivation & curiosity</li>
+                    <li><i class="fas fa-language"></i> Fluent in written and spoken English</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-legal">By submitting this form you are undertaking that the information provided is
+                accurate. You are also consenting to processing of your information for the specified purpose in
+                accordance with relevant data protection laws. The University will maintain confidentiality of the
+                personal information. The information may be used by the University to communicate with you and inform
+                you about our programs and higher education offerings.</div>
+            <div class="copyright">©2026 American University of Beirut, OSB All Rights Reserved</div>
+            <div class="social-icons">
+                <a target="_blank" href="https://www.facebook.com/OSBAUB/"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" href="https://twitter.com/aubosb"><i class="fab fa-twitter"></i></a>
+                <a target="_blank"
+                    href="https://www.linkedin.com/company/aub-suliman-s-olayan-school-of-business-osb-/"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a target="_blank" href="https://www.instagram.com/osb_aub/"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" href="https://www.youtube.com/@AUBOSB"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- UTM & source parameter handling -->
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            url = url.toLowerCase();
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return "";
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        var utm_source = getParameterByName('source');
+        var utm_details = getParameterByName('utm_details');
+        var utm_campaign = getParameterByName('utm_campaign');
+        var utm_content = getParameterByName('utm_content');
+        var utm_placement = getParameterByName('utm_placement');
+        var utm_adsetname = getParameterByName('utm_adsetname');
+
+        if (utm_source != null) $('#lead_source').val(utm_source);
+        if (utm_details != null) $('#00N0Y00000QGkma').val(utm_details);
+        if (utm_campaign != null) $('#Campaign_Name').val(utm_campaign);
+        if (utm_content != null) $('#AD_Name').val(utm_content);
+        if (utm_placement != null) $('#00NP500000LohFU').val(utm_placement);
+        if (utm_adsetname != null) $('#00NP500000Oxk99').val(utm_adsetname);
+    </script>
+</body>
+
+</html>
