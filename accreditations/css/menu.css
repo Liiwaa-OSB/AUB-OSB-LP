@@ -130,7 +130,7 @@ body {
   /* position: relative; */
 }
 
-.nav-item > button {
+.nav-item>button {
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -146,17 +146,18 @@ body {
   transition: opacity 0.2s;
 }
 
-.nav-item > button:hover {
+.nav-item>button:hover {
   opacity: 0.85;
 }
 
 .nav-mega {
+  transform: translateX(-50%);
+  width: 960px;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
   background-color: #fff;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-  min-width: 680px;
   padding: 1.8rem;
   z-index: 50;
   opacity: 0;
@@ -164,6 +165,12 @@ body {
   transition:
     opacity 0.2s ease,
     visibility 0.2s;
+}
+
+@media screen and (min-width: 1400px) {
+  .nav-mega {
+    width: 1050px;
+  }
 }
 
 .nav-item:hover .nav-mega {
@@ -224,6 +231,7 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
 @media (min-width: 1024px) and (max-width: 1270px) {
   .nav-osb-container {
     display: block;
@@ -263,7 +271,7 @@ body {
   text-align: center;
 }
 
-.nav-osb-links .osb-nav-item > a {
+.nav-osb-links .osb-nav-item>a {
   display: flex;
   align-items: center;
   color: #1a202c;
@@ -277,7 +285,7 @@ body {
   white-space: nowrap;
 }
 
-.osb-nav-item.has-dropdown > a::after {
+.osb-nav-item.has-dropdown>a::after {
   content: "";
   display: inline-block;
   width: 14px;
@@ -289,7 +297,7 @@ body {
   transition: transform 0.2s;
 }
 
-.nav-osb-links .osb-nav-item > a:hover {
+.nav-osb-links .osb-nav-item>a:hover {
   color: var(--color-primary);
 }
 
@@ -334,6 +342,7 @@ body {
   .nav-osb-links {
     display: none;
   }
+
   .nav-osb-logo {
     display: none !important;
   }
