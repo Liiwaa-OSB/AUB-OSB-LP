@@ -2066,11 +2066,11 @@
             }
         }
     </style>
-    <section id="voices" style="display: none;">
+    <section id="voices">
         <div class="container">
             <div class="section-label">The People</div>
             <h2 class="section-title">Voices</h2>
-            <div class="voices-grid">
+            <div class="voices-grid" Style="display: none;">
                 <div class="voice-video-card">
                     <div class="voice-video-media"><i class="fas fa-play-circle"></i>
                         <h3>A Message from the President</h3>
@@ -2084,31 +2084,232 @@
                     </div>
                 </div>
             </div>
+
+            <style>
+                /* Distinguished Leadership Section */
+                .distinguished-card {
+                    display: flex;
+                    gap: 2rem;
+                    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+                    border-radius: 24px;
+                    padding: 2rem;
+                    margin-bottom: 3rem;
+                    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    margin-top: 2rem;
+                }
+
+                .distinguished-icon {
+                    flex-shrink: 0;
+                    width: 80px;
+                    height: 80px;
+                    background: rgba(255, 255, 255, 0.2);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid rgba(255, 255, 255, 0.5);
+                }
+
+                .distinguished-icon i {
+                    font-size: 2.8rem;
+                    color: white;
+                }
+
+                .distinguished-content {
+                    flex: 1;
+                }
+
+                .distinguished-badge {
+                    display: inline-block;
+                    background: rgba(255, 255, 255, 1);
+                    color: var(--color-primary-dark);
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    padding: 0.25rem 0.75rem;
+                    border-radius: 50px;
+                    margin-bottom: 0.75rem;
+                }
+
+                .distinguished-content h3 {
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    margin: 0 0 0.25rem 0;
+                    color: #ffffff;
+                }
+
+                .distinguished-role {
+                    font-size: 0.9rem;
+                    color: rgba(255, 255, 255, 0.7);
+                    margin-bottom: 1rem;
+                    letter-spacing: 0.3px;
+                }
+
+                .distinguished-quote {
+                    font-size: 1.1rem;
+                    line-height: 1.6;
+                    color: rgba(255, 255, 255, 0.9);
+                    font-style: italic;
+                    margin-bottom: 1rem;
+                    padding-left: 1rem;
+                    border-left: 3px solid white;
+                }
+
+                .distinguished-meta {
+                    display: flex;
+                    gap: 1.5rem;
+                    margin-bottom: 1.25rem;
+                }
+
+                .distinguished-meta span {
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.6);
+                }
+
+                .distinguished-meta i {
+                    margin-right: 0.4rem;
+                    font-size: 0.75rem;
+                }
+
+                .distinguished-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    background: white;
+                    color: #1a2a3a;
+                    padding: 0.6rem 1.25rem;
+                    border-radius: 40px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 0.85rem;
+                    transition: all 0.2s ease;
+                }
+
+                .distinguished-btn:hover {
+                    background: rgba(255,255,255,0.5)[];
+                    transform: translateX(4px);
+                    text-decoration: none;
+                    color: #0f1a24;
+                }
+
+                /* Voices Section Header */
+                .voices-header {
+                    text-align: center;
+                    margin-bottom: 2rem;
+                }
+
+                .voices-header h3 {
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: #1a2a3a;
+                    margin-bottom: 0.5rem;
+                }
+
+                .voices-header p {
+                    color: #666;
+                    font-size: 0.95rem;
+                }
+
+                /* Responsive */
+                @media (max-width: 768px) {
+                    .distinguished-card {
+                        flex-direction: column;
+                        text-align: center;
+                        padding: 1.5rem;
+                    }
+
+                    .distinguished-quote {
+                        text-align: left;
+                    }
+
+                    .distinguished-meta {
+                        justify-content: center;
+                        flex-wrap: wrap;
+                    }
+
+                    .distinguished-btn {
+                        margin: 0 auto;
+                    }
+                }
+            </style>
+            <!-- Distinguished Leadership Section -->
+            <div class="distinguished-card">
+                <div class="distinguished-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <div class="distinguished-content">
+                    <div class="distinguished-badge">President, AUB</div>
+                    <h3>Dr. Fadlo Khuri</h3>
+                    <!-- <div class="distinguished-role">President, AUB</div> -->
+                    <div class="distinguished-quote">
+                        “The accreditation recognizes the strength of AUB's integrated academic
+                        model across its campuses, while also highlighting the distinct contributions of the Suliman S.
+                        Olayan School of Business and the Faculty of Business at AUB Mediterraneo. This distinction is a
+                        clear indicator of AUB's global visibility and reinforces our broader vision to advance
+                        high-quality business education, leadership development, applied research, and societal impact
+                        across the Middle East, the Mediterranean, and beyond.”
+                    </div>
+                    <!-- <div class="distinguished-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Commencement Ceremony 2025 - lii</span>
+                        <span><i class="fas fa-clock"></i> 30+ Years of Leadership - lii</span>
+                    </div> -->
+                    <a href="#" class="distinguished-btn">Watch Full Speech <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
             <div class="voices-cards">
-                <div class="voice-card"><i class="fas fa-university"></i>
-                    <h4>Provost</h4>
-                    <div class="voice-role">On academic quality</div>
-                    <div class="voice-quote">“A landmark that reinforces our global standing.”</div><a href="#"
-                        class="voice-btn">Read Perspective</a>
+                
+
+                <div class="voice-card">
+                    <i class="fas fa-university"></i>
+                    <h4>Dr. Zaher Dawy</h4>
+                    <div class="voice-role">Provost</div>
+                    <div class="voice-quote">“EQUIS accreditation is a seal of excellence for business education at AUB.
+                        Achieving it alongside our AACSB accreditation places us among a select group of business
+                        schools worldwide that hold the 'Double Crown' distinction, providing our students with a
+                        world-class learning experience, enhanced global credibility, and greater opportunities for
+                        academic and professional success.”</div>
+                    <!-- <a href="#" class="voice-btn">Read Perspective</a> -->
                 </div>
-                <div class="voice-card"><i class="fas fa-chalkboard"></i>
-                    <h4>Dean of OSB</h4>
-                    <div class="voice-role">Suliman S. Olayan School of Business</div>
-                    <div class="voice-quote">“EQUIS crowns our dedication to excellence.”</div><a href="#"
-                        class="voice-btn">Watch Message</a>
+
+                <div class="voice-card">
+                    <i class="fas fa-chalkboard"></i>
+                    <h4>Prof. Yusuf Sidani</h4>
+                    <div class="voice-role">Dean, Suliman S. Olayan School of Business (Beirut)</div>
+                    <div class="voice-quote">“EQUIS accreditation is a significant recognition of the quality,
+                        relevance, and international standing of AUB's business programs. It reflects the collective
+                        efforts of our faculty, staff, students, alumni, advisory board members, and partners, and
+                        affirms our commitment to developing responsible leaders who can contribute meaningfully to
+                        business and society.”</div>
+                    <!-- <a href="#" class="voice-btn">Watch Message</a> -->
                 </div>
-                <div class="voice-card"><i class="fas fa-ship"></i>
-                    <h4>Dean of FoB</h4>
-                    <div class="voice-role">Faculty of Business – Cyprus</div>
-                    <div class="voice-quote">“A new era for business education in Cyprus.”</div><a href="#"
-                        class="voice-btn">Watch Message</a>
+
+                <div class="voice-card">
+                    <i class="fas fa-ship"></i>
+                    <h4>Dr. Alain Daou</h4>
+                    <div class="voice-role">Dean, Faculty of Business – AUB Mediterraneo (Paphos)</div>
+                    <div class="voice-quote">“EQUIS accreditation marks a defining milestone for the Faculty of Business
+                        at AUB Mediterraneo. It affirms that the faculty we are building in Paphos is grounded in AUB's
+                        tradition of academic excellence. For our students and community, it is a confirmation that our
+                        journey begins with a strong foundation and is already aligned with European and internationally
+                        recognized standards of excellence.”</div>
+                    <!-- <a href="#" class="voice-btn">Watch Message</a> -->
                 </div>
-                <div class="voice-card"><i class="fas fa-chart-line"></i>
-                    <h4>Director, Strategic Initiatives</h4>
-                    <div class="voice-role">Continuous Improvement</div>
-                    <div class="voice-quote">“Years of collaborative work, now internationally recognised.”</div><a
-                        href="#" class="voice-btn">Read Perspective</a>
+
+                <div class="voice-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Abir Sinno</h4>
+                    <div class="voice-role">Director, Strategic Initiatives & Continuous Improvement</div>
+                    <div class="voice-quote">“Accreditation has value when it strengthens how an institution thinks,
+                        learns, and improves. The EQUIS process gave us the opportunity to reflect honestly on our
+                        programs, processes, stakeholder engagement, and quality systems, and to show how evidence
+                        informs our work across Beirut and Paphos. Its real value will be seen in how consistently we
+                        turn that reflection into meaningful improvement for our students, faculty, partners, and wider
+                        region.”</div>
+                    <!-- <a href="#" class="voice-btn">Read Perspective</a> -->
                 </div>
+
             </div>
         </div>
     </section>
