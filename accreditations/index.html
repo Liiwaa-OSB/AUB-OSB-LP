@@ -2014,19 +2014,41 @@
             border: 1px solid #E5E7EB;
             border-radius: 12px;
             padding: 1.3rem;
-            transition: 0.2s;
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+            will-change: transform, box-shadow;
+        }
+
+        .voice-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(132, 1, 50, 0.1);
         }
 
         .voice-card i {
-            font-size: 1.6rem;
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
+            font-family: inherit;
+            font-style: normal;
+            font-size: 0;
+            display: block;
+            width: 48px;
+            height: 3px;
+            background-color: var(--color-primary);
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+            transition: height 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .voice-card:hover i {
+            width: 100px;
+            background-color: var(--color-primary);
+            transition: width 0.3s ease-out;
         }
 
         .voice-card h4 {
             font-weight: 700;
             font-size: 1.1rem;
             margin-bottom: 0.2rem;
+            color: #0f172a;
+            letter-spacing: -0.2px;
         }
 
         .voice-role {
@@ -2034,13 +2056,16 @@
             font-weight: 500;
             color: #000;
             margin-bottom: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            opacity: 0.8;
         }
 
         .voice-quote {
             font-size: 0.8rem;
-            line-height: 1.2;
+            line-height: 1.4;
             margin-bottom: 0.8rem;
-            color: #000;
+            color: #1e293b;
         }
 
         .voice-btn {
@@ -2051,18 +2076,29 @@
             font-size: 0.7rem;
             font-weight: 700;
             color: var(--color-primary);
+            background: transparent;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+            cursor: pointer;
         }
 
         .voice-btn:hover {
             background: var(--color-primary);
             color: white;
+            border-color: var(--color-primary);
         }
 
         @media (max-width: 680px) {
-
-            .voices-grid,
             .voices-cards {
                 grid-template-columns: 1fr;
+            }
+
+            .section-container {
+                padding: 0;
+            }
+
+            .voice-card {
+                padding: 1.2rem;
             }
         }
     </style>
@@ -2099,22 +2135,24 @@
                     margin-top: 2rem;
                 }
 
-                .distinguished-icon {
+                .distinguished-profile {
                     flex-shrink: 0;
                     width: 80px;
                     height: 80px;
-                    background: rgba(255, 255, 255, 0.2);
-                    background: black;
                     border-radius: 50%;
+                    overflow: hidden;
+                    /* Ensures image stays within circle */
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     border: 2px solid rgba(255, 255, 255, 0.5);
                 }
 
-                .distinguished-icon i {
-                    font-size: 2.8rem;
-                    color: white;
+                .distinguished-profile img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    /* Ensures image fills circle properly */
                 }
 
                 .distinguished-content {
@@ -2131,7 +2169,7 @@
                     letter-spacing: 1px;
                     padding: 0.25rem 0.75rem;
                     border-radius: 50px;
-                    margin-bottom: 0.75rem;
+                    margin: 0.75rem 0;
                 }
 
                 .distinguished-content h3 {
@@ -2149,10 +2187,9 @@
                 }
 
                 .distinguished-quote {
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                     line-height: 1.6;
                     color: rgba(255, 255, 255, 0.9);
-                    font-style: italic;
                     margin-bottom: 1rem;
                     padding-left: 1rem;
                     border-left: 3px solid white;
@@ -2181,15 +2218,15 @@
                     background: white;
                     color: #1a2a3a;
                     padding: 0.6rem 1.25rem;
-                    border-radius: 40px;
+                    border-radius: 4px;
                     text-decoration: none;
                     font-weight: 600;
-                    font-size: 0.85rem;
+                    font-size: 1rem;
                     transition: all 0.2s ease;
                 }
 
                 .distinguished-btn:hover {
-                    background: rgba(255,255,255,0.5)[];
+                    background: rgba(255, 255, 255, 0.5)[];
                     transform: translateX(4px);
                     text-decoration: none;
                     color: #0f1a24;
@@ -2237,12 +2274,12 @@
             </style>
             <!-- Distinguished Leadership Section -->
             <div class="distinguished-card">
-                <div class="distinguished-icon">
-                    
+                <div class="distinguished-profile">
+                    <img src="images/AUB-OSB-Beirut.jpg" alt="Dr. Fadlo Khuri Profile">
                 </div>
                 <div class="distinguished-content">
-                    <div class="distinguished-badge">President, AUB</div>
                     <h3>Dr. Fadlo Khuri</h3>
+                    <div class="distinguished-badge">President, AUB</div>
                     <!-- <div class="distinguished-role">President, AUB</div> -->
                     <div class="distinguished-quote">
                         “The accreditation recognizes the strength of AUB's integrated academic
@@ -2252,66 +2289,62 @@
                         high-quality business education, leadership development, applied research, and societal impact
                         across the Middle East, the Mediterranean, and beyond.”
                     </div>
-                    <!-- <div class="distinguished-meta">
-                        <span><i class="fas fa-calendar-alt"></i> Commencement Ceremony 2025 - lii</span>
-                        <span><i class="fas fa-clock"></i> 30+ Years of Leadership - lii</span>
-                    </div> -->
                     <a href="#" class="distinguished-btn">Watch Full Speech <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="voices-cards">
-                
+            <div class="section-container">
+                <div class="voices-cards">
+                    <!-- Card 1: Dr. Zaher Dawy (commented out text means deleted: original comment says "Read Perspective" is deleted, so we keep no button) -->
+                    <div class="voice-card">
+                        <i class="fas fa-minus"></i>
+                        <h4>Dr. Zaher Dawy</h4>
+                        <div class="voice-role">Provost</div>
+                        <div class="voice-quote">“EQUIS accreditation is a seal of excellence for business education at
+                            AUB. Achieving it alongside our AACSB accreditation places us among a select group of
+                            business schools worldwide that hold the 'Double Crown' distinction, providing our students
+                            with a world-class learning experience, enhanced global credibility, and greater
+                            opportunities for academic and professional success.”</div>
+                    </div>
 
-                <div class="voice-card">
-                    <i class="fas fa-minus"></i>
-                    <h4>Dr. Zaher Dawy</h4>
-                    <div class="voice-role">Provost</div>
-                    <div class="voice-quote">“EQUIS accreditation is a seal of excellence for business education at AUB.
-                        Achieving it alongside our AACSB accreditation places us among a select group of business
-                        schools worldwide that hold the 'Double Crown' distinction, providing our students with a
-                        world-class learning experience, enhanced global credibility, and greater opportunities for
-                        academic and professional success.”</div>
-                    <!-- <a href="#" class="voice-btn">Read Perspective</a> -->
+                    <!-- Card 2: Prof. Yusuf Sidani (original has 'Watch Message' commented out) -->
+                    <div class="voice-card">
+                        <i class="fas fa-minus"></i>
+                        <h4>Prof. Yusuf Sidani</h4>
+                        <div class="voice-role">Dean, Suliman S. Olayan School of Business (Beirut)</div>
+                        <div class="voice-quote">“EQUIS accreditation is a significant recognition of the quality,
+                            relevance, and international standing of AUB's business programs. It reflects the collective
+                            efforts of our faculty, staff, students, alumni, advisory board members, and partners, and
+                            affirms our commitment to developing responsible leaders who can contribute meaningfully to
+                            business and society.”</div>
+                    </div>
+
+                    <!-- Card 3: Dr. Alain Daou -->
+                    <div class="voice-card">
+                        <i class="fas fa-minus"></i>
+                        <h4>Dr. Alain Daou</h4>
+                        <div class="voice-role">Dean, Faculty of Business – AUB Mediterraneo (Paphos)</div>
+                        <div class="voice-quote">“EQUIS accreditation marks a defining milestone for the Faculty of
+                            Business at AUB Mediterraneo. It affirms that the faculty we are building in Paphos is
+                            grounded in AUB's tradition of academic excellence. For our students and community, it is a
+                            confirmation that our journey begins with a strong foundation and is already aligned with
+                            European and internationally recognized standards of excellence.”</div>
+                    </div>
+
+                    <!-- Card 4: Abir Sinno -->
+                    <div class="voice-card">
+                        <i class="fas fa-minus"></i>
+                        <h4>Abir Sinno</h4>
+                        <div class="voice-role">Director, Strategic Initiatives & Continuous Improvement</div>
+                        <div class="voice-quote">“Accreditation has value when it strengthens how an institution thinks,
+                            learns, and improves. The EQUIS process gave us the opportunity to reflect honestly on our
+                            programs, processes, stakeholder engagement, and quality systems, and to show how evidence
+                            informs our work across Beirut and Paphos. Its real value will be seen in how consistently
+                            we turn that reflection into meaningful improvement for our students, faculty, partners, and
+                            wider region.”</div>
+                    </div>
                 </div>
-
-                <div class="voice-card">
-                    <i class="fas fa-minus"></i>
-                    <h4>Prof. Yusuf Sidani</h4>
-                    <div class="voice-role">Dean, Suliman S. Olayan School of Business (Beirut)</div>
-                    <div class="voice-quote">“EQUIS accreditation is a significant recognition of the quality,
-                        relevance, and international standing of AUB's business programs. It reflects the collective
-                        efforts of our faculty, staff, students, alumni, advisory board members, and partners, and
-                        affirms our commitment to developing responsible leaders who can contribute meaningfully to
-                        business and society.”</div>
-                    <!-- <a href="#" class="voice-btn">Watch Message</a> -->
-                </div>
-
-                <div class="voice-card">
-                    <i class="fas fa-minus"></i>
-                    <h4>Dr. Alain Daou</h4>
-                    <div class="voice-role">Dean, Faculty of Business – AUB Mediterraneo (Paphos)</div>
-                    <div class="voice-quote">“EQUIS accreditation marks a defining milestone for the Faculty of Business
-                        at AUB Mediterraneo. It affirms that the faculty we are building in Paphos is grounded in AUB's
-                        tradition of academic excellence. For our students and community, it is a confirmation that our
-                        journey begins with a strong foundation and is already aligned with European and internationally
-                        recognized standards of excellence.”</div>
-                    <!-- <a href="#" class="voice-btn">Watch Message</a> -->
-                </div>
-
-                <div class="voice-card">
-                    <i class="fas fa-minus"></i>
-                    <h4>Abir Sinno</h4>
-                    <div class="voice-role">Director, Strategic Initiatives & Continuous Improvement</div>
-                    <div class="voice-quote">“Accreditation has value when it strengthens how an institution thinks,
-                        learns, and improves. The EQUIS process gave us the opportunity to reflect honestly on our
-                        programs, processes, stakeholder engagement, and quality systems, and to show how evidence
-                        informs our work across Beirut and Paphos. Its real value will be seen in how consistently we
-                        turn that reflection into meaningful improvement for our students, faculty, partners, and wider
-                        region.”</div>
-                    <!-- <a href="#" class="voice-btn">Read Perspective</a> -->
-                </div>
-
             </div>
+
         </div>
     </section>
 
@@ -2360,7 +2393,7 @@
             border-color: white;
             color: var(--color-primary);
         }
-        
+
         .cta-btn.secondary {
             background: white;
             border-color: white;
@@ -2401,8 +2434,10 @@
                 <a href="https://www.aub.edu.lb/osb" class="cta-btn primary" target="_blank">Apply to OSB Beirut</a>
                 <a href="https://www.aubmed.ac.cy/Pages/default.aspx" class="cta-btn primary" target="_blank">Apply to
                     FoB Cyprus</a>
-                <a href="mailto:osb@aub.edu.lb?subject=Partnership%20Inquiry" class="cta-btn secondary">Partner With Us</a>
-                <a href="https://www.aub.edu.lb/osb/CMS/Pages/default.aspx" class="cta-btn secondary" target="_blank">Hire Our
+                <a href="mailto:osb@aub.edu.lb?subject=Partnership%20Inquiry" class="cta-btn secondary">Partner With
+                    Us</a>
+                <a href="https://www.aub.edu.lb/osb/CMS/Pages/default.aspx" class="cta-btn secondary"
+                    target="_blank">Hire Our
                     Graduates</a>
             </div>
         </div>
