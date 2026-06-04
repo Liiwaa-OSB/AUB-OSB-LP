@@ -6,27 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EQUIS Accreditation — AUB Business Education</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700;800&family=Montserrat:wght@300;400;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="stylesheet" href="css/menu.css" />
     <link rel="stylesheet" href="css/footer.css" />
-
     <style>
+        /* ---------- GLOBAL RESET & CORE VARIABLES (optimized) ---------- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Roboto", sans-serif;
-            background: #fff;
-            color: #000;
-            line-height: 1;
-            scroll-behavior: smooth;
-            font-size: 1.1rem;
         }
 
         :root {
@@ -36,61 +27,67 @@
             --color-black: #000000;
             --color-text: #1e293b;
             --color-dark-bg: #727272;
-            --color-text: #434444;
             --color-grey: #6d6d6d;
-            --color-text-light: rgba(255, 255, 255, 0.82);
-            --color-border: #dadbdb;
             --color-bg-light: #f7f7f7;
-            --color-overlay-dark: rgba(0, 0, 0, 0.55);
-            --color-overlay-light: rgba(0, 0, 0, 0.2);
-
-            --container-width: 1240px;
-
-            --radius-sm: 4px;
-            --radius-md: 10px;
-            --radius-lg: 18px;
-            --radius-pill: 100px;
-
-            --border-light: 1px solid var(--color-border);
-
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
-
-            --space-xs: 0.35rem;
-            --space-sm: 0.75rem;
-            --space-md: 1.1rem;
-            --space-lg: 2rem;
-            --space-xl: 3rem;
-            --space-2xl: 4rem;
-
-            --line-height-base: 1;
-
-            --transition: 0.3s ease;
-      
+            --color-border: #e5e7eb;
             --container-max: 1280px;
-            --border-radius: 4px;
         }
 
-        /* global spacing reduction */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #fff;
+            color: var(--color-text);
+            line-height: 1.4;
+            scroll-behavior: smooth;
+            font-size: 1rem;
+        }
+
         h1,
         h2,
         h3,
         h4,
         p,
-        .section-title,
-        .hero-sub,
-        .hero-stat {
-            line-height: 1;
-            margin-bottom: 0;
+        .section-title {
+            margin: 0 0 0.5rem 0;
+            line-height: 1.2;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 .section-title {
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.4;
+            color: var(--color-text);
+            margin-bottom: 0.75rem;
         }
 
         section {
-            padding: 5rem 2rem 2rem 2rem;
-        }
-
-        section.journey,
-        section.next {
-            padding: 5rem 2rem;
+            padding: 4rem 2rem;
         }
 
         .container {
@@ -110,31 +107,886 @@
         .section-title {
             font-size: 2.2rem;
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--color-primary);
             line-height: 1.2;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         a {
             text-decoration: none;
         }
 
-        img {
+        img,
+        video {
             max-width: 100%;
             display: block;
         }
 
-        @media(max-width:768px) {
+        /* responsive */
+        @media (max-width:768px) {
             .section-title {
                 font-size: 1.8rem;
             }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        /* ----- HERO BANNER (unchanged visual, but semantic text) ----- */
+        .accreditation-hero {
+            position: relative;
+            background-image: url(./images/AUB-OSB-BANNER-EQUIS.jpg);
+            background-size: cover;
+            background-position: center 100%;
+            background-repeat: no-repeat;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem 1.5rem 0;
+        }
+
+        .hero-container {
+            max-width: 590px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* no extra text now, but structure preserved */
+        @media (max-width: 992px) {
+            .accreditation-hero {
+                height: 50vh;
+                background-position: 60% 100%;
+            }
+        }
+
+        /* accreditation split (dark strip with title + logos) */
+        .accred-split {
+            background: var(--color-grey);
+            color: var(--color-white);
+            padding: 2rem 2rem;
+        }
+
+        .accred-split .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .accred-text {
+            flex: 1 1 50%;
+            font-size: 1.3rem;
+            font-weight: 500;
+            line-height: 1.3;
+            letter-spacing: -0.2px;
+            text-transform: uppercase;
+        }
+
+        .accred-text h1 {
+            color: white;
+            line-height: 1;
+        }
+
+        .accred-text p {
+            flex: 1 1 50%;
+            font-size: 1.3rem;
+            font-weight: 500;
+            line-height: 1.3;
+            letter-spacing: -0.2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .accred-logos {
+            flex: 1 1 40%;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .accred-logos img {
+            max-width: 220px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .accred-split .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .accred-logos {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+        }
+
+        /* STICKY MENU (preserved fully) */
+        .equis-menu {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-bottom: 1px solid #eaeaea;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .03);
+            padding: .8rem 0;
+            overflow-x: clip;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+            padding: 0 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .menu-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .equis-menu::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            background: linear-gradient(to right, transparent, white);
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .equis-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            background: linear-gradient(to left, transparent, white);
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .menu-btn {
+            flex-shrink: 0;
+            font-size: .8rem;
+            font-weight: 700;
+            padding: .6rem 1rem;
+            border-radius: 30px;
+            color: var(--color-primary);
+            transition: .25s;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            white-space: nowrap;
+        }
+
+        .menu-btn:hover {
+            background: #ededed;
+            color: black;
+        }
+
+        .menu-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .equis-menu {
+                padding: .6rem 0;
+            }
+
+            .menu-container {
+                justify-content: flex-start;
+            }
+
+            .menu-btn {
+                font-size: .75rem;
+                padding: .55rem .9rem;
+            }
+
+            .equis-menu::after {
+                width: 40px;
+            }
+        }
+
+        /* milestone cards */
+        .milestone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .milestone-card {
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .milestone-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--color-primary);
+            transform: scaleX(0);
+            transition: transform 0.35s;
+        }
+
+        .milestone-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(132, 1, 50, 0.1);
+        }
+
+        .milestone-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .milestone-num {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .milestone-sub {
+            color: var(--color-primary-dark);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .milestone-desc {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            line-height: 1.3;
+        }
+
+        /* EQUIS standard section (dark background, white text) */
+        .equis {
+            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+            color: white;
+        }
+
+        .equis .section-title {
+            color: white;
+        }
+
+        .equis .section-label {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .equis p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem auto 0;
+        }
+
+        .pillar-card {
+            perspective: 1000px;
+            cursor: pointer;
+            min-height: 170px;
+        }
+
+        .pillar-inner {
+            position: relative;
+            width: 100%;
+            height: 170px;
+            transition: transform .6s;
+            transform-style: preserve-3d;
+        }
+
+        .pillar-card:hover .pillar-inner {
+            transform: rotateY(180deg);
+        }
+
+        .pillar-front,
+        .pillar-back {
+            position: absolute;
+            inset: 0;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            text-align: center;
+            backface-visibility: hidden;
+        }
+
+        .pillar-front {
+            background: #fef9f7;
+            border: 1px solid var(--color-border);
+            transform: rotateY(0deg);
+        }
+
+        .pillar-front h4 {
+            color: var(--color-primary);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .pillar-back {
+            background: var(--color-grey);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .pillar-back p {
+            font-size: .95rem;
+            line-height: 1.3;
+            color: white;
+            margin: 0;
+        }
+
+        @media (hover: none) {
+            .pillar-card.flipped .pillar-inner {
+                transform: rotateY(180deg);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .pillars-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* journey section (clean) */
+        .journey-clean {
+            background: #fff;
+        }
+
+        .journey-text p {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--color-text);
+        }
+
+        .journey-text strong {
+            color: var(--color-primary);
+        }
+
+        /* two shores */
+        .shores-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .shore-card {
+            display: block;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.25s;
+            border: 1px solid var(--color-border);
+            background: white;
+            text-decoration: none;
+        }
+
+        .shore-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(132, 1, 50, 0.12);
+        }
+
+        .shore-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            background: #2c3e50;
+        }
+
+        .shore-info {
+            padding: 1.8rem;
+            text-align: center;
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .shore-card:last-child .shore-info {
+            background: var(--color-primary-dark);
+        }
+
+        .shore-school {
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .shore-location {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .shores-split {
+                grid-template-columns: 1fr;
+            }
+
+            .shore-img {
+                height: 200px;
+            }
+        }
+
+        /* perspectives (what it means) */
+        .perspectives-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .perspective-card {
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .perspective-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(132, 1, 50, 0.08);
+        }
+
+        .perspective-img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .perspective-body {
+            padding: 1.5rem;
+        }
+
+        .perspective-for {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .perspective-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: #0f172a;
+        }
+
+        .perspective-text {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+
+        @media (max-width: 900px) {
+            .perspectives-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .perspectives-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* timeline */
+        #path {
+            background: #f8f8f8;
+        }
+
+        .timeline-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: relative;
+            margin: 3rem 0 1rem;
+            gap: 0.5rem;
+        }
+
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            height: 122px;
+            /* min-width: 120px; */
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--color-text);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            margin: 0.5rem auto;
+        }
+
+        .timeline-label {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--color-primary-dark);
+            margin-top: 0.2rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.75rem;
+            color: var(--color-text);
+            line-height: 1.2;
+            display: none;
+            margin: 0;
+        }
+
+        .timeline-item:hover .timeline-desc {
+            display: block;
+        }
+
+        .timeline-grid::before {
+            content: '';
+            position: absolute;
+            top: 44px;
+            left: 5%;
+            width: 90%;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
+
+        @media (max-width: 780px) {
+            .timeline-grid {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            .timeline-grid::before {
+                display: none;
+            }
+
+            .timeline-item {
+                min-height: 94px;
+                border-left: 3px solid var(--color-primary);
+                padding-left: 1rem;
+                text-align: left;
+            }
+
+            .timeline-dot {
+                margin: 0 0 0.3rem 0;
+            }
+        }
+
+        /* voices & distinguished */
+        .voices-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .voice-card {
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.3rem;
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+        }
+
+        .voice-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(132, 1, 50, 0.1);
+        }
+
+        .voice-card i.top-line {
+            display: block;
+            width: 48px;
+            height: 3px;
+            background-color: var(--color-primary);
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+
+        .voice-card:hover i.top-line {
+            width: 100px;
+            transition: width 0.3s ease-out;
+        }
+
+        .voice-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            color: #0f172a;
+        }
+
+        .voice-role {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .quote-wrapper {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .quote-icon {
+            color: var(--color-primary);
+            font-size: 3.3rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .voice-quote {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 0;
+            color: var(--color-text);
+            flex: 1;
+        }
+
+        .distinguished-card {
+            display: flex;
+            gap: 2rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            border-radius: 24px;
+            padding: 2rem;
+            margin: 2rem 0 1rem;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
+        }
+
+        .distinguished-profile {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .distinguished-profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .distinguished-content {
+            flex: 1;
+        }
+
+        .distinguished-badge {
+            display: inline-block;
+            background: white;
+            color: var(--color-primary-dark);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            margin: 0.75rem 0;
+        }
+
+        .distinguished-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 0 0.25rem 0;
+            color: #ffffff;
+        }
+
+        .distinguished-quote {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid white;
+        }
+
+        .distinguished-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: #1a2a3a;
+            padding: 0.6rem 1.25rem;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .distinguished-btn:hover {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .distinguished-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .distinguished-quote {
+                text-align: left;
+            }
+
+            .voices-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* next section */
+        .next {
+            background: var(--color-dark-bg);
+            color: white;
+            text-align: center;
+        }
+
+        .next .section-title {
+            color: white;
+        }
+
+        .next .section-label {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .next-body {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 1rem auto 2rem;
+            line-height: 1.4;
+            color: white;
+        }
+
+        .cta-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.9rem 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 4px;
+            color: white;
+            font-weight: 700;
+            transition: 0.25s;
+        }
+
+        .cta-btn.primary {
+            background: white;
+            border-color: white;
+            color: var(--color-primary);
+        }
+
+        .cta-btn.secondary {
+            background: white;
+            border-color: white;
+            color: black;
+        }
+
+        .cta-btn.primary:hover,
+        .cta-btn.secondary:hover {
+            background: var(--color-primary-dark);
+            color: white;
+            border-color: var(--color-primary-dark);
+        }
+
+        @media (max-width: 680px) {
+            .cta-grid {
+                max-width: 260px;
+                margin: auto;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+        }
+
+        /* misc fixes */
+        .shores-quote {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+
+        #shores {
+            background: #ededed;
+        }
+
+        .equis-description {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
         }
     </style>
     <script src="./js/main.js" defer></script>
     <script src="./js/menu.js" defer></script>
 </head>
-
 
 <body>
     <div class="nav">
@@ -582,7 +1434,7 @@
                             </ul>
                         </li>
                         <!-- Executive Education (external link + dropdown) -->
-                        <li class="osb-nav-item has-dropdown">
+                        <li class="osb-nav-item">
                             <!-- lii replace href below -->
                             <!-- href="https://www.aub.edu.lb/osb/executiveeducation/Pages/default.aspx" -->
                             <a href="https://www.aub.edu.lb/osb/executiveeducation" target="_blank"
@@ -677,393 +1529,28 @@
         </div>
     </div>
 
-    <style>
-        /* ----- HERO BANNER SECTION ----- */
-        .accreditation-hero {
-            position: relative;
-            background-image: url(./images/AUB-OSB-BANNER-EQUIS.jpg);
-            background-size: cover;
-            background-position: center 100%;
-            background-repeat: no-repeat;
-            background-blend-mode: overlay;
-            height: 70vh;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 3rem 1.5rem 0;
-        }
-
-        .hero-container {
-            max-width: 590px;
-            width: 100%;
-            margin: 1rem auto 0;
-            position: relative;
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Main headline - UPPERCASE */
-        .hero-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            text-transform: uppercase;
-            color: var(--color-white);
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1.2rem;
-            line-height: 2.6rem;
-            margin-left: auto;
-            margin-right: auto;
-            backdrop-filter: blur(3px);
-            border-radius: 10px;
-        }
-
-        .hero-title span {
-            background: linear-gradient(120deg, #fbf7f5, #fffff2);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .hero-description {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: white;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(7px);
-            border-radius: 10px;
-        }
-
-        .logos-strip {
-            margin-top: auto;
-            background: linear-gradient(to top, #000000 0%, rgba(0, 0, 0, 0) 100%);
-            padding: 4rem 1rem 1.5rem;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0;
-            flex-wrap: wrap;
-            position: absolute;
-            bottom: 0;
-        }
-
-        .logo-badge {
-            flex: 0 0 auto;
-            transition: transform 0.2s ease;
-        }
-
-        .logo-badge img {
-            width: 300px;
-            /* same size for both */
-            height: auto;
-            max-width: 100%;
-            display: block;
-            filter: brightness(1) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
-        }
-
-        .logo-badge:hover {
-            transform: scale(1.02);
-        }
-
-        /* Responsive design */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 2.6rem;
-            }
-
-            .hero-description {
-                font-size: 1.2rem;
-            }
-
-            .logo-badge img {
-                width: 150px;
-            }
-
-            .logos-strip {
-                gap: 2rem;
-                padding: 1.5rem 1rem 1.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .accreditation-hero {
-                height: 50vh;
-                padding: 2rem 1rem 0;
-                background-position: 60% 100%;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-            }
-
-            .logo-badge img {
-                width: 130px;
-            }
-
-            .logos-strip {
-                gap: 1.5rem;
-                padding: 1.2rem 0.8rem;
-            }
-        }
-
-        @media (max-width: 540px) {
-            .hero-title {
-                font-size: 1.7rem;
-            }
-
-            .hero-description {
-                font-size: 0.9rem;
-            }
-
-            .logo-badge img {
-                width: 110px;
-            }
-
-            .logos-strip {
-                gap: 1rem;
-                flex-wrap: wrap;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .hero-title {
-                font-size: 1.5rem;
-            }
-
-            .logo-badge img {
-                width: 90px;
-            }
-        }
-    </style>
-
+    <!-- Hero Banner (original structure, but text moved to accred-split) -->
     <section class="accreditation-hero">
-        <div class="hero-container">
-            <!-- Main uppercase headline -->
-            <!-- <h1 class="hero-title">
-                <span>First in Lebanon. <br>First in Cyprus.<br>
-                    Now EQUIS-Accredited.</span>
-            </h1> -->
-
-            <!-- descriptive paragraph -->
-            <!-- <p class="hero-description">
-                Business Education at AUB now holds two global accreditation crowns — AACSB and EQUIS —
-                across both shores of the Mediterranean.
-            </p> -->
-
-        </div>
-
-        <!-- <div class="logos-strip">
-            <div class="logo-badge">
-                <img src="./images/Equis-logo-white.png"
-                    alt="EQUIS accreditation logo — global excellence in business education">
-            </div>
-            <div class="logo-badge">
-                <img src="./images/AACSB-logo-white.png"
-                    alt="AACSB International accreditation logo — gold standard in business schools">
-            </div>
-        </div> -->
+        <div class="hero-container"></div>
     </section>
 
-
-
-    <!-- Additional minimal section-specific styles (does not edit the provided CSS) -->
-    <style>
-        /* accreditation split section - only adds layout and background */
-        .accred-split {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-            background: var(--color-grey);
-            color: var(--color-white);
-            padding: 2rem 2rem;
-        }
-
-        .accred-split .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .accred-title {
-            color: white;
-        }
-
-        .accred-text {
-            flex: 1 1 50%;
-            font-size: 1.3rem;
-            font-weight: 500;
-            line-height: 1.3;
-            letter-spacing: -0.2px;
-            text-transform: uppercase;
-        }
-
-        .accred-logos {
-            flex: 1 1 40%;
-            display: flex;
-            gap: 1.5rem;
-            justify-content: flex-end;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .accred-logos img {
-            max-width: 250px;
-            height: auto;
-        }
-
-        /* responsive: stack on mobile */
-        @media (max-width: 768px) {
-            .accred-split .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .accred-logos {
-                justify-content: center;
-                margin-top: 1rem;
-            }
-
-            .accred-text {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
-
-    <!-- Minimal section: exactly the requested text + two images side by side -->
+    <!-- Accredited Strip: First in Lebanon + both logos (replaces hidden hero text) -->
     <section class="accred-split">
         <div class="container">
-
             <div class="accred-text">
-                <h1 class="accred-title">
-                    <span>First in Lebanon. <br>First in Cyprus.<br>
-                        Now EQUIS-Accredited.</span>
-                </h1>
-                Business Education at AUB now holds two global accreditation crowns, AACSB and EQUIS, across both
-                shores of the Mediterranean.
+                <h1>First in Lebanon.<br>First in Cyprus.<br>Now EQUIS-Accredited.</h1>
+                <p>Business Education at AUB now holds two global accreditation crowns, AACSB and EQUIS,
+                    <br />across both shores of the Mediterranean.
+                </p>
             </div>
             <div class="accred-logos">
-                <!-- AACSB logo placeholder (SVG data uri for clean minimal look) -->
-                <a href="#" target="_blank"><img src="./images/Equis-logo-white.png" alt="AACSB logo"></a>
-                <!-- EQUIS logo placeholder -->
-                <a href="#" target="_blank"><img src="./images/AACSB-logo-white.png" alt="EQUIS logo"></a>
+                <a href="#" target="_blank"><img src="./images/Equis-logo-white.png" alt="EQUIS logo"></a>
+                <a href="#" target="_blank"><img src="./images/AACSB-logo-white.png" alt="AACSB logo"></a>
             </div>
         </div>
     </section>
 
-
-    <!-- *********************** STICKY MENU *********************** -->
-    <style>
-        .equis-menu {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: #fff;
-            border-bottom: 1px solid #eaeaea;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, .03);
-            padding: .8rem 0;
-            overflow-x: clip;
-        }
-
-        /* Scrollable menu container */
-        .menu-container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: .5rem;
-            padding: 0 1rem;
-            overflow-x: auto;
-            scrollbar-width: none;
-            /* Hide scrollbar for Firefox */
-            -webkit-overflow-scrolling: touch;
-        }
-
-        /* Hide scrollbar for Chrome/Safari */
-        .menu-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Right edge gradient overlay (fixed to outer div) */
-        .equis-menu::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 100px;
-            background: linear-gradient(to right, transparent, white);
-            pointer-events: none;
-            z-index: 3;
-        }
-
-        .equis-menu::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            background: linear-gradient(to left, transparent, white);
-            pointer-events: none;
-            z-index: 3;
-        }
-
-        /* Menu buttons */
-        .menu-btn {
-            flex-shrink: 0;
-            text-decoration: none;
-            font-size: .8rem;
-            font-weight: 700;
-            padding: .6rem 1rem;
-            border-radius: 30px;
-            color: var(--color-primary, #840132);
-            transition: .25s;
-            text-transform: uppercase;
-            letter-spacing: .5px;
-            white-space: nowrap;
-        }
-
-        .menu-btn:hover {
-            background: #ededed;
-            color: black;
-        }
-
-        .menu-btn.active {
-            background: var(--color-primary, #840132);
-            color: white;
-        }
-
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-            .equis-menu {
-                padding: .6rem 0;
-            }
-
-            .menu-container {
-                justify-content: flex-start;
-                padding: 0 0.75rem;
-            }
-
-            .menu-btn {
-                font-size: .75rem;
-                padding: .55rem .9rem;
-            }
-
-            /* Keep gradients visible on mobile */
-            .equis-menu::after {
-                width: 40px;
-            }
-        }
-    </style>
+    <!-- STICKY MENU -->
     <div class="equis-menu">
         <div class="menu-container">
             <a href="#milestone" class="menu-btn">The Milestone</a>
@@ -1072,118 +1559,29 @@
             <a href="#shores" class="menu-btn">Two Shores</a>
             <a href="#means" class="menu-btn">What it Means</a>
             <a href="#path" class="menu-btn">The Path</a>
-            <a href="#voices" class="menu-btn" style="display:none;">People</a>
+            <a href="#voices" class="menu-btn">The People</a>
             <a href="#next" class="menu-btn">What's Next</a>
         </div>
     </div>
     <script>
         (function () {
-
             const sections = document.querySelectorAll("section[id]");
             const menuLinks = document.querySelectorAll(".menu-btn");
-
             window.addEventListener("scroll", () => {
-
                 let current = "";
-
                 sections.forEach(section => {
-
-                    const top =
-                        section.offsetTop - 150;
-
-                    if (pageYOffset >= top) {
-
-                        current = section.getAttribute("id");
-
-                    }
-
+                    const top = section.offsetTop - 150;
+                    if (pageYOffset >= top) current = section.getAttribute("id");
                 });
-
                 menuLinks.forEach(link => {
-
                     link.classList.remove("active");
-
-                    if (
-                        link.getAttribute("href") === "#" + current
-                    ) {
-                        link.classList.add("active");
-                    }
-
+                    if (link.getAttribute("href") === "#" + current) link.classList.add("active");
                 });
-
             });
-
         })();
     </script>
 
-
-
-
-    <!-- 1. MILESTONE (original hover effect) -->
-    <style>
-        .milestone-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .milestone-card {
-            background: white;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: all 0.35s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .milestone-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--color-primary);
-            transform: scaleX(0);
-            transition: transform 0.35s;
-        }
-
-        .milestone-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(132, 1, 50, 0.1);
-        }
-
-        .milestone-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .milestone-num {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--color-primary);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .milestone-sub {
-            color: var(--color-primary-dark);
-            font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-        }
-
-        .milestone-desc {
-            font-size: 0.9rem;
-            color: #000;
-            line-height: 1.2;
-            font-weight: 400;
-        }
-    </style>
+    <!-- 1. MILESTONE -->
     <section id="milestone">
         <div class="container">
             <div class="section-label">The Milestone</div>
@@ -1192,202 +1590,39 @@
                 <div class="milestone-card">
                     <div class="milestone-num">1<sup>st</sup></div>
                     <div class="milestone-sub">In Lebanon</div>
-                    <div class="milestone-desc">The first business school in Lebanon to earn EQUIS accreditation.</div>
+                    <p class="milestone-desc">The first business school in Lebanon to earn EQUIS accreditation.</p>
                 </div>
                 <div class="milestone-card">
                     <div class="milestone-num">1<sup>st</sup></div>
                     <div class="milestone-sub">In Cyprus</div>
-                    <div class="milestone-desc">The first business education institution in Cyprus to earn EQUIS
-                        accreditation.</div>
+                    <p class="milestone-desc">The first business education institution in Cyprus to earn EQUIS
+                        accreditation.</p>
                 </div>
                 <div class="milestone-card">
                     <div class="milestone-num">2<sup></sup></div>
                     <div class="milestone-sub">Accreditation Crowns</div>
-                    <div class="milestone-desc">Global accreditation crowns held simultaneously: AACSB and EQUIS.</div>
+                    <p class="milestone-desc">Global accreditation crowns held simultaneously: AACSB and EQUIS.</p>
                 </div>
                 <div class="milestone-card">
                     <div class="milestone-num">5<sup>th</sup></div>
                     <div class="milestone-sub">In MENA</div>
-                    <div class="milestone-desc">One of only five EQUIS-accredited business schools in the region.</div>
+                    <p class="milestone-desc">One of only five EQUIS-accredited business schools in the region.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 1. EQUIS SECTION – with background image overlay (formerly journey style) -->
-    <style>
-        .equis {
-            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
-            background-blend-mode: overlay;
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
-
-        .equis .section-title {
-            color: white;
-        }
-
-        .equis .section-label {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .equis .equis-description {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.2;
-        }
-
-        /* Pillars grid (same as before, but now inside equis) */
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-
-            max-width: var(--container-max);
-            margin: 2rem auto;
-        }
-
-        .pillar-card {
-            perspective: 1000px;
-            -webkit-perspective: 1000px;
-            cursor: pointer;
-            min-height: 170px;
-        }
-
-        /* INNER */
-        .pillar-inner {
-            position: relative;
-            width: 100%;
-            height: 170px;
-            transition: transform .6s;
-            -webkit-transition: -webkit-transform .6s;
-            transform-style: preserve-3d;
-            -webkit-transform-style: preserve-3d;
-            will-change: transform;
-        }
-
-        .pillar-card:hover .pillar-inner {
-            transform: rotateY(180deg);
-        }
-
-        /* FRONT + BACK */
-        .pillar-front,
-        .pillar-back {
-            position: absolute;
-            inset: 0;
-
-            border-radius: 10px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            padding: 1.5rem;
-            text-align: center;
-
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-
-        /* FRONT */
-        .pillar-front {
-            background: #fef9f7;
-            border: 1px solid #E5E7EB;
-
-            transform: rotateY(0deg);
-            -webkit-transform: rotateY(0deg);
-        }
-
-        .pillar-front h4 {
-            font-size: 1.2rem;
-            color: var(--color-primary);
-            font-weight: 700;
-            line-height: 1.1;
-            text-transform: uppercase;
-        }
-
-        .pillar-front i {
-            font-size: 1.8rem;
-            color: var(--color-primary);
-        }
-
-        /* BACK */
-        .pillar-back {
-            background: var(--color-grey);
-            color: #fff;
-            transform: rotateY(180deg);
-            -webkit-transform: rotateY(180deg);
-        }
-
-        .pillar-back p {
-            font-size: .95rem;
-            line-height: 1.2;
-        }
-
-        /* DESKTOP HOVER */
-        @media (hover: hover) {
-
-            .pillar-card:hover .pillar-inner {
-                transform: rotateY(180deg);
-                -webkit-transform: rotateY(180deg);
-            }
-
-        }
-
-        /* MOBILE / TOUCH */
-        @media (hover: none) {
-
-            .pillar-card.flipped .pillar-inner {
-                transform: rotateY(180deg);
-                -webkit-transform: rotateY(180deg);
-            }
-
-        }
-
-        /* RESPONSIVE */
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .pillars-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .pillars-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pillar-card,
-            .pillar-inner {
-                height: 190px;
-            }
-
-            .pillar-front,
-            .pillar-back {
-                padding: 1rem;
-            }
-
-            .pillar-front h4 {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
-
+    <!-- 2. STANDARD (EQUIS) -->
     <section id="standard" class="equis">
         <div class="container">
             <div class="section-label">The Standard</div>
             <h2 class="section-title">What EQUIS Is</h2>
-            <div class="equis-description">
-                EFMD Quality Improvement System (EQUIS) accreditation is a globally recognised mark of excellence for
-                business and management education. It involves rigorous evaluation based on criteria such as academic
-                programmes, faculty quality, research output, internationalisation and corporate relevance.
-            </div>
+            <p class="equis-description">EFMD Quality Improvement System (EQUIS) accreditation is a globally recognised
+                mark of excellence for business and management education. It involves rigorous evaluation based on
+                criteria such as academic programmes, faculty quality, research output, internationalisation and
+                corporate relevance.</p>
             <div class="pillars-grid">
-                <div class="pillar-card reveal visible">
+                <div class="pillar-card">
                     <div class="pillar-inner">
                         <div class="pillar-front">
                             <h4>Strategy &amp; Governance</h4>
@@ -1397,18 +1632,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="pillar-card reveal visible">
+                <div class="pillar-card">
                     <div class="pillar-inner">
                         <div class="pillar-front">
                             <h4>Programs &amp; Student Experience</h4>
                         </div>
                         <div class="pillar-back">
-                            <p>6-degree programs benchmarked against international peers and shaped by learning goals,
-                                student voice, and international benchmarking.</p>
+                            <p>6-degree programs benchmarked against international peers.</p>
                         </div>
                     </div>
                 </div>
-                <div class="pillar-card reveal visible">
+                <div class="pillar-card">
                     <div class="pillar-inner">
                         <div class="pillar-front">
                             <h4>Faculty &amp; Research</h4>
@@ -1418,108 +1652,66 @@
                         </div>
                     </div>
                 </div>
-                <div class="pillar-card reveal visible">
+                <div class="pillar-card">
                     <div class="pillar-inner">
                         <div class="pillar-front">
                             <h4>Internationalization</h4>
                         </div>
                         <div class="pillar-back">
-                            <p>A network of partner institutions across Europe, MENA, and beyond — and a faculty body
-                                that mirrors it.</p>
+                            <p>Network of partner institutions across Europe, MENA, and beyond.</p>
                         </div>
                     </div>
                 </div>
-                <div class="pillar-card reveal visible">
+                <div class="pillar-card">
                     <div class="pillar-inner">
                         <div class="pillar-front">
                             <h4>Corporate Connections</h4>
                         </div>
                         <div class="pillar-back">
-                            <p>Active partnerships with regional and international employers. Advisory boards drawn from
-                                MENA, Europe, and beyond.</p>
+                            <p>Active partnerships with regional and international employers.</p>
                         </div>
                     </div>
                 </div>
-                <div class="pillar-card reveal visible">
+                <div class="pillar-card">
                     <div class="pillar-inner">
                         <div class="pillar-front">
                             <h4>Ethics, Responsibility &amp; Sustainability</h4>
                         </div>
                         <div class="pillar-back">
-                            <p>A commitment to responsible leadership, societal contribution, and sustainable impact.
-                                BSIS-labeled in 2024.</p>
+                            <p>Commitment to responsible leadership and sustainable impact.</p>
                         </div>
                     </div>
                 </div>
-                <div class="pillar-card reveal visible">
+                <div class="pillar-card">
                     <div class="pillar-inner">
                         <div class="pillar-front">
                             <h4>Resources &amp; Operations</h4>
                         </div>
                         <div class="pillar-back">
-                            <p>Academic and student support systems that enable quality across locations. Facilities,
-                                libraries, and student support built to international standard.</p>
+                            <p>Academic and student support systems enabling quality.</p>
                         </div>
                     </div>
                 </div>
-                <div class="pillar-card reveal visible">
+                <div class="pillar-card">
                     <div class="pillar-inner">
                         <div class="pillar-front">
                             <h4>Impact &amp; Continuous Improvement</h4>
                         </div>
                         <div class="pillar-back">
-                            <p>Leading in regional and international rankings. Evidence-based reflection, improvement,
-                                and contribution to the region and beyond.</p>
+                            <p>Leading in regional rankings and evidence-based reflection.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <script>
         document.querySelectorAll('.pillar-card').forEach(card => {
-            card.addEventListener('click', function () {
-                // touch devices only
-                if (window.matchMedia("(hover: none)").matches) {
-                    this.classList.toggle('flipped');
-                }
-            });
+            card.addEventListener('click', function () { if (window.matchMedia("(hover: none)").matches) this.classList.toggle('flipped'); });
         });
     </script>
 
-    <!-- 2. JOURNEY SECTION – clean white design, no image (formerly standard style) -->
-    <style>
-        .journey-clean {
-            background: #fff;
-            color: var(--color-text);
-        }
-
-        .journey-clean .container {
-            max-width: var(--container-max);
-            margin: 0 auto;
-        }
-
-        .journey-clean .section-label {
-            color: var(--color-black);
-        }
-
-        .journey-clean .section-title {
-            color: var(--color-primary);
-        }
-
-        .journey-clean .journey-text p {
-            font-size: 1.1rem;
-            line-height: 1.2;
-            margin-bottom: 0.8rem;
-        }
-
-        .journey-clean .journey-text strong {
-            color: var(--color-primary);
-            font-weight: 800;
-        }
-    </style>
-
+    <!-- 3. JOURNEY -->
     <section id="journey" class="journey-clean">
         <div class="container">
             <div class="section-label">The Journey</div>
@@ -1534,81 +1726,8 @@
         </div>
     </section>
 
-
-    <!-- 4. TWO SHORES (clickable cards with looping videos) -->
-    <style>
-        .shores-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin: 2rem 0 1.5rem;
-        }
-
-        .shore-card {
-            display: block;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: 0.25s;
-            border: 1px solid #E5E7EB;
-            background: white;
-            text-decoration: none;
-        }
-
-        .shore-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px rgba(132, 1, 50, 0.12);
-        }
-
-        .shore-img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            background: #2c3e50;
-            display: block;
-        }
-
-        .shore-info {
-            padding: 1.8rem;
-            text-align: center;
-            background: var(--color-primary, #840132);
-            color: white;
-        }
-
-        .shore-card:last-child .shore-info {
-            background: var(--color-primary-dark, #6a132c);
-        }
-
-        .shore-location {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-            opacity: 0.9;
-            margin: 0.3rem 0;
-        }
-
-        .shore-school {
-            font-weight: 800;
-            font-size: 1.1rem;
-            line-height: 1.2;
-        }
-
-        .shores-quote {
-            font-size: 1.1rem;
-            line-height: 1.2;
-        }
-
-        @media (max-width: 768px) {
-            .shores-split {
-                grid-template-columns: 1fr;
-            }
-
-            .shore-img {
-                height: 200px;
-            }
-        }
-    </style>
-
-    <section id="shores" style="background: #ededed;">
+    <!-- 4. TWO SHORES -->
+    <section id="shores">
         <div class="container">
             <div class="section-label">Two Shores</div>
             <h2 class="section-title">Rooted in the region.<br />Recognized by the world.</h2>
@@ -1616,25 +1735,20 @@
                 academic vision. EQUIS accreditation recognizes the strength of this connection: two locations, aligned
                 around quality, relevance, impact, and internationally benchmarked standards.</p>
             <div class="shores-split">
-                <!-- Card 1: OSB Beirut -->
                 <a href="https://www.aub.edu.lb/osb" target="_blank" class="shore-card">
                     <video class="shore-img" autoplay loop muted playsinline poster="./images/AUB-OSB-Beirut.jpg">
-                        <source src="./videos/AUB-OSB.mp4" type="video/mp4">
-                        <!-- Fallback text/image if video not supported -->
-                        <img src="./images/AUB-OSB-Beirut.jpg" alt="Beirut Campus"
-                            style="width:100%;height:100%;object-fit:cover;">
+                        <source src="./videos/AUB-OSB.mp4" type="video/mp4"><img src="./images/AUB-OSB-Beirut.jpg"
+                            alt="Beirut Campus">
                     </video>
                     <div class="shore-info">
                         <div class="shore-school">Suliman S. Olayan School of Business</div>
                         <div class="shore-location">Beirut, Lebanon</div>
                     </div>
                 </a>
-                <!-- Card 2: AUB Mediterraneo -->
                 <a href="https://www.aubmed.ac.cy/" target="_blank" class="shore-card">
                     <video class="shore-img" autoplay loop muted playsinline poster="./images/AUB-Med-Pafos.jpg">
-                        <source src="./videos/AUB-MED.mp4" type="video/mp4">
-                        <img src="./images/AUB-Med-Pafos.jpg" alt="Paphos Campus"
-                            style="width:100%;height:100%;object-fit:cover;">
+                        <source src="./videos/AUB-MED.mp4" type="video/mp4"><img src="./images/AUB-Med-Pafos.jpg"
+                            alt="Paphos Campus">
                     </video>
                     <div class="shore-info">
                         <div class="shore-school">Faculty of Business • AUB Mediterraneo</div>
@@ -1645,254 +1759,76 @@
         </div>
     </section>
 
-    <!-- 5. WHAT THIS MEANS: cards with images (not icons) -->
-    <style>
-        .perspectives-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.8rem;
-            margin-top: 2rem;
-        }
-
-        .perspective-card {
-            background: white;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .perspective-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 30px rgba(132, 1, 50, 0.08);
-        }
-
-        .perspective-img {
-            width: 100%;
-            height: 230px;
-            background: var(--color-primary);
-            object-fit: cover;
-        }
-
-        .perspective-body {
-            padding: 1.5rem;
-        }
-
-        .perspective-for {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .perspective-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 0.6rem;
-            /* color: #000; */
-        }
-
-        .perspective-text {
-            font-size: 0.8rem;
-            line-height: 1.4;
-            margin-bottom: 0.8rem;
-        }
-
-        .perspective-quote {
-            background: #ededed;
-            padding: 0.7rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            color: #000;
-            font-weight: 500;
-            display: none;
-        }
-
-        @media (max-width: 900px) {
-            .perspectives-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .perspectives-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <!-- 5. WHAT IT MEANS (perspectives) -->
     <section id="means">
         <div class="container">
             <div class="section-label">What It Means</div>
-            <h2 class="section-title" style="max-width: 750px;">Six perspectives on what changed the day EQUIS arrived.
+            <h2 class="section-title" style="max-width: 660px;">Six perspectives on what changed the day EQUIS arrived.
             </h2>
             <div class="perspectives-grid">
                 <div class="perspective-card"><img src="./images/AUB-OSB-Equis-STUDENTS.jpg" class="perspective-img"
-                        alt="student">
+                        alt="students">
                     <div class="perspective-body">
                         <div class="perspective-for">For Students</div>
-                        <div class="perspective-title">Your Degree, Globally Benchmarked</div>
-                        <div class="perspective-text">EQUIS strengthens confidence in the education students receive. It
+                        <h3 class="perspective-title">Your Degree, Globally Benchmarked</h3>
+                        <p class="perspective-text">EQUIS strengthens confidence in the education students receive. It
                             signals that programs, learning experiences, faculty engagement, and student support have
-                            been reviewed against international standards.</div>
-                        <div class="perspective-quote">[Quote from a current student — 2 sentences, specific and
-                            unscripted.]</div>
+                            been reviewed against international standards.</p>
                     </div>
                 </div>
-
-                <div class="perspective-card">
-                    <img src="./images/AUB-OSB-Equis-FACULTY.jpg" class="perspective-img" alt="faculty and staff">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-FACULTY.jpg" class="perspective-img"
+                        alt="faculty">
                     <div class="perspective-body">
                         <div class="perspective-for">For Faculty &amp; Staff</div>
-                        <div class="perspective-title">Recognition for the Work</div>
-                        <div class="perspective-text">EQUIS recognizes the teaching, research, mentorship, engagement,
-                            and continuous improvement led by faculty &amp; staff across the business education
-                            community. Not as a single achievement but rather as a confirmation.</div>
-                        <div class="perspective-quote">[Quote from a faculty member / staff.]</div>
+                        <h3 class="perspective-title">Recognition for the Work</h3>
+                        <p class="perspective-text">EQUIS recognizes the teaching, research, mentorship, engagement, and
+                            continuous improvement led by faculty &amp; staff across the business education community.
+                        </p>
                     </div>
                 </div>
-
-                <div class="perspective-card">
-                    <img src="./images/AUB-OSB-Equis-ALUMNI.jpg" class="perspective-img" alt="alumni">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-ALUMNI.jpg" class="perspective-img"
+                        alt="alumni">
                     <div class="perspective-body">
                         <div class="perspective-for">For Alumni</div>
-                        <div class="perspective-title">A Stronger Name to Carry Forward</div>
-                        <div class="perspective-text">As AUB's business education reputation grows, alumni benefit from
-                            enhanced institutional visibility and international recognition.</div>
-                        <div class="perspective-quote">[Quote from a recent alum working internationally.]</div>
+                        <h3 class="perspective-title">A Stronger Name to Carry Forward</h3>
+                        <p class="perspective-text">As AUB's business education reputation grows, alumni benefit from
+                            enhanced institutional visibility and international recognition.</p>
                     </div>
                 </div>
-
-                <div class="perspective-card">
-                    <img src="./images/AUB-OSB-Equis-EMPLOYER.jpg" class="perspective-img" alt="employers">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-EMPLOYER.jpg" class="perspective-img"
+                        alt="employers">
                     <div class="perspective-body">
                         <div class="perspective-for">For Employers</div>
-                        <div class="perspective-title">Talent You Can Trust</div>
-                        <div class="perspective-text">Graduates from a school that meets the same standard as the most
-                            respected institutions in Europe and North America. Hired with confidence. Onboarded without
-                            surprise.</div>
-                        <div class="perspective-quote">[Quote from a real recruiter or partner.]</div>
+                        <h3 class="perspective-title">Talent You Can Trust</h3>
+                        <p class="perspective-text">Graduates from a school that meets the same standard as the most
+                            respected institutions in Europe and North America. Hired with confidence.</p>
                     </div>
                 </div>
-
-                <div class="perspective-card">
-                    <img src="./images/AUB-OSB-Equis-PARENTS.jpg" class="perspective-img" alt="parents">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-PARENTS.jpg" class="perspective-img"
+                        alt="parents">
                     <div class="perspective-body">
                         <div class="perspective-for">For Parents</div>
-                        <div class="perspective-title">Confidence in the Choice</div>
-                        <div class="perspective-text">For parents and families, EQUIS offers added confidence that their
+                        <h3 class="perspective-title">Confidence in the Choice</h3>
+                        <p class="perspective-text">For parents and families, EQUIS offers added confidence that their
                             children are studying in a business education environment recognized for quality, care, and
-                            international standards.</div>
-                        <div class="perspective-quote">[Quote from a parent of a current student.]</div>
+                            international standards.</p>
                     </div>
                 </div>
-
-                <div class="perspective-card">
-                    <img src="./images/AUB-OSB-Equis-REGION.jpg" class="perspective-img" alt="region">
+                <div class="perspective-card"><img src="./images/AUB-OSB-Equis-REGION.jpg" class="perspective-img"
+                        alt="region">
                     <div class="perspective-body">
                         <div class="perspective-for">For the Region</div>
-                        <div class="perspective-title">A Statement for Lebanon, Cyprus, and MENA</div>
-                        <div class="perspective-text">This milestone shows that business education built in the region
-                            can meet global standards while remaining connected to regional realities and needs.</div>
-                        <div class="perspective-quote">[Quote from a regional partner, employer, or government / EU
-                            figure.]</div>
+                        <h3 class="perspective-title">A Statement for Lebanon, Cyprus, and MENA</h3>
+                        <p class="perspective-text">This milestone shows that business education built in the region can
+                            meet global standards while remaining connected to regional realities and needs.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. TIMELINE (horizontal connecting line, original card style) -->
-    <style>
-        #path {
-            padding-bottom: 2rem;
-        }
-
-        .timeline-grid {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            position: relative;
-            margin: 3rem 0 1rem;
-            gap: 0.5rem;
-        }
-
-        .timeline-item {
-            flex: 1;
-            text-align: center;
-            min-width: 120px;
-            height: 122px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .timeline-year {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--color-text);
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-dot {
-            width: 14px;
-            height: 14px;
-            background: var(--color-primary);
-            border-radius: 50%;
-            margin: 0.5rem auto;
-        }
-
-        .timeline-label {
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: var(--color-primary-dark);
-            margin-top: 0.2rem;
-        }
-
-        .timeline-desc {
-            font-size: 0.75rem;
-            color: #000;
-            line-height: 1.2;
-            display: none;
-        }
-
-        .timeline-item:hover .timeline-desc {
-            display: block;
-        }
-
-        .timeline-grid::before {
-            content: '';
-            position: absolute;
-            top: 35px;
-            left: 5%;
-            width: 90%;
-            height: 2px;
-            background: rgba(0, 0, 0, 0.55);
-            z-index: 1;
-        }
-
-        @media (max-width: 780px) {
-            .timeline-grid {
-                flex-direction: column;
-                gap: 1.2rem;
-            }
-
-            .timeline-grid::before {
-                display: none;
-            }
-
-            .timeline-item {
-                border-left: 3px solid var(--color-primary);
-                padding-left: 1rem;
-                text-align: left;
-            }
-
-            .timeline-dot {
-                margin: 0 0 0.3rem 0;
-            }
-        }
-    </style>
-    <section id="path" style="background: #f8f8f8;">
+    <!-- 6. TIMELINE -->
+    <section id="path" style="padding-bottom: 0;">
         <div class="container">
             <div class="section-label">The Path</div>
             <h2 class="section-title">Seventeen Years. Two Crowns.<br>One Continuous Commitment.</h2>
@@ -1901,516 +1837,148 @@
                     <div class="timeline-year">2009</div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-label">AACSB Earned</div>
-                    <div class="timeline-desc">
+                    <p class="timeline-desc">
                         The 100th business school outside the US to earn AACSB Accreditation.
-                    </div>
+                    </p>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-year">2014</div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-label">AACSB Reaffirmed</div>
-                    <div class="timeline-desc">
+                    <p class="timeline-desc">
                         The first five-year review confirms continued progress and commitment.
-                    </div>
+                    </p>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-year">2019</div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-label">AACSB Reaffirmed Through the Storm</div>
-                    <div class="timeline-desc">
+                    <p class="timeline-desc">
                         Reaffirmation arrives as Lebanon enters its deepest economic crisis. The standard does not
                         change.
-                    </div>
+                    </p>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-year">2024</div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-label">EFMD BSIS Label Earned</div>
-                    <div class="timeline-desc">
+                    <p class="timeline-desc">
                         Independent recognition of OSB's social and economic impact on its community.
-                    </div>
+                    </p>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-year">2025</div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-label">AACSB Reaffirmed &amp; Extended</div>
-                    <div class="timeline-desc">
+                    <p class="timeline-desc">
                         Reaffirmation extended to business programs at FoB at AUB Mediterraneo in Paphos.
-                    </div>
+                    </p>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-year">2026</div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-label">EQUIS Earned</div>
-                    <div class="timeline-desc">
+                    <p class="timeline-desc">
                         A second global accreditation crown. The story continues.
-                    </div>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. VOICES (no emojis, fontawesome icons, uniform cards) -->
-    <style>
-        .voices-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.8rem;
-            margin: 2rem 0 2rem;
-        }
-
-        .voice-video-card {
-            background: white;
-            border-radius: 12px;
-            border: 1px solid #E5E7EB;
-            overflow: hidden;
-            transition: 0.2s;
-        }
-
-        .voice-video-media {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-            padding: 2rem;
-            text-align: center;
-            color: white;
-        }
-
-        .voice-video-media i {
-            font-size: 2.8rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .voice-video-media h3 {
-            font-size: 1.2rem;
-            font-weight: 800;
-        }
-
-        .voices-cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .voice-card {
-            background: white;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
-            padding: 1.3rem;
-            transition: transform 0.25s ease, box-shadow 0.3s ease;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
-            will-change: transform, box-shadow;
-        }
-
-        .voice-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(132, 1, 50, 0.1);
-        }
-
-        .voice-card i {
-            font-family: inherit;
-            font-style: normal;
-            font-size: 0;
-            display: block;
-            width: 48px;
-            height: 3px;
-            background-color: var(--color-primary);
-            border-radius: 20px;
-            margin-bottom: 0.75rem;
-            transition: height 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-
-        .voice-card:hover i {
-            width: 100px;
-            background-color: var(--color-primary);
-            transition: width 0.3s ease-out;
-        }
-
-        .voice-card h4 {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.2rem;
-            color: #0f172a;
-            letter-spacing: -0.2px;
-        }
-
-        .voice-role {
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: #000;
-            margin-bottom: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            opacity: 0.8;
-        }
-
-        .voice-quote {
-            font-size: 0.8rem;
-            line-height: 1.4;
-            margin-bottom: 0.8rem;
-            color: #1e293b;
-        }
-
-        .voice-btn {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            border: 1px solid var(--color-primary);
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            background: transparent;
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s;
-            cursor: pointer;
-        }
-
-        .voice-btn:hover {
-            background: var(--color-primary);
-            color: white;
-            border-color: var(--color-primary);
-        }
-
-        @media (max-width: 680px) {
-            .voices-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .section-container {
-                padding: 0;
-            }
-
-            .voice-card {
-                padding: 1.2rem;
-            }
-        }
-    </style>
+    <!-- 7. VOICES -->
     <section id="voices">
         <div class="container">
             <div class="section-label">The People</div>
             <h2 class="section-title">Voices</h2>
-            <div class="voices-grid" Style="display: none;">
-                <div class="voice-video-card">
-                    <div class="voice-video-media"><i class="fas fa-play-circle"></i>
-                        <h3>A Message from the President</h3>
-                        <div>On what this milestone means for the university and its mission.</div>
-                    </div>
-                </div>
-                <div class="voice-video-card">
-                    <div class="voice-video-media"><i class="fas fa-video"></i>
-                        <h3>The EQUIS Announcement</h3>
-                        <div>Watch the official announcement video from AUB Business Education.</div>
-                    </div>
-                </div>
-            </div>
-
-            <style>
-                /* Distinguished Leadership Section */
-                .distinguished-card {
-                    display: flex;
-                    gap: 2rem;
-                    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-                    border-radius: 24px;
-                    padding: 2rem;
-                    margin-bottom: 3rem;
-                    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    margin-top: 2rem;
-                }
-
-                .distinguished-profile {
-                    flex-shrink: 0;
-                    width: 80px;
-                    height: 80px;
-                    border-radius: 50%;
-                    overflow: hidden;
-                    /* Ensures image stays within circle */
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 2px solid rgba(255, 255, 255, 0.5);
-                }
-
-                .distinguished-profile img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    /* Ensures image fills circle properly */
-                }
-
-                .distinguished-content {
-                    flex: 1;
-                }
-
-                .distinguished-badge {
-                    display: inline-block;
-                    background: rgba(255, 255, 255, 1);
-                    color: var(--color-primary-dark);
-                    font-size: 0.75rem;
-                    font-weight: 600;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    padding: 0.25rem 0.75rem;
-                    border-radius: 50px;
-                    margin: 0.75rem 0;
-                }
-
-                .distinguished-content h3 {
-                    font-size: 1.8rem;
-                    font-weight: 700;
-                    margin: 0 0 0.25rem 0;
-                    color: #ffffff;
-                }
-
-                .distinguished-role {
-                    font-size: 0.9rem;
-                    color: rgba(255, 255, 255, 0.7);
-                    margin-bottom: 1rem;
-                    letter-spacing: 0.3px;
-                }
-
-                .distinguished-quote {
-                    font-size: 1rem;
-                    line-height: 1.6;
-                    color: rgba(255, 255, 255, 0.9);
-                    margin-bottom: 1rem;
-                    padding-left: 1rem;
-                    border-left: 3px solid white;
-                }
-
-                .distinguished-meta {
-                    display: flex;
-                    gap: 1.5rem;
-                    margin-bottom: 1.25rem;
-                }
-
-                .distinguished-meta span {
-                    font-size: 0.8rem;
-                    color: rgba(255, 255, 255, 0.6);
-                }
-
-                .distinguished-meta i {
-                    margin-right: 0.4rem;
-                    font-size: 0.75rem;
-                }
-
-                .distinguished-btn {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    background: white;
-                    color: #1a2a3a;
-                    padding: 0.6rem 1.25rem;
-                    border-radius: 4px;
-                    text-decoration: none;
-                    font-weight: 600;
-                    font-size: 1rem;
-                    transition: all 0.2s ease;
-                }
-
-                .distinguished-btn:hover {
-                    background: rgba(255, 255, 255, 0.5)[];
-                    transform: translateX(4px);
-                    text-decoration: none;
-                    color: #0f1a24;
-                }
-
-                /* Voices Section Header */
-                .voices-header {
-                    text-align: center;
-                    margin-bottom: 2rem;
-                }
-
-                .voices-header h3 {
-                    font-size: 1.6rem;
-                    font-weight: 700;
-                    color: #1a2a3a;
-                    margin-bottom: 0.5rem;
-                }
-
-                .voices-header p {
-                    color: #666;
-                    font-size: 0.95rem;
-                }
-
-                /* Responsive */
-                @media (max-width: 768px) {
-                    .distinguished-card {
-                        flex-direction: column;
-                        text-align: center;
-                        padding: 1.5rem;
-                    }
-
-                    .distinguished-quote {
-                        text-align: left;
-                    }
-
-                    .distinguished-meta {
-                        justify-content: center;
-                        flex-wrap: wrap;
-                    }
-
-                    .distinguished-btn {
-                        margin: 0 auto;
-                    }
-                }
-            </style>
-            <!-- Distinguished Leadership Section -->
             <div class="distinguished-card">
-                <div class="distinguished-profile">
-                    <img src="images/AUB-Dr-Fadlo-Khouri.jpg" alt="Dr. Fadlo Khuri Profile">
+                <div class="distinguished-profile"><img src="images/AUB-Dr-Fadlo-Khouri.jpg" alt="Dr. Fadlo Khuri">
                 </div>
                 <div class="distinguished-content">
                     <h3>Dr. Fadlo Khuri</h3>
                     <div class="distinguished-badge">President, AUB</div>
-                    <!-- <div class="distinguished-role">President, AUB</div> -->
-                    <div class="distinguished-quote">
-                        “The accreditation recognizes the strength of AUB's integrated academic
-                        model across its campuses, while also highlighting the distinct contributions of the Suliman S.
-                        Olayan School of Business and the Faculty of Business at AUB Mediterraneo. This distinction is a
-                        clear indicator of AUB's global visibility and reinforces our broader vision to advance
-                        high-quality business education, leadership development, applied research, and societal impact
-                        across the Middle East, the Mediterranean, and beyond.”
-                    </div>
+                    <p class="distinguished-quote">
+                        “The accreditation recognizes the strength of AUB's integrated academic model across its
+                        campuses, while also highlighting the distinct contributions of the Suliman S. Olayan School of
+                        Business and the Faculty of Business at AUB Mediterraneo. This distinction is a clear indicator
+                        of AUB's global visibility and reinforces our broader vision to advance high-quality business
+                        education, leadership development, applied research, and societal impact across the Middle East,
+                        the Mediterranean, and beyond.”
+                    </p>
                     <a href="https://www.aub.edu.lb/President/Documents/Messages/2026/EQUIS-2026.pdf"
-                        class="distinguished-btn" target="_blank">Watch Full Speech <i
-                            class="fas fa-arrow-right"></i></a>
+                        class="distinguished-btn" target="_blank">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-            <div class="section-container">
-                <div class="voices-cards">
-                    <!-- Card 1: Dr. Zaher Dawy (commented out text means deleted: original comment says "Read Perspective" is deleted, so we keep no button) -->
-                    <div class="voice-card">
-                        <i class="fas fa-minus"></i>
-                        <h4>Dr. Zaher Dawy</h4>
-                        <div class="voice-role">Provost</div>
-                        <div class="voice-quote">“EQUIS accreditation is a seal of excellence for business education at
+            <div class="voices-cards">
+                <div class="voice-card"><i class="top-line"></i>
+                    <h4>Dr. Zaher Dawy</h4>
+                    <div class="voice-role">Provost</div>
+                    <div class="quote-wrapper">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="voice-quote">
+                            “EQUIS accreditation is a seal of excellence for business education at
                             AUB. Achieving it alongside our AACSB accreditation places us among a select group of
-                            business schools worldwide that hold the 'Double Crown' distinction, providing our students
+                            business schools worldwide that hold the <b>'Double Crown' distinction</b>, providing our
+                            students
                             with a world-class learning experience, enhanced global credibility, and greater
-                            opportunities for academic and professional success.”</div>
+                            opportunities for academic and professional success.”</p>
                     </div>
-
-                    <!-- Card 2: Prof. Yusuf Sidani (original has 'Watch Message' commented out) -->
-                    <div class="voice-card">
-                        <i class="fas fa-minus"></i>
-                        <h4>Prof. Yusuf Sidani</h4>
-                        <div class="voice-role">Dean, Suliman S. Olayan School of Business (Beirut)</div>
-                        <div class="voice-quote">“EQUIS accreditation is a significant recognition of the quality,
-                            relevance, and international standing of AUB's business programs. It reflects the collective
-                            efforts of our faculty, staff, students, alumni, advisory board members, and partners, and
-                            affirms our commitment to developing responsible leaders who can contribute meaningfully to
-                            business and society.”</div>
+                </div>
+                <div class="voice-card"><i class="top-line"></i>
+                    <h4>Prof. Yusuf Sidani</h4>
+                    <div class="voice-role">Dean, Suliman S. Olayan School of Business (Beirut)</div>
+                    <div class="quote-wrapper">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="voice-quote">
+                            “EQUIS accreditation is a significant recognition of the <b>quality, relevance, and
+                                international standing</b> of AUB's business programs. It reflects the collective
+                            efforts of our
+                            faculty, staff, students, alumni, advisory board members, and partners, and affirms our
+                            commitment to developing responsible leaders who can contribute meaningfully to business and
+                            society.”
+                        </p>
                     </div>
-
-                    <!-- Card 3: Dr. Alain Daou -->
-                    <div class="voice-card">
-                        <i class="fas fa-minus"></i>
-                        <h4>Dr. Alain Daou</h4>
-                        <div class="voice-role">Dean, Faculty of Business – AUB Mediterraneo (Paphos)</div>
-                        <div class="voice-quote">“EQUIS accreditation marks a defining milestone for the Faculty of
-                            Business at AUB Mediterraneo. It affirms that the faculty we are building in Paphos is
-                            grounded in AUB's tradition of academic excellence. For our students and community, it is a
-                            confirmation that our journey begins with a strong foundation and is already aligned with
-                            European and internationally recognized standards of excellence.”</div>
+                </div>
+                <div class="voice-card"><i class="top-line"></i>
+                    <h4>Dr. Alain Daou</h4>
+                    <div class="voice-role">Dean, Faculty of Business – AUB Mediterraneo (Paphos)</div>
+                    <div class="quote-wrapper">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="voice-quote">
+                            “EQUIS accreditation marks a defining milestone for the Faculty of Business at AUB
+                            Mediterraneo. It affirms that the faculty we are building in Paphos is grounded in AUB's
+                            tradition of <b>academic excellence</b>. For our students and community, it is a
+                            confirmation that
+                            our journey begins with a strong foundation and is already aligned with European and
+                            internationally recognized standards of excellence.”
+                        </p>
                     </div>
+                </div>
 
-                    <!-- Card 4: Abir Sinno -->
-                    <div class="voice-card">
-                        <i class="fas fa-minus"></i>
-                        <h4>Abir Sinno</h4>
-                        <div class="voice-role">Director, Strategic Initiatives & Continuous Improvement</div>
-                        <div class="voice-quote">“Accreditation has value when it strengthens how an institution thinks,
-                            learns, and improves. The EQUIS process gave us the opportunity to reflect honestly on our
-                            programs, processes, stakeholder engagement, and quality systems, and to show how evidence
-                            informs our work across Beirut and Paphos. Its real value will be seen in how consistently
-                            we turn that reflection into meaningful improvement for our students, faculty, partners, and
-                            wider region.”</div>
+                <div class="voice-card">
+                    <i class="top-line"></i>
+                    <h4>Abir Sinno</h4>
+                    <div class="voice-role">Director, Strategic Initiatives & Continuous Improvement</div>
+                    <div class="quote-wrapper">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="voice-quote">
+                            “Accreditation has value when it strengthens how <b>an institution thinks, learns, and
+                                improves</b>. The EQUIS process gave us the opportunity to reflect honestly on our
+                            programs,
+                            processes, stakeholder engagement, and quality systems, and to show how evidence informs our
+                            work across Beirut and Paphos. Its real value will be seen in how consistently we turn that
+                            reflection into meaningful improvement for our students, faculty, partners, and wider
+                            region.”
+                        </p>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- 8. WHAT'S NEXT (original button design) -->
-    <style>
-        .next {
-            background: var(--color-dark-bg);
-            color: white;
-            text-align: center;
-        }
-
-        .next .section-title {
-            color: white;
-        }
-
-        .next .section-label {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .next-body {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 1rem auto 2rem;
-            line-height: 1.2;
-        }
-
-        .cta-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            padding: 0.9rem 1.8rem;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 4px;
-            color: white;
-            font-weight: 700;
-            transition: 0.25s;
-        }
-
-        .cta-btn.primary {
-            background: white;
-            border-color: white;
-            color: var(--color-primary);
-        }
-
-        .cta-btn.secondary {
-            background: white;
-            border-color: white;
-            color: Black;
-        }
-
-        .cta-btn.primary:hover,
-        .cta-btn.secondary:hover {
-            background: var(--color-primary-dark);
-            color: white;
-            border-color: var(--color-primary-dark);
-        }
-
-        .cta-btn:hover {
-            background: white;
-            color: var(--color-primary);
-        }
-
-        @media (max-width: 680px) {
-            .cta-grid {
-                max-width: 260px;
-                margin: auto;
-            }
-
-            .cta-btn {
-                width: 100%;
-            }
-        }
-    </style>
+    <!-- 8. NEXT -->
     <section id="next" class="next">
         <div class="container">
             <div class="section-label">What's Next</div>
@@ -2425,12 +1993,10 @@
                 <a href="mailto:osb@aub.edu.lb?subject=Partnership%20Inquiry" class="cta-btn secondary">Partner With
                     Us</a>
                 <a href="https://www.aub.edu.lb/osb/CMS/Pages/default.aspx" class="cta-btn secondary"
-                    target="_blank">Hire Our
-                    Graduates</a>
+                    target="_blank">Hire Our Graduates</a>
             </div>
         </div>
     </section>
-
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
