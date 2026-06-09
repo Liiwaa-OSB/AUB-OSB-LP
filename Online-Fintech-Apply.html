@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>AUB OSB | Fintech Certificate - Apply</title>
 
     <!-- Font Awesome -->
@@ -12,21 +12,22 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800;900&display=swap"
         rel="stylesheet">
-    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" href="build/css/intlTelInput.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/online-programs.css">
-
-    <!-- Additional minimal styles for validation errors (only what is missing) -->
+    <link rel="stylesheet" href="css/main-V1.css">
+    <link rel="stylesheet" href="css/online-programs-V1.css">
     <style>
-        .hero-banner::before {
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/AUB-OSB-ONLINE-Fintech-banner.jpg');
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, var(--color-black-30), var(--color-black-30)), url('images/AUB-OSB-ONLINE-Fintech-banner.jpg');
             background-position: center;
             background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 0;
         }
     </style>
-
     <!-- Scripts – jQuery, then intlTelInput, then phonescript (modified), then validator, then university -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- jQuery Validation Plugin is REMOVED to avoid duplicate validation -->
@@ -48,181 +49,188 @@
 </head>
 
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
 
-    <div class="hero-banner">
+    <!-- Hero Banner - Reusable component -->
+    <section class="hero">
         <div class="container">
-            <div class="banner-logo-center">
-                <a href="https://www.aub.edu.lb/osb"><img src="images/AUB-OSB-Logo-Vertical.png" alt="AUB OSB Logo"
-                        onerror="this.src='https://placehold.co/200x70?text=AUB+OSB'"></a>
+            <div class="hero-logo text-center">
+                <a href="https://www.aub.edu.lb/osb">
+                    <img src="images/AUB-OSB-Logo-Vertical.png" alt="AUB OSB Logo"
+                        onerror="this.src='https://placehold.co/140x140?text=AUB+OSB'">
+                </a>
             </div>
-            <div class="banner-content">
+            <div class="hero-content text-center">
                 <h1>Join the Fintech AI Certificate</h1>
-                <div class="hero-tagline">
+                <p class="hero-tagline">
                     As financial services continue to evolve through rapid technological advancements, professionals are
                     increasingly expected to understand and leverage emerging technologies. The convergence of FinTech
                     and Artificial Intelligence is reshaping how organizations operate, make decisions, manage risk, and
                     deliver value to customers.
-                </div>
+                </p>
             </div>
         </div>
-    </div>
+    </section>
 
     <div class="container">
-        <!-- Overlapping form card – structured to work with apply-validator.js -->
-        <div class="overlap-form-card">
-            <form class="validate-form-modern" id="myform"
-                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
-                name="myform" novalidate="novalidate">
+        <!-- Form Card - Reusable component -->
+        <div class="form-card">
+            <h2 class="form-card__title">Apply Now</h2>
+            <span class="form-card__subtitle">Fill in your details to start your application</span>
 
+            <form class="form" id="myform"
+                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post" novalidate>
                 <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
-                <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-                <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="[Lii - fintch Campaign ID]">
-                <input type="hidden" id="member_status" name="member_status" value="Interested">
+                <input type="hidden" name="recordType" value="0120Y000000ymGb">
+                <input type="hidden" name="Campaign_ID" value="701P500000fpPUgIAM">
+                <input type="hidden" name="member_status" value="Interested">
                 <input type="hidden" name="lead_source" id="lead_source" value="Website">
-                <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Apply Fintech">
-                <input type="hidden" name="00NP500000D37Bx" id="Campaign_Name" value="">
-                <input type="hidden" name="00NP500000D37IP" id="AD_Name" value="">
-                <input type="hidden" id="00NP500000LohFU" name="00NP500000LohFU" value="">
-                <input type="hidden" id="00NP500000Oxk99" name="00NP500000Oxk99" value="">
-                <input type="hidden" name="rating" id="rating" value="Cold">
+                <input type="hidden" name="00N0Y00000QGkma" value="Apply Fintech">
+                <input type="hidden" name="00NP500000D37Bx" value="">
+                <input type="hidden" name="00NP500000D37IP" value="">
+                <input type="hidden" name="00NP500000LohFU" value="">
+                <input type="hidden" name="00NP500000Oxk99" value="">
+                <input type="hidden" name="rating" value="Cold">
                 <input type="hidden" name="country_code" id="country_code" value="LB">
-                <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
-                <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
-                <input type="hidden" name="description" id="description" value="">
+                <input type="hidden" name="00N0Y00000RODiR" value="Personal Email">
+                <input type="hidden" name="00N0Y00000RODr9" value="Personal Phone">
+                <input type="hidden" id="description" name="description">
+                <input type=hidden name="00NP500000D37Bx" id="Campaign_Name" value="">
+                <input type=hidden name="00NP500000D37IP" id="AD_Name" value="">
                 <input type="hidden" name="retURL"
                     value="https://www.aub.edu.lb/osb/Landing/Pages/Online-Fintech-Apply-ThankYou.html">
 
-                <!-- Form fields – two-column grid, matching validator expectations -->
-                <div class="form-grid-modern-apply">
+                <div class="form-grid">
                     <!-- First Name -->
-                    <div class="form-group">
-                        <span class="label-input100">First Name *</span>
-                        <input class="input100" id="first_name" name="first_name" maxlength="40"
-                            placeholder="First Name" type="text" required>
-                        <span class="focus-input100"></span>
+                    <div class="form-group" id="first-name-group">
+                        <label class="form-label">First Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="first_name" name="first_name"
+                            placeholder="Enter your first name" required>
+                        <span class="error-message">Please enter your first name</span>
                     </div>
 
                     <!-- Last Name -->
-                    <div class="form-group">
-                        <span class="label-input100">Last Name *</span>
-                        <input class="input100" id="last_name" name="last_name" maxlength="80" placeholder="Last Name"
-                            type="text" required>
-                        <span class="focus-input100"></span>
+                    <div class="form-group" id="last-name-group">
+                        <label class="form-label">Last Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="last_name" name="last_name"
+                            placeholder="Enter your last name" required>
+                        <span class="error-message">Please enter your last name</span>
                     </div>
 
                     <!-- Email -->
-                    <div class="form-group">
-                        <span class="label-input100">Email *</span>
-                        <input class="input100" id="email" name="00N0Y00000QGklI" maxlength="80" placeholder="Email"
-                            type="email" required>
-                        <span class="focus-input100"></span>
+                    <div class="form-group" id="email-group">
+                        <label class="form-label">Email <span class="required">*</span></label>
+                        <input type="email" class="form-input" id="email" name="00N0Y00000QGklI"
+                            placeholder="your@email.com" required>
+                        <span class="error-message">Please enter a valid email address</span>
                     </div>
 
-                    <!-- Phone (intlTelInput) -->
-                    <div class="form-group">
-                        <span class="label-input100">Mobile Number *</span>
-                        <input class="input100" id="phone" maxlength="40" placeholder="Phone" type="text" required>
-                        <span class="focus-input100"></span>
+                    <!-- Phone -->
+                    <div class="form-group" id="phone-group">
+                        <label class="form-label">Mobile Number <span class="required">*</span></label>
+                        <input type="tel" class="form-input" id="phone" placeholder="phone number" required>
+                        <span class="error-message">Please enter a valid phone number</span>
                     </div>
 
-                    <!-- Company (Employer) – required by apply-validator.js -->
-                    <div class="form-group">
-                        <span class="label-input100">Company *</span>
-                        <input class="input100" id="employer" name="00N0Y00000QGku0" maxlength="40"
-                            placeholder="Company / Organization" type="text" required>
-                        <span class="focus-input100"></span>
+                    <!-- Company -->
+                    <div class="form-group" id="company-group">
+                        <label class="form-label">Company <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="employer" name="00N0Y00000QGku0"
+                            placeholder="Your company name" required>
+                        <span class="error-message">Please enter your company name</span>
                     </div>
 
-                    <!-- Country of Residence -->
-                    <div class="form-group">
-                        <span class="label-input100">Country of Residence *</span>
-                        <input class="input100" id="country_residence" name="country_residence"
-                            placeholder="e.g., Lebanon, USA, UAE" type="text" required>
-                        <span class="focus-input100"></span>
+                    <!-- Country -->
+                    <div class="form-group" id="country-group">
+                        <label class="form-label">Country of Residence <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="country_residence" name="country_residence"
+                            placeholder="e.g., Lebanon, USA, UAE" required>
+                        <span class="error-message">Please enter your country</span>
                     </div>
 
-                    <!-- University (select) -->
-                    <div class="form-group">
-                        <span class="label-input100">University *</span>
-                        <select id="university" name="university" class="input100" required></select>
-                        <span class="focus-input100"></span>
+                    <!-- University -->
+                    <div class="form-group" id="university-group">
+                        <label class="form-label">University <span class="required">*</span></label>
+                        <select class="form-select" id="university" name="university" required>
+                        </select>
+                        <span class="error-message">Please select your university</span>
                     </div>
 
-                    <!-- University Major -->
-                    <div class="form-group">
-                        <span class="label-input100">University Major *</span>
-                        <input class="input100" id="major" name="major"
-                            placeholder="e.g., Business, Engineering, Economics" type="text" required>
-                        <span class="focus-input100"></span>
+                    <!-- Major -->
+                    <div class="form-group" id="major-group">
+                        <label class="form-label">University Major <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="major" name="major"
+                            placeholder="e.g., Business, Engineering" required>
+                        <span class="error-message">Please enter your major</span>
                     </div>
 
                     <!-- Years of Experience -->
-                    <div class="form-group">
-                        <span class="label-input100">Years of Experience *</span>
-                        <input class="input100" id="years_experience" name="00N0Y00000QGkuK"
-                            placeholder="Number of years" type="number" min="0" step="1" required>
-                        <span class="focus-input100"></span>
+                    <div class="form-group" id="experience-group">
+                        <label class="form-label">Years of Experience <span class="required">*</span></label>
+                        <input type="number" class="form-input" id="years_experience" name="00N0Y00000QGkuK"
+                            placeholder="0-50" min="0" max="50" required>
+                        <span class="error-message">Please enter valid years of experience</span>
                     </div>
 
-                    <!-- How did you hear about us? -->
-                    <div class="form-group">
-                        <span class="label-input100">How did you hear about us? *</span>
-                        <select id="hear_about" name="hear_about" class="input100" required>
-                            <option value="" disabled selected>-- Select --</option>
-                            <option value="Social Media (Facebook, Instagram, LinkedIn, Twitter)">Social Media
-                                (Facebook, Instagram, LinkedIn, Twitter)</option>
-                            <option value="Google Search / Ads">Google Search / Ads</option>
-                            <option value="Email / Newsletter">Email / Newsletter</option>
+                    <!-- How did you hear -->
+                    <div class="form-group" id="hear-group">
+                        <label class="form-label">How did you hear about us? <span class="required">*</span></label>
+                        <select class="form-select" id="hear_about" name="hear_about" required>
+                            <option value="" disabled selected>-- Select an option --</option>
+                            <option value="Social Media">Social Media (Facebook, Instagram, LinkedIn, Twitter)</option>
+                            <option value="Google Search">Google Search / Ads</option>
+                            <option value="Email">Email / Newsletter</option>
                             <option value="AUB Website">AUB Website</option>
-                            <option value="Event / Webinar">Event / Webinar</option>
-                            <option value="Friend / Colleague">Friend / Colleague</option>
-                            <option value="Alumni Referral">Alumni Referral</option>
+                            <option value="Event">Event / Webinar</option>
+                            <option value="Friend">Friend / Colleague</option>
+                            <option value="Alumni">Alumni Referral</option>
                             <option value="Other">Other</option>
                         </select>
-                        <span class="focus-input100"></span>
+                        <span class="error-message">Please select an option</span>
                     </div>
+                </div>
 
-                    <!-- Submit Button + Loading Overlay -->
-                    <div class="container-contact100-form-btn full-width-field">
-                        <div class="wrap-contact100-form-btn">
-                            <button class="btn btn-submit" type="submit" id="submitbtn">SUBMIT</button>
-                        </div>
-                        <div id="loading-overlay" style="display: none; text-align: center; margin-top: 15px;">
-                            <i class="fas fa-spinner fa-pulse" style="font-size: 24px;"></i>
-                            <span>Submitting, please wait...</span>
-                        </div>
-                        <div class="note-text" style="margin-top: 1rem;">
-                            Your information is secure. An admissions advisor will contact you shortly.
-                        </div>
+                <div class="form-submit">
+                    <button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">SUBMIT</button>
+                    <div class="loading-overlay" id="loading-overlay">
+                        <i class="fas fa-spinner fa-pulse"></i>
+                        <span>Submitting, please wait...</span>
                     </div>
+                    <p class="form-note">
+                        <i class="fas fa-lock" style="margin-right: 4px;"></i>
+                        Your information is secure. An admissions advisor will contact you shortly.
+                    </p>
                 </div>
             </form>
 
-            <!-- Action buttons (Visit Website / Download Brochure) – now centered via CSS -->
-            <div class="form-footer-buttons">
-                <a href="https://www.aub.edu.lb/osb" class="btn-primary" target="_blank">Visit Website</a>
-                <a href="Online-Fintech-Brochure.html" class="btn-outline">Download Brochure</a>
+            <!-- Button Group -->
+            <div class="button-group">
+                <a href="https://www.aub.edu.lb/osb" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-globe"></i> Visit Website
+                </a>
+                <a href="Online-Fintech-Brochure.html" class="btn btn-outline">
+                    <i class="fas fa-download"></i> Download Brochure
+                </a>
             </div>
         </div>
 
-        <!-- Info cards -->
-        <div class="cards-section">
-            <div class="info-card-modern">
+        <!-- Info Cards Grid -->
+        <div class="cards-grid">
+            <div class="info-card">
                 <h3>Overview</h3>
-                <ul class="bullet-list-modern">
+                <ul class="bullet-list">
+                    <!-- lii - Ghina custom color? -->
                     <li><i class="fa-regular fa-clock"></i> Flexible online format</li>
                     <li><i class="fas fa-chalkboard-user"></i> Taught by world‑renowned professors</li>
                     <li><i class="fas fa-code-branch"></i> Cutting‑edge Fintech Certificate curriculum</li>
                     <li><i class="fas fa-globe"></i> Access to global alumni network</li>
                 </ul>
             </div>
-            <div class="info-card-modern">
+            <div class="info-card">
                 <h3>Main Admission Requirements</h3>
-                <ul class="bullet-list-modern">
-                    <li><i class="fas fa-graduation-cap"></i> Bachelor’s Degree with a good GPA</li>
+                <ul class="bullet-list">
+                    <!-- lii - Ghina custom color? -->
+                    <li><i class="fas fa-graduation-cap"></i> Bachelor's Degree with a good GPA</li>
                     <li><i class="fas fa-briefcase"></i> Professional experience (preferred)</li>
                     <li><i class="fas fa-chart-line"></i> Strong motivation & curiosity</li>
                     <li><i class="fas fa-language"></i> Fluent in written and spoken English</li>
