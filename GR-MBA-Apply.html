@@ -16,8 +16,27 @@
     <link rel="stylesheet" href="css/main-programs.css">
 
     <style>
-        .page-wrapper {
+        /* .page-wrapper {
             background: url("images/AUB-OSB-MBA-bg.jpg") no-repeat center top/cover fixed;
+        } */
+
+        /* Add fixed background via pseudo-element */
+        .page-wrapper::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -2;
+            background: url("images/AUB-OSB-MBA-bg.jpg") no-repeat center top/cover;
+            pointer-events: none;
+        }
+
+        @supports not (position: fixed) {
+            .page-wrapper {
+                background: url("images/AUB-OSB-MBA-bg.jpg") no-repeat center top/cover fixed;
+            }
         }
     </style>
 

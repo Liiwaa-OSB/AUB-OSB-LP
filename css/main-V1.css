@@ -211,6 +211,8 @@ a.btn-outline {
 
 /* ----- footer (identical for all pages) ----- */
 .footer {
+  position: absolute;
+  z-index: 9999;
   background-color: var(--color-primary-dark);
   width: 100%;
   padding: 2rem 0 1.8rem;
