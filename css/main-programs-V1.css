@@ -6,7 +6,6 @@
 .page-wrapper {
   position: relative;
   isolation: isolate;
-  /* background: none; */
 }
 
 @media (min-width: 900px) {
@@ -32,17 +31,16 @@
   margin-bottom: 2.5rem;
 }
 
-.logo a {
-  /* text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px; */
-}
-
 .logo-img img {
   max-height: 85px;
   width: auto;
   display: block;
+}
+
+@media (max-width: 900px) {
+  .logo-img img {
+    max-height: 65px;
+  }
 }
 
 /* two column layout */
@@ -70,7 +68,7 @@
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(var(--text-xl), 5vw, var(--text-3xl));
   margin-bottom: 2rem;
   font-weight: 300;
   text-transform: uppercase;
@@ -78,8 +76,12 @@
 
 .button-group {
   display: flex;
+  gap: var(--space-md);
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+
   margin-bottom: 2rem;
   padding-bottom: 1px;
 }
@@ -242,10 +244,6 @@
 }
 
 .thankyou-title {
-  font-size: 2.6rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 
   max-width: min(100%, 700px);
@@ -255,10 +253,17 @@
 }
 
 .vertical-logo .logo-img img {
-  max-height: 250px;
+  max-height: 180px;
   width: auto;
   display: block;
   margin: auto;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+  .vertical-logo .logo-img img {
+    max-height: 130px;
+  }
 }
 
 .separator {
@@ -340,10 +345,6 @@
 
   .form-card {
     padding: 1.2rem;
-  }
-
-  .thankyou-title {
-    font-size: 1.6rem;
   }
 }
 
