@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
-  <title>AUB OSB | Fintech Certificate - Apply</title>
+  <title>AUB OSB | Fintech Certificate - Thank You</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -16,67 +16,77 @@
   <link rel="stylesheet" href="css/main-V1.css">
   <link rel="stylesheet" href="css/online-programs-V1.css">
 
-  <!-- Additional minimal styles for validation errors (only what is missing) -->
   <style>
-    .hero-banner::before {
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/AUB-OSB-ONLINE-Fintech-banner.jpg');
-      background-position: center;
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, var(--color-black-30, rgba(0, 0, 0, 0.3)), var(--color-black-30, rgba(0, 0, 0, 0.3))), url('images/AUB-OSB-ONLINE-Fintech-banner.jpg');
+      background-position: center center;
       background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 0;
     }
   </style>
 
-  <!-- Scripts – jQuery, then intlTelInput, then phonescript (modified), then validator, then university -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
-  <!-- End Google Tag Manager -->
 </head>
 
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="hero-banner">
+  <section class="hero">
     <div class="container">
-      <div class="banner-logo-center">
-        <a href="https://www.aub.edu.lb/osb"><img src="images/AUB-OSB-Logo-Vertical.png" alt="AUB OSB Logo"
-            onerror="this.src='https://placehold.co/200x70?text=AUB+OSB'"></a>
+      <div class="hero-logo text-center">
+        <a href="https://www.aub.edu.lb/osb">
+          <img src="images/AUB-OSB-Logo-Vertical.png" alt="AUB OSB Logo"
+            onerror="this.src='https://placehold.co/140x140?text=AUB+OSB'">
+        </a>
       </div>
-      <div class="banner-content">
+      <div class="hero-content text-center">
         <h1>Thank you for completing the form.</h1>
-        <div class="hero-tagline">
+        <p class="hero-tagline">
           You've taken the first step toward advancing your expertise in FinTech and Artificial Intelligence. Our team
           looks forward to supporting you throughout your learning journey.
-        </div>
+        </p>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="container">
-    <!-- Overlapping form card – structured to work with apply-validator.js -->
-    <div class="overlap-form-card">
+    <div class="form-card">
 
-
-      <!-- Action buttons (Visit Website / Download Brochure) – now centered via CSS -->
-      <div class="form-footer-buttons">
-        <a href="[Lii Fintech Brochure PDF]" class="btn-outline" download>Download
-          Brochure</a>
+      <!-- Action buttons - use the existing button-group class -->
+      <div class="button-group">
+        <a href="https://www.aub.edu.lb/osb/Documents/FINTECH%20AND%20AI%20FS.pdf" class="btn btn-outline" download>
+          <i class="fas fa-download"></i> Download Brochure
+        </a>
         <a href="https://bookings.cloud.microsoft/book/InvestmentAnalysisModernPortfolioManagementOnlineDiploma@mail.aub.edu/?ismsaljsauthenabled=true"
-          class="btn-outline">Schedule one-on-one meeting</a>
-        <a href="https://graduateadmissions.aub.edu.lb/" class="btn-primary">Complete Your Application Here</a>
+          class="btn btn-outline" target="_blank">
+          <i class="fas fa-calendar-alt"></i> Schedule one-on-one meeting
+        </a>
+        <a href="https://graduateadmissions.aub.edu.lb/" class="btn btn-primary" target="_blank">
+          <i class="fas fa-file-alt"></i> Complete Your Application Here
+        </a>
       </div>
 
       <div class="separator"></div>
 
-      <div class="">
+      <!-- Contact section - use existing contact-section classes -->
+      <div class="contact-section">
         <p style="margin-bottom: 1rem; font-size: 1.1rem; font-weight: 500; text-align: center;">For inquiries, please
           contact us</p>
-        <div class="cta__contact-links">
-          <a href="tel:+9611374374,3929" class="cta__contact-link"><i data-lucide="phone" width="20"
-              height="20"></i><span>+961-1-374 374 ext. 3929</span></a>
-          <a href="mailto:fintechaicertificate@aub.edu.lb" class="cta__contact-link"><i data-lucide="mail" width="20"
-              height="20"></i><span>fintechaicertificate@aub.edu.lb</span></a>
+        <div class="contact-links">
+          <a href="tel:+9611374374,3929" class="contact-link">
+            <i class="fas fa-phone"></i>
+            <span>+961-1-374 374 ext. 3929</span>
+          </a>
+          <a href="mailto:fintechaicertificate@aub.edu.lb" class="contact-link">
+            <i class="fas fa-envelope"></i>
+            <span>fintechaicertificate@aub.edu.lb</span>
+          </a>
         </div>
       </div>
     </div>
@@ -84,11 +94,11 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-legal">By submitting this form you are undertaking that the information provided is
-        accurate. You are also consenting to processing of your information for the specified purpose in
-        accordance with relevant data protection laws. The University will maintain confidentiality of the
-        personal information. The information may be used by the University to communicate with you and inform
-        you about our programs and higher education offerings.</div>
+      <div class="footer-legal">By submitting this form you are undertaking that the information provided is accurate.
+        You are also consenting to processing of your information for the specified purpose in accordance with relevant
+        data protection laws. The University will maintain confidentiality of the personal information. The information
+        may be used by the University to communicate with you and inform you about our programs and higher education
+        offerings.</div>
       <div class="copyright">©2026 American University of Beirut, OSB All Rights Reserved</div>
       <div class="social-icons">
         <a target="_blank" href="https://www.facebook.com/OSBAUB/"><i class="fab fa-facebook-f"></i></a>

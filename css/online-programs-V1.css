@@ -12,70 +12,74 @@
  /* ============================================
        HERO BANNER
        ============================================ */
+
  .hero {
+     min-height: 640px;
+     height: auto;
+     padding: 3rem 0 180px 0;
      position: relative;
-     min-height: 550px;
-     height: 65vh;
      display: flex;
      align-items: center;
      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-     overflow: hidden;
-     padding-bottom: 120px;
+     overflow: visible;
  }
 
 
 
+ /* Hero container - proper centering */
  .hero .container {
      position: relative;
      z-index: 2;
      text-align: center;
+     width: 100%;
+     max-width: var(--container-max, 1280px);
+     margin: 0 auto;
+     padding: 0 var(--container-padding, 1.5rem);
  }
 
+ /* Logo image - fully responsive, never cuts off */
  .hero-logo {
-     margin-bottom: var(--space-xl);
+     margin-bottom: var(--space-xl, 2rem);
  }
 
  .hero-logo img {
-     max-height: 140px;
+     max-width: 180px;
+     /* Cap maximum width */
      width: auto;
+     max-height: 180px;
+     height: auto;
      filter: drop-shadow(0 4px 8px var(--color-black-30));
+     display: inline-block;
+ }
+
+ /* Hero content text stays readable */
+ .hero-content h1 {
+     font-size: clamp(1.8rem, 6vw, 3rem);
+     margin-bottom: var(--space-md, 1rem);
+     word-break: break-word;
  }
 
  .hero-tagline {
-     font-size: clamp(var(--text-base), 3vw, var(--text-xl));
-     font-weight: 400;
+     font-size: clamp(0.95rem, 3vw, 1.25rem);
      max-width: 800px;
      margin: 0 auto;
-     color: var(--color-white-80);
- }
-
- /* Mobile hero adjustments */
- @media (max-width: 768px) {
-     .hero {
-         min-height: 450px;
-         height: 50vh;
-     }
-
-     .hero-logo img {
-         max-height: 100px;
-     }
-
-     .hero-logo {
-         margin-bottom: var(--space-xl);
-     }
+     padding: 0 0.5rem;
  }
 
  /* ============================================
        FORM CARD (Reusable Component)
        ============================================ */
  .form-card {
+
+     position: relative;
+     z-index: 10;
      background: var(--color-black-70);
      backdrop-filter: blur(14px);
      border-radius: var(--radius-xl);
      border: 1px solid var(--color-white-30);
      box-shadow: var(--shadow-elevation);
      padding: var(--space-2xl) var(--space-xl);
-     margin: -100px auto 0 auto;
+     margin: -100px auto var(--space-3xl) auto;
      transition: var(--transition-base);
  }
 
@@ -94,18 +98,92 @@
      display: block;
  }
 
- /* Responsive form card */
+ /* Responsive adjustments for small screens */
  @media (max-width: 768px) {
+     .hero {
+         min-height: 700px;
+         padding: 2rem 0 90px 0;
+     }
+
+     .hero-logo img {
+         max-width: 150px;
+         max-height: 150px;
+     }
+
+     .hero-logo {
+         margin-bottom: 1.25rem;
+     }
+
      .form-card {
-         padding: var(--space-lg);
          margin-top: -60px;
      }
  }
 
- @media (max-width: 480px) {
+ @media (max-width: 550px) {
+     .hero {
+        min-height: 430px;
+         padding: 1.5rem 0 90px 0;
+     }
+
+     .hero-logo img {
+         max-width: 120px;
+         max-height: 120px;
+     }
+
+     .hero-content h1 {
+         font-size: 1.7rem;
+         line-height: 1.2;
+     }
+
+     .hero-tagline {
+         font-size: 0.85rem;
+     }
+
      .form-card {
-         padding: var(--space-md);
-         margin-top: -40px;
+         margin-top: -50px;
+     }
+ }
+
+ /* Large screens: ensure hero doesn't look empty */
+ @media (min-width: 1200px) {
+     .hero {
+         padding: 4rem 0 200px 0;
+     }
+
+     .form-card {
+         margin-top: -100px;
+     }
+ }
+
+ /* Override any potential conflicting styles from online-programs-V1 */
+ /* Keep backdrop blur and everything else intact */
+ .hero .container,
+ .hero-content,
+ .hero-logo {
+     transform: none;
+     /* prevent any shifting issues */
+ }
+
+
+
+ /* Phone number input and other existing overrides remain untouched */
+ .iti__country-list .iti__country-name {
+     color: #000 !important;
+ }
+
+ /* Additional safety: no hidden overflow on hero */
+ .hero {
+     overflow-x: hidden;
+ }
+
+ /* Ensure the background image doesn't create weird cut-offs on very small heights */
+ @media (max-height: 500px) {
+     .hero {
+         padding: 1rem 0 100px 0;
+     }
+
+     .hero-logo img {
+         max-height: 70px;
      }
  }
 
@@ -352,7 +430,6 @@
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
      gap: var(--space-xl);
-     margin-top: var(--space-3xl);
      margin-bottom: var(--space-3xl);
  }
 
@@ -461,10 +538,6 @@
        PRINT STYLES
        ============================================ */
  @media print {
-     .hero::before {
-         opacity: 0.3;
-     }
-
      .btn,
      .button-group,
      .contact-links,

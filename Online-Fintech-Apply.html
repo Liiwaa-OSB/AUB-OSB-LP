@@ -12,37 +12,36 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800;900&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" href="build/css/intlTelInput.css">
     <link rel="stylesheet" href="css/main-V1.css">
     <link rel="stylesheet" href="css/online-programs-V1.css">
+
     <style>
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(0deg, var(--color-black-30), var(--color-black-30)), url('images/AUB-OSB-ONLINE-Fintech-banner.jpg');
-            background-position: center;
+            background: linear-gradient(0deg, var(--color-black-30), var(--color-black-30)),
+                url('images/AUB-OSB-ONLINE-Fintech-banner.jpg');
+            background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
             z-index: 0;
         }
     </style>
-    <!-- Scripts – jQuery, then intlTelInput, then phonescript (modified), then validator, then university -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- jQuery Validation Plugin is REMOVED to avoid duplicate validation -->
     <script src="js/mailchimp-subscribe.js"></script>
     <script src="build/js/intlTelInput.js"></script>
-    <!-- Modified phonescript.js (see below – the line $("form").validate(); is commented out) -->
     <script src="js/phonescript.js"></script>
-    <!-- Main validation and form handler (apply-validator.js) -->
     <script src="js/apply-validator.js"></script>
     <script src="js/universities.js"></script>
     <script src="js/university-ui.js"></script>
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
-    <!-- End Google Tag Manager -->
 
     <!-- Mailchimp endpoint -->
     <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";</script>
@@ -50,7 +49,7 @@
 
 <body>
 
-    <!-- Hero Banner - Reusable component -->
+    <!-- Hero Banner -->
     <section class="hero">
         <div class="container">
             <div class="hero-logo text-center">
@@ -72,7 +71,7 @@
     </section>
 
     <div class="container">
-        <!-- Form Card - Reusable component -->
+        <!-- Form Card -->
         <div class="form-card">
             <h2 class="form-card__title">Apply Now</h2>
             <span class="form-card__subtitle">Fill in your details to start your application</span>
