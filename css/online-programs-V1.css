@@ -76,7 +76,6 @@
      background: var(--color-black-70);
      backdrop-filter: blur(14px);
      border-radius: var(--radius-xl);
-     border: 1px solid var(--color-white-30);
      box-shadow: var(--shadow-elevation);
      padding: var(--space-2xl) var(--space-xl);
      margin: -100px auto var(--space-3xl) auto;
@@ -344,7 +343,7 @@
  }
 
  .btn-primary {
-     background: var(--color-primary-dark);
+     background: var(--color-primary);
      color: var(--color-white);
  }
 
