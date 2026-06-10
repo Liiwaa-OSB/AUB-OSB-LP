@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AUB OSB | Continuoud Education . Aviation - Brochure</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" href="build/css/intlTelInput.css">
+    <link rel="stylesheet" href="css/main-V1.css">
+    <link rel="stylesheet" href="css/online-programs-V1.css">
+
+    <style>
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, var(--color-black-30, rgba(0, 0, 0, 0.3)), var(--color-black-30, rgba(0, 0, 0, 0.3))), url('images/AUB-OSB-ONLINE-Fintech-banner.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        /* .info-card,
+        .btn-submit {
+            background: #72bbc0;
+        }
+
+        .btn-submit:hover {
+            background: #4d8185;
+        } */
+    </style>
+
+    <!-- jQuery and Validation -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <!-- Libraries -->
+    <script src="build/js/intlTelInput.js"></script>
+    <script src="js/mailchimp-subscribe.js"></script>
+    <script src="js/phonescript.js"></script>
+    <script src="js/brochure-validator.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Mailchimp endpoint URL (used by brochure-validator.js) -->
+    <script>
+        var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";
+    </script>
+</head>
+
+<body class="brochure">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-logo text-center">
+                <a href="https://www.aub.edu.lb/osb">
+                    <img src="images/AUB-OSB-Logo-Vertical.png" alt="AUB OSB Logo"
+                        onerror="this.src='https://placehold.co/140x140?text=AUB+OSB'">
+                </a>
+            </div>
+            <div class="hero-content text-center">
+                <h1>Join the Fintech and AI Certificate</h1>
+                <p class="hero-tagline">
+                    As financial services continue to evolve through rapid technological advancements, professionals are
+                    increasingly expected to understand and leverage emerging technologies. The convergence of FinTech
+                    and Artificial Intelligence is reshaping how organizations operate, make decisions, manage risk, and
+                    deliver value to customers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Form Card -->
+        <div class="form-card">
+            <h2 class="form-card__title">Download Brochure</h2>
+            <span class="form-card__subtitle">Fill in your details to get instant access to the brochure</span>
+
+            <form class="contact100-form validate-form" id="myform"
+                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
+                name="myform" novalidate="novalidate">
+
+                <!-- Salesforce hidden fields (only required ones) -->
+                <input type="hidden" name="oid" value="00D0Y000001Xrwc">
+                <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
+                <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="lii - aviation campaign id">
+                <input type="hidden" id="member_status" name="member_status" value="Interested">
+                <input type="hidden" name="lead_source" id="lead_source" value="Website">
+                <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure Fintech            ">
+                <input type="hidden" name="country_code" id="country_code" value="LB">
+                <input type="hidden" name="rating" id="rating" value="Cold">
+                <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
+                <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
+                <!-- retURL points to PDF -->
+                <input type="hidden" name="retURL"
+                    value="lii aviation fact sheet.pdf">
+
+                <!-- Form fields -->
+                <div class="form-group form-group--full validate-input" data-validate="First Name is required">
+                    <span class="form-label">First Name *</span>
+                    <input class="form-input" id="first_name" maxlength="40" name="first_name" placeholder="First Name"
+                        type="text">
+                </div>
+
+                <div class="form-group form-group--full validate-input" data-validate="Last Name is required">
+                    <span class="form-label">Last Name *</span>
+                    <input class="form-input" id="last_name" maxlength="80" name="last_name" placeholder="Last Name"
+                        type="text">
+                </div>
+
+                <div class="form-group form-group--full validate-input" data-validate="Valid email is required">
+                    <span class="form-label">Email *</span>
+                    <input class="form-input" id="email" maxlength="80" name="00N0Y00000QGklI" placeholder="Email"
+                        type="text">
+                </div>
+
+                <div class="form-group form-group--full validate-input" data-validate="Phone number is required">
+                    <span class="form-label">Phone *</span>
+                    <input class="form-input" id="phone" maxlength="40" name="phone" placeholder="Phone" required
+                        type="text">
+                </div>
+
+                <div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to receive
+                    communications from AUB OSB.</div>
+
+                <div class="form-submit">
+                    <div class="wrap-contact100-form-btn">
+                        <button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">DOWNLOAD
+                            BROCHURE</button>
+                    </div>
+                    <div class="loading-overlay" id="loading-overlay">
+                        <i class="fas fa-spinner fa-pulse"></i>
+                        <span>Submitting, please wait...</span>
+                    </div>
+                    <p class="form-note">
+                        <i class="fas fa-lock" style="margin-right: 4px;"></i>
+                        Your information is secure. An admissions advisor will contact you shortly.
+                    </p>
+                </div>
+            </form>
+
+            <!-- Button Group -->
+            <div class="button-group">
+                <a href="https://www.aub.edu.lb/osb" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-globe"></i> Visit Website
+                </a>
+                <!-- lii hange when name changes -->
+                <a href="Aviation-Apply.html" class="btn btn-outline">
+                    <i class="fas fa-paper-plane"></i> Apply Now
+                </a>
+            </div>
+        </div>
+
+        <!-- Info Cards Grid -->
+        <div class="cards-grid">
+            <!-- lii change fot aviation -->
+            <div class="info-card">
+                <h3>Overview</h3>
+                <ul class="bullet-list">
+                    <li>Flexible online format</li>
+                    <li>Taught by world‑renowned professors</li>
+                    <li>Cutting‑edge Fintech Certificate curriculum</li>
+                    <li>Access to global alumni network</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Who Should Enroll</h3>
+                <ul class="bullet-list">
+                    <li>Finance and banking professionals</li>
+                    <li>Business leaders and managers</li>
+                    <li>Technology and IT professionals</li>
+                    <li>Consultants, legal advisors, and compliance professionals</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-legal">By submitting this form you are undertaking that the information provided is
+                accurate. You are also consenting to processing of your information for the specified purpose in
+                accordance with relevant data protection laws. The University will maintain confidentiality of the
+                personal information. The information may be used by the University to communicate with you and inform
+                you about our programs and higher education offerings.</div>
+            <div class="copyright">©2026 American University of Beirut, OSB All Rights Reserved</div>
+            <div class="social-icons">
+                <a target="_blank" href="https://www.facebook.com/OSBAUB/"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" href="https://twitter.com/aubosb"><i class="fab fa-x-twitter"></i></a>
+                <a target="_blank"
+                    href="https://www.linkedin.com/company/aub-suliman-s-olayan-school-of-business-osb-/"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a target="_blank" href="https://www.instagram.com/osb_aub/"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" href="https://www.youtube.com/@AUBOSB"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- UTM & source parameter handling -->
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            url = url.toLowerCase();
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return "";
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        var utm_source = getParameterByName('source');
+        var utm_details = getParameterByName('utm_details');
+        var utm_campaign = getParameterByName('utm_campaign');
+        var utm_content = getParameterByName('utm_content');
+        var utm_placement = getParameterByName('utm_placement');
+        var utm_adsetname = getParameterByName('utm_adsetname');
+
+        if (utm_source != null) $('#lead_source').val(utm_source);
+        if (utm_details != null) $('#00N0Y00000QGkma').val(utm_details);
+        if (utm_campaign != null) $('#Campaign_Name').val(utm_campaign);
+        if (utm_content != null) $('#AD_Name').val(utm_content);
+        if (utm_placement != null) $('#00NP500000LohFU').val(utm_placement);
+        if (utm_adsetname != null) $('#00NP500000Oxk99').val(utm_adsetname);
+    </script>
+</body>
+
+</html>
