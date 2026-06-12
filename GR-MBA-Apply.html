@@ -16,11 +16,6 @@
     <link rel="stylesheet" href="css/main-programs-V1.css">
 
     <style>
-        /* .page-wrapper {
-            background: url("images/AUB-OSB-MBA-bg.jpg") no-repeat center top/cover fixed;
-        } */
-
-        /* Add fixed background via pseudo-element */
         .page-wrapper::after {
             content: "";
             position: fixed;
@@ -29,15 +24,28 @@
             right: 0;
             bottom: 0;
             z-index: -2;
-            background: url("images/AUB-OSB-MBA-bg.jpg") no-repeat center top/cover;
+            background: url("images/AUB-OSB-MBA-bg.jpg") no-repeat center top / cover;
             pointer-events: none;
         }
 
         @supports not (position: fixed) {
             .page-wrapper {
-                background: url("images/AUB-OSB-MBA-bg.jpg") no-repeat center top/cover fixed;
+                background: url("images/AUB-OSB-MBA-bg.jpg") no-repeat center top / cover fixed;
             }
         }
+
+        /* Mobile */
+		@media (max-width: 768px) {
+			.page-wrapper::after {
+				background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("images/AUB-OSB-MBA-bg-mobile.jpg");
+			}
+
+			@supports not (position: fixed) {
+				.page-wrapper {
+					background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("images/AUB-OSB-MBA-bg-mobile.jpg");
+				}
+			}
+		}
     </style>
 
     <!-- jQuery (required for validation and intlTelInput) -->

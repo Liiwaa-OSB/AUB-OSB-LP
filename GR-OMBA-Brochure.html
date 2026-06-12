@@ -14,8 +14,35 @@
 	<link rel="stylesheet" href="css/main-programs-V1.css">
 
 	<style>
-		.page-wrapper {
-			background: url("images/AUB-OSB-OMBA-brochure-bg.jpg") no-repeat center center/cover fixed;
+		.page-wrapper::after {
+			content: "";
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -2;
+			background: url("images/AUB-OSB-OMBA-bg.jpg") no-repeat center top / cover;
+			pointer-events: none;
+		}
+
+		@supports not (position: fixed) {
+			.page-wrapper {
+				background: url("images/AUB-OSB-OMBA-bg.jpg") no-repeat center top / cover fixed;
+			}
+		}
+
+		/* Mobile */
+		@media (max-width: 768px) {
+			.page-wrapper::after {
+				background-image: url("images/AUB-OSB-OMBA-bg-mobile.jpg");
+			}
+
+			@supports not (position: fixed) {
+				.page-wrapper {
+					background-image: url("images/AUB-OSB-OMBA-bg-mobile.jpg");
+				}
+			}
 		}
 	</style>
 
@@ -41,7 +68,7 @@
 
 	<!-- Mailchimp endpoint URL (used by brochure-validator.js) -->
 	<script>
-		var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";
+		var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=f5c06e1dff";
 	</script>
 </head>
 
@@ -57,17 +84,19 @@
 					<div class="logo">
 						<a href="https://www.aub.edu.lb/osb" style="text-decoration: none">
 							<div class="logo-img">
-								<img class="OSBLogo" src="images/AUB-OSB-Logo-White.png" alt="AUB OSB Logo" onclick="window.location.href='https://www.aub.edu.lb/osb';" style="cursor:pointer;" >
+								<img class="OSBLogo" src="images/AUB-OSB-Logo-White.png" alt="AUB OSB Logo"
+									onclick="window.location.href='https://www.aub.edu.lb/osb';"
+									style="cursor:pointer;">
 							</div>
 						</a>
 					</div>
 					<div class="hero-content">
 						<h1>
-                            Experience the <br />
-                            #1 MBA Program <br />
-                            in the MENA – Fully Online
-                        </h1>
-                        <div class="hero-subtitle">Complete the form<br>in just a few minutes</div>
+							Experience the <br />
+							#1 MBA Program <br />
+							in the MENA – Fully Online
+						</h1>
+						<div class="hero-subtitle">Complete the form<br>in just a few minutes</div>
 						<div class="button-group" style="margin-top: 2rem;">
 							<a href="https://www.aub.edu.lb/osb" class="btn-primary" target="_blank">Visit Website</a>
 							<a href="GR-OMBA-Apply.html" class="btn-outline">Apply Now</a>
@@ -97,7 +126,8 @@
 						<input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
 						<input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
 						<!-- retURL points to PDF -->
-						<input type="hidden" name="retURL" value="https://www.aub.edu.lb/osb/OMBA/Documents/OMBA%20Brochure%202024.pdf">
+						<input type="hidden" name="retURL"
+							value="https://www.aub.edu.lb/osb/OMBA/Documents/OMBA%20Brochure%202024.pdf">
 
 						<!-- Form fields -->
 						<div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
