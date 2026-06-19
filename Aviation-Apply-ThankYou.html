@@ -21,11 +21,41 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg, var(--color-black-30, rgba(0, 0, 0, 0.3)), var(--color-black-30, rgba(0, 0, 0, 0.3))), url('images/AUB-OSB-Avitation-Banner.jpg');
-      background-position: center center;
+      background: linear-gradient(0deg, var(--color-black-30), var(--color-black-30)),
+        url('images/AUB-OSB-Avitation-Banner.jpg');
+      background-position: 35% center;
       background-size: cover;
       background-repeat: no-repeat;
       z-index: 0;
+    }
+
+    .hero__label {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero__title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .hero__sub {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .hero__desc {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      margin: 1rem 0 2rem;
+      max-width: 600px;
     }
   </style>
 
@@ -37,23 +67,25 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-logo text-center">
-        <a href="https://www.aub.edu.lb/osb">
-          <img src="images/AUB-OSB-Logo-Vertical.png" alt="AUB OSB Logo"
-            onerror="this.src='https://placehold.co/140x140?text=AUB+OSB'">
-        </a>
-      </div>
-      <div class="hero-content text-center">
-        <h1>Thank you for completing the form.</h1>
-        <p class="hero-tagline">
-          You've taken the first step toward advancing your expertise in FinTech and Artificial Intelligence. Our team
-          looks forward to supporting you throughout your learning journey.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- Hero Banner -->
+    <section class="hero hero-left-align">
+        <div class="container">
+            <div class="hero-logo text-center">
+                <a href="https://www.aub.edu.lb/osb">
+                    <img src="images/AUB-OSB-Logo-White.png" alt="AUB OSB Logo"
+                        onerror="this.src='https://placehold.co/140x140?text=AUB+OSB'">
+                </a>
+            </div>
+            <div class="hero-content">
+                <div class="hero__label">Professional Certificate</div>
+                <h1 class="hero__title">Aviation Management</h1>
+                <div class="hero__sub">In Partnership with IATA | AUB OSB</div>
+                <p class="hero__desc">The future of aviation belongs to leaders who can think globally, lead
+                    strategically, and adapt rapidly. Take off toward a future in aviation with a program designed to
+                    help you lead, innovate, and succeed.</p>
+            </div>
+        </div>
+    </section>
 
   <div class="container">
     <div class="form-card">

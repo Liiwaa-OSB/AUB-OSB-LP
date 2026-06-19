@@ -24,21 +24,42 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(0deg, var(--color-black-30, rgba(0, 0, 0, 0.3)), var(--color-black-30, rgba(0, 0, 0, 0.3))), url('images/AUB-OSB-Avitation-Banner.jpg');
+            background: linear-gradient(0deg, var(--color-black-30, rgba(0, 0, 0, 0.4)), var(--color-black-30, rgba(0, 0, 0, 0.4))), url('images/AUB-OSB-Aviation-brochure-banner.jpg');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
             z-index: 0;
         }
 
-        /* .info-card,
-        .btn-submit {
-            background: #72bbc0;
+        .hero__label {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
         }
 
-        .btn-submit:hover {
-            background: #4d8185;
-        } */
+        .hero__title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .hero__sub {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 0.5rem 0 1rem;
+        }
+
+        .hero__desc {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            margin: 1rem 0 2rem;
+            max-width: 600px;
+            margin: auto;
+        }
     </style>
 
     <!-- jQuery and Validation -->
@@ -83,13 +104,12 @@
                 </a>
             </div>
             <div class="hero-content text-center">
-                <h1>Join the Fintech and AI Certificate</h1>
-                <p class="hero-tagline">
-                    As financial services continue to evolve through rapid technological advancements, professionals are
-                    increasingly expected to understand and leverage emerging technologies. The convergence of FinTech
-                    and Artificial Intelligence is reshaping how organizations operate, make decisions, manage risk, and
-                    deliver value to customers.
-                </p>
+                <div class="hero__label">Professional Certificate</div>
+                <h1 class="hero__title">Aviation Management</h1>
+                <div class="hero__sub">In Partnership with IATA | AUB OSB</div>
+                <p class="hero__desc">The future of aviation belongs to leaders who can think globally, lead
+                    strategically, and adapt rapidly. Take off toward a future in aviation with a program designed to
+                    help you lead, innovate, and succeed.</p>
             </div>
         </div>
     </section>
@@ -116,8 +136,7 @@
                 <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
                 <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
                 <!-- retURL points to PDF -->
-                <input type="hidden" name="retURL"
-                    value="lii aviation fact sheet.pdf">
+                <input type="hidden" name="retURL" value="lii aviation fact sheet.pdf">
 
                 <!-- Form fields -->
                 <div class="form-group form-group--full validate-input" data-validate="First Name is required">
@@ -172,29 +191,6 @@
                 <a href="Aviation-Apply.html" class="btn btn-outline">
                     <i class="fas fa-paper-plane"></i> Apply Now
                 </a>
-            </div>
-        </div>
-
-        <!-- Info Cards Grid -->
-        <div class="cards-grid">
-            <!-- lii change fot aviation -->
-            <div class="info-card">
-                <h3>Overview</h3>
-                <ul class="bullet-list">
-                    <li>Flexible online format</li>
-                    <li>Taught by world‑renowned professors</li>
-                    <li>Cutting‑edge Fintech Certificate curriculum</li>
-                    <li>Access to global alumni network</li>
-                </ul>
-            </div>
-            <div class="info-card">
-                <h3>Who Should Enroll</h3>
-                <ul class="bullet-list">
-                    <li>Finance and banking professionals</li>
-                    <li>Business leaders and managers</li>
-                    <li>Technology and IT professionals</li>
-                    <li>Consultants, legal advisors, and compliance professionals</li>
-                </ul>
             </div>
         </div>
     </div>
