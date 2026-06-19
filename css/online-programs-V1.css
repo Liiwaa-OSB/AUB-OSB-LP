@@ -120,7 +120,7 @@
 
  @media (max-width: 550px) {
      .hero {
-        min-height: 430px;
+         min-height: 430px;
          padding: 1.5rem 0 90px 0;
      }
 
@@ -409,12 +409,13 @@
      display: inline-flex;
      align-items: center;
      gap: var(--space-sm);
-     padding: 0.75rem var(--space-xl);
+     padding: 0.75rem var(--space-sm);
      background: var(--color-white-15);
      border-radius: var(--radius-md);
      color: var(--color-white);
      text-decoration: none;
      transition: var(--transition-base);
+     max-width: 100%;
  }
 
  .contact-link:hover {
@@ -537,6 +538,7 @@
        PRINT STYLES
        ============================================ */
  @media print {
+
      .btn,
      .button-group,
      .contact-links,
