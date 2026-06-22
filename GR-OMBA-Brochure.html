@@ -22,7 +22,7 @@
 			right: 0;
 			bottom: 0;
 			z-index: -2;
-			background: url("images/AUB-OSB-OMBA-bg.jpg") no-repeat center cenrer / cover;
+			background: url("images/AUB-OSB-OMBA-bg.jpg") no-repeat center center / cover;
 			pointer-events: none;
 		}
 
@@ -35,12 +35,12 @@
 		/* Mobile */
 		@media (max-width: 768px) {
 			.page-wrapper::after {
-				background-image: url("images/AUB-OSB-OMBA-bg-mobile.jpg");
+				background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("images/AUB-OSB-OMBA-bg-mobile.jpg");
 			}
 
 			@supports not (position: fixed) {
 				.page-wrapper {
-					background-image: url("images/AUB-OSB-OMBA-bg-mobile.jpg");
+					background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("images/AUB-OSB-OMBA-bg-mobile.jpg");
 				}
 			}
 		}
@@ -84,7 +84,7 @@
 					<div class="logo">
 						<a href="https://www.aub.edu.lb/osb" style="text-decoration: none">
 							<div class="logo-img">
-								<img class="OSBLogo" src="images/AUB-OSB-Logo-White.png" alt="AUB OSB Logo"
+								<img class="OSBLogo" src="images/AUB-OSB-Logo.png" alt="AUB OSB Logo"
 									onclick="window.location.href='https://www.aub.edu.lb/osb';"
 									style="cursor:pointer;">
 							</div>
@@ -98,7 +98,8 @@
 						</h1>
 						<div class="hero-subtitle">Complete the form<br>in just a few minutes</div>
 						<div class="button-group" style="margin-top: 2rem;">
-							<a href="https://www.aub.edu.lb/osb" class="btn-primary" target="_blank">Visit Website</a>
+							<a href="https://www.aub.edu.lb/osb/OMBA/Pages/default.aspx" class="btn-primary"
+								target="_blank">Visit Website</a>
 							<a href="GR-OMBA-Apply.html" class="btn-outline">Apply Now</a>
 						</div>
 					</div>

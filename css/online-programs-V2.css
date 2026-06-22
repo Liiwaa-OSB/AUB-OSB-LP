@@ -200,7 +200,6 @@
      }
  }
 
- /* Override any potential conflicting styles from online-programs-V1 */
  /* Keep backdrop blur and everything else intact */
  .hero .container,
  .hero-content,
