@@ -2,957 +2,582 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OSB Executive MBA | AUB</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <title>AUB OSB | Executive MBA Apply</title>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <!-- Google Font: Roboto -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-        rel="stylesheet" />
-        	<link rel="stylesheet" href="css/main-V1.css">
-	<link rel="stylesheet" href="css/main-programs-V2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- CSS (shared) -->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" href="build/css/intlTelInput.css">
+    <link rel="stylesheet" href="css/main-V1.css">
+    <link rel="stylesheet" href="css/main-programs-V2.css">
 
     <style>
-        /* ===== RESET & BASE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --color-accent: #142d66;
-            --color-accent-dark: #0e1f4a;
-            --color-accent-light: #1a3a7a; 
-            --color-primary: #840132;
-            --color-primary-dark: #6a132c;
-            --color-primary-light: #9e013b;
-            --color-white: #ffffff;
-            --color-black: #1a1a1a;
-            --color-gray-900: #2d2d2d;
-            --color-gray-700: #555555;
-            --color-gray-500: #888888;
-            --color-gray-300: #cccccc;
-            --color-gray-200: #e8e8e8;
-            --color-gray-100: #f5f5f5;
-            --color-gray-50: #fafafa;
-            --color-border: #e0e0e0;
-
-            --font-family: 'Roboto', sans-serif;
-
-            --radius-sm: 4px;
-            --radius-md: 8px;
-            --radius-lg: 12px;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.10);
-            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
-            --transition: 0.25s ease;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-family);
-            background: var(--color-gray-50);
-            color: var(--color-gray-900);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* ===== BUTTONS ===== */
-        .btn-primary {
-            display: inline-block;
-            background: var(--color-primary);
-            color: var(--color-white);
-            padding: 0.85rem 2.2rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: background var(--transition), transform var(--transition);
-            border-radius: var(--radius-sm);
-        }
-
-        .btn-primary:hover {
-            background: var(--color-primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-primary-burgundy {
-            display: inline-block;
-            background: var(--color-accent);
-            color: var(--color-white);
-            padding: 0.85rem 2.2rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: background var(--transition), transform var(--transition);
-            border-radius: var(--radius-sm);
-        }
-
-        .btn-primary-burgundy:hover {
-            background: var(--color-accent-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            display: inline-block;
-            background: transparent;
-            color: var(--color-primary);
-            padding: 0.85rem 2.2rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border: 2px solid var(--color-primary);
-            cursor: pointer;
-            transition: background var(--transition), color var(--transition);
-            border-radius: var(--radius-sm);
-        }
-
-        .btn-outline:hover {
-            background: var(--color-primary);
-            color: var(--color-white);
-        }
-
-        .btn-outline-burgundy {
-            display: inline-block;
-            background: transparent;
-            color: var(--color-accent);
-            padding: 0.85rem 2.2rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border: 2px solid var(--color-accent);
-            cursor: pointer;
-            transition: background var(--transition), color var(--transition);
-            border-radius: var(--radius-sm);
-        }
-
-        .btn-outline-burgundy:hover {
-            background: var(--color-accent);
-            color: var(--color-white);
-        }
-
-        .btn-block {
-            width: 100%;
-            justify-content: center;
-            text-align: center;
-        }
-
-        /* ===== SECTION TAGS ===== */
-        .section-tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
-            font-weight: 900;
-            line-height: 1.2;
-            color: var(--color-primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .section-title-burgundy {
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
-            font-weight: 900;
-            line-height: 1.2;
-            color: var(--color-accent);
-            margin-bottom: 1.5rem;
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            position: relative;
-            padding: 5rem 0 6rem;
-            background: var(--color-primary);
-            overflow: hidden;
-            min-height: 500px;
-            /* display: flex;
-            align-items: center; */
-        }
-
-        .hero::before {
+        /* ===== EMB-apply specific overrides & additions ===== */
+        .page-wrapper::after {
             content: "";
-            position: absolute;
-            inset: 0;
-            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&h=900&fit=crop&auto=format') center/cover no-repeat;
-            opacity: 0.4;
-            z-index: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -2;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/AUB-OSB-EMBA-bg.jpg") no-repeat center bottom / cover;
+            pointer-events: none;
         }
 
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: 1;
+        @supports not (position: fixed) {
+            .page-wrapper {
+                background: url("images/AUB-OSB-EMBA-bg.jpg") no-repeat center top / cover fixed;
+            }
         }
 
-        .hero .container {
-            position: relative;
-            z-index: 2;
-            color: var(--color-white);
+        /* mobile background */
+        @media (max-width: 768px) {
+            .page-wrapper::after {
+                background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/AUB-OSB-EMBA-bg-mobile.jpg");
+            }
+
+            @supports not (position: fixed) {
+                .page-wrapper {
+                    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/AUB-OSB-EMBA-bg-mobile.jpg");
+                }
+            }
         }
 
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .hero-content .tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 0.75rem;
-            display: block;
-        }
-
+        /* left column: hero content */
         .hero-content h1 {
-            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-            font-weight: 900;
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: -0.02em;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
         }
 
-        .hero-content h1 .highlight {
-            color: var(--color-accent-dark);
+        .hero-content .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            opacity: 0.9;
         }
 
-        .hero-content p {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 1.15rem;
-            max-width: 600px;
-            line-height: 1.8;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-content .sub-note {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+        /* highlight cards / info block */
+        .grid-2cols.info-cards {
             margin-top: 2rem;
         }
 
-        .hero-buttons .btn-primary {
-            background: var(--color-white);
-            color: var(--color-primary);
+        .form-card {
+            background: rgba(20, 45, 102, 0.55);
         }
 
-        .hero-buttons .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.9);
+        .btn-submit {
+            color: #142d66;
         }
 
-        .hero-buttons .btn-outline {
-            border-color: rgba(255, 255, 255, 0.4);
-            color: var(--color-white);
+        .info-card {
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: var(--radius-lg);
+            padding: 1.6rem 1.8rem;
+            transition: 0.2s;
         }
 
-        .hero-buttons .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--color-white);
-            color: var(--color-white);
-        }
-
-        /* ===== HIGHLIGHTS BAR ===== */
-        .highlights {
-            background: var(--color-white);
-            border-bottom: 1px solid var(--color-border);
-            padding: 2rem 0;
-        }
-
-        .highlights-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 1px;
-            background: var(--color-border);
-        }
-
-        .highlight-item {
-            background: var(--color-white);
-            padding: 1.5rem 1rem;
-            text-align: center;
-            transition: background var(--transition);
-        }
-
-        .highlight-item:hover {
-            background: var(--color-gray-50);
-        }
-
-        .highlight-item i {
-            color: var(--color-accent);
+        .info-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 0.4rem;
-            display: block;
-        }
-
-        .highlight-item .label {
-            font-size: 0.6rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-gray-500);
-            display: block;
-        }
-
-        .highlight-item .value {
             font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--color-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.3px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .info-card ul li i {
+            width: 24px;
+            color: white;
+            font-size: 1.1rem;
             margin-top: 0.1rem;
         }
 
-        /* ===== WHY SECTION ===== */
-        .section-why {
-            padding: 5rem 0;
-            background: var(--color-gray-50);
-        }
-
-        .section-why .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .why-content p {
-            color: var(--color-gray-700);
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 1.25rem;
-        }
-
-        .why-content strong {
-            color: var(--color-primary);
-        }
-
-        .investment-block {
-            margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--color-border);
-        }
-
-        .investment-block h3 {
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: var(--color-accent);
-            margin-bottom: 0.75rem;
-        }
-
-        .pill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .pill {
-            background: var(--color-white);
-            border: 1px solid var(--color-border);
-            padding: 0.6rem 1rem;
-            font-size: 0.8rem;
+        .info-card .highlight-badge {
+            display: inline-block;
+            background: #840132;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
             font-weight: 600;
-            text-align: center;
-            color: var(--color-primary);
-            border-radius: var(--radius-sm);
-            transition: border var(--transition), background var(--transition);
-            cursor: default;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            margin-top: 0.25rem;
         }
 
-        .pill:hover {
-            border-color: var(--color-accent);
-            background: var(--color-gray-50);
-        }
-
-        /* ===== FORM CARD ===== */
-        .form-card {
-            background: var(--color-white);
-            padding: 2.5rem 2rem;
+        /* extra content sections (full width) */
+        .content-section {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
             border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--color-border);
-            position: sticky;
-            top: 100px;
+            padding: 2rem 2rem 1.8rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        .form-card .tag {
-            color: var(--color-accent);
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        .form-card h3 {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--color-primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .form-card .sub {
-            color: var(--color-gray-500);
-            font-size: 0.85rem;
-            margin-bottom: 1.75rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-gray-700);
-            margin-bottom: 0.3rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.7rem 1rem;
-            background: var(--color-gray-50);
-            border: 1px solid var(--color-border);
-            color: var(--color-gray-900);
-            font-size: 0.9rem;
-            font-family: var(--font-family);
-            border-radius: var(--radius-sm);
-            transition: border var(--transition);
-            outline: none;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--color-primary);
-        }
-
-        .form-group select {
-            appearance: none;
-            cursor: pointer;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        .form-row-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-        }
-
-        .form-privacy {
-            color: var(--color-gray-500);
-            font-size: 0.65rem;
-            text-align: center;
-            margin-top: 0.75rem;
-        }
-
-        .thankyou-state {
-            text-align: center;
-            padding: 2rem 0;
-            display: none;
-        }
-
-        .thankyou-state .icon-circle {
-            width: 60px;
-            height: 60px;
-            background: var(--color-accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.25rem;
+        .content-section h2 {
             font-size: 1.8rem;
-            color: var(--color-white);
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.3px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 0.5rem;
         }
 
-        .thankyou-state h4 {
+        .content-section h3 {
             font-size: 1.3rem;
-            font-weight: 900;
-            color: var(--color-primary);
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem;
         }
 
-        .thankyou-state p {
-            color: var(--color-gray-500);
+        .content-section p {
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            font-weight: 300;
         }
 
-        /* ===== FAQ ===== */
-        .section-faq {
-            padding: 5rem 0;
-            background: var(--color-white);
-            border-top: 1px solid var(--color-border);
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.8rem 0 1.2rem;
         }
 
-        .section-faq .container {
-            max-width: 900px;
+        .content-section ul li {
+            padding: 0.4rem 0 0.4rem 1.8rem;
+            position: relative;
+            font-weight: 300;
         }
 
-        .section-faq .section-tag {
-            display: block;
-            text-align: center;
+        .content-section ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: white;
+            font-size: 1.2rem;
         }
 
-        .section-faq .section-title {
-            text-align: center;
-        }
-
-        .faq-list {
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-        }
-
+        /* FAQ collapsible styles */
         .faq-item {
-            border-bottom: 1px solid var(--color-border);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 0;
         }
 
         .faq-item:last-child {
             border-bottom: none;
         }
 
-        .faq-btn {
-            width: 100%;
+        .faq-toggle {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            gap: 1rem;
-            padding: 1.25rem 1.5rem;
-            background: var(--color-white);
-            border: none;
-            color: var(--color-gray-900);
-            font-family: var(--font-family);
-            font-size: 1rem;
-            font-weight: 700;
+            align-items: center;
             cursor: pointer;
-            transition: background var(--transition);
-            text-align: left;
-        }
-
-        .faq-btn:hover {
-            background: var(--color-gray-50);
-        }
-
-        .faq-btn .fa-chevron-down,
-        .faq-btn .fa-chevron-up {
-            color: var(--color-accent);
-            font-size: 0.9rem;
-            flex-shrink: 0;
-        }
-
-        .faq-answer {
-            padding: 0 1.5rem 1.5rem;
-            color: var(--color-gray-700);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            border-top: 1px solid var(--color-border);
-            background: var(--color-gray-50);
-            display: none;
-        }
-
-        .faq-answer p {
-            padding-top: 1.25rem;
-        }
-
-        /* ===== CTA BANNER ===== */
-        .cta-banner {
-            background: var(--color-primary);
-            padding: 4rem 0;
-            text-align: center;
-            color: var(--color-white);
-        }
-
-        .cta-banner h2 {
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
-            font-weight: 900;
-            margin-bottom: 0.75rem;
-        }
-
-        .cta-banner p {
-            color: rgba(255, 255, 255, 0.7);
             font-size: 1.1rem;
-            margin-bottom: 2rem;
+            font-weight: 600;
+            margin: 0.8rem 0 0.5rem;
+            padding: 0.3rem 0;
+            transition: color 0.2s;
+            user-select: none;
         }
 
-        .cta-banner .btn-primary {
-            background: var(--color-white);
+        .faq-toggle:hover {
             color: var(--color-primary);
         }
 
-        .cta-banner .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.9);
+        .faq-icon {
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+            flex-shrink: 0;
         }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .highlights-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        .faq-icon.open {
+            transform: rotate(180deg);
         }
 
-        @media (max-width: 992px) {
-            .section-why .container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .form-card {
-                position: static;
-            }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            padding: 0 0.2rem;
         }
 
-        @media (max-width: 768px) {
-            .hero {
-                padding: 3rem 0 4rem;
-                min-height: 400px;
+        .faq-answer.open {
+            max-height: 400px;
+            /* enough for content */
+            opacity: 1;
+            padding: 0.2rem 0.2rem 0.8rem;
+        }
+
+        .faq-answer p {
+            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0.3rem 0;
+        }
+
+        .cta-block {
+            background: rgba(20, 45, 102, 0.5);
+            backdrop-filter: blur(4px);
+            border-radius: var(--radius-lg);
+            padding: 2rem 2rem 2.2rem;
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-block h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-block p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0.5rem auto 1.2rem;
+        }
+
+        .cta-block .btn-outline {
+            border-color: white;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 2.5rem;
+            font-weight: 600;
+        }
+
+        .cta-block .btn-outline:hover {
+            background: white;
+            color: #6a001f;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* responsive */
+        @media (max-width: 900px) {
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .cta-block {
+                padding: 1.5rem;
             }
 
             .hero-content h1 {
                 font-size: 2.2rem;
             }
-
-            .hero-buttons .btn-primary,
-            .hero-buttons .btn-outline {
-                width: 100%;
-                text-align: center;
-            }
-
-            .highlights-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
+        @media (max-width: 550px) {
+            .info-card ul li {
+                font-size: 0.9rem;
             }
 
-            .form-row-2 {
-                grid-template-columns: 1fr;
+            .content-section h2 {
+                font-size: 1.5rem;
             }
 
-            .form-card {
-                padding: 1.5rem 1rem;
-            }
-
-            .pill-grid {
-                grid-template-columns: 1fr 1fr;
+            .cta-block h2 {
+                font-size: 1.6rem;
             }
         }
     </style>
+
+    <!-- jQuery, validation, phone, etc. (same as original) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script src="js/mailchimp-subscribe.js"></script>
+    <script src="build/js/intlTelInput.js"></script>
+    <script src="js/phonescript.js"></script>
+    <script src="js/apply-validator.js"></script>
+    <script src="js/universities.js"></script>
+    <script src="js/university-ui.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";
+    </script>
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-    <header class="navbar">
-        <div class="logo">
-            <a href="https://www.aub.edu.lb/osb" style="text-decoration: none">
-                <div class="logo-img">
-                    <img class="OSBLogo" src="images/AUB-OSB-Logo.png" alt="AUB OSB Logo"
-                        onclick="window.location.href='https://www.aub.edu.lb/osb';" style="cursor:pointer;">
-                </div>
-            </a>
-        </div>
-    </header>
-
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="highlights">
+    <div class="page-wrapper">
         <div class="container">
-            <div class="hero-content">
-                <span class="tag">Executive MBA · Beirut</span>
-                <h1>Transform Experience into <span class="highlight">Executive Leadership</span></h1>
-                <p>
-                    For over 25 years, OSB's Executive MBA has empowered accomplished professionals across the MENA
-                    region to broaden their strategic perspective, strengthen leadership capabilities, and create
-                    lasting organizational impact.
-                </p>
-                <p class="sub-note">Grounded in AUB's 160-year legacy of academic excellence.</p>
-                <div class="hero-buttons">
-                    <a href="#request" class="btn-primary">Request Information</a>
-                    <a href="#why" class="btn-outline">Explore the Program</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== HIGHLIGHTS BAR ===== -->
-    <section class="highlights">
-        <div class="container" style="padding:0 1rem;">
-            <div class="highlights-grid">
-                <div class="highlight-item">
-                    <i class="fa-regular fa-clock"></i>
-                    <span class="label">Duration</span>
-                    <span class="value">15-Month Executive MBA</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="fa-solid fa-book-open"></i>
-                    <span class="label">Format</span>
-                    <span class="value">Blended Learning</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="fa-solid fa-users"></i>
-                    <span class="label">Residencies</span>
-                    <span class="value">9 Executive Residencies</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="fa-solid fa-globe"></i>
-                    <span class="label">Reach</span>
-                    <span class="value">International Residency</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="fa-solid fa-star"></i>
-                    <span class="label">QS Ranking 2025</span>
-                    <span class="value">#3 Middle East &amp; Africa</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="fa-solid fa-award"></i>
-                    <span class="label">Accreditation</span>
-                    <span class="value">AACSB Accredited</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== WHY + FORM ===== -->
-    <section class="section-why" id="why">
-        <div class="container">
-            <!-- LEFT: Content -->
-            <div class="why-content">
-                <span class="section-tag">Why Choose OSB's Executive MBA?</span>
-                <h2 class="section-title">Beyond Experience. Toward Enterprise Leadership.</h2>
-
-                <p>
-                    There comes a point in every executive's career when experience alone is no longer enough. Today's
-                    leaders must think beyond their functional expertise, lead transformation, navigate complexity, and
-                    make decisions with enterprise-wide impact.
-                </p>
-                <p>
-                    Designed for accomplished professionals, OSB's Executive MBA provides the strategic mindset,
-                    leadership skills, and global perspective needed to excel in an evolving business landscape.
-                </p>
-                <p>
-                    For over 25 years, the program has developed leaders across industries throughout the MENA region.
-                    Participants learn from internationally recognized faculty, collaborate with a diverse cohort of
-                    experienced professionals, benefit from personalized executive coaching, and broaden their global
-                    perspective through an international residency creating a transformative learning experience that
-                    extends far beyond the classroom.
-                </p>
-
-                <div class="investment-block">
-                    <h3>An Investment in Lifelong Leadership</h3>
-                    <p>
-                        The OSB Executive MBA is more than a degree! It's an investment in your future as a leader.
-                        Through an integrated curriculum covering strategy, leadership, AI and digital transformation,
-                        innovation, finance, marketing, and operations, you will develop the knowledge, analytical
-                        skills, and leadership capabilities to lead organizations with confidence.
-                    </p>
-                    <p>
-                        Your learning is reinforced through personalized executive coaching and culminates in a Capstone
-                        Project, where you apply your knowledge to solve a real business challenge, often within your
-                        own organization, transforming classroom insights into practical solutions that deliver
-                        immediate value and measurable impact.
-                    </p>
-                </div>
-
-                <div class="pill-grid">
-                    <span class="pill">Strategy</span>
-                    <span class="pill">Leadership</span>
-                    <span class="pill">AI &amp; Digital Transformation</span>
-                    <span class="pill">Innovation</span>
-                    <span class="pill">Finance</span>
-                    <span class="pill">Marketing &amp; Operations</span>
-                </div>
-            </div>
-
-            <!-- RIGHT: Form -->
-            <div class="form-card" id="request">
-                <span class="tag">Request Information</span>
-                <h3>Take the Next Step</h3>
-                <p class="sub">An OSB admissions advisor will be in touch within 2 business days.</p>
-
-                <form id="inquiryForm"
-                    onsubmit="event.preventDefault(); document.getElementById('thankyouState').style.display='block'; this.style.display='none';">
-                    <div id="formFields">
-                        <div class="form-row-2">
-                            <div class="form-group">
-                                <label>First Name *</label>
-                                <input type="text" placeholder="Rania" required />
+            <!-- main two-column: left hero + right form -->
+            <div class="grid-2cols">
+                <!-- LEFT COLUMN -->
+                <div class="">
+                    <div class="logo">
+                        <a href="#" style="text-decoration: none">
+                            <div class="logo-img">
+                                <img class="OSBLogo" src="images/AUB-OSB-Logo.png" alt="logo"
+                                    onclick="window.location.href='https://www.aub.edu.lb/osb';"
+                                    style="cursor:pointer;">
                             </div>
-                            <div class="form-group">
-                                <label>Last Name *</label>
-                                <input type="text" placeholder="Khalil" required />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Work Email *</label>
-                            <input type="email" placeholder="rania@company.com" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="tel" placeholder="+961 3 000 000" />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Company / Organization</label>
-                            <input type="text" placeholder="Your organization" />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Current Title</label>
-                            <input type="text" placeholder="Director, VP, General Manager…" />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Years of Experience</label>
-                            <select>
-                                <option value="">Select range</option>
-                                <option value="8-10">8–10 years</option>
-                                <option value="11-15">11–15 years</option>
-                                <option value="16-20">16–20 years</option>
-                                <option value="20+">20+ years</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Message (optional)</label>
-                            <textarea placeholder="What would you like to know about the program?"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-primary-burgundy btn-block">Submit Request</button>
-                        <p class="form-privacy">Your information is kept strictly confidential.</p>
+                        </a>
                     </div>
-                </form>
+                    <div class="hero-content">
+                        <h1>Transform Experience<br>into Executive Leadership</h1>
+                        <div class="hero-subtitle">OSB Executive MBA – Beirut</div>
+                        <div class="button-group" style="margin-top:1.5rem;">
+                            <a href="https://www.aub.edu.lb/osb/EMBA/Pages/default.aspx" class="btn-primary">Visit
+                                Website</a>
+                            <a href="GR-EMBA-Brochure.html" class="btn-outline">Download Brochure</a>
+                        </div>
+                    </div>
+                </div>
 
-                <div id="thankyouState" class="thankyou-state">
-                    <div class="icon-circle"><i class="fa-solid fa-check"></i></div>
-                    <h4>Thank you!</h4>
-                    <p>We've received your request and will reach out shortly.</p>
+                <!-- RIGHT COLUMN: FORM CARD (same as MBA apply) -->
+                <div class="form-card">
+                    <form class="contact100-form validate-form" id="myform"
+                        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
+                        name="myform" novalidate="novalidate">
+                        <!-- Salesforce hidden fields -->
+                        <input type="hidden" name="oid" value="00D0Y000001Xrwc">
+                        <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
+                        <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000S0gqAAC">
+                        <input type="hidden" id="member_status" name="member_status" value="Interested">
+                        <input type="hidden" name="lead_source" id="lead_source" value="Website">
+                        <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Apply Executive MBA">
+                        <input type=hidden name="00NP500000D37Bx" id="Campaign_Name" value="">
+                        <input type=hidden name="00NP500000D37IP" id="AD_Name" value="">
+                        <input type=hidden id="00NP500000LohFU" name="00NP500000LohFU" value="">
+                        <input type=hidden id="00NP500000Oxk99" name="00NP500000Oxk99" value="">
+                        <input type="hidden" name="rating" id="rating" value="Cold">
+                        <input type="hidden" name="country_code" id="country_code" value="LB">
+                        <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
+                        <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
+                        <input type="hidden" name="description" id="description" value="Concated text">
+                        <input type="hidden" name="retURL"
+                            value="https://www.aub.edu.lb/osb/Landing/Pages/GR-EMBA-Apply-ThankYou.html">
+                        <!-- form fields (same as original) -->
+                        <div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
+                            <span class="label-input100">First Name *</span>
+                            <input class="input100" id="first_name" maxlength="40" name="first_name" required
+                                placeholder="First Name" size="20" type="text">
+                            <span class="focus-input100"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input form-group" data-validate="Last Name is required">
+                            <span class="label-input100">Last Name *</span>
+                            <input class="input100" id="last_name" maxlength="80" placeholder="Last Name" required
+                                name="last_name" size="20" type="text">
+                            <span class="focus-input100"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input form-group"
+                            data-validate="Valid email is required: ex@abc.xyz">
+                            <span class="label-input100">Email *</span>
+                            <input class="input100" placeholder="Email" id="email" maxlength="80" required
+                                name="00N0Y00000QGklI" size="20" type="text">
+                            <span class="focus-input100"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input form-group" data-validate="Phone number is required">
+                            <span class="label-input100">Phone *</span>
+                            <input class="input100" placeholder="Phone" id="phone" maxlength="40" required type="text">
+                            <span class="focus-input100"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input form-group" data-validate="Company name is required">
+                            <span class="label-input100">Company *</span>
+                            <input class="input100" id="employer" placeholder="Company" maxlength="40" required
+                                name="00N0Y00000QGku0" size="20" type="hodde">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <!-- additional fields (concatenated) -->
+                        <!-- <div class="wrap-input100 validate-input form-group "
+                            data-validate="Country of Residence is required">
+                            <span class="label-input100">Country of Residence *</span>
+                            <input class="input100" id="country_residence" name="country_residence" required 
+                                placeholder="e.g., Lebanon, USA, UAE" type="text">
+                            <span class="focus-input100"></span>
+                        </div> -->
+                        <!-- <div class="wrap-input100 validate-input form-group" data-validate="University is required">
+                            <span class="label-input100">University *</span>
+                            <select id="university" name="university" class="input100" required></select>
+                            <span class="focus-input100"></span>
+                        </div> -->
+                        <!-- <div class="wrap-input100 validate-input form-group" data-validate="Major is required">
+                            <span class="label-input100">University Major *</span>
+                            <input class="input100" id="major" name="major" required
+                                placeholder="e.g., Business, Engineering, Economics" type="text">
+                            <span class="focus-input100"></span>
+                        </div> -->
+                        <div class="wrap-input100 validate-input form-group" data-validate="Position is required">
+                            <span class="label-input100">Position *</span>
+                            <input class="input100" id="major" name="major" required placeholder="You Porisition"
+                                type="text">
+                            <span class="focus-input100"></span>
+
+
+                        </div>
+                        <div class="wrap-input100 validate-input form-group"
+                            data-validate="Years of experience is required (numeric)">
+                            <span class="label-input100">Years of Experience *</span>
+                            <input class="input100" id="years_experience" name="00N0Y00000QGkuK" required
+                                placeholder="Experience in Management" type="number" min="0" step="1">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <!-- <div class="wrap-input100 validate-input form-group" data-validate="Please select an option">
+                            <span class="label-input100">How did you hear about us? *</span>
+                            <select class="input100" id="hear_about" name="hear_about" required>
+                                <option value="" disabled selected>-- Select --</option>
+                                <option value="Social Media (Facebook, Instagram, LinkedIn, Twitter)">Social Media
+                                    (Facebook, Instagram, LinkedIn, Twitter)</option>
+                                <option value="Google Search / Ads">Google Search / Ads</option>
+                                <option value="Email / Newsletter">Email / Newsletter</option>
+                                <option value="AUB Website">AUB Website</option>
+                                <option value="Event / Webinar">Event / Webinar</option>
+                                <option value="Friend / Colleague">Friend / Colleague</option>
+                                <option value="Alumni Referral">Alumni Referral</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="focus-input100"></span>-->
+
+                        <div class="container-contact100-form-btn">
+                            <div class="wrap-contact100-form-btn">
+                                <button class="btn btn-submit" type="submit" name="submitbtn"
+                                    id="submitbtn">SUBMIT</button>
+                            </div>
+                        </div>
+                        <div id="loading-overlay" style="display: none; text-align: center; margin-top: 15px;">
+                            <i class="fas fa-spinner fa-pulse" style="font-size: 24px;"></i>
+                            <span>Submitting, please wait...</span>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ===== FAQ ===== -->
-    <section class="section-faq" id="faq">
-        <div class="container">
-            <span class="section-tag">Frequently Asked Questions</span>
-            <h2 class="section-title-burgundy">Common Questions</h2>
+            <!-- ========== ADDED CONTENT (EXACTLY AS PROVIDED) ========== -->
+            <!-- Program Highlights card (two columns) -->
+            <div class="grid-2cols info-cards" style="margin-top: 2rem;">
+                <div class="info-card">
+                    <h3>Program Highlights</h3>
+                    <ul>
+                        <li> 15-Month Executive MBA</li>
+                        <li>Blended Learning Format</li>
+                        <li> 9 Executive Residencies</li>
+                        <li>International Residency</li>
+                        <li>Ranked #3 in the Middle East &amp; Africa <span style="font-size:0.7rem; opacity:0.8;">(QS
+                                Executive MBA Rankings 2025)</span></li>
+                        <li>AACSB Accredited</li>
+                    </ul>
+                    <a class="btn-primary" style="margin-top: 10px;">Request Information</a>
+                </div>
+                <div class="info-card">
+                    <h3>Why Choose OSB's Executive MBA?</h3>
+                    <p style="font-weight:300; line-height:1.6; margin-bottom:0.8rem;">There comes a point in every
+                        executive's career when experience alone is no longer enough. Today's leaders must think beyond
+                        their functional expertise, lead transformation, navigate complexity, and make decisions with
+                        enterprise-wide impact.</p>
+                    <p style="font-weight:300; line-height:1.6; margin-bottom:0.5rem;">Designed for accomplished
+                        professionals, OSB's Executive MBA provides the strategic mindset, leadership skills, and global
+                        perspective needed to excel in an evolving business landscape.</p>
+                    <p style="font-weight:300; line-height:1.6; font-size:0.9rem; opacity:0.9;">For over 25 years, the
+                        program has developed leaders across industries throughout the MENA region. Participants learn
+                        from internationally recognized faculty, collaborate with a diverse cohort of experienced
+                        professionals, benefit from personalized executive coaching, and broaden their global
+                        perspective through an international residency — creating a transformative learning experience
+                        that extends far beyond the classroom.</p>
+                </div>
+            </div>
 
-            <div class="faq-list">
-                <!-- FAQ 1 -->
+            <!-- An Investment in Lifelong Leadership -->
+            <div class="content-section">
+                <h2> An Investment in Lifelong Leadership
+                </h2>
+                <p>The OSB Executive MBA is more than a degree! It's an investment in your future as a leader. Through
+                    an integrated curriculum covering strategy, leadership, AI and digital transformation, innovation,
+                    finance, marketing, and operations, you will develop the knowledge, analytical skills, and
+                    leadership capabilities to lead organizations with confidence.</p>
+                <p>Your learning is reinforced through personalized executive coaching and culminates in a Capstone
+                    Project, where you apply your knowledge to solve a real business challenge, often within your own
+                    organization, transforming classroom insights into practical solutions that deliver immediate value
+                    and measurable impact.</p>
+            </div>
+
+            <!-- FAQ section -->
+            <div class="content-section">
+                <h2> Frequently Asked Questions</h2>
                 <div class="faq-item">
-                    <button class="faq-btn" onclick="toggleFaq(this)">
-                        <span>Who should apply?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
+                    <h4 class="faq-toggle">Who should apply? <span class="faq-icon"><i
+                                class="fas fa-chevron-down"></i></span></h4>
                     <div class="faq-answer">
-                        <p>
-                            The OSB Executive MBA is designed for experienced professionals, senior managers, directors,
+                        <p>The OSB Executive MBA is designed for experienced professionals, senior managers, directors,
                             entrepreneurs, and business leaders who are ready to broaden their strategic perspective,
                             strengthen their leadership capabilities, and accelerate their career growth. Applicants are
                             typically expected to have a minimum of eight years of professional experience, with
-                            significant managerial or leadership responsibilities.
-                        </p>
+                            significant managerial or leadership responsibilities.</p>
                     </div>
                 </div>
-
-                <!-- FAQ 2 -->
                 <div class="faq-item">
-                    <button class="faq-btn" onclick="toggleFaq(this)">
-                        <span>Can I study while working full-time?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
+                    <h4 class="faq-toggle">Can I study while working full-time? <span class="faq-icon"><i
+                                class="fas fa-chevron-down"></i></span></h4>
                     <div class="faq-answer">
-                        <p>
-                            Yes. The OSB Executive MBA is specifically designed for working professionals. Its blended
+                        <p>Yes. The OSB Executive MBA is specifically designed for working professionals. Its blended
                             learning format, combined with 9 residencies, allows participants to continue advancing
                             their careers while pursuing their degree, minimizing disruption to their professional and
-                            personal commitments.
-                        </p>
+                            personal commitments.</p>
                     </div>
                 </div>
-
-                <!-- FAQ 3 -->
                 <div class="faq-item">
-                    <button class="faq-btn" onclick="toggleFaq(this)">
-                        <span>What is the minimum work experience required?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
+                    <h4 class="faq-toggle">What is the minimum work experience required? <span class="faq-icon"><i
+                                class="fas fa-chevron-down"></i></span></h4>
                     <div class="faq-answer">
-                        <p>
-                            Applicants should have at least eight years of professional work experience, including
+                        <p>Applicants should have at least eight years of professional work experience, including
                             substantial managerial or leadership responsibilities. The program attracts a diverse cohort
                             of executives with an average of 12 years of professional experience, creating a rich
-                            peer-learning environment.
-                        </p>
+                            peer-learning environment.</p>
                     </div>
                 </div>
-
-                <!-- FAQ 4 -->
                 <div class="faq-item">
-                    <button class="faq-btn" onclick="toggleFaq(this)">
-                        <span>When does the next cohort begin?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
+                    <h4 class="faq-toggle">When does the next cohort begin? <span class="faq-icon"><i
+                                class="fas fa-chevron-down"></i></span></h4>
                     <div class="faq-answer">
-                        <p>
-                            The OSB Executive MBA welcomes one cohort each year, beginning in September. We encourage
+                        <p>The OSB Executive MBA welcomes one cohort each year, beginning in September. We encourage
                             prospective participants to contact the admissions team early to learn about application
-                            deadlines, admissions events, and upcoming information sessions.
-                        </p>
+                            deadlines, admissions events, and upcoming information sessions.</p>
                     </div>
                 </div>
-
-                <!-- FAQ 5 -->
                 <div class="faq-item">
-                    <button class="faq-btn" onclick="toggleFaq(this)">
-                        <span>Is the international residency included?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
+                    <h4 class="faq-toggle">Is the international residency included? <span class="faq-icon"><i
+                                class="fas fa-chevron-down"></i></span></h4>
                     <div class="faq-answer">
-                        <p>
-                            Yes. The program includes an international residency at a partner global business school,
+                        <p>Yes. The program includes an international residency at a partner global business school,
                             providing participants with valuable international exposure, opportunities to engage with
                             global faculty and business leaders, and insights into international business practices. The
                             international residency is an integral part of the OSB Executive MBA learning experience.
@@ -960,66 +585,98 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ===== CTA BANNER ===== -->
-    <section class="cta-banner">
-        <div class="container">
-            <h2>Ready for Your Next Leadership Chapter?</h2>
-            <p>Take the next step toward becoming the leader your organization needs.</p>
-            <a href="#request" class="btn-primary">Speak with our admissions team today.</a>
-        </div>
-    </section>
+            <!-- Ready for Your Next Leadership Chapter? CTA -->
+            <div class="cta-block">
+                <h2>Ready for Your Next Leadership Chapter?</h2>
+                <p>Take the next step toward becoming the leader your organization needs.</p>
+                <p style="font-weight:400; margin-bottom:1.2rem;">Speak with our admissions team today.</p>
+                <div class="flex-center">
+                    <a href="#myform" class="btn-outline" style="border-color:white; color:white; background:#142d66;">
+                        Request Information</a>
+                </div>
+            </div>
 
+        </div> <!-- /container -->
+    </div> <!-- /page-wrapper -->
+
+    <!-- FOOTER (exactly as original) -->
     <footer class="footer">
-		<div class="footer-inner">
-			<div class="footer-legal">By submitting this form you are undertaking that the information provided is
-				accurate. You are also consenting to processing of your information for the specified purpose in
-				accordance with relevant data protection laws. The University will maintain confidentiality of the
-				personal information. The information may be used by the University to communicate with you and inform
-				you about our programs and higher education offerings.</div>
-			<div class="copyright">©2026 American University of Beirut, OSB All Rights Reserved</div>
-			<div class="social-icons">
-				<a target="_blank" href="https://www.facebook.com/OSBAUB/"><i class="fab fa-facebook-f"></i></a>
-				<a target="_blank" href="https://twitter.com/aubosb"><i class="fab fa-x-twitter"></i></a>
-				<a target="_blank"
-					href="https://www.linkedin.com/company/aub-suliman-s-olayan-school-of-business-osb-/"><i
-						class="fab fa-linkedin-in"></i></a>
-				<a target="_blank" href="https://www.instagram.com/osb_aub/"><i class="fab fa-instagram"></i></a>
-				<a target="_blank" href="https://www.youtube.com/@AUBOSB"><i class="fab fa-youtube"></i></a>
-			</div>
-		</div>
-	</footer>
+        <div class="footer-inner">
+            <div class="footer-legal">By submitting this form you are undertaking that the information provided is
+                accurate. You are also consenting to processing of your information for the specified purpose in
+                accordance with relevant data protection laws. The University will maintain confidentiality of the
+                personal information. The information may be used by the University to communicate with you and inform
+                you about our programs and higher education offerings.</div>
+            <div class="copyright">©2026 American University of Beirut, OSB All Rights Reserved</div>
+            <div class="social-icons">
+                <a target="_blank" href="https://www.facebook.com/OSBAUB/"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" href="https://twitter.com/aubosb"><i class="fab fa-x-twitter"></i></a>
+                <a target="_blank"
+                    href="https://www.linkedin.com/company/aub-suliman-s-olayan-school-of-business-osb-/"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a target="_blank" href="https://www.instagram.com/osb_aub/"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" href="https://www.youtube.com/@AUBOSB"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
 
-    <!-- ===== FAQ TOGGLE SCRIPT ===== -->
+
     <script>
-        function toggleFaq(btn) {
-            const answer = btn.nextElementSibling;
-            const icon = btn.querySelector('i');
-            const isOpen = answer.style.display === 'block';
-
-            document.querySelectorAll('.faq-answer').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.faq-btn i').forEach(el => {
-                el.className = 'fa-solid fa-chevron-down';
-            });
-
-            if (!isOpen) {
-                answer.style.display = 'block';
-                icon.className = 'fa-solid fa-chevron-up';
-            }
-        }
-
+        // Collapsible FAQ toggle
         document.addEventListener('DOMContentLoaded', function () {
-            const firstBtn = document.querySelector('.faq-btn');
-            if (firstBtn) {
-                const firstAnswer = firstBtn.nextElementSibling;
-                firstAnswer.style.display = 'block';
-                firstBtn.querySelector('i').className = 'fa-solid fa-chevron-up';
-            }
+            const toggles = document.querySelectorAll('.faq-toggle');
+            toggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function () {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('.faq-icon');
+                    const isOpen = answer.classList.contains('open');
+
+                    // Close all other open FAQs (optional: accordion behavior)
+                    document.querySelectorAll('.faq-answer.open').forEach(function (openAns) {
+                        if (openAns !== answer) {
+                            openAns.classList.remove('open');
+                            openAns.previousElementSibling.querySelector('.faq-icon').classList.remove('open');
+                        }
+                    });
+
+                    // Toggle current
+                    if (isOpen) {
+                        answer.classList.remove('open');
+                        icon.classList.remove('open');
+                    } else {
+                        answer.classList.add('open');
+                        icon.classList.add('open');
+                    }
+                });
+            });
         });
     </script>
-
+    <!-- Source parameters (same as original) -->
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            url = url.toLowerCase();
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return "";
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        var utm_source = getParameterByName('source');
+        var utm_details = getParameterByName('utm_details');
+        var utm_campaign = getParameterByName('utm_campaign');
+        var utm_content = getParameterByName('utm_content');
+        var utm_placement = getParameterByName('utm_placement');
+        var utm_adsetname = getParameterByName('utm_adsetname');
+        if (utm_source != null) { $('#lead_source').val(utm_source); }
+        if (utm_details != null) { $('#00N0Y00000QGkma').val(utm_details); }
+        if (utm_campaign != null) { $('#Campaign_Name').val(utm_campaign); }
+        if (utm_content != null) { $('#AD_Name').val(utm_content); }
+        if (utm_placement != null) { $('#00NP500000LohFU').val(utm_placement); }
+        if (utm_adsetname != null) { $('#00NP500000Oxk99').val(utm_adsetname); }
+    </script>
 </body>
 
 </html>
