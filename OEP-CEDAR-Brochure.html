@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>AUB OSB | Design Thinking Program - Brochure</title>
+    <title>AUB OSB | CEDAR Program - Brochure</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -22,17 +22,15 @@
 
     <style>
         :root {
-            /* Design Thinking accent */
-            --color-accent: #854295;
-            --color-accent-dark: #4b1757;
+            --color-accent: #CC9E2B;
+            --color-accent-dark: #CC9E2B;
         }
 
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(0deg, var(--color-black-30), var(--color-black-30)),
-                url('images/AUB-OSB-OEP-design-thinking.jpg');
+            background: linear-gradient(0deg, var(--color-black-30, rgba(0, 0, 0, 0.3)), var(--color-black-30, rgba(0, 0, 0, 0.3))), url('images/AUB-OSB-OEP-CEDAR.jpg');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -51,12 +49,23 @@
 
     <!-- jQuery and Validation -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- jQuery Validation Plugin is NOT loaded (to avoid conflict) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
     <!-- Libraries -->
     <script src="build/js/intlTelInput.js"></script>
     <script src="js/mailchimp-subscribe.js"></script>
-    <script src="js/brochure-validator.js"></script>
     <script src="js/phonescript.js"></script>
+    <script src="js/brochure-validator.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
+    <!-- End Google Tag Manager -->
 
     <!-- Mailchimp endpoint -->
     <!-- <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=lii";</script> -->
@@ -64,6 +73,7 @@
 </head>
 
 <body class="brochure">
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -74,16 +84,15 @@
             <div class="hero-logo text-center">
                 <a href="https://www.aub.edu.lb/osb">
                     <img src="images/logos/AUB-OSB-Logo-white-vertical.png" alt="AUB OSB Logo"
-                        onerror="this.src='https://placehold.co/200x70?text=AUB+OSB'">
+                        onerror="this.src='https://placehold.co/140x140?text=AUB+OSB'">
                 </a>
             </div>
             <div class="hero-content text-center">
-                <h1>Join the Design Thinking Program</h1>
+                <h1>CEDAR Program Brochure</h1>
                 <p class="hero-tagline">
-                    With today’s rapidly evolving customers’ needs, organizations are undergoing increased pressure to
-                    innovate and constantly adapt. The shift from a centrally dedicated innovation entity to a
-                    team-based, cross-functional effort requires fundamental changes to the traditional innovation
-                    mindset.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non lorem vitae sapien cursus
+                    facilisis. This placeholder should be replaced with the official CEDAR program overview once the
+                    final copy is available.
                 </p>
             </div>
         </div>
@@ -93,8 +102,7 @@
         <!-- Form Card -->
         <div class="form-card">
             <h2 class="form-card__title">Download Brochure</h2>
-            <span class="form-card__subtitle">Fill in your details to get instant access to the program
-                brochure</span>
+            <span class="form-card__subtitle">Fill in your details to get instant access to the program brochure</span>
 
             <form class="contact100-form validate-form" id="myform"
                 action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
@@ -103,53 +111,57 @@
                 <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
                 <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-                <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000o9UrjIAE">
+                <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000tmsUgIAI">
                 <input type="hidden" id="member_status" name="member_status" value="Interested">
                 <input type="hidden" name="lead_source" id="lead_source" value="Website">
-                <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure Design Thinking">
+                <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure CEDAR">
                 <input type="hidden" name="country_code" id="country_code" value="LB">
                 <input type="hidden" name="campaign" id="campaign" value="">
                 <input type="hidden" name="rating" id="rating" value="Cold">
                 <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
                 <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
                 <input type="hidden" name="00N0Y00000RODqu" id="00N0Y00000RODqu" value="">
-                <!-- Dummy fields to satisfy Salesforce (not used in validation) -->
+
+                <!-- Dummy fields to satisfy Salesforce -->
                 <input type="hidden" name="00N0Y00000QGklm" id="00N0Y00000QGklm" value="N/A">
                 <input type="hidden" name="title" id="title" value="N/A">
                 <input type="hidden" name="00N0Y00000QGkuK" id="00N0Y00000QGkuK" value="0">
                 <input type="hidden" name="00N0Y00000QGkrV" id="00N0Y00000QGkrV" value="N/A">
                 <input type="hidden" name="00N0Y00000QGksE" id="00N0Y00000QGksE" value="N/A">
                 <input type="hidden" name="description" id="description" value="">
+
+                <!-- Placeholder PDF URL. Replace only if the final CEDAR fact sheet URL differs. -->
                 <input type="hidden" name="retURL"
-                    value="https://www.aub.edu.lb/osb/executiveeducation/Documents/Fact%20Sheet-%20OEP-DESIGN%20THINKING.pdf">
+                    value="https://www.aub.edu.lb/osb/executiveeducation/Documents/Fact-Sheet-OEP-CEDAR.pdf">
 
                 <!-- Form fields -->
                 <div class="form-group form-group--full validate-input" data-validate="First Name is required">
                     <span class="form-label">First Name *</span>
-                    <input class="form-input" id="first_name" name="first_name" maxlength="40" placeholder="First Name"
+                    <input class="form-input" id="first_name" maxlength="40" name="first_name" placeholder="First Name"
                         type="text" required>
                 </div>
 
                 <div class="form-group form-group--full validate-input" data-validate="Last Name is required">
                     <span class="form-label">Last Name *</span>
-                    <input class="form-input" id="last_name" name="last_name" maxlength="80" placeholder="Last Name"
+                    <input class="form-input" id="last_name" maxlength="80" name="last_name" placeholder="Last Name"
                         type="text" required>
                 </div>
 
                 <div class="form-group form-group--full validate-input" data-validate="Valid email is required">
                     <span class="form-label">Email *</span>
-                    <input class="form-input" id="email" name="00N0Y00000QGklI" maxlength="80" placeholder="Email"
+                    <input class="form-input" id="email" maxlength="80" name="00N0Y00000QGklI" placeholder="Email"
                         type="email" required>
                 </div>
 
                 <div class="form-group form-group--full validate-input" data-validate="Phone number is required">
                     <span class="form-label">Mobile Number *</span>
-                    <input class="form-input" id="phone" name="intphone" type="tel" required>
+                    <input class="form-input" id="phone" maxlength="40" name="intphone" placeholder="Mobile Number"
+                        type="tel" required>
                 </div>
 
                 <div class="form-group form-group--full validate-input" data-validate="Company is required">
                     <span class="form-label">Company *</span>
-                    <input class="form-input" id="employer" name="00N0Y00000QGku0" maxlength="40"
+                    <input class="form-input" id="employer" maxlength="40" name="00N0Y00000QGku0"
                         placeholder="Company name" type="text" required>
                 </div>
 
@@ -158,22 +170,28 @@
 
                 <div class="form-submit">
                     <div class="wrap-contact100-form-btn">
-                        <button class="btn btn-submit" type="submit" id="submitbtn">DOWNLOAD BROCHURE</button>
+                        <button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">DOWNLOAD
+                            BROCHURE</button>
                     </div>
                     <div class="loading-overlay" id="loading-overlay">
                         <i class="fas fa-spinner fa-pulse"></i>
                         <span>Submitting, please wait...</span>
                     </div>
                     <p class="form-note">
+                        <i class="fas fa-lock" style="margin-right: 4px;"></i>
                         Your information is secure. An admissions advisor will contact you shortly.
                     </p>
                 </div>
             </form>
 
-            <!-- Action buttons -->
+            <!-- Button Group -->
             <div class="button-group">
-                <a href="https://www.aub.edu.lb/osb" class="btn btn-primary" target="_blank">Visit Website</a>
-                <a href="OEP-Design-Thinking-Apply.html" class="btn btn-outline">Apply Now</a>
+                <a href="https://www.aub.edu.lb/osb" class="btn btn-primary" target="_blank">
+                     Visit Website
+                </a>
+                <a href="OEP-CEDAR-Apply.html" class="btn btn-outline">
+                    Apply Now
+                </a>
             </div>
         </div>
 
@@ -182,19 +200,19 @@
             <div class="info-card">
                 <h3>Program Highlights</h3>
                 <ul class="bullet-list">
-                    <li>Human-centered design mindset</li>
-                    <li>Led by industry & academic experts</li>
-                    <li>Prototyping, user research & agile methods</li>
-                    <li>Join a global innovation network</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Consectetur adipiscing elit</li>
+                    <li>Sed do eiusmod tempor incididunt</li>
+                    <li>Ut labore et dolore magna aliqua</li>
                 </ul>
             </div>
             <div class="info-card">
                 <h3>Who Should Apply</h3>
                 <ul class="bullet-list">
-                    <li>Professionals driving innovation</li>
-                    <li>Entrepreneurs & product managers</li>
-                    <li>Change agents in any industry</li>
-                    <li>Fluency in English required</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Consectetur adipiscing elit</li>
+                    <li>Sed do eiusmod tempor incididunt</li>
+                    <li>Ut labore et dolore magna aliqua</li>
                 </ul>
             </div>
         </div>
@@ -220,18 +238,19 @@
         </div>
     </footer>
 
-    <!-- UTM & source parameter handling -->
     <script>
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
             url = url.toLowerCase();
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
                 results = regex.exec(url);
             if (!results) return null;
-            if (!results[2]) return "";
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
+        var source = getParameterByName('source');
+        var campaign = getParameterByName('campaign');
         var utm_source = getParameterByName('source');
         var utm_details = getParameterByName('utm_details');
         var utm_campaign = getParameterByName('utm_campaign');
@@ -239,12 +258,51 @@
         var utm_placement = getParameterByName('utm_placement');
         var utm_adsetname = getParameterByName('utm_adsetname');
 
+        switch (source) {
+            case "fb": var sourcetxt = "Social Media"; var sourcelbl = "Fb - Brochure CEDAR"; break;
+            case "insta": var sourcetxt = "Social Media"; var sourcelbl = "Insta - Brochure CEDAR"; break;
+            case "tw": var sourcetxt = "Social Media"; var sourcelbl = "Tw - Brochure CEDAR"; break;
+            case "lin": var sourcetxt = "Social Media"; var sourcelbl = "Lin - Brochure CEDAR"; break;
+            case "gs": var sourcetxt = "Google Ads"; var sourcelbl = "Search - Brochure CEDAR"; break;
+            case "mail": var sourcetxt = "Mailchimp"; var sourcelbl = "Brochure CEDAR"; break;
+            case "linkedin": var sourcetxt = "Social Media"; var sourcelbl = "LinkedIn - Brochure CEDAR"; break;
+            default: var sourcetxt = "Website"; var sourcelbl = "Brochure CEDAR"; break;
+        }
+        switch (campaign) {
+            case "uae": var campaigntxt = "AE"; break;
+            case "ksa": var campaigntxt = "SA"; break;
+            case "kwt": var campaigntxt = "KW"; break;
+            case "qat": var campaigntxt = "QA"; break;
+            case "jor": var campaigntxt = "JO"; break;
+            case "nyc": var campaigntxt = "US"; break;
+            case "fra": var campaigntxt = "FR"; break;
+            default: var campaigntxt = "LB"; break;
+        }
+
+        $('#lead_source').val(sourcetxt);
+        $('#00N0Y00000QGkma').val(sourcelbl);
+        $('#country_code').val(campaigntxt);
+        if (campaign) $('#campaign').val(campaign);
+
         if (utm_source != null) $('#lead_source').val(utm_source);
         if (utm_details != null) $('#00N0Y00000QGkma').val(utm_details);
         if (utm_campaign != null) $('#Campaign_Name').val(utm_campaign);
         if (utm_content != null) $('#AD_Name').val(utm_content);
         if (utm_placement != null) $('#00NP500000LohFU').val(utm_placement);
         if (utm_adsetname != null) $('#00NP500000Oxk99').val(utm_adsetname);
+    </script>
+
+    <!-- Ensure intlTelInput initializes correctly (phonescript does it, but fallback safety) -->
+    <script>
+        $(window).on('load', function () {
+            if (typeof intlTelInput !== 'undefined' && $("#phone").length && !$("#phone").data("intlTelInput")) {
+                $("#phone").intlTelInput({
+                    preferredCountries: ["lb", "ae", "sa", "qa", "kw", "us", "uk"],
+                    separateDialCode: true,
+                    utilsScript: "build/js/utils.js"
+                });
+            }
+        });
     </script>
 </body>
 

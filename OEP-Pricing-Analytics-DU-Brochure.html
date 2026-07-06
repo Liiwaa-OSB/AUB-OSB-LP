@@ -1,32 +1,51 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <title>AUB OSB | Pricing Analytics Program - Brochure</title>
-
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800;900&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800;900&amp;display=swap"
+        rel="stylesheet" />
     <!-- Core CSS -->
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" href="build/css/intlTelInput.css">
-    <link rel="stylesheet" href="css/main-V1.css">
-    <link rel="stylesheet" href="css/online-programs.css">
-
+    <link href="css/util.css" rel="stylesheet" type="text/css" />
+    <link href="build/css/intlTelInput.css" rel="stylesheet" />
+    <link rel="icon" href="images/logos/favicon.ico" type="image/png">
+    <link href="css/main-V1.css" rel="stylesheet" />
+    <link href="css/online-programs-V2.css" rel="stylesheet" />
     <style>
-        .hero-banner::before {
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/AUB-OSB-OEP-Pricing-Analytics.jpg');
-            background-position: center;
+        :root {
+            /* Pricing Analytics accent */
+            --color-accent: #3c955c;
+            --color-accent-dark: #26613a;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, var(--color-black-30), var(--color-black-30)),
+                url('images/AUB-OSB-OEP-Pricing-Analytics.jpg');
+            background-position: center center;
             background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        .info-card,
+        .btn-submit {
+            background: var(--color-accent);
+        }
+
+        .btn-submit:hover {
+            background: var(--color-accent-dark);
         }
     </style>
-
     <!-- Scripts (only what is needed) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- jQuery Validation Plugin is NOT loaded (to avoid conflict) -->
@@ -34,149 +53,141 @@
     <script src="js/mailchimp-subscribe.js"></script>
     <script src="js/brochure-validator.js"></script>
     <script src="js/phonescript.js"></script>
-
     <!-- Mailchimp endpoint -->
-    <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";</script>
+    <!-- <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=lii";</script> -->
     <script>function GoogleConversion() { }</script>
 </head>
 
-<body>
+<body class="brochure">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-
-    <div class="hero-banner">
+    <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ"
+            style="display:none;visibility:hidden" width="0"></iframe></noscript>
+    <section class="hero">
         <div class="container">
-            <div class="banner-logo-center">
-                <a href="https://www.aub.edu.lb/osb"><img src="images/AUB-OSB-Logo-white-vertical.png" alt="AUB OSB Logo"
-                        onerror="this.src='https://placehold.co/200x70?text=AUB+OSB'"></a>
+            <div class="hero-logo text-center">
+                <a href="https://www.aub.edu.lb/osb"><img alt="AUB OSB Logo"
+                        onerror="this.src='https://placehold.co/140x140?text=AUB+OSB'"
+                        src="images/logos/AUB-OSB-Logo-white-vertical.png" /></a>
             </div>
-            <div class="banner-content">
-                <h1>Pricing Analytics<br>Program Brochure</h1>
-                <div class="hero-tagline">
+            <div class="hero-content text-center">
+                <h1>Pricing Analytics<br />Program Brochure</h1>
+                <p class="hero-tagline">
                     Pricing is one of the most powerful levers a company can use to drive profitability and
                     competitiveness, yet it remains a complex challenge that businesses face if reduced to cost plus- or
                     competition-based approaches. This program focuses on pricing as a competitive driver, balancing the
                     tradeoff between faster resource/inventory turnover and higher margins through data analytics
                     capabilities.
-                </div>
+                </p>
             </div>
         </div>
-    </div>
-
+    </section>
     <div class="container">
-        <div class="overlap-form-card">
-            <span class="form-card__title">Download Brochure</span>
+        <div class="form-card">
+            <h2 class="form-card__title">Download Brochure</h2>
             <span class="form-card__subtitle">Fill in your details to get instant access to the program
                 brochure</span>
-
-            <form class="validate-form-modern" id="myform"
-                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
-                name="myform" novalidate="novalidate">
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
+                class="contact100-form validate-form" id="myform" method="post" name="myform" novalidate="novalidate">
                 <!-- Salesforce hidden fields -->
-                <input type="hidden" name="oid" value="00D0Y000001Xrwc">
-                <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-                <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000m0UfBIAU">
-                <input type="hidden" id="member_status" name="member_status" value="Interested">
-                <input type="hidden" name="lead_source" id="lead_source" value="Website">
-                <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure Pricing Analytics">
-                <input type="hidden" name="country_code" id="country_code" value="LB">
-                <input type="hidden" name="campaign" id="campaign" value="">
-                <input type="hidden" name="rating" id="rating" value="Cold">
-                <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
-                <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
-                <input type="hidden" name="00N0Y00000RODqu" id="00N0Y00000RODqu" value="">
+                <input name="oid" type="hidden" value="00D0Y000001Xrwc" />
+                <input id="recordType" name="recordType" type="hidden" value="0120Y000000ymGb" />
+                <input id="Campaign_ID" name="Campaign_ID" type="hidden" value="701P500000m0UfBIAU" />
+                <input id="member_status" name="member_status" type="hidden" value="Interested" />
+                <input id="lead_source" name="lead_source" type="hidden" value="Website" />
+                <input id="00N0Y00000QGkma" name="00N0Y00000QGkma" type="hidden" value="Brochure Pricing Analytics" />
+                <input id="country_code" name="country_code" type="hidden" value="LB" />
+                <input id="campaign" name="campaign" type="hidden" value="" />
+                <input id="rating" name="rating" type="hidden" value="Cold" />
+                <input id="00N0Y00000RODiR" name="00N0Y00000RODiR" type="hidden" value="Personal Email" />
+                <input id="00N0Y00000RODr9" name="00N0Y00000RODr9" type="hidden" value="Personal Phone" />
+                <input id="00N0Y00000RODqu" name="00N0Y00000RODqu" type="hidden" value="" />
                 <!-- Dummy fields to satisfy Salesforce (not used in validation) -->
-                <input type="hidden" name="00N0Y00000QGklm" id="00N0Y00000QGklm" value="N/A">
-                <input type="hidden" name="title" id="title" value="N/A">
-                <input type="hidden" name="00N0Y00000QGkuK" id="00N0Y00000QGkuK" value="0">
-                <input type="hidden" name="00N0Y00000QGkrV" id="00N0Y00000QGkrV" value="N/A">
-                <input type="hidden" name="00N0Y00000QGksE" id="00N0Y00000QGksE" value="N/A">
-                <input type="hidden" name="description" id="description" value="">
-                <input type="hidden" name="retURL"
-                    value="https://www.aub.edu.lb/osb/executiveeducation/Documents/Fact-Sheet-OEP-PRICING-ANALYTICS%20DU.pdf">
-
+                <input id="00N0Y00000QGklm" name="00N0Y00000QGklm" type="hidden" value="N/A" />
+                <input id="title" name="title" type="hidden" value="N/A" />
+                <input id="00N0Y00000QGkuK" name="00N0Y00000QGkuK" type="hidden" value="0" />
+                <input id="00N0Y00000QGkrV" name="00N0Y00000QGkrV" type="hidden" value="N/A" />
+                <input id="00N0Y00000QGksE" name="00N0Y00000QGksE" type="hidden" value="N/A" />
+                <input id="description" name="description" type="hidden" value="" />
+                <input name="retURL" type="hidden"
+                    value="https://www.aub.edu.lb/osb/executiveeducation/Documents/Fact-Sheet-OEP-PRICING-ANALYTICS%20DU.pdf" />
                 <!-- Form fields: 2-column grid, each with focus span for error placement -->
-                <div class="form-grid-modern-brochure">
-                    <div class="form-group full-width-field">
-                        <span class="label-input100">First Name *</span>
-                        <input class="input100" id="first_name" name="first_name" maxlength="40"
-                            placeholder="First Name" type="text" required>
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="form-group full-width-field">
-                        <span class="label-input100">Last Name *</span>
-                        <input class="input100" id="last_name" name="last_name" maxlength="80" placeholder="Last Name"
-                            type="text" required>
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="form-group full-width-field">
-                        <span class="label-input100">Email *</span>
-                        <input class="input100" id="email" name="00N0Y00000QGklI" maxlength="80" placeholder="Email"
-                            type="email" required>
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="form-group full-width-field">
-                        <span class="label-input100">Mobile Number *</span>
-                        <input class="input100" id="phone" name="intphone" type="tel" required>
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="form-group full-width-field" style="grid-column: span 2;">
-                        <span class="label-input100">Company *</span>
-                        <input class="input100" id="employer" name="00N0Y00000QGku0" maxlength="40"
-                            placeholder="Company name" type="text" required>
-                        <span class="focus-input100"></span>
-                    </div>
 
-                    <!-- Submit Button + Loading Overlay -->
-                    <div class="container-contact100-form-btn full-width-field">
-                        <div class="note-text" style="margin-top: 0.5rem;">By submitting, you agree to receive
-                            communications
-                            from AUB OSB.</div>
-                        <div class="wrap-contact100-form-btn">
-                            <button class="btn btn-submit" type="submit" id="submitbtn">DOWNLOAD BROCHURE</button>
-                        </div>
-                        <div id="loading-overlay" style="display: none; text-align: center; margin-top: 15px;">
-                            <i class="fas fa-spinner fa-pulse" style="font-size: 24px;"></i>
-                            <span>Submitting, please wait...</span>
-                        </div>
-                        <div class="note-text" style="margin-top: 1rem;">
-                            Your information is secure. An admissions advisor will contact you shortly.
-                        </div>
-                    </div>
+                <div class="form-group form-group--full validate-input" data-validate="First Name is required">
+                    <span class="form-label">First Name *</span>
+                    <input class="form-input" id="first_name" maxlength="40" name="first_name" placeholder="First Name"
+                        required="" type="text" />
+
                 </div>
-            </form>
+                <div class="form-group form-group--full validate-input" data-validate="Last Name is required">
+                    <span class="form-label">Last Name *</span>
+                    <input class="form-input" id="last_name" maxlength="80" name="last_name" placeholder="Last Name"
+                        required="" type="text" />
 
+                </div>
+                <div class="form-group form-group--full validate-input" data-validate="Valid email is required">
+                    <span class="form-label">Email *</span>
+                    <input class="form-input" id="email" maxlength="80" name="00N0Y00000QGklI" placeholder="Email"
+                        required="" type="email" />
+
+                </div>
+                <div class="form-group form-group--full validate-input" data-validate="Phone number is required">
+                    <span class="form-label">Mobile Number *</span>
+                    <input class="form-input" id="phone" name="intphone" required="" type="tel" />
+
+                </div>
+                <div class="form-group form-group--full validate-input" data-validate="Company is required">
+                    <span class="form-label">Company *</span>
+                    <input class="form-input" id="employer" maxlength="40" name="00N0Y00000QGku0"
+                        placeholder="Company name" required="" type="text" />
+
+                </div>
+                <!-- Submit Button + Loading Overlay -->
+                <div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to receive
+                    communications
+                    from AUB OSB.</div>
+                <div class="form-submit">
+
+                    <div class="wrap-contact100-form-btn">
+                        <button class="btn btn-submit" id="submitbtn" type="submit">DOWNLOAD BROCHURE</button>
+                    </div>
+                    <div class="loading-overlay" id="loading-overlay">
+                        <i class="fas fa-spinner fa-pulse"></i>
+                        <span>Submitting, please wait...</span>
+                    </div>
+                    <p class="form-note">
+                        Your information is secure. An admissions advisor will contact you shortly.
+                    </p>
+                </div>
+
+            </form>
             <!-- Action buttons (centered) -->
-            <div class="form-footer-buttons">
-                <a href="https://www.aub.edu.lb/osb" class="btn-primary" target="_blank">Visit Website</a>
-                <a href="OEP-Pricing-Analytics-DU-Brochure.html" class="btn-outline">Apply Now</a>
+            <div class="button-group">
+                <a class="btn btn-primary" href="https://www.aub.edu.lb/osb" target="_blank">Visit Website</a>
+                <a class="btn btn-outline" href="OEP-Pricing-Analytics-DU-Brochure.html">Apply Now</a>
             </div>
         </div>
-
         <!-- Info cards -->
-        <div class="cards-section">
-            <div class="info-card-modern">
+        <div class="cards-grid">
+            <div class="info-card">
                 <h3>Program Highlights</h3>
-                <ul class="bullet-list-modern">
-                    <li><i class="fa-regular fa-lightbulb"></i> Human-centered design mindset</li>
-                    <li><i class="fas fa-chalkboard-user"></i> Led by industry & academic experts</li>
-                    <li><i class="fas fa-code-branch"></i> Prototyping, user research & agile methods</li>
-                    <li><i class="fas fa-globe"></i> Join a global innovation network</li>
+                <ul class="bullet-list">
+                    <li>Human-centered design mindset</li>
+                    <li>Led by industry &amp; academic experts</li>
+                    <li>Prototyping, user research &amp; agile methods</li>
+                    <li>Join a global innovation network</li>
                 </ul>
             </div>
-            <div class="info-card-modern">
+            <div class="info-card">
                 <h3>Who Should Apply</h3>
-                <ul class="bullet-list-modern">
-                    <li><i class="fas fa-briefcase"></i> Professionals driving innovation</li>
-                    <li><i class="fas fa-graduation-cap"></i> Entrepreneurs & product managers</li>
-                    <li><i class="fas fa-chart-line"></i> Change agents in any industry</li>
-                    <li><i class="fas fa-language"></i> Fluency in English required</li>
+                <ul class="bullet-list">
+                    <li>Professionals driving innovation</li>
+                    <li>Entrepreneurs &amp; product managers</li>
+                    <li>Change agents in any industry</li>
+                    <li>Fluency in English required</li>
                 </ul>
             </div>
         </div>
     </div>
-
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-legal">By submitting this form you are undertaking that the information provided is
@@ -186,17 +197,15 @@
                 you about our programs and higher education offerings.</div>
             <div class="copyright">©2026 American University of Beirut, OSB All Rights Reserved</div>
             <div class="social-icons">
-                <a target="_blank" href="https://www.facebook.com/OSBAUB/"><i class="fab fa-facebook-f"></i></a>
-                <a target="_blank" href="https://twitter.com/aubosb"><i class="fab fa-x-twitter"></i></a>
-                <a target="_blank"
-                    href="https://www.linkedin.com/company/aub-suliman-s-olayan-school-of-business-osb-/"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a target="_blank" href="https://www.instagram.com/osb_aub/"><i class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://www.youtube.com/@AUBOSB"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/OSBAUB/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/aubosb" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/aub-suliman-s-olayan-school-of-business-osb-/"
+                    target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/osb_aub/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@AUBOSB" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
-
     <script>
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
@@ -236,7 +245,6 @@
         $('#country_code').val(campaigntxt);
         if (campaign) $('#campaign').val(campaign);
     </script>
-
     <!-- Ensure intlTelInput initializes correctly (phonescript does it, but fallback safety) -->
     <script>
         $(window).on('load', function () {

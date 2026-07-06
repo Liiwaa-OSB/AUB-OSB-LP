@@ -497,17 +497,12 @@
      margin-bottom: var(--space-lg);
  }
 
- .bullet-list {
-     list-style: none;
-     padding: 0;
- }
-
  .bullet-list li {
-     display: flex;
      align-items: center;
      gap: var(--space-md);
      margin-bottom: var(--space-md);
      font-size: var(--text-sm);
+     margin-left: var(--text-sm);
  }
 
  .bullet-list li i {

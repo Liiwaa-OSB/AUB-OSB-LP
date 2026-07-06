@@ -5,14 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
-    <title>AUB OSB | AI in Supply Chain Program - Apply</title>
+    <title>AUB OSB | KAED Program - Apply</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800;900&display=swap"
         rel="stylesheet">
-    <!-- CSS -->
+    <!-- CSS – inline critical styles + external references (matching structure) -->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" href="build/css/intlTelInput.css">
         <link rel="icon" href="images/logos/favicon.ico" type="image/png">
@@ -20,10 +20,10 @@
     <link rel="stylesheet" href="css/online-programs-V2.css">
 
     <style>
+        /* KAED accent – distinctive gold/amber */
         :root {
-            /* AI in supply chain accent */
-            --color-accent: #3aa0e2;
-            --color-accent-dark: #005e99;
+            --color-accent: #c9a84c;
+            --color-accent-dark: #a07d2e;
         }
 
         .hero::before {
@@ -31,7 +31,7 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(0deg, var(--color-black-30), var(--color-black-30)),
-                url('images/AUB-OSB-OEP-AI-Supply Chain.jpg');
+                url('images/AUB-OSB-OEP-KAED.jpg');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -46,16 +46,24 @@
         .btn-submit:hover {
             background: var(--color-accent-dark);
         }
+
+        /* subtle tweaks for gold theme */
+        .form-card__title {
+            color: var(--color-accent-dark);
+        }
+
+        .hero-tagline strong {
+            color: var(--color-accent);
+        }
     </style>
 
-    <!-- Scripts – jQuery, then intlTelInput, then phonescript (modified), then validator, then university -->
+    <!-- Scripts (same pattern as AI Supply Chain) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- jQuery Validation Plugin is REMOVED to avoid duplicate validation -->
     <script src="js/mailchimp-subscribe.js"></script>
     <script src="build/js/intlTelInput.js"></script>
-    <!-- Modified phonescript.js (see below – the line $("form").validate(); is commented out) -->
+    <!-- phonescript.js with validate() commented out -->
     <script src="js/phonescript.js"></script>
-    <!-- Main validation and form handler (apply-validator.js) -->
+    <!-- Main validation + form handler (apply-validator.js) -->
     <script src="js/apply-validator.js"></script>
     <script src="js/universities.js"></script>
     <script src="js/university-ui.js"></script>
@@ -64,7 +72,7 @@
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- Mailchimp endpoint -->
+    <!-- Mailchimp endpoint (same) -->
     <!-- <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=lii";</script> -->
 </head>
 
@@ -72,7 +80,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- HERO SECTION - Using .hero class from online-programs-V2.css -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
             <div class="hero-logo text-center">
@@ -82,13 +90,13 @@
                 </a>
             </div>
             <div class="hero-content text-center">
-                <h1>Join the AI in Supply Chain Program</h1>
+                <h1>Join the KAED Program</h1>
                 <p class="hero-tagline">
-                    Artificial intelligence (AI) is reshaping supply chain management by boosting efficiency, enhancing
-                    forecasting accuracy, enabling smarter decision-making, and strengthening operational resilience.
-                    The AI in Supply Chain Program focuses on real-world AI applications through a combination of
-                    executive-level lectures and guided, non-technical hands‑on activities that allow participants to
-                    develop practical literacy in how AI-driven systems shape modern supply chains.
+                    <strong>KAED</strong> – Knowledge, Analytics, and Executive Decision‑Making – is a transformative
+                    program designed for leaders who want to harness data‑driven insights and strategic frameworks.
+                    Through a blend of executive lectures, real‑world case studies, and hands‑on analytics workshops,
+                    participants gain the practical literacy to navigate complexity and drive impact in today’s dynamic
+                    business environment.
                 </p>
             </div>
         </div>
@@ -96,7 +104,7 @@
 
     <!-- MAIN CONTENT -->
     <div class="container">
-        <!-- Overlapping form card – using .form-card from online-programs-V2.css -->
+        <!-- Overlapping form card -->
         <div class="form-card">
             <h2 class="form-card__title">Apply Now</h2>
             <span class="form-card__subtitle">Fill in your details to begin your application</span>
@@ -106,10 +114,12 @@
                 <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
                 <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-                <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000m01v1IAA">
+                <!-- CAMPAIGN ID UPDATED FOR KAED -->
+                <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000tmDmYIAU">
                 <input type="hidden" id="member_status" name="member_status" value="Interested">
                 <input type="hidden" name="lead_source" id="lead_source" value="Website">
-                <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Apply AI in Supply Chain">
+                <!-- Program name updated -->
+                <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Apply KAED">
                 <input type="hidden" name="00NP500000D37Bx" id="Campaign_Name" value="">
                 <input type="hidden" name="00NP500000D37IP" id="AD_Name" value="">
                 <input type="hidden" id="00NP500000LohFU" name="00NP500000LohFU" value="">
@@ -119,10 +129,11 @@
                 <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
                 <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
                 <input type="hidden" name="description" id="description" value="">
+                <!-- Thank you page (update if needed) -->
                 <input type="hidden" name="retURL"
-                    value="https://www.aub.edu.lb/osb/Landing/Pages/OEP-AISupplyChain-Apply-ThankYou.html">
+                    value="https://www.aub.edu.lb/osb/Landing/Pages/OEP-KAED-Apply-ThankYou.html">
 
-                <!-- Form grid - using .form-grid from online-programs-V2.css -->
+                <!-- Form grid -->
                 <div class="form-grid">
                     <!-- First Name -->
                     <div class="form-group" id="first-name-group">
@@ -156,7 +167,7 @@
                         <span class="error-message">Please enter a valid phone number</span>
                     </div>
 
-                    <!-- Company (Employer) – required by apply-validator.js -->
+                    <!-- Company (Employer) -->
                     <div class="form-group" id="company-group">
                         <label class="form-label">Company <span class="required">*</span></label>
                         <input class="form-input" id="employer" name="00N0Y00000QGku0" maxlength="40"
@@ -216,7 +227,7 @@
                     </div>
                 </div>
 
-                <!-- Submit Button + Loading Overlay -->
+                <!-- Submit + loading -->
                 <div class="form-submit">
                     <button class="btn btn-submit" type="submit" id="submitbtn">SUBMIT</button>
                     <div class="loading-overlay" id="loading-overlay">
@@ -230,35 +241,36 @@
                 </div>
             </form>
 
-            <!-- Action buttons (Visit Website / Download Brochure) -->
+            <!-- Action buttons -->
             <div class="button-group">
                 <a href="https://www.aub.edu.lb/osb" class="btn btn-primary" target="_blank">
                      Visit Website
                 </a>
-                <a href="OEP-AI-Supply-Chain-Brochure.html" class="btn btn-outline">
+                <a href="OEP-KAED-Brochure.html" class="btn btn-outline">
                      Download Brochure
                 </a>
             </div>
         </div>
 
-        <!-- INFO CARDS - using .cards-grid and .info-card from online-programs-V2.css -->
+        <!-- INFO CARDS (KAED specific content) -->
         <div class="cards-grid">
             <div class="info-card">
-                <h3>Program Overview</h3>
+                <h3>Program Highlights</h3>
                 <ul class="bullet-list">
-                    <li> Available in full-time or part-time</li>
-                    <li> Taught by world-renowned professors</li>
-                    <li> Cutting-edge curriculum</li>
-                    <li> Admission to an international alumni network</li>
+                    <li> Flexible full‑time / part‑time options</li>
+                    <li> Taught by distinguished faculty &amp; industry experts
+                    </li>
+                    <li><i class="fas fa-code-branch"></i> Data‑driven curriculum with real‑world applications</li>
+                    <li> Join a global network of decision‑makers</li>
                 </ul>
             </div>
             <div class="info-card">
-                <h3>Main Admission Requirements</h3>
+                <h3>Admission Requirements</h3>
                 <ul class="bullet-list">
-                    <li>Bachelor's Degree with a good GPA</li>
-                    <li>At least two years of work experience</li>
-                    <li>GMAT score</li>
-                    <li>Fluent in written and spoken English</li>
+                    <li>Bachelor's Degree with strong academic record</li>
+                    <li>Minimum 2 years of professional experience</li>
+                    <li>GMAT or equivalent (waivers available)</li>
+                    <li>Proficiency in English (written &amp; spoken)</li>
                 </ul>
             </div>
         </div>
@@ -285,6 +297,7 @@
         </div>
     </footer>
 
+    <!-- populate description field before submit (matches AI supply chain) -->
     <script>
         $(document).ready(function () {
             var $form = $("#myform");
@@ -312,14 +325,14 @@
         });
     </script>
 
-    <!-- DYNAMIC LEAD SOURCE TRACKING (fully matches Fintech) -->
+    <!-- DYNAMIC LEAD SOURCE TRACKING (mirrors AI supply chain, extended for KAED) -->
     <script>
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
             url = url.toLowerCase();
             name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+            var results = regex.exec(url);
             if (!results) return null;
             if (!results[2]) return "";
             return decodeURIComponent(results[2].replace(/\+/g, " "));
@@ -328,34 +341,34 @@
         var type = getParameterByName("type");
 
         switch (source) {
-            case "fb": var sourcetxt = "Social Media"; var sourcelbl = "Fb - AI in Supply Chain"; break;
-            case "gmac": var sourcetxt = "Landing Page"; var sourcelbl = "GMAC - AI in Supply Chain"; break;
-            case "meta": var sourcetxt = "Social Media"; var sourcelbl = "Meta MS - AI in Supply Chain"; break;
-            case "metaosb": var sourcetxt = "Social Media"; var sourcelbl = "Meta OSB - AI in Supply Chain"; break;
-            case "linosb": var sourcetxt = "Social Media"; var sourcelbl = "LinkedIn OSB - AI in Supply Chain"; break;
-            case "fbt": var sourcetxt = "Social Media"; var sourcelbl = "Fb Testimonials - AI in Supply Chain"; break;
-            case "insta": var sourcetxt = "Social Media"; var sourcelbl = "Insta - AI in Supply Chain"; break;
-            case "instas": var sourcetxt = "Social Media"; var sourcelbl = "Insta Stories - AI in Supply Chain"; break;
-            case "instat": var sourcetxt = "Social Media"; var sourcelbl = "Insta Testimonials - AI in Supply Chain"; break;
-            case "tw": var sourcetxt = "Social Media"; var sourcelbl = "Twitter - AI in Supply Chain"; break;
-            case "twt": var sourcetxt = "Social Media"; var sourcelbl = "Twitter Testimonials - AI in Supply Chain"; break;
-            case "lin": var sourcetxt = "Social Media"; var sourcelbl = "LinkedIn - AI in Supply Chain"; break;
-            case "lint": var sourcetxt = "Social Media"; var sourcelbl = "LinkedIn Testimonials - AI in Supply Chain"; break;
-            case "gs": var sourcetxt = "Google Ads"; var sourcelbl = "Search - AI in Supply Chain"; break;
-            case "mail": var sourcetxt = "Mailchimp"; var sourcelbl = "AI in Supply Chain Apply"; break;
-            case "mailde": var sourcetxt = "Mailchimp"; var sourcelbl = "Deadline Extended - AI in Supply Chain"; break;
-            case "mailnw": var sourcetxt = "Mailchimp"; var sourcelbl = "Newsweek - AI in Supply Chain"; break;
-            default: var sourcetxt = "Website"; var sourcelbl = "AI in Supply Chain - Apply"; break;
+            case "fb": var sourcetxt = "Social Media"; var sourcelbl = "Fb - KAED"; break;
+            case "gmac": var sourcetxt = "Landing Page"; var sourcelbl = "GMAC - KAED"; break;
+            case "meta": var sourcetxt = "Social Media"; var sourcelbl = "Meta MS - KAED"; break;
+            case "metaosb": var sourcetxt = "Social Media"; var sourcelbl = "Meta OSB - KAED"; break;
+            case "linosb": var sourcetxt = "Social Media"; var sourcelbl = "LinkedIn OSB - KAED"; break;
+            case "fbt": var sourcetxt = "Social Media"; var sourcelbl = "Fb Testimonials - KAED"; break;
+            case "insta": var sourcetxt = "Social Media"; var sourcelbl = "Insta - KAED"; break;
+            case "instas": var sourcetxt = "Social Media"; var sourcelbl = "Insta Stories - KAED"; break;
+            case "instat": var sourcetxt = "Social Media"; var sourcelbl = "Insta Testimonials - KAED"; break;
+            case "tw": var sourcetxt = "Social Media"; var sourcelbl = "Twitter - KAED"; break;
+            case "twt": var sourcetxt = "Social Media"; var sourcelbl = "Twitter Testimonials - KAED"; break;
+            case "lin": var sourcetxt = "Social Media"; var sourcelbl = "LinkedIn - KAED"; break;
+            case "lint": var sourcetxt = "Social Media"; var sourcelbl = "LinkedIn Testimonials - KAED"; break;
+            case "gs": var sourcetxt = "Google Ads"; var sourcelbl = "Search - KAED"; break;
+            case "mail": var sourcetxt = "Mailchimp"; var sourcelbl = "KAED Apply"; break;
+            case "mailde": var sourcetxt = "Mailchimp"; var sourcelbl = "Deadline Extended - KAED"; break;
+            case "mailnw": var sourcetxt = "Mailchimp"; var sourcelbl = "Newsweek - KAED"; break;
+            default: var sourcetxt = "Website"; var sourcelbl = "KAED - Apply"; break;
         }
         $("#lead_source").val(sourcetxt);
         $("#00N0Y00000QGkma").val(sourcelbl);
     </script>
 
-    <!-- Ensure international telephone plugin works flawlessly -->
+    <!-- Ensure intlTelInput works -->
     <script>
         $(window).on('load', function () {
             if (typeof intlTelInput !== 'undefined' && $("#phone").length && !$("#phone").data("intlTelInput")) {
-                console.log("IntlTelInput ready");
+                console.log("IntlTelInput ready (KAED)");
             }
         });
     </script>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>AUB OSB | AI in Supply Chain Program - Brochure</title>
 
     <!-- Font Awesome -->
@@ -13,65 +13,94 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Core CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" href="build/css/intlTelInput.css">
-    <link rel="stylesheet" href="css/main-V1.css">
-    <link rel="stylesheet" href="css/online-programs.css">
+        <link rel="icon" href="images/logos/favicon.ico" type="image/png">
+<link rel="stylesheet" href="css/main-V1.css">
+    <link rel="stylesheet" href="css/online-programs-V2.css">
 
     <style>
-        .hero-banner::before {
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/AUB-OSB-OEP-design-thinking.jpg');
-            background-position: center;
+        :root {
+            /* AI in supply chain accent */
+            --color-accent: #3aa0e2;
+            --color-accent-dark: #005e99;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, var(--color-black-30), var(--color-black-30)),
+                url('images/AUB-OSB-OEP-AI-Supply Chain.jpg');
+            background-position: center center;
             background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        .info-card,
+        .btn-submit {
+            background: var(--color-accent);
+        }
+
+        .btn-submit:hover {
+            background: var(--color-accent-dark);
         }
     </style>
 
-    <!-- Scripts (only what is needed) -->
+    <!-- jQuery and Validation -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- jQuery Validation Plugin is NOT loaded (to avoid conflict) -->
+    <!-- Libraries -->
     <script src="build/js/intlTelInput.js"></script>
     <script src="js/mailchimp-subscribe.js"></script>
     <script src="js/brochure-validator.js"></script>
     <script src="js/phonescript.js"></script>
 
     <!-- Mailchimp endpoint -->
-    <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";</script>
+    <!-- <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=lii";</script> -->
     <script>function GoogleConversion() { }</script>
 </head>
 
-<body>
+<body class="brochure">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
-    <div class="hero-banner">
+    <!-- Hero Banner -->
+    <section class="hero">
         <div class="container">
-            <div class="banner-logo-center">
-                <a href="https://www.aub.edu.lb/osb"><img src="images/AUB-OSB-Logo-white-vertical.png" alt="AUB OSB Logo"
-                        onerror="this.src='https://placehold.co/200x70?text=AUB+OSB'"></a>
+            <div class="hero-logo text-center">
+                <a href="https://www.aub.edu.lb/osb">
+                    <img src="images/logos/AUB-OSB-Logo-white-vertical.png" alt="AUB OSB Logo"
+                        onerror="this.src='https://placehold.co/200x70?text=AUB+OSB'">
+                </a>
             </div>
-            <div class="banner-content">
+            <div class="hero-content text-center">
                 <h1>AI in Supply Chain<br>Program Brochure</h1>
-                <div class="hero-tagline">
+                <p class="hero-tagline">
                     Artificial intelligence (AI) is reshaping supply chain management by boosting efficiency, enhancing
                     forecasting accuracy, enabling smarter decision-making, and strengthening operational resilience.
                     The AI in Supply Chain Program focuses on real-world AI applications through a combination of
                     executive-level lectures and guided, non-technical hands‑on activities that allow participants to
-                    develop practical literacy in how AI-driven systems shape modern supply chains. </div>
+                    develop practical literacy in how AI-driven systems shape modern supply chains.
+                </p>
             </div>
         </div>
-    </div>
+    </section>
 
     <div class="container">
-        <div class="overlap-form-card">
-            <span class="form-card__title">Download Brochure</span>
+        <!-- Form Card -->
+        <div class="form-card">
+            <h2 class="form-card__title">Download Brochure</h2>
             <span class="form-card__subtitle">Fill in your details to get instant access to the program
                 brochure</span>
 
-            <form class="validate-form-modern" id="myform"
+            <form class="contact100-form validate-form" id="myform"
                 action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
                 name="myform" novalidate="novalidate">
+
                 <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
                 <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
@@ -95,82 +124,78 @@
                 <input type="hidden" name="retURL"
                     value="https://www.aub.edu.lb/osb/executiveeducation/Documents/Fact%20Sheet-%20OEP-AI%20SUPPLY%20CHAIN.pdf">
 
-                <!-- Form fields: 2-column grid, each with focus span for error placement -->
-                <div class="form-grid-modern-brochure">
-                    <div class="form-group full-width-field">
-                        <span class="label-input100">First Name *</span>
-                        <input class="input100" id="first_name" name="first_name" maxlength="40"
-                            placeholder="First Name" type="text" required>
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="form-group full-width-field">
-                        <span class="label-input100">Last Name *</span>
-                        <input class="input100" id="last_name" name="last_name" maxlength="80" placeholder="Last Name"
-                            type="text" required>
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="form-group full-width-field">
-                        <span class="label-input100">Email *</span>
-                        <input class="input100" id="email" name="00N0Y00000QGklI" maxlength="80" placeholder="Email"
-                            type="email" required>
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="form-group full-width-field">
-                        <span class="label-input100">Mobile Number *</span>
-                        <input class="input100" id="phone" name="intphone" type="tel" required>
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="form-group full-width-field" style="grid-column: span 2;">
-                        <span class="label-input100">Company *</span>
-                        <input class="input100" id="employer" name="00N0Y00000QGku0" maxlength="40"
-                            placeholder="Company name" type="text" required>
-                        <span class="focus-input100"></span>
-                    </div>
+                <!-- Form fields -->
+                <div class="form-group form-group--full validate-input" data-validate="First Name is required">
+                    <span class="form-label">First Name *</span>
+                    <input class="form-input" id="first_name" name="first_name" maxlength="40" placeholder="First Name"
+                        type="text" required>
+                </div>
 
-                    <!-- Submit Button + Loading Overlay -->
-                    <div class="container-contact100-form-btn full-width-field">
-                        <div class="note-text" style="margin-top: 0.5rem;">By submitting, you agree to receive
-                            communications
-                            from AUB OSB.</div>
-                        <div class="wrap-contact100-form-btn">
-                            <button class="btn btn-submit" type="submit" id="submitbtn">DOWNLOAD BROCHURE</button>
-                        </div>
-                        <div id="loading-overlay" style="display: none; text-align: center; margin-top: 15px;">
-                            <i class="fas fa-spinner fa-pulse" style="font-size: 24px;"></i>
-                            <span>Submitting, please wait...</span>
-                        </div>
-                        <div class="note-text" style="margin-top: 1rem;">
-                            Your information is secure. An admissions advisor will contact you shortly.
-                        </div>
+                <div class="form-group form-group--full validate-input" data-validate="Last Name is required">
+                    <span class="form-label">Last Name *</span>
+                    <input class="form-input" id="last_name" name="last_name" maxlength="80" placeholder="Last Name"
+                        type="text" required>
+                </div>
+
+                <div class="form-group form-group--full validate-input" data-validate="Valid email is required">
+                    <span class="form-label">Email *</span>
+                    <input class="form-input" id="email" name="00N0Y00000QGklI" maxlength="80" placeholder="Email"
+                        type="email" required>
+                </div>
+
+                <div class="form-group form-group--full validate-input" data-validate="Phone number is required">
+                    <span class="form-label">Mobile Number *</span>
+                    <input class="form-input" id="phone" name="intphone" type="tel" required>
+                </div>
+
+                <div class="form-group form-group--full validate-input" data-validate="Company is required">
+                    <span class="form-label">Company *</span>
+                    <input class="form-input" id="employer" name="00N0Y00000QGku0" maxlength="40"
+                        placeholder="Company name" type="text" required>
+                </div>
+
+                <div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to receive
+                    communications from AUB OSB.</div>
+
+                <div class="form-submit">
+                    <div class="wrap-contact100-form-btn">
+                        <button class="btn btn-submit" type="submit" id="submitbtn">DOWNLOAD BROCHURE</button>
                     </div>
+                    <div class="loading-overlay" id="loading-overlay">
+                        <i class="fas fa-spinner fa-pulse"></i>
+                        <span>Submitting, please wait...</span>
+                    </div>
+                    <p class="form-note">
+                        Your information is secure. An admissions advisor will contact you shortly.
+                    </p>
                 </div>
             </form>
 
-            <!-- Action buttons (centered) -->
-            <div class="form-footer-buttons">
-                <a href="https://www.aub.edu.lb/osb" class="btn-primary" target="_blank">Visit Website</a>
-                <a href="OEP-AI-Supply-Chain-Brochure.html" class="btn-outline">Apply Now</a>
+            <!-- Action buttons -->
+            <div class="button-group">
+                <a href="https://www.aub.edu.lb/osb" class="btn btn-primary" target="_blank">Visit Website</a>
+                <a href="OEP-AI-Supply-Chain-Brochure.html" class="btn btn-outline">Apply Now</a>
             </div>
         </div>
 
-        <!-- Info cards -->
-        <div class="cards-section">
-            <div class="info-card-modern">
+        <!-- Info Cards Grid -->
+        <div class="cards-grid">
+            <div class="info-card">
                 <h3>Program Highlights</h3>
-                <ul class="bullet-list-modern">
-                    <li><i class="fa-regular fa-lightbulb"></i> Human-centered design mindset</li>
-                    <li><i class="fas fa-chalkboard-user"></i> Led by industry & academic experts</li>
-                    <li><i class="fas fa-code-branch"></i> Prototyping, user research & agile methods</li>
-                    <li><i class="fas fa-globe"></i> Join a global innovation network</li>
+                <ul class="bullet-list">
+                    <li>Human-centered design mindset</li>
+                    <li>Led by industry & academic experts</li>
+                    <li>Prototyping, user research & agile methods</li>
+                    <li>Join a global innovation network</li>
                 </ul>
             </div>
-            <div class="info-card-modern">
+            <div class="info-card">
                 <h3>Who Should Apply</h3>
-                <ul class="bullet-list-modern">
-                    <li><i class="fas fa-briefcase"></i> Professionals driving innovation</li>
-                    <li><i class="fas fa-graduation-cap"></i> Entrepreneurs & product managers</li>
-                    <li><i class="fas fa-chart-line"></i> Change agents in any industry</li>
-                    <li><i class="fas fa-language"></i> Fluency in English required</li>
+                <ul class="bullet-list">
+                    <li>Professionals driving innovation</li>
+                    <li>Entrepreneurs & product managers</li>
+                    <li>Change agents in any industry</li>
+                    <li>Fluency in English required</li>
                 </ul>
             </div>
         </div>
