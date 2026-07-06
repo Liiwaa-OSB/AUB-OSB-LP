@@ -141,6 +141,10 @@ textarea {
   outline: none;
 }
 
+input[type="radio"] {
+  width: unset;
+}
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -157,6 +161,11 @@ textarea::placeholder {
 select option {
   background: #1e1e1e;
   color: white;
+}
+
+.radio-group {
+  min-height: 48px;
+  align-content: center;
 }
 
 button,

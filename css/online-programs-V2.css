@@ -70,47 +70,47 @@
    PAGE-SPECIFIC: Left-aligned Hero
    ============================================ */
 
-/* Only applies to hero with .hero-left-align class */
-.hero-left-align .hero-content {
-    text-align: left;
-    max-width: 700px;
-}
+ /* Only applies to hero with .hero-left-align class */
+ .hero-left-align .hero-content {
+     text-align: left;
+     max-width: 700px;
+ }
 
-.hero-left-align .hero-content .hero__desc {
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 600px;
-}
+ .hero-left-align .hero-content .hero__desc {
+     margin-left: 0;
+     margin-right: 0;
+     max-width: 600px;
+ }
 
-.hero-left-align .hero-logo {
-    text-align: left;
-}
+ .hero-left-align .hero-logo {
+     text-align: left;
+ }
 
-.hero-left-align .hero-logo img {
-    margin-left: 0;
-    max-width: 270px;
+ .hero-left-align .hero-logo img {
+     margin-left: 0;
+     max-width: 270px;
 
-}
+ }
 
-/* Keep logo centered on mobile if desired */
-@media (max-width: 768px) {
-    .hero-left-align .hero-logo {
-        text-align: center;
-    }
-    
-    .hero-left-align .hero-logo img {
-        margin: 0 auto;
-    }
-    
-    .hero-left-align .hero-content {
-        text-align: center;
-    }
-    
-    .hero-left-align .hero-content .hero__desc {
-        margin: 1rem auto 2rem;
-        max-width: 600px;
-    }
-}
+ /* Keep logo centered on mobile if desired */
+ @media (max-width: 768px) {
+     .hero-left-align .hero-logo {
+         text-align: center;
+     }
+
+     .hero-left-align .hero-logo img {
+         margin: 0 auto;
+     }
+
+     .hero-left-align .hero-content {
+         text-align: center;
+     }
+
+     .hero-left-align .hero-content .hero__desc {
+         margin: 1rem auto 2rem;
+         max-width: 600px;
+     }
+ }
 
  /* ============================================
        FORM CARD (Reusable Component)
@@ -251,8 +251,12 @@
      gap: var(--space-xs);
  }
 
- .form-group--full {
+ /* .form-group--full {
      grid-column: span 2;
+ } */
+
+ .form-group.full-width {
+     grid-column: 1 / -1;
  }
 
  .form-label {
@@ -280,6 +284,10 @@
      color: var(--color-white);
      transition: var(--transition-base);
      font-family: inherit;
+ }
+
+ input[type="date"]::-webkit-calendar-picker-indicator {
+     filter: brightness(0) invert(1);
  }
 
  .form-input:focus,

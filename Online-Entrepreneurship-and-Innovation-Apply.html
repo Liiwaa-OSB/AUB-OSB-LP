@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AUB OSB | Entrepreneurship & Innovation – Apply</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" href="build/css/intlTelInput.css">
+    <link rel="icon" href="images/logos/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="css/main-V1.css">
+    <link rel="stylesheet" href="css/online-programs-V2.css">
+
+    <style>
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, var(--color-black-30), var(--color-black-30)),
+                url('images/AUB-OSB-ONLINE-Entrepreneurship-and-Innovation-banner.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/mailchimp-subscribe.js"></script>
+    <script src="build/js/intlTelInput.js"></script>
+    <script src="js/phonescript.js"></script>
+    <script src="js/apply-validator.js"></script>
+    <script src="js/universities.js"></script>
+    <script src="js/university-ui.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
+
+    <!-- Mailchimp endpoint -->
+    <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=643f74b5d97f671dfd188d733&id=2c0dfa1622";</script>
+
+</head>
+
+<body>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-logo text-center">
+                <a href="https://www.aub.edu.lb/osb">
+                    <img src="images/logos/AUB-OSB-Logo-white-vertical.png" alt="AUB OSB Logo"
+                        onerror="this.src='https://placehold.co/140x140?text=AUB+OSB'">
+                </a>
+            </div>
+            <div class="hero-content text-center">
+                <h1>Online Professional Graduate Diploma<br>Entrepreneurship & Innovation</h1>
+                <p class="hero-tagline">
+                    <strong>Application Deadline:</strong> June 23, 2026
+                </p>
+                <p class="hero-tagline"
+                    style="margin-top: 12px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Shape the future of business. Gain the mindset, tools, and network to launch or scale innovative
+                    ventures.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Form Card -->
+        <div class="form-card">
+            <h2 class="form-card__title">Start your application</h2>
+            <span class="form-card__subtitle">Fill in your details to start your application</span>
+
+
+            <form class="form" id="myform"
+                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post" novalidate>
+                <!-- Salesforce hidden fields -->
+                <input type="hidden" name="oid" value="00D0Y000001Xrwc">
+                <input type="hidden" name="recordType" value="0120Y000000ymGb">
+                <input type="hidden" name="Campaign_ID" value="701P500000fpPUgIAM">
+                <input type="hidden" name="member_status" value="Interested">
+                <input type="hidden" name="lead_source" id="lead_source" value="Website">
+                <input type="hidden" name="00N0Y00000QGkma" value="Apply Entrepreneurship">
+                <input type="hidden" name="00NP500000D37Bx" value="">
+                <input type="hidden" name="00NP500000D37IP" value="">
+                <input type="hidden" name="00NP500000LohFU" value="">
+                <input type="hidden" name="00NP500000Oxk99" value="">
+                <input type="hidden" name="rating" value="Cold">
+                <input type="hidden" name="country_code" id="country_code" value="LB">
+                <input type="hidden" name="00N0Y00000RODiR" value="Personal Email">
+                <input type="hidden" name="00N0Y00000RODr9" value="Personal Phone">
+                <input type="hidden" id="description" name="description">
+                <input type="hidden" name="00NP500000D37Bx" id="Campaign_Name" value="">
+                <input type="hidden" name="00NP500000D37IP" id="AD_Name" value="">
+                <input type="hidden" name="retURL"
+                    value="https://www.aub.edu.lb/osb/Landing/Pages/Online-Entrepreneurship-Apply-ThankYou.html">
+
+                <div class="form-grid">
+                    <!-- First Name -->
+                    <div class="form-group" id="first-name-group">
+                        <label class="form-label">First Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="first_name" name="first_name" placeholder="First Name"
+                            required>
+                        <span class="error-message">Please enter your first name</span>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="form-group" id="last-name-group">
+                        <label class="form-label">Last Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="last_name" name="last_name" placeholder="Last Name"
+                            required>
+                        <span class="error-message">Please enter your last name</span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group" id="email-group">
+                        <label class="form-label">Email <span class="required">*</span></label>
+                        <input type="email" class="form-input" id="email" name="00N0Y00000QGklI"
+                            placeholder="your@email.com" required>
+                        <span class="error-message">Please enter a valid email address</span>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="form-group" id="phone-group">
+                        <label class="form-label">Mobile Number <span class="required">*</span></label>
+                        <input type="tel" class="form-input" id="phone" placeholder="phone number" required>
+                        <span class="error-message">Please enter a valid phone number</span>
+                    </div>
+
+                    <!-- Current Country of Residence -->
+                    <div class="form-group full-width" id="country-group">
+                        <label class="form-label">Current Country of Residence <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="country_residence" name="country_residence"
+                            placeholder="e.g., Lebanon, USA, UAE" required>
+                        <span class="error-message">Please enter your country</span>
+                    </div>
+
+                    <!-- Gender (Male/Female only) -->
+                    <div class="form-group" id="gender-group">
+                        <label class="form-label">Gender <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="gender" value="Male" required> Male</label>
+                            <label><input type="radio" name="gender" value="Female" required> Female</label>
+                        </div>
+                        <span class="error-message">Please select your gender</span>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="form-group" id="dob-group">
+                        <label class="form-label">Date of Birth <span class="required">*</span></label>
+                        <input type="date" class="form-input" id="dob" name="dob" required>
+                        <span class="error-message">Please enter your date of birth</span>
+                    </div>
+
+                    <!-- Nationality -->
+                    <div class="form-group" id="nationality-group">
+                        <label class="form-label">Nationality <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="nationality" name="nationality"
+                            placeholder="e.g., Lebanese" required>
+                        <span class="error-message">Please enter your nationality</span>
+                    </div>
+
+                    <!-- Second Nationality -->
+                    <div class="form-group" id="second-nat-group">
+                        <label class="form-label">Second Nationality (if applicable)</label>
+                        <input type="text" class="form-input" id="second_nationality" name="second_nationality"
+                            placeholder="Optional">
+                    </div>
+
+                    <!-- Are you an AUB graduate? (radio) -->
+                    <div class="form-group" id="aub-grad-group">
+                        <label class="form-label">Are you an AUB graduate? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="aub_grad" value="Yes" required> Yes</label>
+                            <label><input type="radio" name="aub_grad" value="No" required> No</label>
+                        </div>
+                        <span class="error-message">Please select an option</span>
+                    </div>
+
+                    <!-- First generation college student (radio) -->
+                    <div class="form-group" id="first-gen-group">
+                        <label class="form-label">Are you a first generation college student? (A first-generation
+                            college student is a student whose parents do not have a college degree.) <span
+                                class="required">*</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="first_gen" value="Yes" required> Yes</label>
+                            <label><input type="radio" name="first_gen" value="No" required> No</label>
+                        </div>
+                        <span class="error-message">Please select an option</span>
+                    </div>
+
+                    <!-- State the name of the university you graduated from -->
+                    <div class="form-group" id="university-group">
+                        <label class="form-label">State the name of the university you graduated from <span
+                                class="required">*</span></label>
+                        <input type="text" class="form-input" id="university" name="university"
+                            placeholder="Name of University" required>
+                        <span class="error-message">Please enter your university</span>
+                    </div>
+
+                    <!-- Degree Type (radio) -->
+                    <div class="form-group" id="degree-group">
+                        <label class="form-label">Degree Type <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="degree_type" value="Bachelors Degree" required> Bachelors
+                                Degree</label>
+                            <label><input type="radio" name="degree_type" value="Masters Degree" required> Masters
+                                Degree</label>
+                            <label><input type="radio" name="degree_type" value="Doctorate / PHD" required> Doctorate /
+                                PHD</label>
+                        </div>
+                        <span class="error-message">Please select your degree</span>
+                    </div>
+
+                    <!-- University Major -->
+                    <div class="form-group" id="major-group">
+                        <label class="form-label">University Major <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="major" name="major"
+                            placeholder="e.g., Business, Engineering" required>
+                        <span class="error-message">Please enter your major</span>
+                    </div>
+
+                    <!-- Year of Graduation -->
+                    <div class="form-group" id="grad-year-group">
+                        <label class="form-label">Year of Graduation <span class="required">*</span></label>
+                        <input type="number" class="form-input" id="grad_year" name="grad_year" placeholder="YYYY"
+                            min="1960" max="2030" required>
+                        <span class="error-message">Please enter a valid year</span>
+                    </div>
+
+                    <!-- Are you currently employed? (radio) -->
+                    <div class="form-group" id="employed-group">
+                        <label class="form-label">Are you currently employed? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="employed" value="Yes" required> Yes</label>
+                            <label><input type="radio" name="employed" value="No" required> No</label>
+                        </div>
+                        <span class="error-message">Please select an option</span>
+                    </div>
+
+                    <!-- Motivations (dropdown) -->
+                    <div class="form-group" id="motivation-group">
+                        <label class="form-label">Motivations <span class="required">*</span></label>
+                        <select class="form-select" id="motivation" name="motivation" required>
+                            <option value="" disabled selected>--None--</option>
+                            <option value="Career Advancement">Career Advancement</option>
+                            <option value="Career Change">Career Change</option>
+                            <option value="Certification">Certification</option>
+                            <option value="Enhance Expertise">Enhance Expertise</option>
+                            <option value="Lifelong Learner">Lifelong Learner</option>
+                        </select>
+                        <span class="error-message">Please select your motivation</span>
+                    </div>
+
+                    <!-- Main outcome (full width, textarea) -->
+                    <div class="form-group full-width" id="outcome-group">
+                        <label class="form-label">In one sentence or phrase , what is the main outcome you expect to
+                            achieve upon completing the program? <span class="required">*</span></label>
+                        <textarea class="form-input" id="outcome" name="outcome" rows="4"
+                            placeholder="e.g., Build a scalable startup" required></textarea>
+                        <span class="error-message">Please describe your expected outcome</span>
+                    </div>
+
+                    <!-- How did you hear (radio) -->
+                    <div class="form-group full-width" id="hear-group">
+                        <label class="form-label">How did you hear about this program? <span
+                                class="required">*</span></label>
+                        <div class="radio-group" style="">
+                            <label><input type="radio" name="hear_about" value="AUB Website" required> AUB
+                                Website</label><br />
+                            <label><input type="radio" name="hear_about" value="Email from AUB"> Email from
+                                AUB</label><br />
+                            <label><input type="radio" name="hear_about" value="Facebook"> Facebook</label><br />
+                            <label><input type="radio" name="hear_about" value="Instagram"> Instagram</label><br />
+                            <label><input type="radio" name="hear_about" value="LinkedIn"> LinkedIn</label><br />
+                            <label><input type="radio" name="hear_about" value="YouTube"> YouTube</label><br />
+                            <label><input type="radio" name="hear_about" value="TikTok"> TikTok</label><br />
+                            <label><input type="radio" name="hear_about" value="Twitter"> Twitter</label><br />
+                            <label><input type="radio" name="hear_about" value="Google search"> Google
+                                search</label><br />
+                            <label><input type="radio" name="hear_about" value="Tv Display"> Tv Display</label><br />
+                            <label><input type="radio" name="hear_about" value="Word of Mouth"> Word of
+                                Mouth</label><br />
+                            <label><input type="radio" name="hear_about" value="Other"> Other</label><br />
+                        </div>
+                        <span class="error-message">Please select an option</span>
+                    </div>
+                </div>
+
+                <div class="form-submit">
+                    <button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">SUBMIT
+                        APPLICATION</button>
+                    <div class="loading-overlay" id="loading-overlay">
+                        <i class="fas fa-spinner fa-pulse"></i>
+                        <span>Submitting, please wait...</span>
+                    </div>
+                    <p class="form-note">
+                        <i class="fas fa-lock" style="margin-right: 4px;"></i>
+                        Your information is secure. All data remains confidential and will be used for statistical and
+                        admissions purposes.
+                    </p>
+                </div>
+            </form>
+
+            <!-- Button Group -->
+            <div class="button-group">
+                <a href="#" class="btn btn-primary" target="_blank">
+                    Program Overview
+                </a>
+                <a href="#" class="btn btn-outline">
+                    Download Brochure
+                </a>
+            </div>
+        </div>
+
+        <!-- Info Cards Grid -->
+        <div class="cards-grid">
+            <div class="info-card">
+                <h3>Program Highlights</h3>
+                <ul class="bullet-list">
+                    <li>Fully online & flexible</li>
+                    <li>Taught by world-class faculty</li>
+                    <li>Hands-on innovation projects</li>
+                    <li>Access to AUB's global network</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Who Should Enroll</h3>
+                <ul class="bullet-list">
+                    <li>Aspiring entrepreneurs & founders</li>
+                    <li>Business leaders & managers</li>
+                    <li>Innovation & product managers</li>
+                    <li>Consultants & corporate strategists</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-legal">By submitting this form you undertake that the information provided is
+                accurate. You are also consenting to processing of your information for the specified purpose in
+                accordance with relevant data protection laws. The University will maintain confidentiality of the
+                personal information. The information may be used by the University to communicate with you and inform
+                you about our programs and higher education offerings.</div>
+            <div class="copyright">©2026 American University of Beirut, OSB All Rights Reserved</div>
+            <div class="social-icons">
+                <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" href="#"><i class="fab fa-x-twitter"></i></a>
+                <a target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a target="_blank" href="#"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- UTM & source parameter handling -->
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            url = url.toLowerCase();
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return "";
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        var utm_source = getParameterByName('source');
+        var utm_details = getParameterByName('utm_details');
+        var utm_campaign = getParameterByName('utm_campaign');
+        var utm_content = getParameterByName('utm_content');
+        var utm_placement = getParameterByName('utm_placement');
+        var utm_adsetname = getParameterByName('utm_adsetname');
+
+        if (utm_source != null) $('#lead_source').val(utm_source);
+        if (utm_details != null) $('#00N0Y00000QGkma').val(utm_details);
+        if (utm_campaign != null) $('#Campaign_Name').val(utm_campaign);
+        if (utm_content != null) $('#AD_Name').val(utm_content);
+        if (utm_placement != null) $('#00NP500000LohFU').val(utm_placement);
+        if (utm_adsetname != null) $('#00NP500000Oxk99').val(utm_adsetname);
+    </script>
+
+    <!-- Phone & validation (intlTelInput) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script>
+        (function () {
+            // intlTelInput
+            const phoneInput = document.querySelector("#phone");
+            if (phoneInput && typeof intlTelInput !== 'undefined') {
+                const iti = window.intlTelInput(phoneInput, {
+                    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+                    initialCountry: "lb",
+                    separateDialCode: true,
+                    preferredCountries: ["lb", "us", "ae", "sa", "eg"],
+                    formatOnDisplay: true,
+                });
+                // store iti for validation
+                window.iti = iti;
+
+                phoneInput.addEventListener('blur', function () {
+                    const group = document.getElementById('phone-group');
+                    const val = this.value.trim();
+                    const isValid = val.length > 0 && iti.isValidNumber();
+                    if (!isValid) {
+                        group.classList.add('error');
+                        group.querySelector('.error-message').style.display = 'block';
+                    } else {
+                        group.classList.remove('error');
+                        group.querySelector('.error-message').style.display = 'none';
+                    }
+                });
+            }
+
+            // Form validation (lightweight)
+            const form = document.getElementById('myform');
+            form.addEventListener('submit', function (e) {
+                let valid = true;
+
+                // Helper: validate a group
+                function validateGroup(groupId, checkFn) {
+                    const group = document.getElementById(groupId);
+                    if (!group) return true;
+                    const err = group.querySelector('.error-message');
+                    const isValid = checkFn(group);
+                    if (!isValid) {
+                        group.classList.add('error');
+                        if (err) err.style.display = 'block';
+                    } else {
+                        group.classList.remove('error');
+                        if (err) err.style.display = 'none';
+                    }
+                    return isValid;
+                }
+
+                // Text inputs
+                valid &= validateGroup('first-name-group', g => g.querySelector('input').value.trim() !== '');
+                valid &= validateGroup('last-name-group', g => g.querySelector('input').value.trim() !== '');
+                valid &= validateGroup('email-group', g => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(g.querySelector('input').value.trim()));
+                valid &= validateGroup('country-group', g => g.querySelector('input').value.trim() !== '');
+                valid &= validateGroup('nationality-group', g => g.querySelector('input').value.trim() !== '');
+                valid &= validateGroup('university-group', g => g.querySelector('input').value.trim() !== '');
+                valid &= validateGroup('major-group', g => g.querySelector('input').value.trim() !== '');
+                valid &= validateGroup('grad-year-group', g => {
+                    const val = g.querySelector('input').value.trim();
+                    const num = parseInt(val);
+                    return val !== '' && !isNaN(num) && num >= 1960 && num <= 2030;
+                });
+                valid &= validateGroup('outcome-group', g => g.querySelector('textarea').value.trim() !== '');
+                valid &= validateGroup('motivation-group', g => g.querySelector('select').value !== '');
+
+                // Radio groups: check if any checked
+                function radioValid(groupId) {
+                    const group = document.getElementById(groupId);
+                    const radios = group.querySelectorAll('input[type="radio"]');
+                    let checked = false;
+                    radios.forEach(r => { if (r.checked) checked = true; });
+                    return checked;
+                }
+                valid &= validateGroup('gender-group', radioValid);
+                valid &= validateGroup('aub-grad-group', radioValid);
+                valid &= validateGroup('first-gen-group', radioValid);
+                valid &= validateGroup('degree-group', radioValid);
+                valid &= validateGroup('employed-group', radioValid);
+                valid &= validateGroup('hear-group', radioValid);
+
+                // Phone (using intlTelInput)
+                const phoneGroup = document.getElementById('phone-group');
+                const phoneVal = phoneInput.value.trim();
+                const isPhoneValid = phoneVal.length > 0 && window.iti && window.iti.isValidNumber();
+                if (!isPhoneValid) {
+                    phoneGroup.classList.add('error');
+                    phoneGroup.querySelector('.error-message').style.display = 'block';
+                    valid = false;
+                } else {
+                    phoneGroup.classList.remove('error');
+                    phoneGroup.querySelector('.error-message').style.display = 'none';
+                }
+
+                // DOB
+                valid &= validateGroup('dob-group', g => g.querySelector('input').value !== '');
+
+                if (!valid) {
+                    e.preventDefault();
+                    const firstError = document.querySelector('.form-group.error');
+                    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return false;
+                }
+
+                // Show loading if valid
+                const submitBtn = document.getElementById('submitbtn');
+                const overlay = document.getElementById('loading-overlay');
+                submitBtn.disabled = true;
+                overlay.style.display = 'flex';
+                submitBtn.textContent = 'SUBMITTING...';
+
+                // Let the form submit naturally after a brief moment (or handle via AJAX)
+                // Here we just let it go, but we re-enable after a timeout in case of demo
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    overlay.style.display = 'none';
+                    submitBtn.textContent = 'SUBMIT APPLICATION';
+                }, 5000);
+
+                return true;
+            });
+        })();
+    </script>
+</body>
+
+</html>
