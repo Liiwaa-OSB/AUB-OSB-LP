@@ -39,12 +39,12 @@
         /* mobile background */
         @media (max-width: 768px) {
             .page-wrapper::after {
-                background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/AUB-OSB-EMBA-bg-mobile.jpg");
+                background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/AUB-OSB-EMBA-bg.jpg");
             }
 
             @supports not (position: fixed) {
                 .page-wrapper {
-                    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/AUB-OSB-EMBA-bg-mobile.jpg");
+                    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/AUB-OSB-EMBA-bg.jpg");
                 }
             }
         }
@@ -278,6 +278,94 @@
             justify-content: center;
         }
 
+        /* Testimonial carousel */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(132, 1, 50, 0.3);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-lg);
+            padding: 1.8rem 1.5rem;
+            transition: 0.2s;
+        }
+
+        .testimonial-card:hover {
+            background: rgba(132, 1, 50, 0.6);
+        }
+
+        .testimonial-card .quote-icon {
+            font-size: 1.8rem;
+            opacity: 0.4;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        .testimonial-card blockquote {
+            font-weight: 300;
+            line-height: 1.6;
+            font-size: 1rem;
+            margin: 0.2rem 0 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-card .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 0.8rem;
+        }
+
+        .testimonial-card .testimonial-author .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #142d66;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .testimonial-card .testimonial-author .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card .testimonial-author .author-name {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .testimonial-card .testimonial-author .author-title {
+            font-size: 0.85rem;
+            opacity: 0.75;
+            font-weight: 300;
+        }
+
+        .testimonial-card .testimonial-author .author-title i {
+            margin-right: 4px;
+        }
+
+        @media (max-width: 550px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card blockquote {
+                font-size: 0.95rem;
+            }
+        }
+
         /* responsive */
         @media (max-width: 900px) {
             .content-section {
@@ -338,7 +426,7 @@
                     <div class="logo">
                         <a href="#" style="text-decoration: none">
                             <div class="logo-img">
-                                <img class="OSBLogo" src="images/logos/AUB-OSB-Logo.png" alt="logo"
+                                <img class="OSBLogo" src="images/logos/AUB-OSB-Logo-White.png" alt="logo"
                                     onclick="window.location.href='https://www.aub.edu.lb/osb';"
                                     style="cursor:pointer;">
                             </div>
@@ -347,11 +435,12 @@
                     <div class="hero-content">
                         <h1>Transform Experience<br>into Executive Leadership</h1>
                         <div class="hero-subtitle">OSB's Executive MBA – Beirut</div>
+                        <!-- lii - add dates -->
                         <p>Next cohort begins [date] — applications close [date]</p>
                         <div class="button-group" style="margin-top:1.5rem;">
                             <a href="mailto:jk119@aub.edu.lb?cc=emba@aub.edu.lb&subject=Apply%20to%20the%20EMBA%20Program&body=Dear%20EMBA%20Team,%0D%0A%0D%0AThis%20is%20to%20inquire%20about%20the%20OSB's%20Executive%20MBA%20program%20and%20the%20application%20process.%0D%0A%0D%0ARegards,%0D%0AYour%20Name"
                                 class="btn-primary">Book a consultation</a>
-                            <a href="GR-EMBA-Brochure.html" class="btn-outline">Download Brochure</a>
+                            <a href="EMBA-Brochure.html" class="btn-outline">Download Brochure</a>
                         </div>
                     </div>
                 </div>
@@ -411,25 +500,6 @@
                             <span class="focus-input100"></span>
                         </div>
 
-                        <!-- additional fields (concatenated) -->
-                        <!-- <div class="wrap-input100 validate-input form-group "
-                            data-validate="Country of Residence is required">
-                            <span class="label-input100">Country of Residence *</span>
-                            <input class="input100" id="country_residence" name="country_residence" required 
-                                placeholder="e.g., Lebanon, USA, UAE" type="text">
-                            <span class="focus-input100"></span>
-                        </div> -->
-                        <!-- <div class="wrap-input100 validate-input form-group" data-validate="University is required">
-                            <span class="label-input100">University *</span>
-                            <select id="university" name="university" class="input100" required></select>
-                            <span class="focus-input100"></span>
-                        </div> -->
-                        <!-- <div class="wrap-input100 validate-input form-group" data-validate="Major is required">
-                            <span class="label-input100">University Major *</span>
-                            <input class="input100" id="major" name="major" required
-                                placeholder="e.g., Business, Engineering, Economics" type="text">
-                            <span class="focus-input100"></span>
-                        </div> -->
                         <div class="wrap-input100 validate-input form-group" data-validate="Position is required">
                             <span class="label-input100">Position *</span>
                             <input class="input100" id="major" name="major" required placeholder="Your Position"
@@ -445,22 +515,6 @@
                                 placeholder="Experience in Management" type="number" min="0" step="1">
                             <span class="focus-input100"></span>
                         </div>
-
-                        <!-- <div class="wrap-input100 validate-input form-group" data-validate="Please select an option">
-                            <span class="label-input100">How did you hear about us? *</span>
-                            <select class="input100" id="hear_about" name="hear_about" required>
-                                <option value="" disabled selected>-- Select --</option>
-                                <option value="Social Media (Facebook, Instagram, LinkedIn, Twitter)">Social Media
-                                    (Facebook, Instagram, LinkedIn, Twitter)</option>
-                                <option value="Google Search / Ads">Google Search / Ads</option>
-                                <option value="Email / Newsletter">Email / Newsletter</option>
-                                <option value="AUB Website">AUB Website</option>
-                                <option value="Event / Webinar">Event / Webinar</option>
-                                <option value="Friend / Colleague">Friend / Colleague</option>
-                                <option value="Alumni Referral">Alumni Referral</option>
-                                <option value="Other">Other</option>
-                            </select>
-                            <span class="focus-input100"></span>-->
 
                         <div class="container-contact100-form-btn">
                             <div class="wrap-contact100-form-btn">
@@ -514,6 +568,29 @@
                     Project, where you apply your knowledge to solve a real business challenge, often within your own
                     organization, transforming classroom insights into practical solutions that deliver immediate value
                     and measurable impact.</p>
+            </div>
+
+            <!-- ===== TESTIMONIAL SECTION (inserted before FAQ) ===== -->
+            <div class="content-section">
+                <h2>What Our Executives Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <span class="quote-icon"><i class="fas fa-quote-left"></i></span>
+                        <blockquote>
+                            "The Executive MBA program at AUB was one of the most rewarding personal and professional
+                            decisions I've made. Learning alongside accomplished professionals from diverse industries
+                            created an inspiring environment of collaboration, mutual respect, and shared growth."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="avatar">ME</div>
+                            <div class="author-info">
+                                <span class="author-name">Miguel El Khoury</span>
+                                <span class="author-title"><i class="fas fa-briefcase"></i> Senior Vice President, MDS
+                                    System Integration Group</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- FAQ section -->
