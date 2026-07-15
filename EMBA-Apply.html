@@ -12,8 +12,8 @@
     <!-- CSS (shared) -->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" href="build/css/intlTelInput.css">
-        <link rel="icon" href="images/logos/favicon.ico" type="image/png">
-<link rel="stylesheet" href="css/main-V1.css">
+    <link rel="icon" href="images/logos/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="css/main-V1.css">
     <link rel="stylesheet" href="css/main-programs-V2.css">
 
     <style>
@@ -51,7 +51,8 @@
 
         /* left column: hero content */
         .hero-content h1 {
-            font-size: clamp(2rem, 6vw, 3.2rem);
+            white-space: nowrap;
+            font-size: clamp(2rem, 3.5vw, 3.2rem);
             text-transform: uppercase;
             font-weight: 800;
             letter-spacing: -0.02em;
@@ -98,7 +99,7 @@
         }
 
         .info-card ul li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.3rem;
             align-items: flex-start;
             gap: 0.75rem;
             font-size: 0.95rem;
@@ -286,10 +287,6 @@
             .cta-block {
                 padding: 1.5rem;
             }
-
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
         }
 
         @media (max-width: 550px) {
@@ -349,10 +346,11 @@
                     </div>
                     <div class="hero-content">
                         <h1>Transform Experience<br>into Executive Leadership</h1>
-                        <div class="hero-subtitle">OSB Executive MBA – Beirut</div>
+                        <div class="hero-subtitle">OSB's Executive MBA – Beirut</div>
+                        <p>Next cohort begins [date] — applications close [date]</p>
                         <div class="button-group" style="margin-top:1.5rem;">
-                            <a href="https://www.aub.edu.lb/osb/EMBA/Pages/default.aspx" class="btn-primary">Visit
-                                Website</a>
+                            <a href="mailto:jk119@aub.edu.lb?cc=emba@aub.edu.lb&subject=Apply%20to%20the%20EMBA%20Program&body=Dear%20EMBA%20Team,%0D%0A%0D%0AThis%20is%20to%20inquire%20about%20the%20OSB's%20Executive%20MBA%20program%20and%20the%20application%20process.%0D%0A%0D%0ARegards,%0D%0AYour%20Name"
+                                class="btn-primary">Book a consultation</a>
                             <a href="GR-EMBA-Brochure.html" class="btn-outline">Download Brochure</a>
                         </div>
                     </div>
@@ -434,7 +432,7 @@
                         </div> -->
                         <div class="wrap-input100 validate-input form-group" data-validate="Position is required">
                             <span class="label-input100">Position *</span>
-                            <input class="input100" id="major" name="major" required placeholder="You Porisition"
+                            <input class="input100" id="major" name="major" required placeholder="Your Position"
                                 type="text">
                             <span class="focus-input100"></span>
 
@@ -492,23 +490,15 @@
                                 Executive MBA Rankings 2025)</span></li>
                         <li>AACSB Accredited</li>
                     </ul>
-                    <a class="btn-primary" style="margin-top: 10px;">Request Information</a>
                 </div>
                 <div class="info-card">
                     <h3>Why Choose OSB's Executive MBA?</h3>
-                    <p style="font-weight:300; line-height:1.6; margin-bottom:0.8rem;">There comes a point in every
-                        executive's career when experience alone is no longer enough. Today's leaders must think beyond
-                        their functional expertise, lead transformation, navigate complexity, and make decisions with
-                        enterprise-wide impact.</p>
-                    <p style="font-weight:300; line-height:1.6; margin-bottom:0.5rem;">Designed for accomplished
-                        professionals, OSB's Executive MBA provides the strategic mindset, leadership skills, and global
-                        perspective needed to excel in an evolving business landscape.</p>
-                    <p style="font-weight:300; line-height:1.6; font-size:0.9rem; opacity:0.9;">For over 25 years, the
-                        program has developed leaders across industries throughout the MENA region. Participants learn
-                        from internationally recognized faculty, collaborate with a diverse cohort of experienced
-                        professionals, benefit from personalized executive coaching, and broaden their global
-                        perspective through an international residency — creating a transformative learning experience
-                        that extends far beyond the classroom.</p>
+                    <p style="font-weight:300; line-height:1.6; margin-bottom:0.8rem;">OSB’s Executive MBA equips
+                        accomplished professionals with the strategic mindset, leadership capabilities, and global
+                        perspective needed to lead transformation and make enterprise-wide decisions.
+                        For over 25 years, the program has developed leaders across the MENA region through
+                        internationally recognized faculty, a diverse executive cohort, personalized coaching, and an
+                        international residency.</p>
                 </div>
             </div>
 
@@ -516,7 +506,7 @@
             <div class="content-section">
                 <h2> An Investment in Lifelong Leadership
                 </h2>
-                <p>The OSB Executive MBA is more than a degree! It's an investment in your future as a leader. Through
+                <p>The OSB Executive MBA is more than a degree. It's an investment in your future as a leader. Through
                     an integrated curriculum covering strategy, leadership, AI and digital transformation, innovation,
                     finance, marketing, and operations, you will develop the knowledge, analytical skills, and
                     leadership capabilities to lead organizations with confidence.</p>
@@ -585,11 +575,13 @@
             <!-- Ready for Your Next Leadership Chapter? CTA -->
             <div class="cta-block">
                 <h2>Ready for Your Next Leadership Chapter?</h2>
-                <p>Take the next step toward becoming the leader your organization needs.</p>
-                <p style="font-weight:400; margin-bottom:1.2rem;">Speak with our admissions team today.</p>
-                <div class="flex-center">
+                <p>Schedule a one-on-one consultation with the Executive MBA team to explore the program and discuss
+                    your next steps.</p>
+                <div class="flex-center button-group">
+                    <a href="https://www.aub.edu.lb/osb/EMBA/Pages/default.aspx" class="btn-primary">Visit
+                        Website</a>
                     <a href="#myform" class="btn-outline" style="border-color:white; color:white; background:#142d66;">
-                        Request Information</a>
+                        Book a Consultation</a>
                 </div>
             </div>
 

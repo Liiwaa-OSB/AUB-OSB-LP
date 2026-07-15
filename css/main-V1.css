@@ -166,6 +166,15 @@ select option {
 .radio-group {
   min-height: 48px;
   align-content: center;
+  font-size: var(--text-sm);
+}
+
+.radio-group label {
+  margin-right: 10px;
+}
+
+input[type='radio'] {
+    accent-color: var(--color-primary);
 }
 
 button,
@@ -273,7 +282,8 @@ a.btn-outline {
   margin-left: 2px;
 }
 
-.error-message {
+.error-message,
+.help-block {
   color: #ffa0a0;
   font-size: 0.7rem;
   margin-top: 4px;
@@ -330,10 +340,6 @@ select.error {
 
 .iti__country-list .iti__country-name {
   color: #000 !important;
-}
-
-.iti__selected-flag {
-  max-height: 40px;
 }
 
 /* responsive adjustments (common) */

@@ -97,14 +97,14 @@ $(document).ready(function() {
                 if (val === '') {
                     isValid = false; errorMsg = 'Email is required';
                 } else if (!isValidEmail(val)) {
-                    isValid = false; errorMsg = 'Please enter a valid email address (e.g., name@example.com)';
+                    isValid = false; errorMsg = ' (e.g., name@example.com)';
                 }
                 break;
             case 'phone':
                 if (val === '') {
                     isValid = false; errorMsg = 'Phone number is required';
                 } else if (!isValidPhone()) {
-                    isValid = false; errorMsg = 'Please enter a valid phone number';
+                    isValid = false; errorMsg = '';
                 }
                 break;
             case 'company':

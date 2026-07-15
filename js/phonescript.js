@@ -36,7 +36,6 @@ $(document).ready(function(){
     updateCountryCode();
     input.addEventListener("countrychange", updateCountryCode);
 
-    $("form").validate();
 
     // Phone validation
     var errorMap = ["Invalid number. ", "Invalid country code. ", "Too short. ", "Too long. ", "Invalid number. "];
@@ -47,5 +46,4 @@ $(document).ready(function(){
     }, "Invalid Phone Number");
 
     
-    $("#phone").rules("add", { Validphonenumber: true });
 });

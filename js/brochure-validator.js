@@ -82,7 +82,7 @@ $(document).ready(function () {
                 errorMsg = 'Email is required';
             } else if (!isValidEmail(val)) {
                 isValid = false;
-                errorMsg = 'Please enter a valid email address (e.g., name@example.com)';
+                errorMsg = ' (e.g., name@example.com)';
             }
         }
         else if (field.is($phone)) {
@@ -91,7 +91,7 @@ $(document).ready(function () {
                 errorMsg = 'Phone number is required';
             } else if (!isValidPhone()) {
                 isValid = false;
-                errorMsg = 'Please enter a valid phone number';
+                errorMsg = '';
             }
         }
 
