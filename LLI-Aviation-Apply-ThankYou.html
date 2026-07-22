@@ -30,6 +30,34 @@
       z-index: 0;
     }
 
+    .hero__logos {
+      display: flex;
+      align-items: center;
+      gap: clamp(1rem, 3vw, 3rem);
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .hero__logos img {
+      height: clamp(70px, 8vw, 80px);
+      width: auto;
+      flex: 0 0 auto;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .hero__logos img#IATA-logo {
+      height: clamp(80px, 8vw, 90px);
+
+    }
+
+    @media (max-width: 768px) {
+      .hero__logos {
+        justify-content: center;
+      }
+    }
+
     .hero__label {
       font-size: 0.8rem;
       letter-spacing: 3px;
@@ -71,11 +99,10 @@
   <!-- Hero Banner -->
   <section class="hero hero-left-align">
     <div class="container">
-      <div class="hero-logo text-center">
-        <a href="https://www.aub.edu.lb/osb">
-          <img src="images/AUB-OSB-Logo-White.png" alt="AUB OSB Logo"
-            onerror="this.src='https://placehold.co/140x140?text=AUB+OSB'">
-        </a>
+      <div class="hero__logos">
+        <!-- lii - take to website -->
+        <a href="https://www.aub.edu.lb/osb" target="_blank"><img src="images/AUB-OSB-LLI-Logo-white.png" /></a>
+        <a href="https://www.iata.org/" target="_blank"><img id="IATA-logo" src="images/Logo-IATA.png" /></a>
       </div>
       <div class="hero-content">
         <div class="hero__label">Professional Certificate</div>
@@ -96,7 +123,8 @@
         <a href="lii.pdf" class="btn btn-outline" download>
           <i class="fas fa-download"></i> Download Brochure
         </a>
-        <a href="lii-booking-link" class="btn btn-outline" target="_blank">
+        <a href="https://outlook.office365.com/book/HibasCalendar@mail.aub.edu/?ismsaljsauthenabled=true"
+          class="btn btn-outline" target="_blank">
           <!-- change link -->
           <i class="fas fa-calendar-alt"></i> Schedule one-on-one meeting
         </a>
@@ -112,13 +140,13 @@
         <p style="margin-bottom: 1rem; font-size: 1.1rem; font-weight: 500; text-align: center;">For inquiries, please
           contact us</p>
         <div class="contact-links">
-          <a href="tel:+9611374374,liiext" class="contact-link">
+          <a href="tel:+9611350000,3759 " class="contact-link">
             <i class="fas fa-phone"></i>
-            <span>+961-1-374 374 ext. ????</span>
+            <span>+961-1-350 000 ext. 3759 </span>
           </a>
-          <a href="mailto:liiemailaviation@aub.edu.lb" class="contact-link">
+          <a href="mailto:hn22@aub.edu.lb" class="contact-link">
             <i class="fas fa-envelope"></i>
-            <span>?????@aub.edu.lb</span>
+            <span>hn22@aub.edu.lb</span>
           </a>
         </div>
       </div>

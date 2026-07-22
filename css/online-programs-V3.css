@@ -192,7 +192,7 @@
  /* Large screens: ensure hero doesn't look empty */
  @media (min-width: 1200px) {
      .hero {
-         padding: 4rem 0 200px 0;
+         padding: 4rem 0 170px 0;
      }
 
      .form-card {
