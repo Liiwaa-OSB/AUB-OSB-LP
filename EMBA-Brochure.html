@@ -12,8 +12,8 @@
 	<link rel="stylesheet" href="build/css/intlTelInput.css">
 
 	<link rel="icon" href="images/favicon.ico" type="image/png">
-	<link rel="stylesheet" href="css/main-V3.css">
-	<link rel="stylesheet" href="css/main-programs-V3.css">
+	<link rel="stylesheet" href="css/main-V4.css">
+	<link rel="stylesheet" href="css/main-programs-V4.css">
 
 	<style>
 		.page-wrapper {
@@ -31,11 +31,15 @@
 	<!-- Libraries -->
 	<script src="build/js/intlTelInput.js"></script>
 	<script src="js/mailchimp-subscribe.js"></script>
-	<script src="js/apply-validator.js"></script>
+	<script src="js/brochure-validator.js"></script>
 	<script src="js/phonescript.js"></script>
 
+
+	<!-- Mailchimp endpoint URL (used by brochure-validator.js) -->
 	<script>
-		var mcurl = 'https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3';
+		//var mcurl = 'https://aub.us19.list-manage.com/subscribe/post?u=643f74b5d97f671dfd188d733&id=2b17956d30';
+		var mcurl = '';
+
 		function GoogleConversion() { }
 	</script>
 </head>
@@ -66,65 +70,72 @@
 				</div>
 
 				<div class="form-card">
-					<span class="form-card__title">Download
-						Brochure</span>
+					<span class="form-card__title">Download Brochure</span>
+					<span class="contac100-form-subtitle"
+						style="display: block; text-align: center; margin-bottom: 1.5rem; opacity: 0.9;">Fill the form
+						to get instant access</span>
 
 					<form class="contact100-form validate-form" id="myform"
 						action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
 						name="myform" novalidate="novalidate">
 
-						<!-- Salesforce hidden fields (original + dummy fields to satisfy apply-validator.js) -->
+						<!-- Salesforce hidden fields (only required ones) -->
 						<input type="hidden" name="oid" value="00D0Y000001Xrwc">
 						<input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000RybeAAC">
+						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000o9UrjIAE">
 						<input type="hidden" id="member_status" name="member_status" value="Interested">
-						<input type="hidden" name="lead_source" id="lead_source" value="Website">
-						<input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure EMBA">
-						<input type="hidden" name="country_code" id="country_code" value="LB">
-						<input type="hidden" name="campaign" id="campaign" value="">
+						<!-- Lead Source:-->
+						<input type=hidden name="lead_source" id="lead_source" value="Website">
+						<input type=hidden name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="EMBA Brochure">
+						<input type=hidden name="00NP500000D37Bx" id="Campaign_Name" value="">
+						<input type=hidden name="00NP500000D37IP" id="AD_Name" value="">
+						<input type=hidden id="00NP500000LohFU" name="00NP500000LohFU" value="">
+						<input type=hidden id="00NP500000Oxk99" name="00NP500000Oxk99" value="">
+						<!-- Country:-->
+						<input type=hidden name="country_code" id="country_code" value="LB">
+
+						<input type=hidden name="campaign" id="campaign" value="">
 						<input type="hidden" name="rating" id="rating" value="Cold">
-						<input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Work Email">
-						<input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Work Phone">
-						<!-- Hidden phone field used by phonescript -->
-						<input type="hidden" name="00N0Y00000RODqu" id="00N0Y00000RODqu" value="">
-						<!-- Dummy fields to satisfy apply-validator.js rules -->
-						<input type="hidden" name="00N0Y00000QGklm" id="00N0Y00000QGklm" value="N/A">
-						<input type="hidden" name="title" id="title" value="N/A">
-						<input type="hidden" name="00N0Y00000QGkuK" id="00N0Y00000QGkuK" value="0">
-						<input type="hidden" name="00N0Y00000QGkrV" id="00N0Y00000QGkrV" value="N/A">
-						<input type="hidden" name="00N0Y00000QGksE" id="00N0Y00000QGksE" value="N/A">
+						<input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
+						<input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
 						<!-- retURL points to PDF -->
 						<input type="hidden" name="retURL"
-							value="https://www.aub.edu.lb/osb/EMBA/Documents/EMBA%20Factsheet.pdf">
+							value="https://issuu.com/aub-osb/docs/emba_fs_beirut_722bae72214dc2?fr=xKAE9_zU1NQ">
+						<!-- new fields June 2026-->
+						<input type="hidden" id="00NP500000RwxHu" maxlength="255" name="00NP500000RwxHu" size="20"
+							type="text" /><!--Google Click ID-->
+						<input type="hidden" id="00NP500000Rx6gB" maxlength="255" name="00NP500000Rx6gB" size="20"
+							type="text" /><!--Google GBRAID-->
+						<input type="hidden" id="00NP500000Shc6v" maxlength="255" name="00NP500000Shc6v" size="20"
+							type="text" /><!--Google WBRAID-->
+						<input type="hidden" id="00NP500000RwKv7" maxlength="255" name="00NP500000RwKv7" size="20"
+							type="text" /><!--Meta Click ID-->
+						<input type="hidden" id="00NP500000Rwxy5" maxlength="255" name="00NP500000Rwxy5" size="20"
+							type="text" /><!--LinkedIn Click ID-->
+						<!---->
 
 						<!-- Form fields -->
 						<div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
 							<span class="label-input100">First Name *</span>
-							<input class="input100" id="first_name" maxlength="40" name="first_name" required
+							<input class="input100" id="first_name" maxlength="40" name="first_name"
 								placeholder="First Name" type="text">
 						</div>
 
 						<div class="wrap-input100 validate-input form-group" data-validate="Last Name is required">
 							<span class="label-input100">Last Name *</span>
-							<input class="input100" id="last_name" maxlength="80" placeholder="Last Name" required
+							<input class="input100" id="last_name" maxlength="80" placeholder="Last Name"
 								name="last_name" type="text">
 						</div>
 
 						<div class="wrap-input100 validate-input form-group" data-validate="Valid email is required">
 							<span class="label-input100">Email *</span>
-							<input class="input100" placeholder="Email" id="email" maxlength="80" required
-								name="00N0Y00000QGl8W" type="text">
+							<input class="input100" placeholder="Email" id="email" maxlength="80" name="00N0Y00000QGklI"
+								type="text">
 						</div>
 
 						<div class="wrap-input100 validate-input form-group" data-validate="Phone number is required">
 							<span class="label-input100">Phone *</span>
-							<input class="input100" id="phone" name="intphone" type="tel" pattern="[0-9]*" required>
-						</div>
-
-						<div class="wrap-input100 validate-input form-group" data-validate="Company name is required">
-							<span class="label-input100">Company *</span>
-							<input class="input100" id="employer" placeholder="Company" maxlength="40" required
-								name="00N0Y00000QGku0" type="text">
+							<input class="input100" placeholder="Phone" id="phone" maxlength="40" required type="text">
 						</div>
 
 						<div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to
@@ -162,51 +173,46 @@
 		</div>
 	</footer>
 
-	<!-- Source/campaign tracking -->
 	<script>
 		function getParameterByName(name, url) {
 			if (!url) url = window.location.href;
 			url = url.toLowerCase();
-			name = name.replace(/[\[\]]/g, '\\$&');
-			var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
 				results = regex.exec(url);
 			if (!results) return null;
-			if (!results[2]) return '';
-			return decodeURIComponent(results[2].replace(/\+/g, ' '));
+			if (!results[2]) return "";
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
 		}
-		var source = getParameterByName('source');
-		var type = getParameterByName('type'); // not used!
-		var campaign = getParameterByName('campaign');
 
-		switch (source) {
-			case "fb": var sourcetxt = "Social Media"; var sourcelbl = "Fb - Brochure EMBA"; break;
-			case "insta": var sourcetxt = "Social Media"; var sourcelbl = "Insta - Brochure EMBA"; break;
-			case "tw": var sourcetxt = "Social Media"; var sourcelbl = "Tw - Brochure EMBA"; break;
-			case "lin": var sourcetxt = "Social Media"; var sourcelbl = "Lin - Brochure EMBA"; break;
-			case "gs": var sourcetxt = "Google Ads"; var sourcelbl = "Search - Brochure EMBA"; break;
-			case "mail": var sourcetxt = "Mailchimp"; var sourcelbl = "Brochure EMBA"; break;
-			default: var sourcetxt = "Website"; var sourcelbl = "Brochure EMBA"; break;
-		}
-		switch (campaign) {
-			case "uae": var campaigntxt = "AE"; break;
-			case "ksa": var campaigntxt = "SA"; break;
-			case "kwt": var campaigntxt = "KW"; break;
-			case "qat": var campaigntxt = "QA"; break;
-			case "jor": var campaigntxt = "JO"; break;
-			case "nyc": var campaigntxt = "US"; break;
-			case "fra": var campaigntxt = "FR"; break;
-			default: var campaigntxt = "LB"; break;
-		}
-		$('#lead_source').val(sourcetxt);
-		$('#00N0Y00000QGkma').val(sourcelbl);
-		$('#country_code').val(campaigntxt);
+		var utm_source = getParameterByName('source');
+		var utm_details = getParameterByName('utm_details');
+		var utm_campaign = getParameterByName('utm_campaign');
+		var utm_content = getParameterByName('utm_content');
+		var utm_placement = getParameterByName('utm_placement');
+		var utm_adsetname = getParameterByName('utm_adsetname');
 
-		// Lii - this is only here - Does this override the campaign from URL?
-		if (userTimeZone) {
-			const timezone = ct.getTimezone(userTimeZone);
-			// console.log(timezone.countries[0]);
-			$('#country_code').val(timezone.countries[0]);
-		} 
+
+		if (utm_source != null) {
+			$('#lead_source').val(utm_source);
+		}
+
+		if (utm_details != null) {
+			$('#00N0Y00000QGkma').val(utm_details);
+		}
+		if (utm_campaign != null) {
+			$('#Campaign_Name').val(utm_campaign);
+		}
+		if (utm_content != null) {
+			$('#AD_Name').val(utm_content);
+		}
+
+		if (utm_placement != null) {
+			$('#00NP500000LohFU').val(utm_placement);
+		}
+		if (utm_adsetname != null) {
+			$('#00NP500000Oxk99').val(utm_adsetname);
+		}
 	</script>
 </body>
 

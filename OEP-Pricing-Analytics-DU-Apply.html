@@ -16,8 +16,8 @@
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" href="build/css/intlTelInput.css">
     <link rel="icon" href="images/favicon.ico" type="image/png">
-    <link rel="stylesheet" href="css/main-V3.css">
-    <link rel="stylesheet" href="css/online-programs-V3.css">
+    <link rel="stylesheet" href="css/main-V4.css">
+    <link rel="stylesheet" href="css/online-programs-V4.css">
 
     <style>
         :root {
@@ -55,8 +55,9 @@
     <script src="build/js/intlTelInput.js"></script>
     <!-- Modified phonescript.js (see below – the line $("form").validate(); is commented out) -->
     <script src="js/phonescript.js"></script>
-    <!-- Main validation and form handler (apply-validator.js) -->
-    <script src="js/apply-validator.js"></script>
+    <!-- Main validation and form handler (apply-validator-v1.js) -->
+    <script src="js/validator-config.js"></script>
+    <script src="js/apply-validator-v1.js"></script>
     <script src="js/universities.js"></script>
     <script src="js/university-ui.js"></script>
 
@@ -72,7 +73,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- HERO SECTION - Using .hero class from online-programs-V3.css -->
+    <!-- HERO SECTION - Using .hero class from online-programs-V4.css -->
     <section class="hero">
         <div class="container">
             <div class="hero-logo text-center">
@@ -96,7 +97,7 @@
 
     <!-- MAIN CONTENT -->
     <div class="container">
-        <!-- Overlapping form card – using .form-card from online-programs-V3.css -->
+        <!-- Overlapping form card – using .form-card from online-programs-V4.css -->
         <div class="form-card">
             <h2 class="form-card__title">Apply Now</h2>
             <span class="form-card__subtitle">Fill in your details to begin your application</span>
@@ -124,7 +125,7 @@
                 <input type="hidden" name="retURL"
                     value="https://www.aub.edu.lb/osb/Landing/Pages/OEP-FamilyBusiness-Apply-ThankYou.html">
 
-                <!-- Form grid - using .form-grid from online-programs-V3.css -->
+                <!-- Form grid - using .form-grid from online-programs-V4.css -->
                 <div class="form-grid">
                     <!-- First Name -->
                     <div class="form-group" id="first-name-group">
@@ -158,7 +159,7 @@
                         <span class="error-message"></span>
                     </div>
 
-                    <!-- Company (Employer) – required by apply-validator.js -->
+                    <!-- Company (Employer) – required by apply-validator-v1.js -->
                     <div class="form-group" id="company-group">
                         <label class="form-label">Company <span class="required">*</span></label>
                         <input class="form-input" id="employer" name="00N0Y00000QGku0" maxlength="40"
@@ -243,7 +244,7 @@
             </div>
         </div>
 
-        <!-- INFO CARDS - using .cards-grid and .info-card from online-programs-V3.css -->
+        <!-- INFO CARDS - using .cards-grid and .info-card from online-programs-V4.css -->
         <div class="cards-grid">
             <div class="info-card">
                 <h3>Program Overview</h3>

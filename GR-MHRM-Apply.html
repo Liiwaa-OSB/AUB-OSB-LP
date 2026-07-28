@@ -11,8 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" href="build/css/intlTelInput.css">
 	    <link rel="icon" href="images/favicon.ico" type="image/png">
-<link rel="stylesheet" href="css/main-V3.css" />
-	<link rel="stylesheet" href="css/main-programs-V3.css" />
+<link rel="stylesheet" href="css/main-V4.css" />
+	<link rel="stylesheet" href="css/main-programs-V4.css" />
 
 	<style>
 		.page-wrapper {
@@ -31,7 +31,8 @@
 	<!-- Phone script (initialises intlTelInput and adds custom validation method) -->
 	<script src="js/phonescript.js"></script>
 	<!-- Main validation and form handler (kept as is) -->
-	<script src="js/apply-validator.js"></script>
+	<script src="js/validator-config.js"></script>
+    <script src="js/apply-validator-v1.js"></script>
 
 	<!-- Google Tag Manager -->
 	<script>
@@ -73,7 +74,7 @@
 			src="https://www.facebook.com/tr?id=368598848515387&ev=PageView&noscript=1" /></noscript>
 	<!-- End Meta Pixel Code -->
 
-	<!-- Mailchimp endpoint URL (used by apply-validator.js) -->
+	<!-- Mailchimp endpoint URL (used by apply-validator-v1.js) -->
 	<script>
 		var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";
 	</script>
@@ -285,7 +286,7 @@
 	<!-- Patch to set the description field before Salesforce submission (keeps all existing validation logic) -->
 	<script>
 		$(document).ready(function () {
-			// Wait for apply-validator.js to initialise the validation on the form
+			// Wait for apply-validator-v1.js to initialise the validation on the form
 			// We need to override the submitHandler to first populate the description field.
 			// Get the existing validator instance.
 			var validator = $("#myform").data("validator");

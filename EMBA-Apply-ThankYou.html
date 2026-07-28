@@ -12,19 +12,50 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
   <!-- End Google Tag Manager -->
-   
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
-  <title>AUB OSB | [Lii-ProgAcr] Apply Thank You</title>
+  <title>AUB OSB | Executive MBA Apply Thank You</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-      <link rel="icon" href="images/favicon.ico" type="image/png">
-<link rel="stylesheet" href="css/main-V4.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/png">
+  <link rel="stylesheet" href="css/main-V4.css" />
   <link rel="stylesheet" href="css/main-programs-V4.css" />
 
   <style>
-    .page-wrapper {
-      background: url("images/AUB-OSB-[Lii-ProgAcr]-bg.jpg") no-repeat center top/cover fixed;
+    .page-wrapper::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -2;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/AUB-OSB-EMBA-bg.jpg") no-repeat center bottom / cover;
+      pointer-events: none;
+    }
+
+    .main-program-thank-you-page .page-wrapper::before {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    @supports not (position: fixed) {
+      .page-wrapper {
+        background: url("images/AUB-OSB-EMBA-bg.jpg") no-repeat center top / cover fixed;
+      }
+    }
+
+    /* mobile background */
+    @media (max-width: 768px) {
+      .page-wrapper::after {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/AUB-OSB-EMBA-bg.jpg");
+      }
+
+      @supports not (position: fixed) {
+        .page-wrapper {
+          background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/AUB-OSB-EMBA-bg.jpg");
+        }
+      }
     }
   </style>
 
@@ -48,18 +79,19 @@
             <div class="vertical-logo">
               <a href="#" style="text-decoration: none">
                 <div class="logo-img">
-                  <img class="OSBLogo" src="images/AUB-OSB-Logo-white-vertical.png" alt="logo" onclick="window.location.href='https://www.aub.edu.lb/osb';" style="cursor:pointer;" />
+                  <img class="OSBLogo" src="images/AUB-OSB-Logo-white-vertical.png" alt="logo"
+                    onclick="window.location.href='https://www.aub.edu.lb/osb';" style="cursor:pointer;" />
                 </div>
               </a>
             </div>
             <h1 class="thankyou-title">
-              Thank you for your interest in our [Lii-ProgAcr] program
+              Thank you for your interest in our Execuitve MBA program
             </h1>
-            <div>
-              <a href="Lii - Val - Brochure PDF URL" class="btn-outline" download>Download
-                Brochure</a>
-              <a href="Lii - Val - Lead Manager Calendar"
-                class="btn-outline">Schedule one-on-one meeting</a>
+            <div class="button-group">
+              <a href="https://www.aub.edu.lb/osb/EMBA/Documents/EMBA%20Factsheet.pdf" class="btn-outline"
+                download>Download Brochure</a>
+              <!-- <a href="https://outlook.office365.com/book/HibasCalendar@mail.aub.edu/?ismsaljsauthenabled=true"
+                class="btn-outline">Schedule one-on-one meeting</a> -->
               <a href="https://graduateadmissions.aub.edu.lb/" class="btn-primary">Complete Your Application Here</a>
             </div>
 
@@ -68,13 +100,13 @@
             <div class="cta__divider">
               <p>For inquiries, feel free to contact us</p>
               <div class="cta__contact-links">
-                <a href="tel:+9611350000;[lii - Lead Manager extension]" class="cta__contact-link">
+                <a href="tel:+9611350000;3794" class="cta__contact-link">
                   <i data-lucide="phone" width="20" height="20"></i>
-                  <span>+961-1-350 000 ext. [lii - Lead Manager extension]</span>
+                  <span>+961-1-350 000 ext. 3794</span>
                 </a>
-                <a href="mailto:[lii - Lead Manager email]" class="cta__contact-link">
+                <a href="mailto:emba@aub.edu.lb" class="cta__contact-link">
                   <i data-lucide="mail" width="20" height="20"></i>
-                  <span>[lii - Lead Manager email]</span>
+                  <span>emba@aub.edu.lb</span>
                 </a>
               </div>
             </div>

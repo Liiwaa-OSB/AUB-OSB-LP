@@ -1,4 +1,4 @@
-// E&I-Apply-validator.js
+// E&I-apply-validator-v1.js
 // Validates the new E&I form.
 // Uses the visible field IDs/groups.
 // Submits fields through their actual Salesforce names.

@@ -77,13 +77,15 @@
 .button-group {
   display: flex;
   gap: var(--space-md);
-  /* justify-content: center; */
   flex-wrap: wrap;
   margin-top: var(--space-xl);
   padding-top: var(--space-xl);
-
   margin-bottom: 2rem;
   padding-bottom: 1px;
+}
+
+.main-program-thank-you-page .button-group {
+  justify-content: center;
 }
 
 /* right column: form card */
