@@ -1,8 +1,9 @@
-// apply-validator-v1.js – Configurable validation
+// apply-validator-v1.js – Configurable validation (generic version)
+
 (function () {
     'use strict';
 
-    // Cookie functions (unchanged)
+    // Cookie functions
     function setCookie(name, value, days) {
         var date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -21,15 +22,28 @@
     }
 
     $(document).ready(function () {
-        // Wait for config to load
-        if (typeof pageConfig === 'undefined') {
+        // Get page config from form data attribute
+        var $form = $('#myform');
+        var pageConfigKey = $form.data('page-config');
+
+        if (!pageConfigKey) {
+            console.error('Page config not specified. Add data-page-config attribute to the form.');
+            return;
+        }
+
+        if (typeof VALIDATOR_CONFIG === 'undefined') {
             console.error('Validator config not loaded');
             return;
         }
 
-        var $form = $('#myform');
+        var pageConfig = VALIDATOR_CONFIG[pageConfigKey];
+
+        if (!pageConfig) {
+            console.error('Config not found for:', pageConfigKey);
+            return;
+        }
+
         var $submitBtn = $('#submitbtn');
-        var config = pageConfig;
 
         // ----- Field map (stores jQuery objects and error spans) -----
         var fields = {};
@@ -46,7 +60,7 @@
         }
 
         // ----- Initialize all fields from config -----
-        config.fields.forEach(function (fieldConfig) {
+        pageConfig.fields.forEach(function (fieldConfig) {
             var $field = $('#' + fieldConfig.id);
             if ($field.length) {
                 fields[fieldConfig.id] = $field;
@@ -139,7 +153,7 @@
         }
 
         // ----- Attach live validation for each field -----
-        config.fields.forEach(function (fieldConfig) {
+        pageConfig.fields.forEach(function (fieldConfig) {
             var $field = fields[fieldConfig.id];
             if (!$field) return;
 
@@ -153,17 +167,19 @@
         });
 
         // ----- Restore localStorage for configured fields -----
-        config.localStorageFields.forEach(function (fieldId) {
-            var $field = fields[fieldId];
-            if ($field && localStorage.getItem('ls_' + fieldId) != null) {
-                $field.val(localStorage.getItem('ls_' + fieldId));
-            }
-        });
+        if (pageConfig.localStorageFields) {
+            pageConfig.localStorageFields.forEach(function (fieldId) {
+                var $field = fields[fieldId];
+                if ($field && localStorage.getItem('ls_' + fieldId) != null) {
+                    $field.val(localStorage.getItem('ls_' + fieldId));
+                }
+            });
+        }
 
         // ----- Global form validation -----
         function validateForm() {
             var isValid = true;
-            config.fields.forEach(function (fieldConfig) {
+            pageConfig.fields.forEach(function (fieldConfig) {
                 if (!validateField(fieldConfig.id)) {
                     isValid = false;
                 }
@@ -189,12 +205,14 @@
             $submitBtn.prop('disabled', true).text('SUBMITTING...');
 
             // Save to localStorage
-            config.localStorageFields.forEach(function (fieldId) {
-                var $field = fields[fieldId];
-                if ($field) {
-                    localStorage.setItem('ls_' + fieldId, $field.val());
-                }
-            });
+            if (pageConfig.localStorageFields) {
+                pageConfig.localStorageFields.forEach(function (fieldId) {
+                    var $field = fields[fieldId];
+                    if ($field) {
+                        localStorage.setItem('ls_' + fieldId, $field.val());
+                    }
+                });
+            }
 
             // ---- Handle "Other" university (MBA only) ----
             var $uniSelect = fields.university;
@@ -217,14 +235,16 @@
 
             // ---- Build description from configured fields ----
             var descriptionParts = [];
-            config.descriptionFields.forEach(function (fieldId) {
-                var $field = fields[fieldId];
-                if ($field && $field.val()) {
-                    var label = config.fields.find(function (f) { return f.id === fieldId; });
-                    var fieldName = label ? label.label : fieldId;
-                    descriptionParts.push(fieldName + ': ' + $field.val().trim());
-                }
-            });
+            if (pageConfig.descriptionFields) {
+                pageConfig.descriptionFields.forEach(function (fieldId) {
+                    var $field = fields[fieldId];
+                    if ($field && $field.val()) {
+                        var label = pageConfig.fields.find(function (f) { return f.id === fieldId; });
+                        var fieldName = label ? label.label : fieldId;
+                        descriptionParts.push(fieldName + ': ' + $field.val().trim());
+                    }
+                });
+            }
             $('#description').val(descriptionParts.join(' | ') || 'No additional info');
 
             // ---- Mailchimp ----
@@ -239,6 +259,7 @@
             }
 
             // ---- Submit to Salesforce ----
+            // The form will submit to Salesforce and redirect to retURL
             $form.get(0).submit();
         });
     });

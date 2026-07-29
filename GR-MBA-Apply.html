@@ -59,12 +59,13 @@
     <script src="build/js/intlTelInput.js"></script>
     <!-- Phone script (initialises intlTelInput and adds custom validation method) -->
     <script src="js/phonescript.js"></script>
-    <!-- Main validation and form handler -->
-    <script src="js/validator-config.js"></script>
-    <script src="js/apply-validator-v1.js"></script>
     <!-- University script (List of Unis from js file) -->
     <script src="js/universities.js"></script>
     <script src="js/university-ui.js"></script>
+    <!-- Validator config - Defines all page configurations -->
+    <script src="js/validator-config.js"></script>
+    <!-- Main validation and form handler -->
+    <script src="js/apply-validator-v1.js"></script>
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -115,9 +116,14 @@
 
                 <!-- RIGHT COLUMN: FORM CARD -->
                 <div class="form-card">
+                    <!-- 
+                        IMPORTANT: data-page-config tells the validation which config to use
+                        The retURL is a hidden input that Salesforce uses for redirect after submission
+                        The campaign value is also in a hidden input
+                    -->
                     <form class="contact100-form validate-form" id="myform"
                         action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
-                        name="myform" novalidate="novalidate">
+                        name="myform" novalidate="novalidate" data-page-config="apply_default">
 
                         <!-- Salesforce hidden fields -->
                         <input type="hidden" name="oid" value="00D0Y000001Xrwc">
@@ -126,20 +132,22 @@
                         <input type="hidden" id="member_status" name="member_status" value="Interested">
                         <input type="hidden" name="lead_source" id="lead_source" value="Website">
                         <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Apply MBA">
-
-                        <input type=hidden name="00NP500000D37Bx" id="Campaign_Name" value="">
-                        <input type=hidden name="00NP500000D37IP" id="AD_Name" value="">
-                        <input type=hidden id="00NP500000LohFU" name="00NP500000LohFU" value="">
-                        <input type=hidden id="00NP500000Oxk99" name="00NP500000Oxk99" value="">
-
                         <input type="hidden" name="rating" id="rating" value="Cold">
                         <input type="hidden" name="country_code" id="country_code" value="LB">
                         <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
                         <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
-                        <!-- description will be dynamically concatenated with new fields -->
                         <input type="hidden" name="description" id="description" value="Concated text">
+
+                        <!-- retURL - Salesforce redirects here after successful submission -->
+                        <!-- This is page-specific and stays in HTML -->
                         <input type="hidden" name="retURL"
                             value="https://www.aub.edu.lb/osb/Landing/Pages/GR-MBA-Apply-ThankYou.html">
+
+                        <!-- UTM tracking hidden fields (populated by JS) -->
+                        <input type="hidden" name="00NP500000D37Bx" id="Campaign_Name" value="">
+                        <input type="hidden" name="00NP500000D37IP" id="AD_Name" value="">
+                        <input type="hidden" id="00NP500000LohFU" name="00NP500000LohFU" value="">
+                        <input type="hidden" id="00NP500000Oxk99" name="00NP500000Oxk99" value="">
 
                         <!-- EXISTING FIELDS -->
                         <div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
@@ -167,7 +175,6 @@
                         <div class="wrap-input100 validate-input form-group" data-validate="Phone number is required">
                             <span class="label-input100">Phone *</span>
                             <input class="input100" placeholder="Phone" id="phone" maxlength="40" required type="text">
-
                             <span class="focus-input100"></span>
                         </div>
 
@@ -178,7 +185,7 @@
                             <span class="focus-input100"></span>
                         </div>
 
-                        <!-- === NEW FIELDS (NOT IN SALESFORCE, WILL BE CONCATENATED INTO DESCRIPTION) === -->
+                        <!-- NEW FIELDS (not in Salesforce, will be concatenated into description) -->
                         <!-- Country of Residence -->
                         <div class="wrap-input100 validate-input form-group"
                             data-validate="Country of Residence is required">
@@ -203,7 +210,7 @@
                             <span class="focus-input100"></span>
                         </div>
 
-                        <!-- Years of Experience (number) -->
+                        <!-- Years of Experience -->
                         <div class="wrap-input100 validate-input form-group"
                             data-validate="Years of experience is required (numeric)">
                             <span class="label-input100">Years of Experience *</span>
@@ -212,7 +219,7 @@
                             <span class="focus-input100"></span>
                         </div>
 
-                        <!-- How did you hear about us? Dropdown -->
+                        <!-- How did you hear about us? -->
                         <div class="wrap-input100 validate-input form-group" data-validate="Please select an option">
                             <span class="label-input100">How did you hear about us? *</span>
                             <select class="input100" id="hear_about" name="hear_about" required>
@@ -288,7 +295,7 @@
         </div>
     </footer>
 
-    <!-- Script to handle source parameters (original) -->
+    <!-- Script to handle source parameters -->
     <script>
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
@@ -308,11 +315,9 @@
         var utm_placement = getParameterByName('utm_placement');
         var utm_adsetname = getParameterByName('utm_adsetname');
 
-
         if (utm_source != null) {
             $('#lead_source').val(utm_source);
         }
-
         if (utm_details != null) {
             $('#00N0Y00000QGkma').val(utm_details);
         }
@@ -322,14 +327,12 @@
         if (utm_content != null) {
             $('#AD_Name').val(utm_content);
         }
-
         if (utm_placement != null) {
             $('#00NP500000LohFU').val(utm_placement);
         }
         if (utm_adsetname != null) {
             $('#00NP500000Oxk99').val(utm_adsetname);
         }
-
     </script>
 </body>
 

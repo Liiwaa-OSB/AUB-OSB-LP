@@ -225,7 +225,6 @@
 
         .faq-answer.open {
             max-height: 400px;
-            /* enough for content */
             opacity: 1;
             padding: 0.2rem 0.2rem 0.8rem;
         }
@@ -392,16 +391,19 @@
         }
     </style>
 
-    <!-- jQuery, validation, phone, etc. (same as original) -->
+    <!-- jQuery, validation, phone, etc. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
     <script src="js/mailchimp-subscribe.js"></script>
     <script src="build/js/intlTelInput.js"></script>
     <script src="js/phonescript.js"></script>
-    <script src="js/validator-config.js"></script>
-    <script src="js/apply-validator-v1.js"></script>
+    <!-- University script (List of Unis from js file) -->
     <script src="js/universities.js"></script>
     <script src="js/university-ui.js"></script>
+    <!-- Validator config - Defines all page configurations -->
+    <script src="js/validator-config.js"></script>
+    <!-- Main validation and form handler -->
+    <script src="js/apply-validator-v1.js"></script>
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
@@ -436,7 +438,6 @@
                     <div class="hero-content">
                         <h1>Transform Experience<br>into Executive Leadership</h1>
                         <div class="hero-subtitle">OSB's Executive MBA – Beirut</div>
-                        <!-- lii - add dates -->
                         <p>Next cohort begins September 21, 2026 — Applications close August 31, 2026</p>
                         <div class="button-group" style="margin-top:1.5rem;">
                             <a href="mailto:jk119@aub.edu.lb?cc=emba@aub.edu.lb&subject=Apply%20to%20the%20EMBA%20Program&body=Dear%20EMBA%20Team,%0D%0A%0D%0AThis%20is%20to%20inquire%20about%20the%20OSB's%20Executive%20MBA%20program%20and%20the%20application%20process.%0D%0A%0D%0ARegards,%0D%0AYour%20Name"
@@ -446,30 +447,47 @@
                     </div>
                 </div>
 
-                <!-- RIGHT COLUMN: FORM CARD (same as MBA apply) -->
+                <!-- RIGHT COLUMN: FORM CARD -->
                 <div class="form-card">
-                    <form class="contact100-form validate-form" id="myform"
-                        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
-                        name="myform" novalidate="novalidate">
+                    <!-- 
+                        IMPORTANT: data-page-config tells the validation which config to use
+                        The retURL is a hidden input that Salesforce uses for redirect after submission
+                        The campaign value is also in a hidden input
+                    -->
+                    <form 
+                        class="contact100-form validate-form" 
+                        id="myform"
+                        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" 
+                        method="post"
+                        name="myform" 
+                        novalidate="novalidate"
+                        data-page-config="apply_emba">
+
                         <!-- Salesforce hidden fields -->
                         <input type="hidden" name="oid" value="00D0Y000001Xrwc">
                         <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-                        <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000S0gqAAC">
+                        <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000o9UrjIAE">
                         <input type="hidden" id="member_status" name="member_status" value="Interested">
                         <input type="hidden" name="lead_source" id="lead_source" value="Website">
                         <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Apply Executive MBA">
-                        <input type=hidden name="00NP500000D37Bx" id="Campaign_Name" value="">
-                        <input type=hidden name="00NP500000D37IP" id="AD_Name" value="">
-                        <input type=hidden id="00NP500000LohFU" name="00NP500000LohFU" value="">
-                        <input type=hidden id="00NP500000Oxk99" name="00NP500000Oxk99" value="">
                         <input type="hidden" name="rating" id="rating" value="Cold">
                         <input type="hidden" name="country_code" id="country_code" value="LB">
                         <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
                         <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
                         <input type="hidden" name="description" id="description" value="Concated text">
+                        
+                        <!-- retURL - Salesforce redirects here after successful submission -->
+                        <!-- This is page-specific and stays in HTML -->
                         <input type="hidden" name="retURL"
                             value="https://www.aub.edu.lb/osb/Landing/Pages/EMBA-Apply-ThankYou.html">
-                        <!-- form fields (same as original) -->
+
+                        <!-- UTM tracking hidden fields (populated by JS) -->
+                        <input type="hidden" name="00NP500000D37Bx" id="Campaign_Name" value="">
+                        <input type="hidden" name="00NP500000D37IP" id="AD_Name" value="">
+                        <input type="hidden" id="00NP500000LohFU" name="00NP500000LohFU" value="">
+                        <input type="hidden" id="00NP500000Oxk99" name="00NP500000Oxk99" value="">
+
+                        <!-- form fields -->
                         <div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
                             <span class="label-input100">First Name *</span>
                             <input class="input100" id="first_name" maxlength="40" name="first_name" required
@@ -497,7 +515,7 @@
                         <div class="wrap-input100 validate-input form-group" data-validate="Company name is required">
                             <span class="label-input100">Company *</span>
                             <input class="input100" id="employer" placeholder="Company" maxlength="40" required
-                                name="00N0Y00000QGku0" size="20" type="hodde">
+                                name="00N0Y00000QGku0" size="20" type="text">
                             <span class="focus-input100"></span>
                         </div>
 
@@ -506,9 +524,8 @@
                             <input class="input100" id="major" name="major" required placeholder="Your Position"
                                 type="text">
                             <span class="focus-input100"></span>
-
-
                         </div>
+
                         <div class="wrap-input100 validate-input form-group"
                             data-validate="Years of experience is required (numeric)">
                             <span class="label-input100">Years of Experience *</span>
@@ -531,7 +548,6 @@
                 </div>
             </div>
 
-            <!-- ========== ADDED CONTENT (EXACTLY AS PROVIDED) ========== -->
             <!-- Program Highlights card (two columns) -->
             <div class="grid-2cols info-cards" style="margin-top: 2rem;">
                 <div class="info-card">
@@ -549,7 +565,7 @@
                 <div class="info-card">
                     <h3>Why Choose OSB's Executive MBA?</h3>
                     <p style="font-weight:300; line-height:1.6; margin-bottom:0.8rem;">
-                        OSB’s Executive MBA equips accomplished professionals with the strategic mindset, leadership
+                        OSB's Executive MBA equips accomplished professionals with the strategic mindset, leadership
                         capabilities, and global perspective needed to lead transformation and make enterprise-wide
                         decisions. For over 25 years, the program has developed leaders across the MENA region.
                         Participants learn from internationally recognized faculty, collaborate with a diverse cohort of
@@ -562,8 +578,7 @@
 
             <!-- An Investment in Lifelong Leadership -->
             <div class="content-section">
-                <h2> An Investment in Lifelong Leadership
-                </h2>
+                <h2>An Investment in Lifelong Leadership</h2>
                 <p>The OSB Executive MBA is more than a degree. It's an investment in your future as a leader. Through
                     an integrated curriculum covering strategy, leadership, AI and digital transformation, innovation,
                     finance, marketing, and operations, you will develop the knowledge, analytical skills, and
@@ -574,7 +589,7 @@
                     and measurable impact.</p>
             </div>
 
-            <!-- ===== TESTIMONIAL SECTION (inserted before FAQ) ===== -->
+            <!-- Testimonial SECTION -->
             <div class="content-section">
                 <h2>What Our Executives Say</h2>
                 <div class="testimonial-grid">
@@ -599,7 +614,7 @@
 
             <!-- FAQ section -->
             <div class="content-section">
-                <h2> Frequently Asked Questions</h2>
+                <h2>Frequently Asked Questions</h2>
                 <div class="faq-item">
                     <h4 class="faq-toggle">Who should apply? <span class="faq-icon"><i
                                 class="fas fa-chevron-down"></i></span></h4>
@@ -669,7 +684,7 @@
         </div> <!-- /container -->
     </div> <!-- /page-wrapper -->
 
-    <!-- FOOTER (exactly as original) -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-legal">By submitting this form you are undertaking that the information provided is
@@ -690,9 +705,8 @@
         </div>
     </footer>
 
-
+    <!-- Collapsible FAQ toggle -->
     <script>
-        // Collapsible FAQ toggle
         document.addEventListener('DOMContentLoaded', function () {
             const toggles = document.querySelectorAll('.faq-toggle');
             toggles.forEach(function (toggle) {
@@ -701,7 +715,6 @@
                     const icon = this.querySelector('.faq-icon');
                     const isOpen = answer.classList.contains('open');
 
-                    // Close all other open FAQs (optional: accordion behavior)
                     document.querySelectorAll('.faq-answer.open').forEach(function (openAns) {
                         if (openAns !== answer) {
                             openAns.classList.remove('open');
@@ -709,7 +722,6 @@
                         }
                     });
 
-                    // Toggle current
                     if (isOpen) {
                         answer.classList.remove('open');
                         icon.classList.remove('open');
@@ -721,6 +733,7 @@
             });
         });
     </script>
+    
     <!-- Source parameters (same as original) -->
     <script>
         function getParameterByName(name, url) {

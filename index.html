@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -57,7 +58,7 @@
       border-radius: 1.5rem;
       padding: 1rem 1.5rem;
       margin-bottom: 2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -83,12 +84,12 @@
       transition: all 0.2s ease;
       font-family: inherit;
       outline: none;
-      box-shadow: 0 1px 1px rgba(0,0,0,0.02);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
     }
 
     .filter-group input:focus {
       border-color: #3b82f6;
-      box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
     }
 
     .clear-btn {
@@ -240,215 +241,221 @@
       body {
         padding: 1.2rem;
       }
+
       .filter-section {
         flex-direction: column;
         align-items: stretch;
       }
+
       .filter-group {
         width: 100%;
       }
+
       .stats {
         text-align: center;
       }
+
       .card-title {
         font-size: 1.1rem;
       }
     }
   </style>
 </head>
+
 <body>
 
-<div class="container">
-  <div class="header">
-    <h1>Internal workspace · OSB NEW Landing Pages</h1>
-  </div>
-
-  <div class="filter-section">
-    <div class="filter-group">
-      <input type="text" id="filterInput" placeholder="🔍 Filter pages by name..." autocomplete="off">
-      <button class="clear-btn" id="clearFilterBtn">Clear</button>
+  <div class="container">
+    <div class="header">
+      <h1>Internal workspace · OSB NEW Landing Pages</h1>
     </div>
-    <div class="stats" id="statsCounter">— pages</div>
+
+    <div class="filter-section">
+      <div class="filter-group">
+        <input type="text" id="filterInput" placeholder="🔍 Filter pages by name..." autocomplete="off">
+        <button class="clear-btn" id="clearFilterBtn">Clear</button>
+      </div>
+      <div class="stats" id="statsCounter">— pages</div>
+    </div>
+
+    <div id="pagesGrid" class="pages-grid">
+      <!-- dynamic cards injected here -->
+    </div>
   </div>
 
-  <div id="pagesGrid" class="pages-grid">
-    <!-- dynamic cards injected here -->
-  </div>
-</div>
-
-<script>
-  // --------------------------------------------------------------
-  // 📌 EDIT THIS ARRAY: add / remove / modify your internal pages
-  //    Each item: { name: "Page Title", url: "relative/path.html" }
-  // --------------------------------------------------------------
-  const pages = [
-    { name: "✅ Cont - Aviation - Apply", url: "Aviation-Apply.html" },
-    { name: "✅ Cont - Aviation - Brochure", url: "Aviation-Brochure.html" },
-    { name: "✅ Cont - Aviation - Thank you", url: "Aviation-Apply-ThankYou.html" },
-    { name: "⚠️ ONLINE - E & I - Apply", url: "Online-Entrepreneurship-and-Innovation-Apply.html" },
-    { name: "❌ ONLINE - E & I - Brochure", url: "Online-Entrepreneurship-and-Innovation-Brochure.html" },
-    { name: "❌ ONLINE - E & I - Thank you", url: "Online-Entrepreneurship-Apply-ThankYou.html" },
-    { name: "✅ ONLINE - Fintech - Apply", url: "Online-Fintech-Apply.html" },
-    { name: "✅ ONLINE - Fintech - Brochure", url: "Online-Fintech-Brochure.html" },
-    { name: "✅ ONLINE - Fintech - Thank you", url: "Online-Fintech-Apply-ThankYou.html" },
-    { name: "⤴️ OEP - Design Thinking - Apply", url: "OEP-Design-Thinking-Apply.html" },
-    { name: "✅ OEP - Design Thinking - Brochure", url: "OEP-Design-Thinking-Brochure.html" },
-    { name: "⤴️ OEP - Design Thinking - Thank you", url: "OEP-DesignThinking-Apply-ThankYou.html" },
-    { name: "⤴️ OEP - AI in Supply Chain - Apply", url: "OEP-AI-Supply-Chain-Apply.html" },
-    { name: "✅ OEP - AI in Supply Chain - Brochure", url: "OEP-AI-Supply-Chain-Brochure.html" },
-    { name: "⤴️ OEP - AI in Supply Chain - Thank you", url: "OEP-AISupplyChain-Apply-ThankYou.html" },
-    { name: "⤴️ OEP - Family Business Governance - Apply", url: "OEP-Family-Business-Governance-Apply.html" },
-    { name: "✅ OEP - Family Business Governance - Brochure", url: "OEP-Family-Business-Governance-Brochure.html" },
-    { name: "⤴️ OEP - Family Business Governance - Thank you", url: "OEP-FamilyBusiness-Apply-ThankYou.html" },
-    { name: "⤴️ OEP - Pricing Analytics DU - Apply", url: "OEP-Pricing-Analytics-DU-Apply.html" },
-    { name: "✅ OEP - Pricing Analytics DU - Brochure", url: "OEP-Pricing-Analytics-DU-Brochure.html" },
-    { name: "⤴️ OEP - Pricing Analytics DU - Thank you", url: "OEP-PricingAnalytics-Apply-DU-ThankYou.html" },
-    { name: "✅ OEP - CEDAR - Apply", url: "OEP-CEDAR-Apply.html" },
-    { name: "⚠️ OEP - CEDAR - Brochure", url: "OEP-CEDAR-Brochure.html" },
-    { name: "✅ OEP - CEDAR - Thank you", url: "OEP-CEDAR-Apply-ThankYou.html" },
-    { name: "✅ OEP - KAED - Apply", url: "OEP-KAED-Apply.html" },
-    { name: "⚠️ OEP - KAED - Brochure", url: "OEP-KAED-Brochure.html" },
-    { name: "✅ OEP - KAED - Thank you", url: "OEP-KAED-Apply-ThankYou.html" },
-    { name: "✅ MBA - Apply", url: "GR-MBA-Apply.html" },
-    { name: "✅ MBA - Brochure", url: "GR-MBA-Brochure.html" },
-    { name: "✅ MBA - Thank You", url: "GR-MBA-Apply-ThankYou.html" },
-    { name: "⚠️ MSBA - Apply", url: "GR-MSBA-Apply.html" },
-    { name: "⚠️ MSBA - Brochure", url: "GR-MSBA-Brochure.html" },
-    { name: "⚠️ MSBA - Thank You", url: "GR-MSBA-Apply-ThankYou.html" },
-    { name: "✅ OMBA - Apply", url: "GR-OMBA-Apply.html" },
-    { name: "✅ OMBA - Brochure", url: "GR-OMBA-Brochure.html" },
-    { name: "✅ OMBA - Thank You", url: "GR-OMBA-Apply-ThankYou.html" },
-    { name: "💣 MFIN - Apply", url: "GR-MFIN-Apply.html" },
-    { name: "💣 MFIN - Thank You", url: "GR-MFIN-Apply-Thankyou.html" },
-    { name: "💣 MFIN - Brochure", url: "GR-MFIN-Brochure.html" },
-    { name: "💣 MHRM - Apply", url: "GR-MHRM-Apply.html" },
-    { name: "💣 MHRM - Brochure", url: "GR-MHRM-Brochure.html" },
-    { name: "💣 MHRM - Thank You", url: "GR-MHRM-Apply-Thankyou.html" },
-    { name: "⤴️ EMBA - Apply", url: "EMBA-Apply.html" },
-    { name: "⤴️ EMBA - Brochure", url: "EMBA-Brochure.html" },
-    { name: "⤴️ EMBA - Thank You", url: "EMBA-Apply-ThankYou.html" },
+  <script>
+    // --------------------------------------------------------------
+    // 📌 EDIT THIS ARRAY: add / remove / modify your internal pages
+    //    Each item: { name: "Page Title", url: "relative/path.html" }
+    // --------------------------------------------------------------
+    const pages = [
+      { name: "✅ Cont - Aviation - Apply", url: "Aviation-Apply.html" },
+      { name: "✅ Cont - Aviation - Brochure", url: "Aviation-Brochure.html" },
+      { name: "✅ Cont - Aviation - Thank you", url: "Aviation-Apply-ThankYou.html" },
+      { name: "⚠️ ONLINE - E & I - Apply", url: "Online-Entrepreneurship-and-Innovation-Apply.html" },
+      { name: "❌ ONLINE - E & I - Brochure", url: "Online-Entrepreneurship-and-Innovation-Brochure.html" },
+      { name: "❌ ONLINE - E & I - Thank you", url: "Online-Entrepreneurship-Apply-ThankYou.html" },
+      { name: "✅ ONLINE - Fintech - Apply", url: "Online-Fintech-Apply.html" },
+      { name: "✅ ONLINE - Fintech - Brochure", url: "Online-Fintech-Brochure.html" },
+      { name: "✅ ONLINE - Fintech - Thank you", url: "Online-Fintech-Apply-ThankYou.html" },
+      { name: "⤴️ OEP - Design Thinking - Apply", url: "OEP-Design-Thinking-Apply.html" },
+      { name: "✅ OEP - Design Thinking - Brochure", url: "OEP-Design-Thinking-Brochure.html" },
+      { name: "⤴️ OEP - Design Thinking - Thank you", url: "OEP-DesignThinking-Apply-ThankYou.html" },
+      { name: "⤴️ OEP - AI in Supply Chain - Apply", url: "OEP-AI-Supply-Chain-Apply.html" },
+      { name: "✅ OEP - AI in Supply Chain - Brochure", url: "OEP-AI-Supply-Chain-Brochure.html" },
+      { name: "⤴️ OEP - AI in Supply Chain - Thank you", url: "OEP-AISupplyChain-Apply-ThankYou.html" },
+      { name: "⤴️ OEP - Family Business Governance - Apply", url: "OEP-Family-Business-Governance-Apply.html" },
+      { name: "✅ OEP - Family Business Governance - Brochure", url: "OEP-Family-Business-Governance-Brochure.html" },
+      { name: "⤴️ OEP - Family Business Governance - Thank you", url: "OEP-FamilyBusiness-Apply-ThankYou.html" },
+      { name: "⤴️ OEP - Pricing Analytics DU - Apply", url: "OEP-Pricing-Analytics-DU-Apply.html" },
+      { name: "✅ OEP - Pricing Analytics DU - Brochure", url: "OEP-Pricing-Analytics-DU-Brochure.html" },
+      { name: "⤴️ OEP - Pricing Analytics DU - Thank you", url: "OEP-PricingAnalytics-Apply-DU-ThankYou.html" },
+      { name: "✅ OEP - CEDAR - Apply", url: "OEP-CEDAR-Apply.html" },
+      { name: "⚠️ OEP - CEDAR - Brochure", url: "OEP-CEDAR-Brochure.html" },
+      { name: "✅ OEP - CEDAR - Thank you", url: "OEP-CEDAR-Apply-ThankYou.html" },
+      { name: "✅ OEP - KAED - Apply", url: "OEP-KAED-Apply.html" },
+      { name: "⚠️ OEP - KAED - Brochure", url: "OEP-KAED-Brochure.html" },
+      { name: "✅ OEP - KAED - Thank you", url: "OEP-KAED-Apply-ThankYou.html" },
+      { name: "✅ MBA - Apply", url: "GR-MBA-Apply.html" },
+      { name: "✅ MBA - Brochure", url: "GR-MBA-Brochure.html" },
+      { name: "✅ MBA - Thank You", url: "GR-MBA-Apply-ThankYou.html" },
+      { name: "⚠️ MSBA - Apply", url: "GR-MSBA-Apply.html" },
+      { name: "⚠️ MSBA - Brochure", url: "GR-MSBA-Brochure.html" },
+      { name: "⚠️ MSBA - Thank You", url: "GR-MSBA-Apply-ThankYou.html" },
+      { name: "✅ OMBA - Apply", url: "GR-OMBA-Apply.html" },
+      { name: "✅ OMBA - Brochure", url: "GR-OMBA-Brochure.html" },
+      { name: "✅ OMBA - Thank You", url: "GR-OMBA-Apply-ThankYou.html" },
+      { name: "💣 MFIN - Apply", url: "GR-MFIN-Apply.html" },
+      { name: "💣 MFIN - Thank You", url: "GR-MFIN-Apply-Thankyou.html" },
+      { name: "💣 MFIN - Brochure", url: "GR-MFIN-Brochure.html" },
+      { name: "💣 MHRM - Apply", url: "GR-MHRM-Apply.html" },
+      { name: "💣 MHRM - Brochure", url: "GR-MHRM-Brochure.html" },
+      { name: "💣 MHRM - Thank You", url: "GR-MHRM-Apply-Thankyou.html" },
+      { name: "⤴️ EMBA - Apply", url: "EMBA-Apply.html" },
+      { name: "⤴️ EMBA - Brochure", url: "EMBA-Brochure.html" },
+      { name: "⤴️ EMBA - Thank You", url: "EMBA-Apply-ThankYou.html" },
 
 
-    
-  ];
 
-  // ----- DO NOT EDIT BELOW (unless you need advanced behavior) -----
-  // but feel free to customize styles or filter logic
+    ];
 
-  let currentFilter = "";
+    // ----- DO NOT EDIT BELOW (unless you need advanced behavior) -----
+    // but feel free to customize styles or filter logic
 
-  const gridContainer = document.getElementById("pagesGrid");
-  const filterInput = document.getElementById("filterInput");
-  const clearBtn = document.getElementById("clearFilterBtn");
-  const statsSpan = document.getElementById("statsCounter");
+    let currentFilter = "";
 
-  // Helper: create a card element for a single page
-  function createCard(page) {
-    const card = document.createElement("div");
-    card.className = "card";
+    const gridContainer = document.getElementById("pagesGrid");
+    const filterInput = document.getElementById("filterInput");
+    const clearBtn = document.getElementById("clearFilterBtn");
+    const statsSpan = document.getElementById("statsCounter");
 
-    // title section with link
-    const titleDiv = document.createElement("div");
-    titleDiv.className = "card-title";
+    // Helper: create a card element for a single page
+    function createCard(page) {
+      const card = document.createElement("div");
+      card.className = "card";
 
-    const link = document.createElement("a");
-    link.href = page.url;
-    // internal same tab (standard navigation)
-    link.setAttribute("target", "_blank");
-    link.textContent = page.name;
-    // optional: add tiny data attribute for debugging
-    link.setAttribute("data-internal", "true");
+      // title section with link
+      const titleDiv = document.createElement("div");
+      titleDiv.className = "card-title";
 
-    titleDiv.appendChild(link);
+      const link = document.createElement("a");
+      link.href = page.url;
+      // internal same tab (standard navigation)
+      link.setAttribute("target", "_blank");
+      link.textContent = page.name;
+      // optional: add tiny data attribute for debugging
+      link.setAttribute("data-internal", "true");
 
-    // url meta display (nice to see the path)
-    const urlSpan = document.createElement("div");
-    urlSpan.className = "url-meta";
-    urlSpan.textContent = page.url;
+      titleDiv.appendChild(link);
 
-    // optional badge / footer
-    const footerDiv = document.createElement("div");
-    footerDiv.className = "card-footer";
-    const badgeSpan = document.createElement("span");
-    badgeSpan.className = "badge";
-    badgeSpan.textContent = "internal page";
-    footerDiv.appendChild(badgeSpan);
+      // url meta display (nice to see the path)
+      const urlSpan = document.createElement("div");
+      urlSpan.className = "url-meta";
+      urlSpan.textContent = page.url;
 
-    card.appendChild(titleDiv);
-    card.appendChild(urlSpan);
-    card.appendChild(footerDiv);
+      // optional badge / footer
+      const footerDiv = document.createElement("div");
+      footerDiv.className = "card-footer";
+      const badgeSpan = document.createElement("span");
+      badgeSpan.className = "badge";
+      badgeSpan.textContent = "internal page";
+      footerDiv.appendChild(badgeSpan);
 
-    return card;
-  }
+      card.appendChild(titleDiv);
+      card.appendChild(urlSpan);
+      card.appendChild(footerDiv);
 
-  // render filtered list based on currentFilter
-  function renderPages() {
-    // filter pages (case-insensitive, match by name)
-    let filtered = pages;
-    if (currentFilter.trim() !== "") {
-      const lowerFilter = currentFilter.toLowerCase();
-      filtered = pages.filter(page => 
-        page.name.toLowerCase().includes(lowerFilter)
-      );
+      return card;
     }
 
-    // update stats text
-    const total = pages.length;
-    const visible = filtered.length;
-    if (visible === total) {
-      statsSpan.textContent = `📄 ${total} page${total !== 1 ? 's' : ''}`;
-    } else {
-      statsSpan.textContent = `🔍 ${visible} of ${total} page${total !== 1 ? 's' : ''}`;
-    }
+    // render filtered list based on currentFilter
+    function renderPages() {
+      // filter pages (case-insensitive, match by name)
+      let filtered = pages;
+      if (currentFilter.trim() !== "") {
+        const lowerFilter = currentFilter.toLowerCase();
+        filtered = pages.filter(page =>
+          page.name.toLowerCase().includes(lowerFilter)
+        );
+      }
 
-    // clear grid container
-    gridContainer.innerHTML = "";
+      // update stats text
+      const total = pages.length;
+      const visible = filtered.length;
+      if (visible === total) {
+        statsSpan.textContent = `📄 ${total} page${total !== 1 ? 's' : ''}`;
+      } else {
+        statsSpan.textContent = `🔍 ${visible} of ${total} page${total !== 1 ? 's' : ''}`;
+      }
 
-    if (filtered.length === 0) {
-      // empty state
-      const emptyDiv = document.createElement("div");
-      emptyDiv.className = "empty-state";
-      emptyDiv.innerHTML = `
+      // clear grid container
+      gridContainer.innerHTML = "";
+
+      if (filtered.length === 0) {
+        // empty state
+        const emptyDiv = document.createElement("div");
+        emptyDiv.className = "empty-state";
+        emptyDiv.innerHTML = `
         <p>✨ No matching pages found</p>
         <p style="font-size: 0.85rem; margin-top: 0.5rem;">Try a different filter or clear the search</p>
       `;
-      gridContainer.appendChild(emptyDiv);
-      return;
+        gridContainer.appendChild(emptyDiv);
+        return;
+      }
+
+      // create and append cards using DocumentFragment for performance
+      const fragment = document.createDocumentFragment();
+      filtered.forEach(page => {
+        fragment.appendChild(createCard(page));
+      });
+      gridContainer.appendChild(fragment);
     }
 
-    // create and append cards using DocumentFragment for performance
-    const fragment = document.createDocumentFragment();
-    filtered.forEach(page => {
-      fragment.appendChild(createCard(page));
-    });
-    gridContainer.appendChild(fragment);
-  }
+    // event: filter input change
+    function onFilterInput(e) {
+      currentFilter = e.target.value;
+      renderPages();
+    }
 
-  // event: filter input change
-  function onFilterInput(e) {
-    currentFilter = e.target.value;
-    renderPages();
-  }
+    // clear filter input and reset
+    function clearFilter() {
+      filterInput.value = "";
+      currentFilter = "";
+      renderPages();
+      // optional: bring focus back to input
+      filterInput.focus();
+    }
 
-  // clear filter input and reset
-  function clearFilter() {
-    filterInput.value = "";
-    currentFilter = "";
-    renderPages();
-    // optional: bring focus back to input
-    filterInput.focus();
-  }
+    // initial load and event binding
+    function init() {
+      renderPages();
+      filterInput.addEventListener("input", onFilterInput);
+      clearBtn.addEventListener("click", clearFilter);
+      // optional: small instruction in console (non-intrusive)
+      console.log("✅ Internal page index ready — edit the 'pages' array to customize your links");
+    }
 
-  // initial load and event binding
-  function init() {
-    renderPages();
-    filterInput.addEventListener("input", onFilterInput);
-    clearBtn.addEventListener("click", clearFilter);
-    // optional: small instruction in console (non-intrusive)
-    console.log("✅ Internal page index ready — edit the 'pages' array to customize your links");
-  }
-
-  init();
-</script>
+    init();
+  </script>
 </body>
+
 </html>
