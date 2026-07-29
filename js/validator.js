@@ -1,4 +1,4 @@
-// apply-validator-v1.js – Configurable validation (generic version)
+// validator.js – Configurable validation (generic version)
 
 (function () {
     'use strict';
