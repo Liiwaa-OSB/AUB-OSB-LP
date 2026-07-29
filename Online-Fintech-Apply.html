@@ -36,6 +36,7 @@
         .btn-submit {
             background: #72bbc0;
         }
+
         .btn-submit:hover {
             background: #4d8185;
         }
@@ -87,7 +88,8 @@
             <span class="form-card__subtitle">Fill in your details to start your application</span>
 
             <form class="form" id="myform"
-                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post" novalidate>
+                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post" novalidate
+                data-page-config="apply_default">
                 <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
                 <input type="hidden" name="recordType" value="0120Y000000ymGb">
