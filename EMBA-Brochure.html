@@ -31,17 +31,17 @@
 	<!-- Libraries -->
 	<script src="build/js/intlTelInput.js"></script>
 	<script src="js/mailchimp-subscribe.js"></script>
-	<script src="js/brochure-validator.js"></script>
 	<script src="js/phonescript.js"></script>
+	<!-- Validator config - Main validation -->
+	<script src="js/validator-config.js"></script>
+	<script src="js/apply-validator-v1.js"></script>
 
-
-	<!-- Mailchimp endpoint URL (used by brochure-validator.js) -->
+	<!-- Mailchimp endpoint URL -->
 	<script>
 		//var mcurl = 'https://aub.us19.list-manage.com/subscribe/post?u=643f74b5d97f671dfd188d733&id=2b17956d30';
 		var mcurl = '';
 
-		function GoogleConversion() { }
-	</script>
+		function GoogleConversion() { }	</script>
 </head>
 
 <body class="brochure">
@@ -59,8 +59,7 @@
 					<div class="hero-content">
 						<h1>Transform Experience<br>into Executive Leadership</h1>
 						<div class="hero-subtitle">OSB's Executive MBA – Beirut</div>
-						<!-- lii - add dates -->
-						<p>Next cohort begins [date] — applications close [date]</p>
+						<p>Next cohort begins September 21, 2026 — applications close August 31, 2026</p>
 						<div class="button-group" style="margin-top:1.5rem;">
 							<a href="mailto:jk119@aub.edu.lb?cc=emba@aub.edu.lb&subject=Apply%20to%20the%20EMBA%20Program&body=Dear%20EMBA%20Team,%0D%0A%0D%0AThis%20is%20to%20inquire%20about%20the%20OSB's%20Executive%20MBA%20program%20and%20the%20application%20process.%0D%0A%0D%0ARegards,%0D%0AYour%20Name"
 								class="btn-primary">Book a consultation</a>
@@ -75,33 +74,39 @@
 						style="display: block; text-align: center; margin-bottom: 1.5rem; opacity: 0.9;">Fill the form
 						to get instant access</span>
 
+					<!-- 
+						IMPORTANT: data-page-config="brochure_default" tells the validator which config to use
+						The retURL is a hidden input that Salesforce uses for redirect after submission
+						The campaign value is also in a hidden input
+					-->
 					<form class="contact100-form validate-form" id="myform"
 						action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
-						name="myform" novalidate="novalidate">
+						name="myform" novalidate="novalidate" data-page-config="brochure_default">
 
-						<!-- Salesforce hidden fields (only required ones) -->
+						<!-- Salesforce hidden fields -->
 						<input type="hidden" name="oid" value="00D0Y000001Xrwc">
 						<input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
-						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000o9UrjIAE">
+						<input type="hidden" id="Campaign_ID" name="Campaign_ID" value="7011n000000RybeAAC">
 						<input type="hidden" id="member_status" name="member_status" value="Interested">
-						<!-- Lead Source:-->
-						<input type=hidden name="lead_source" id="lead_source" value="Website">
-						<input type=hidden name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="EMBA Brochure">
-						<input type=hidden name="00NP500000D37Bx" id="Campaign_Name" value="">
-						<input type=hidden name="00NP500000D37IP" id="AD_Name" value="">
-						<input type=hidden id="00NP500000LohFU" name="00NP500000LohFU" value="">
-						<input type=hidden id="00NP500000Oxk99" name="00NP500000Oxk99" value="">
-						<!-- Country:-->
-						<input type=hidden name="country_code" id="country_code" value="LB">
-
-						<input type=hidden name="campaign" id="campaign" value="">
+						<input type="hidden" name="lead_source" id="lead_source" value="Website">
+						<input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="EMBA Brochure">
 						<input type="hidden" name="rating" id="rating" value="Cold">
+						<input type="hidden" name="country_code" id="country_code" value="LB">
 						<input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
 						<input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
-						<!-- retURL points to PDF -->
+						<input type="hidden" name="description" id="description" value="Brochure Download">
+
+						<!-- retURL - Salesforce redirects to the brochure PDF after successful submission -->
 						<input type="hidden" name="retURL"
 							value="https://issuu.com/aub-osb/docs/emba_fs_beirut_722bae72214dc2?fr=xKAE9_zU1NQ">
-						<!-- new fields June 2026-->
+
+						<!-- UTM tracking hidden fields (populated by JS) -->
+						<input type="hidden" name="00NP500000D37Bx" id="Campaign_Name" value="">
+						<input type="hidden" name="00NP500000D37IP" id="AD_Name" value="">
+						<input type="hidden" id="00NP500000LohFU" name="00NP500000LohFU" value="">
+						<input type="hidden" id="00NP500000Oxk99" name="00NP500000Oxk99" value="">
+
+						<!-- Google & Meta tracking fields -->
 						<input type="hidden" id="00NP500000RwxHu" maxlength="255" name="00NP500000RwxHu" size="20"
 							type="text" /><!--Google Click ID-->
 						<input type="hidden" id="00NP500000Rx6gB" maxlength="255" name="00NP500000Rx6gB" size="20"
@@ -112,7 +117,6 @@
 							type="text" /><!--Meta Click ID-->
 						<input type="hidden" id="00NP500000Rwxy5" maxlength="255" name="00NP500000Rwxy5" size="20"
 							type="text" /><!--LinkedIn Click ID-->
-						<!---->
 
 						<!-- Form fields -->
 						<div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
@@ -146,6 +150,11 @@
 								<button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">DOWNLOAD
 									BROCHURE</button>
 							</div>
+						</div>
+
+						<div id="loading-overlay" style="display: none; text-align: center; margin-top: 15px;">
+							<i class="fas fa-spinner fa-pulse" style="font-size: 24px;"></i>
+							<span>Processing, please wait...</span>
 						</div>
 					</form>
 				</div>
@@ -192,11 +201,9 @@
 		var utm_placement = getParameterByName('utm_placement');
 		var utm_adsetname = getParameterByName('utm_adsetname');
 
-
 		if (utm_source != null) {
 			$('#lead_source').val(utm_source);
 		}
-
 		if (utm_details != null) {
 			$('#00N0Y00000QGkma').val(utm_details);
 		}
@@ -206,7 +213,6 @@
 		if (utm_content != null) {
 			$('#AD_Name').val(utm_content);
 		}
-
 		if (utm_placement != null) {
 			$('#00NP500000LohFU').val(utm_placement);
 		}

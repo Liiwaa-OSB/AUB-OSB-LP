@@ -25,7 +25,7 @@
         // Get page config from form data attribute
         var $form = $('#myform');
         var pageConfigKey = $form.data('page-config');
-
+        
         if (!pageConfigKey) {
             console.error('Page config not specified. Add data-page-config attribute to the form.');
             return;
@@ -37,13 +37,14 @@
         }
 
         var pageConfig = VALIDATOR_CONFIG[pageConfigKey];
-
+        
         if (!pageConfig) {
             console.error('Config not found for:', pageConfigKey);
             return;
         }
 
         var $submitBtn = $('#submitbtn');
+        var isBrochure = pageConfig.isBrochure || false;
 
         // ----- Field map (stores jQuery objects and error spans) -----
         var fields = {};
@@ -202,7 +203,7 @@
             if ($submitBtn.data('submitting')) return false;
             $submitBtn.data('submitting', true);
             $('#loading-overlay').show();
-            $submitBtn.prop('disabled', true).text('SUBMITTING...');
+            $submitBtn.prop('disabled', true).text(isBrochure ? 'DOWNLOADING...' : 'SUBMITTING...');
 
             // Save to localStorage
             if (pageConfig.localStorageFields) {
@@ -214,7 +215,7 @@
                 });
             }
 
-            // ---- Handle "Other" university (MBA only) ----
+            // ---- Handle "Other" university (only if university field exists) ----
             var $uniSelect = fields.university;
             if ($uniSelect && $uniSelect.length) {
                 var universityValue = $uniSelect.val();
@@ -222,7 +223,7 @@
                     var otherUniversity = $('#UniversityOther').val().trim();
                     if (otherUniversity === "") {
                         $('#loading-overlay').hide();
-                        $submitBtn.prop('disabled', false).text('SUBMIT');
+                        $submitBtn.prop('disabled', false).text(isBrochure ? 'DOWNLOAD BROCHURE' : 'SUBMIT');
                         $submitBtn.data('submitting', false);
                         alert("Please enter your university name.");
                         return false;
@@ -235,7 +236,7 @@
 
             // ---- Build description from configured fields ----
             var descriptionParts = [];
-            if (pageConfig.descriptionFields) {
+            if (pageConfig.descriptionFields && pageConfig.descriptionFields.length > 0) {
                 pageConfig.descriptionFields.forEach(function (fieldId) {
                     var $field = fields[fieldId];
                     if ($field && $field.val()) {
@@ -245,7 +246,13 @@
                     }
                 });
             }
-            $('#description').val(descriptionParts.join(' | ') || 'No additional info');
+            
+            // If descriptionParts is empty, set a default value for brochures
+            if (descriptionParts.length === 0) {
+                $('#description').val(isBrochure ? 'Brochure Download Request' : 'No additional info');
+            } else {
+                $('#description').val(descriptionParts.join(' | '));
+            }
 
             // ---- Mailchimp ----
             var email = $('#email').val();

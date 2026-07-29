@@ -47,14 +47,16 @@
     </style>
 
     <!-- jQuery and Validation -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-    <!-- Libraries -->
-    <script src="build/js/intlTelInput.js"></script>
-    <script src="js/mailchimp-subscribe.js"></script>
-    <script src="js/phonescript.js"></script>
-    <script src="js/brochure-validator.js"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+	<!-- Libraries -->
+	<script src="build/js/intlTelInput.js"></script>
+	<script src="js/mailchimp-subscribe.js"></script>
+	<script src="js/phonescript.js"></script>
+	<!-- Validator config - Main validation -->
+	<script src="js/validator-config.js"></script>
+	<script src="js/apply-validator-v1.js"></script>
+    
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -105,7 +107,7 @@
 
             <form class="contact100-form validate-form" id="myform"
                 action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
-                name="myform" novalidate="novalidate">
+                name="myform" novalidate="novalidate" data-page-config="brochure_default">
 
                 <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
@@ -174,7 +176,7 @@
                     </div>
                     <div class="loading-overlay" id="loading-overlay">
                         <i class="fas fa-spinner fa-pulse"></i>
-                        <span>Submitting, please wait...</span>
+                        <span>Processing, please wait...</span>
                     </div>
                     <p class="form-note">
                         <i class="fas fa-lock" style="margin-right: 4px;"></i>

@@ -54,7 +54,9 @@
 	<script src="build/js/intlTelInput.js"></script>
 	<script src="js/mailchimp-subscribe.js"></script>
 	<script src="js/phonescript.js"></script>
-	<script src="js/brochure-validator.js"></script>
+	<!-- Validator config - Main validation -->
+	<script src="js/validator-config.js"></script>
+	<script src="js/apply-validator-v1.js"></script>
 
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
@@ -114,7 +116,7 @@
 
 					<form class="contact100-form validate-form" id="myform"
 						action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
-						name="myform" novalidate="novalidate">
+						name="myform" novalidate="novalidate" data-page-config="brochure_default">
 
 						<!-- Salesforce hidden fields (only required ones) -->
 						<input type="hidden" name="oid" value="00D0Y000001Xrwc">
@@ -163,6 +165,11 @@
 								<button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">DOWNLOAD
 									BROCHURE</button>
 							</div>
+						</div>
+
+						<div id="loading-overlay" style="display: none; text-align: center; margin-top: 15px;">
+							<i class="fas fa-spinner fa-pulse" style="font-size: 24px;"></i>
+							<span>Processing, please wait...</span>
 						</div>
 					</form>
 				</div>

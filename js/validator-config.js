@@ -1,7 +1,7 @@
 // validator-config.js - Generic configuration for all application pages
 
 var VALIDATOR_CONFIG = {
-    // MBA Application Page
+    // Default Application Page (MBA, or any general apply page)
     apply_default: {
         fields: [
             { id: 'first_name', type: 'firstName', label: 'First Name' },
@@ -32,5 +32,18 @@ var VALIDATOR_CONFIG = {
         ],
         descriptionFields: ['major'],
         localStorageFields: ['first_name', 'last_name', 'email']
+    },
+
+    // Brochure Download Page
+    brochure_default: {
+        fields: [
+            { id: 'first_name', type: 'firstName', label: 'First Name' },
+            { id: 'last_name', type: 'lastName', label: 'Last Name' },
+            { id: 'email', type: 'email', label: 'Email' },
+            { id: 'phone', type: 'phone', label: 'Phone' }
+        ],
+        descriptionFields: [], // No extra fields to concatenate
+        localStorageFields: ['first_name', 'last_name', 'email'],
+        isBrochure: true // Flag to indicate brochure behavior
     }
 };

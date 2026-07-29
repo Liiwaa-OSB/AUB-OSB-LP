@@ -50,13 +50,15 @@
     </style>
 
     <!-- jQuery and Validation -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- jQuery Validation Plugin is NOT loaded (to avoid conflict) -->
-    <!-- Libraries -->
-    <script src="build/js/intlTelInput.js"></script>
-    <script src="js/mailchimp-subscribe.js"></script>
-    <script src="js/brochure-validator.js"></script>
-    <script src="js/phonescript.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+	<!-- Libraries -->
+	<script src="build/js/intlTelInput.js"></script>
+	<script src="js/mailchimp-subscribe.js"></script>
+	<script src="js/phonescript.js"></script>
+	<!-- Validator config - Main validation -->
+	<script src="js/validator-config.js"></script>
+	<script src="js/apply-validator-v1.js"></script>
 
     <!-- Mailchimp endpoint -->
     <!-- <script>var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=lii";</script> -->
@@ -99,7 +101,7 @@
 
             <form class="contact100-form validate-form" id="myform"
                 action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
-                name="myform" novalidate="novalidate">
+                name="myform" novalidate="novalidate" data-page-config="brochure_default">
 
                 <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
@@ -163,7 +165,7 @@
                     </div>
                     <div class="loading-overlay" id="loading-overlay">
                         <i class="fas fa-spinner fa-pulse"></i>
-                        <span>Submitting, please wait...</span>
+                        <span>Processing, please wait...</span>
                     </div>
                     <p class="form-note">
                         Your information is secure. An admissions advisor will contact you shortly.
