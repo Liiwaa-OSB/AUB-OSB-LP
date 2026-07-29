@@ -479,7 +479,7 @@
  /* ============================================
        INFO CARDS
        ============================================ */
- .cards-grid {
+ /* .cards-grid {
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
      gap: var(--space-xl);
@@ -517,7 +517,7 @@
      width: 24px;
      color: var(--color-primary-light);
      font-size: var(--text-lg);
- }
+ } */
 
  /* ============================================
        SEPARATOR
@@ -542,9 +542,9 @@
          grid-column: span 1;
      }
 
-     .cards-grid {
+     /* .cards-grid {
          gap: var(--space-md);
-     }
+     } */
 
      .info-card {
          padding: var(--space-lg);
@@ -577,8 +577,7 @@
      }
  }
 
- .form-card,
- .cards-grid>* {
+ .form-card {
      animation: fadeInUp 0.5s ease-out;
  }
 
