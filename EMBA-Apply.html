@@ -321,18 +321,15 @@
             padding-top: 0.8rem;
         }
 
-        .testimonial-card .testimonial-author .avatar {
+        .testimonial-card .testimonial-author .profile-img {
             width: 44px;
             height: 44px;
-            border-radius: 50%;
-            background: #142d66;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: white;
-            flex-shrink: 0;
+        }
+
+        .testimonial-card .testimonial-author .profile-img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
         }
 
         .testimonial-card .testimonial-author .author-info {
@@ -454,14 +451,9 @@
                         The retURL is a hidden input that Salesforce uses for redirect after submission
                         The campaign value is also in a hidden input
                     -->
-                    <form 
-                        class="contact100-form validate-form" 
-                        id="myform"
-                        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" 
-                        method="post"
-                        name="myform" 
-                        novalidate="novalidate"
-                        data-page-config="apply_emba">
+                    <form class="contact100-form validate-form" id="myform"
+                        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
+                        name="myform" novalidate="novalidate" data-page-config="apply_emba">
 
                         <!-- Salesforce hidden fields -->
                         <input type="hidden" name="oid" value="00D0Y000001Xrwc">
@@ -475,7 +467,7 @@
                         <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
                         <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
                         <input type="hidden" name="description" id="description" value="Concated text">
-                        
+
                         <!-- retURL - Salesforce redirects here after successful submission -->
                         <!-- This is page-specific and stays in HTML -->
                         <input type="hidden" name="retURL"
@@ -601,7 +593,7 @@
                             created an inspiring environment of collaboration, mutual respect, and shared growth."
                         </blockquote>
                         <div class="testimonial-author">
-                            <div class="avatar">ME</div>
+                            <div class="profile-img"><img src="images/Miguel-El-Khoury.jpg" /></div>
                             <div class="author-info">
                                 <span class="author-name">Miguel El Khoury</span>
                                 <span class="author-title"><i class="fas fa-briefcase"></i> Senior Vice President, MDS
@@ -733,7 +725,7 @@
             });
         });
     </script>
-    
+
     <!-- Source parameters (same as original) -->
     <script>
         function getParameterByName(name, url) {
