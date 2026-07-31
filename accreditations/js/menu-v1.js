@@ -5,22 +5,55 @@
   const osbRow = document.querySelector(".nav-osb");
   const bodyEl = document.body;
 
+  // --- Helper: update sticky state based on exact combined height of top sections
+  function updateSticky() {
+    if (!mainHeader || !osbRow) return;
+
+    // Force Chrome to recalculate layout
+    const utilityHeight = utilityBar ? utilityBar.getBoundingClientRect().height : 0;
+    const mainHeaderHeight = mainHeader.getBoundingClientRect().height;
+    const totalTopHeight = utilityHeight + mainHeaderHeight;
+
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const shouldStick = scrollY > totalTopHeight;
+
+    if (shouldStick) {
+      if (!bodyEl.classList.contains("nav-scrolled")) {
+        bodyEl.classList.add("nav-scrolled");
+        // Force reflow for Chrome
+        void bodyEl.offsetHeight;
+        const osbHeight = osbRow.getBoundingClientRect().height;
+        bodyEl.style.paddingTop = osbHeight + "px";
+      } else {
+        const osbHeight = osbRow.getBoundingClientRect().height;
+        bodyEl.style.paddingTop = osbHeight + "px";
+      }
+    } else {
+      if (bodyEl.classList.contains("nav-scrolled")) {
+        bodyEl.classList.remove("nav-scrolled");
+        bodyEl.style.paddingTop = "";
+      }
+    }
+  }
+
   // Use requestAnimationFrame for smoother scrolling in Chrome
   let ticking = false;
-  // function onScroll() {
-  //   if (!ticking) {
-  //     requestAnimationFrame(function () {
-  //       ticking = false;
-  //     });
-  //     ticking = true;
-  //   }
-  // }
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        updateSticky();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
 
   // --- Debounced resize listener
   let resizeTimer;
   function handleResize() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
+      updateSticky();
       // Force mobile menu to recalculate if open
       if (overlay && overlay.classList.contains("open")) {
         const mobileContent = overlay.querySelector(".mobile-menu-sections");
@@ -35,9 +68,13 @@
   }
 
   // --- Event binding with Chrome compatibility
-  // window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", handleResize);
-  
+
+  // Initial call with slight delay for Chrome to calculate properly
+  setTimeout(updateSticky, 100);
+  updateSticky();
+
   // --- Mobile overlay toggle
   const burger = document.getElementById("burgerBtn");
   const overlay = document.getElementById("mobileOverlay");
@@ -291,17 +328,42 @@
     },
     {
       title: "Executive Education",
-      url: "https://www.aub.edu.lb/osb/executiveeducation/Pages/default.aspx",
-      external: true,
-      isLink: true
+      links: [
+        {
+          text: "About Executive Education",
+          url: "https://www.aub.edu.lb/osb/executiveeducation/Site/index.html",
+        },
+        {
+          text: "Our Impact",
+          url: "https://www.aub.edu.lb/osb/executiveeducation/Site/our-impact.html",
+        },
+        {
+          text: "Open Enrollment Programs",
+          url: "https://www.aub.edu.lb/osb/executiveeducation/Site/open-enrollment-programs/index.html",
+        },
+        {
+          text: "Customized Programs",
+          url: "https://www.aub.edu.lb/osb/executiveeducation/Site/custom-programs/index.html",
+        },
+        {
+          text: "Contact Us",
+          url: "https://www.aub.edu.lb/osb/executiveeducation/Site/contact-us.html",
+        }
+      ]
     },
     {
-      title: "OSB Online",
+      title: "OSB Online Programs",
       links: [
-        { text: "Entrepreneurship & Innovation Online Graduate Professional Diploma", url: "https://www.aub.edu.lb/online/Entrepreneurship-Innovation-online-diploma/Pages/default.aspx", external: true },
-        { text: "Combating Trade-Based Financial Crime Online Certificate", url: "https://www.aub.edu.lb/osb/online/combating-trade-based-financial-crime-certificate/Pages/default.aspx", external: true },
-        { text: "Strategic Branding in the Digital Era Online Diploma", url: "https://www.aub.edu.lb/osb/online/strategic_branding/Pages/default.aspx", external: true },
-        { text: "Investment Analysis and Modern Portfolio Management Online Graduate Professional Diploma", url: "https://www.aub.edu.lb/osb/online/investment-analysis-modern-portfolio-management/Pages/default.aspx", external: true }
+        { text: "Entrepreneurship & Innovation", url: "https://www.aub.edu.lb/online/Entrepreneurship-Innovation-online-diploma/Pages/default.aspx", external: true },
+        { text: "Combating Trade-Based Financial Crime", url: "https://www.aub.edu.lb/osb/online/combating-trade-based-financial-crime-certificate/Pages/default.aspx", external: true },
+        { text: "Strategic Branding in the Digital Era", url: "https://www.aub.edu.lb/osb/online/strategic_branding/Pages/default.aspx", external: true },
+        { text: "Investment Analysis and Modern Portfolio Management", url: "https://www.aub.edu.lb/osb/online/investment-analysis-modern-portfolio-management/Pages/default.aspx", external: true }
+      ]
+    },
+    {
+      title: "Lifelong Learning Institute",
+      links: [
+        { text: "Aviation program", url: "https://www.aub.edu.lb/osb/lifelong_learning_institute/programs/Aviation-Certificate.html", external: true },
       ]
     },
     {
@@ -386,10 +448,10 @@
       });
 
       // Chrome-friendly click handler
-      button.addEventListener("click", function(e) {
+      button.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        
+
         // Close other open menus
         document.querySelectorAll(".mobile-nav-link.has-sub.open").forEach(openBtn => {
           if (openBtn !== button) {
@@ -398,7 +460,7 @@
             if (siblingSubmenu) siblingSubmenu.classList.remove("open");
           }
         });
-        
+
         button.classList.toggle("open");
         submenu.classList.toggle("open");
       });
@@ -438,10 +500,10 @@
           submenu.appendChild(anchor);
         });
 
-        button.addEventListener("click", function(e) {
+        button.addEventListener("click", function (e) {
           e.preventDefault();
           e.stopPropagation();
-          
+
           // Close other open OSB menus
           document.querySelectorAll("#mobileOsbNav .mobile-nav-link.has-sub.open").forEach(openBtn => {
             if (openBtn !== button) {
@@ -450,7 +512,7 @@
               if (siblingSubmenu) siblingSubmenu.classList.remove("open");
             }
           });
-          
+
           button.classList.toggle("open");
           submenu.classList.toggle("open");
         });
@@ -468,7 +530,7 @@
     const container = document.getElementById("mobileUtilityGrid");
     if (!container) return;
     container.innerHTML = "";
-    
+
     utilityLinks.forEach(link => {
       const anchor = createLink(link);
       container.appendChild(anchor);
@@ -477,7 +539,7 @@
 
   // Initialize mobile menus when DOM is ready
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       buildMobileMain();
       buildMobileOsb();
       buildUtilityGrid();
