@@ -988,7 +988,7 @@
         }
     </style>
     <script src="./js/main.js" defer></script>
-    <script src="./js/menu.js" defer></script>
+    <script src="./js/menu-v1.js" defer></script>
 </head>
 
 <body>
@@ -1368,7 +1368,7 @@
                     <ul class="osb-nav">
                         <!-- About OSB with dropdown -->
                         <li class="osb-nav-item has-dropdown">
-                            <a href="#" id="about-osb-link">About OSB</a>
+                            <a id="about-osb-link">About OSB</a>
                             <ul class="osb-dropdown">
                                 <li>
                                     <a href="/osb/about/Pages/Meet-the-Dean.aspx" id="meet-the-dean">Meet the Dean</a>
@@ -1413,7 +1413,7 @@
                         </li>
                         <!-- Academic Programs with dropdown -->
                         <li class="osb-nav-item has-dropdown">
-                            <a href="#" id="academic-programs-link">Academic Programs</a>
+                            <a id="academic-programs-link">Academic Programs</a>
                             <ul class="osb-dropdown">
                                 <li>
                                     <a href="/osb/UndergradProgram" target="_blank"
@@ -1437,42 +1437,67 @@
                             </ul>
                         </li>
                         <!-- Executive Education (external link + dropdown) -->
-                        <li class="osb-nav-item">
-                            <!-- lii replace href below -->
-                            <!-- href="https://www.aub.edu.lb/osb/executiveeducation/Pages/default.aspx" -->
-                            <a href="https://www.aub.edu.lb/osb/executiveeducation" target="_blank"
-                                id="executive-education-link">Executive Education</a>
+                        <li class="osb-nav-item has-dropdown">
+                            <a target="_blank" id="executive-education-link">Executive Education</a>
+                            <ul class="osb-dropdown">
+                                <li>
+                                    <a href="https://www.aub.edu.lb/osb/executiveeducation/Site/index.html"
+                                        target="_blank" id="about-executive-education">About Executive Education</a>
+                                </li>
+                                <li>
+                                <li>
+                                    <a href="https://www.aub.edu.lb/osb/executiveeducation/Site/our-impact.html"
+                                        target="_blank" id="our-impact">Our Impact</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.aub.edu.lb/osb/executiveeducation/Site/open-enrollment-programs\index.html"
+                                        target="_blank" id="open-enrollment-programs">Open Enrollment Programs</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.aub.edu.lb/osb/executiveeducation/Site/custom-programs\index.html"
+                                        target="_blank" id="customized-programs">Customized Programs</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.aub.edu.lb/osb/executiveeducation/Site/contact-us.html"
+                                        id="contact-us">Contact Us</a>
+                                </li>
+                            </ul>
                         </li>
                         <!-- OSB Online with dropdown -->
                         <li class="osb-nav-item has-dropdown">
-                            <a href="#" id="osb-online-link">OSB Online</a>
+                            <a id="osb-online-link">OSB Online Programs</a>
                             <ul class="osb-dropdown">
                                 <li>
                                     <a href="https://www.aub.edu.lb/online/Entrepreneurship-Innovation-online-diploma/Pages/default.aspx"
                                         target="_blank" id="entrepreneurship-innovation-online-diploma">Entrepreneurship
-                                        & Innovation Online
-                                        Graduate
-                                        Professional Diploma</a>
+                                        & Innovation</a>
                                 </li>
                                 <li>
                                     <a href="https://www.aub.edu.lb/osb/online/combating-trade-based-financial-crime-certificate/Pages/default.aspx"
                                         target="_blank" id="combating-trade-based-financial-crime-certificate">Combating
                                         Trade-Based
-                                        Financial Crime Online
-                                        Certificate</a>
+                                        Financial Crime</a>
                                 </li>
                                 <li>
                                     <a href="https://www.aub.edu.lb/osb/online/strategic_branding/Pages/default.aspx"
                                         target="_blank" id="strategic-branding-digital-era-diploma">Strategic Branding
-                                        in the Digital Era Online Diploma</a>
+                                        in the Digital Era</a>
                                 </li>
                                 <li>
                                     <a href="https://www.aub.edu.lb/osb/online/investment-analysis-modern-portfolio-management/Pages/default.aspx"
                                         target="_blank"
                                         id="investment-analysis-modern-portfolio-management-diploma">Investment Analysis
-                                        and
-                                        Modern Portfolio Management
-                                        Online Graduate Professional Diploma</a>
+                                        and Modern Portfolio Management</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- OSB LLI with dropdown -->
+                        <li class="osb-nav-item has-dropdown">
+                            <a id="osb-lli-link">Lifelong Learning Institute</a>
+                            <ul class="osb-dropdown">
+                                <li>
+                                    <a href="https://www.aub.edu.lb/osb/lifelong_learning_institute/programs/Aviation-Certificate.html"
+                                        target="_blank" id="aviation-program">Aviation program</a>
                                 </li>
                             </ul>
                         </li>
