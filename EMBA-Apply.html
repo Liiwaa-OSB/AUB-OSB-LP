@@ -402,12 +402,12 @@
     <!-- Main validation and form handler -->
     <script src="js/validator.js"></script>
 
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KZDZDJJ');</script>
-    <!-- End Google Tag Manager -->
+    <script src="https://cdn.jsdelivr.net/gh/manuelmhtr/countries-and-timezones@v3.4.0/dist/index.min.js"
+        type="text/javascript"></script>
 
     <script>
-        var mcurl = "https://aub.us19.list-manage.com/subscribe/post?u=0e5f1277e4d50b3c896aa32da&id=937350afe3";
+        //var mcurl = 'https://aub.us19.list-manage.com/subscribe/post?u=643f74b5d97f671dfd188d733&id=2b17956d30';
+        var mcurl = '';
     </script>
 </head>
 
@@ -478,6 +478,18 @@
                         <input type="hidden" name="00NP500000D37IP" id="AD_Name" value="">
                         <input type="hidden" id="00NP500000LohFU" name="00NP500000LohFU" value="">
                         <input type="hidden" id="00NP500000Oxk99" name="00NP500000Oxk99" value="">
+
+                        <!-- new fields June 2026-->
+                        <input type="hidden" id="00NP500000RwxHu" maxlength="255" name="00NP500000RwxHu" size="20"
+                            type="text" /><!--Google Click ID-->
+                        <input type="hidden" id="00NP500000Rx6gB" maxlength="255" name="00NP500000Rx6gB" size="20"
+                            type="text" /><!--Google GBRAID-->
+                        <input type="hidden" id="00NP500000Shc6v" maxlength="255" name="00NP500000Shc6v" size="20"
+                            type="text" /><!--Google WBRAID-->
+                        <input type="hidden" id="00NP500000RwKv7" maxlength="255" name="00NP500000RwKv7" size="20"
+                            type="text" /><!--Meta Click ID-->
+                        <input type="hidden" id="00NP500000Rwxy5" maxlength="255" name="00NP500000Rwxy5" size="20"
+                            type="text" /><!--LinkedIn Click ID-->
 
                         <!-- form fields -->
                         <div class="wrap-input100 validate-input form-group" data-validate="First Name is required">
@@ -731,12 +743,12 @@
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
             url = url.toLowerCase();
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
                 results = regex.exec(url);
             if (!results) return null;
-            if (!results[2]) return "";
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
         var utm_source = getParameterByName('source');
         var utm_details = getParameterByName('utm_details');
@@ -744,12 +756,57 @@
         var utm_content = getParameterByName('utm_content');
         var utm_placement = getParameterByName('utm_placement');
         var utm_adsetname = getParameterByName('utm_adsetname');
-        if (utm_source != null) { $('#lead_source').val(utm_source); }
-        if (utm_details != null) { $('#00N0Y00000QGkma').val(utm_details); }
-        if (utm_campaign != null) { $('#Campaign_Name').val(utm_campaign); }
-        if (utm_content != null) { $('#AD_Name').val(utm_content); }
-        if (utm_placement != null) { $('#00NP500000LohFU').val(utm_placement); }
-        if (utm_adsetname != null) { $('#00NP500000Oxk99').val(utm_adsetname); }
+        //new parm june 2026
+        var googleClick = getParameterByName('gclid');
+        var googleGBRAID = getParameterByName('gbraid');
+        var googleWBRAID = getParameterByName('wbraid');
+        var metaClick = getParameterByName('fbclid');
+        var linkedinClick = getParameterByName('li_fat_id');
+        if (googleClick != null) {
+            $('#00NP500000RwxHu').val(googleClick);
+        }
+        if (googleGBRAID != null) {
+            $('#00NP500000Rx6gB').val(googleGBRAID);
+        }
+        if (googleWBRAID != null) {
+            $('#00NP500000Shc6v').val(googleWBRAID);
+        }
+        if (metaClick != null) {
+            $('#00NP500000RwKv7').val(metaClick);
+        }
+        if (linkedinClick != null) {
+            $('#00NP500000Rwxy5').val(linkedinClick);
+        }
+        //////////////////////////////////////////////////
+
+        if (utm_source != null) {
+            $('#lead_source').val(utm_source);
+        }
+
+        if (utm_details != null) {
+            $('#00N0Y00000QGkma').val(utm_details);
+        }
+        if (utm_campaign != null) {
+            $('#Campaign_Name').val(utm_campaign);
+        }
+        if (utm_content != null) {
+            $('#AD_Name').val(utm_content);
+        }
+
+        if (utm_placement != null) {
+            $('#00NP500000LohFU').val(utm_placement);
+        }
+
+
+        if (utm_adsetname != null) {
+            $('#00NP500000Oxk99').val(utm_adsetname);
+        }
+
+        if (userTimeZone) {
+            const timezone = ct.getTimezone(userTimeZone);
+            // console.log(timezone.countries[0]);
+            $('#country_code').val(timezone.countries[0]);
+        } 
     </script>
 </body>
 
