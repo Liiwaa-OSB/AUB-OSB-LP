@@ -89,7 +89,7 @@
     <script src="js/mailchimp-subscribe.js"></script>
     <script src="js/phonescript.js"></script>
     <!-- Validator config - Main validation -->
-    <script src="js/validator-config.js"></script>
+    <script src="js/validator-configuration.js"></script>
     <script src="js/validator.js"></script>
 
     <!-- Google Tag Manager -->
@@ -127,10 +127,11 @@
                 <div class="hero__label">Professional Certificate</div>
                 <h1 class="hero__title">Aviation Management</h1>
                 <div class="hero__sub">In Partnership with IATA | AUB OSB</div>
-                <p class="hero__desc">The Aviation Management Program combines academic excellence with industry-relevant training to
-                    prepare professionals for the evolving demands of the global aviation sector. It equips participants
-                    with the practical knowledge, strategic insights, and internationally aligned competencies required
-                    to excel in aviation management, safety, security, and revenue optimization.</p>
+                <p class="hero__desc">The Aviation Management Program combines academic excellence with
+                    industry-relevant training to prepare professionals for the evolving demands of the global aviation
+                    sector. It equips participants with the practical knowledge, strategic insights, and internationally
+                    aligned competencies required to excel in aviation management, safety, security, and revenue
+                    optimization.</p>
                 <!-- <p class="hero__desc" style="margin-top: 12px;">
                     Unique & Regionally Competitive • Industry-Relevant & Future-Oriented • Comprehensive Yet Flexible •
                     Globally Recognized
@@ -155,7 +156,7 @@
                 <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000vAphzIAC">
                 <input type="hidden" id="member_status" name="member_status" value="Interested">
                 <input type="hidden" name="lead_source" id="lead_source" value="Website">
-                <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure Aviation            ">
+                <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure Aviation">
                 <input type="hidden" name="country_code" id="country_code" value="LB">
                 <input type="hidden" name="rating" id="rating" value="Cold">
                 <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
@@ -165,52 +166,47 @@
                     value="https://www.aub.edu.lb/osb/executiveeducation/Documents/FACTSHEET-AVIATION.pdf">
 
                 <!-- Form fields -->
-                <div class="form-group form-group--full validate-input" data-validate="First Name is required">
-                    <span class="form-label">First Name *</span>
-                    <input class="form-input" id="first_name" maxlength="40" name="first_name" placeholder="First Name"
+                <div class=" validate-input form-group" data-validate="First Name is required">
+                    <span>First Name *</span>
+                    <input id="first_name" maxlength="40" name="first_name" placeholder="First Name"
                         type="text">
                 </div>
 
-                <div class="form-group form-group--full validate-input" data-validate="Last Name is required">
-                    <span class="form-label">Last Name *</span>
-                    <input class="form-input" id="last_name" maxlength="80" name="last_name" placeholder="Last Name"
-                        type="text">
+                <div class=" validate-input form-group" data-validate="Last Name is required">
+                    <span>Last Name *</span>
+                    <input id="last_name" maxlength="80" placeholder="Last Name" name="last_name" type="text">
                 </div>
 
-                <div class="form-group form-group--full validate-input" data-validate="Valid email is required">
-                    <span class="form-label">Email *</span>
-                    <input class="form-input" id="email" maxlength="80" name="00N0Y00000QGklI" placeholder="Email"
-                        type="text">
+                <div class=" validate-input form-group" data-validate="Valid email is required">
+                    <span>Email *</span>
+                    <input placeholder="Email" id="email" maxlength="80" name="00N0Y00000QGklI" type="text">
                 </div>
 
-                <div class="form-group form-group--full validate-input" data-validate="Phone number is required">
-                    <span class="form-label">Phone *</span>
-                    <input class="form-input" id="phone" maxlength="40" name="phone" placeholder="Phone" required
-                        type="text">
+                <div class=" validate-input form-group" data-validate="Phone number is required">
+                    <span>Phone *</span>
+                    <input placeholder="Phone" id="phone" maxlength="40" required type="text">
                 </div>
 
-                <div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to receive
-                    communications from AUB OSB.</div>
+                <div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to
+                    receive communications from AUB OSB.</div>
 
                 <div class="form-submit">
                     <div class="wrap-contact100-form-btn">
-                        <button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">DOWNLOAD
-                            BROCHURE</button>
+                        <button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">
+                            DOWNLOAD BROCHURE</button>
                     </div>
-                    <div class="loading-overlay" id="loading-overlay">
-                        <i class="fas fa-spinner fa-pulse"></i>
-                        <span>Processing, please wait...</span>
-                    </div>
-                    <p class="form-note">
-                        <i class="fas fa-lock" style="margin-right: 4px;"></i>
-                        Your information is secure. An admissions advisor will contact you shortly.
-                    </p>
+                </div>
+
+                <div id="loading-overlay" style="display: none; text-align: center; margin-top: 15px;">
+                    <i class="fas fa-spinner fa-pulse" style="font-size: 24px;"></i>
+                    <span>Processing, please wait...</span>
                 </div>
             </form>
 
             <!-- Button Group -->
             <div class="button-group">
-                <a href="https://www.aub.edu.lb/osb/lifelong_learning_institute/programs/Aviation-Certificate.html" class="btn btn-primary" target="_blank">
+                <a href="https://www.aub.edu.lb/osb/lifelong_learning_institute/programs/Aviation-Certificate.html"
+                    class="btn btn-primary" target="_blank">
                     <i class="fas fa-globe"></i> Visit Website
                 </a>
                 <a href="LLI-Aviation-Apply.html" class="btn btn-outline">

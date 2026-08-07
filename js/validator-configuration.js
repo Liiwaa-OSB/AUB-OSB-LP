@@ -1,4 +1,4 @@
-// validator-config.js - Generic configuration for all application pages
+// validator-configuration.js - Generic configuration for all application pages
 
 var VALIDATOR_CONFIG = {
     // Default Application Page (MBA, or any general apply page)
@@ -45,5 +45,19 @@ var VALIDATOR_CONFIG = {
         descriptionFields: [], // No extra fields to concatenate
         localStorageFields: ['first_name', 'last_name', 'email'],
         isBrochure: true // Flag to indicate brochure behavior
+    },
+
+    // ONLINE - OEP - LLI
+    brochure_secondary: {
+        fields: [
+            { id: 'first_name', type: 'firstName', label: 'First Name' },
+            { id: 'last_name', type: 'lastName', label: 'Last Name' },
+            { id: 'email', type: 'email', label: 'Email' },
+            { id: 'phone', type: 'phone', label: 'Phone' },
+            { id: 'employer', type: 'company', label: 'Company' }
+        ],
+        descriptionFields: ['employer'], // Include company in description
+        localStorageFields: ['first_name', 'last_name', 'email', 'employer'],
+        isBrochure: true
     }
 };

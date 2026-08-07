@@ -55,7 +55,7 @@
     <script src="js/mailchimp-subscribe.js"></script>
     <script src="js/phonescript.js"></script>
     <!-- Validator config - Main validation -->
-    <script src="js/validator-config.js"></script>
+    <script src="js/validator-configuration.js"></script>
     <script src="js/validator.js"></script>
 
     <!-- Google Tag Manager -->
@@ -114,9 +114,9 @@
 
             <form class="contact100-form validate-form" id="myform"
                 action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
-                name="myform" novalidate="novalidate" data-page-config="brochure_default">
+                name="myform" novalidate="novalidate" data-page-config="brochure_secondary">
 
-                <!-- Salesforce hidden fields -->
+                <!-- Salesforce hidden fields (only required ones) -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
                 <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
                 <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000tmDmYIAU">
@@ -124,77 +124,60 @@
                 <input type="hidden" name="lead_source" id="lead_source" value="Website">
                 <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure KAED">
                 <input type="hidden" name="country_code" id="country_code" value="LB">
-                <input type="hidden" name="campaign" id="campaign" value="">
                 <input type="hidden" name="rating" id="rating" value="Cold">
                 <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
                 <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
-                <input type="hidden" name="00N0Y00000RODqu" id="00N0Y00000RODqu" value="">
-
-                <!-- Dummy fields to satisfy Salesforce -->
-                <input type="hidden" name="00N0Y00000QGklm" id="00N0Y00000QGklm" value="N/A">
-                <input type="hidden" name="title" id="title" value="N/A">
-                <input type="hidden" name="00N0Y00000QGkuK" id="00N0Y00000QGkuK" value="0">
-                <input type="hidden" name="00N0Y00000QGkrV" id="00N0Y00000QGkrV" value="N/A">
-                <input type="hidden" name="00N0Y00000QGksE" id="00N0Y00000QGksE" value="N/A">
-                <input type="hidden" name="description" id="description" value="">
-
+                <!-- retURL points to PDF -->
                 <input type="hidden" name="retURL"
                     value="https://www.aub.edu.lb/osb/executiveeducation/Documents/OEP%20Factsheet%20-%20KAED.pdf">
 
-
                 <!-- Form fields -->
-                <div class="form-group form-group--full validate-input" data-validate="First Name is required">
-                    <span class="form-label">First Name *</span>
-                    <input class="form-input" id="first_name" maxlength="40" name="first_name" placeholder="First Name"
-                        type="text" required>
+                <div class=" validate-input form-group" data-validate="First Name is required">
+                    <span>First Name *</span>
+                    <input id="first_name" maxlength="40" name="first_name" placeholder="First Name" type="text">
                 </div>
 
-                <div class="form-group form-group--full validate-input" data-validate="Last Name is required">
-                    <span class="form-label">Last Name *</span>
-                    <input class="form-input" id="last_name" maxlength="80" name="last_name" placeholder="Last Name"
-                        type="text" required>
+                <div class=" validate-input form-group" data-validate="Last Name is required">
+                    <span>Last Name *</span>
+                    <input id="last_name" maxlength="80" placeholder="Last Name" name="last_name" type="text">
                 </div>
 
-                <div class="form-group form-group--full validate-input" data-validate="Valid email is required">
-                    <span class="form-label">Email *</span>
-                    <input class="form-input" id="email" maxlength="80" name="00N0Y00000QGklI" placeholder="Email"
-                        type="email" required>
+                <div class=" validate-input form-group" data-validate="Valid email is required">
+                    <span>Email *</span>
+                    <input placeholder="Email" id="email" maxlength="80" name="00N0Y00000QGklI" type="text">
                 </div>
 
-                <div class="form-group form-group--full validate-input" data-validate="Phone number is required">
-                    <span class="form-label">Mobile Number *</span>
-                    <input class="form-input" id="phone" maxlength="40" name="intphone" placeholder="Mobile Number"
-                        type="tel" required>
+                <div class=" validate-input form-group" data-validate="Phone number is required">
+                    <span>Phone *</span>
+                    <input placeholder="Phone" id="phone" maxlength="40" required type="text">
                 </div>
 
-                <div class="form-group form-group--full validate-input" data-validate="Company is required">
+                <div class="form-group validate-input" data-validate="Company is required">
                     <span class="form-label">Company *</span>
                     <input class="form-input" id="employer" maxlength="40" name="00N0Y00000QGku0"
                         placeholder="Company name" type="text" required>
                 </div>
 
-                <div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to receive
-                    communications from AUB OSB.</div>
+                <div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to
+                    receive communications from AUB OSB.</div>
 
                 <div class="form-submit">
                     <div class="wrap-contact100-form-btn">
-                        <button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">DOWNLOAD
-                            BROCHURE</button>
+                        <button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">
+                            DOWNLOAD BROCHURE</button>
                     </div>
-                    <div class="loading-overlay" id="loading-overlay">
-                        <i class="fas fa-spinner fa-pulse"></i>
-                        <span>Processing, please wait...</span>
-                    </div>
-                    <p class="form-note">
-                        <i class="fas fa-lock" style="margin-right: 4px;"></i>
-                        Your information is secure. An admissions advisor will contact you shortly.
-                    </p>
+                </div>
+
+                <div id="loading-overlay" style="display: none; text-align: center; margin-top: 15px;">
+                    <i class="fas fa-spinner fa-pulse" style="font-size: 24px;"></i>
+                    <span>Processing, please wait...</span>
                 </div>
             </form>
 
             <!-- Button Group -->
             <div class="button-group">
-                <a href="https://www.aub.edu.lb/osb/executiveeducation/Site/open-enrollment-programs/programs/KAED.html" class="btn btn-primary" target="_blank">
+                <a href="https://www.aub.edu.lb/osb/executiveeducation/Site/open-enrollment-programs/programs/KAED.html"
+                    class="btn btn-primary" target="_blank">
                     Visit Website
                 </a>
                 <a href="OEP-KAED-Apply.html" class="btn btn-outline">

@@ -54,7 +54,7 @@
     <script src="js/mailchimp-subscribe.js"></script>
     <script src="js/phonescript.js"></script>
     <!-- Validator config - Main validation -->
-    <script src="js/validator-config.js"></script>
+    <script src="js/validator-configuration.js"></script>
     <script src="js/validator.js"></script>
 
     <!-- Mailchimp endpoint -->
@@ -93,80 +93,67 @@
             <h2 class="form-card__title">Download Brochure</h2>
             <span class="form-card__subtitle">Fill in your details to get instant access to the program
                 brochure</span>
-            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
-                class="contact100-form validate-form" id="myform" method="post" name="myform" novalidate="novalidate"
-                data-page-config="brochure_default">
-                <!-- Salesforce hidden fields -->
-                <input name="oid" type="hidden" value="00D0Y000001Xrwc" />
-                <input id="recordType" name="recordType" type="hidden" value="0120Y000000ymGb" />
-                <input id="Campaign_ID" name="Campaign_ID" type="hidden" value="701P500000m0UfBIAU" />
-                <input id="member_status" name="member_status" type="hidden" value="Interested" />
-                <input id="lead_source" name="lead_source" type="hidden" value="Website" />
-                <input id="00N0Y00000QGkma" name="00N0Y00000QGkma" type="hidden" value="Brochure Pricing Analytics" />
-                <input id="country_code" name="country_code" type="hidden" value="LB" />
-                <input id="campaign" name="campaign" type="hidden" value="" />
-                <input id="rating" name="rating" type="hidden" value="Cold" />
-                <input id="00N0Y00000RODiR" name="00N0Y00000RODiR" type="hidden" value="Personal Email" />
-                <input id="00N0Y00000RODr9" name="00N0Y00000RODr9" type="hidden" value="Personal Phone" />
-                <input id="00N0Y00000RODqu" name="00N0Y00000RODqu" type="hidden" value="" />
-                <!-- Dummy fields to satisfy Salesforce (not used in validation) -->
-                <input id="00N0Y00000QGklm" name="00N0Y00000QGklm" type="hidden" value="N/A" />
-                <input id="title" name="title" type="hidden" value="N/A" />
-                <input id="00N0Y00000QGkuK" name="00N0Y00000QGkuK" type="hidden" value="0" />
-                <input id="00N0Y00000QGkrV" name="00N0Y00000QGkrV" type="hidden" value="N/A" />
-                <input id="00N0Y00000QGksE" name="00N0Y00000QGksE" type="hidden" value="N/A" />
-                <input id="description" name="description" type="hidden" value="" />
-                <input name="retURL" type="hidden"
-                    value="https://www.aub.edu.lb/osb/executiveeducation/Documents/Fact%20Sheet-%20OEP-PRICING%20ANALYTICS.pdf" />
-                <!-- Form fields: 2-column grid, each with focus span for error placement -->
+            <form class="contact100-form validate-form" id="myform"
+                action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post"
+                name="myform" novalidate="novalidate" data-page-config="brochure_secondary">
 
-                <div class="form-group form-group--full validate-input" data-validate="First Name is required">
-                    <span class="form-label">First Name *</span>
-                    <input class="form-input" id="first_name" maxlength="40" name="first_name" placeholder="First Name"
-                        required="" type="text" />
+                <!-- Salesforce hidden fields (only required ones) -->
+                <input type="hidden" name="oid" value="00D0Y000001Xrwc">
+                <input type="hidden" id="recordType" name="recordType" value="0120Y000000ymGb">
+                <input type="hidden" id="Campaign_ID" name="Campaign_ID" value="701P500000m0UfBIAU">
+                <input type="hidden" id="member_status" name="member_status" value="Interested">
+                <input type="hidden" name="lead_source" id="lead_source" value="Website">
+                <input type="hidden" name="00N0Y00000QGkma" id="00N0Y00000QGkma" value="Brochure Pricing Analytics">
+                <input type="hidden" name="country_code" id="country_code" value="LB">
+                <input type="hidden" name="rating" id="rating" value="Cold">
+                <input type="hidden" id="00N0Y00000RODiR" name="00N0Y00000RODiR" value="Personal Email">
+                <input type="hidden" id="00N0Y00000RODr9" name="00N0Y00000RODr9" value="Personal Phone">
+                <!-- retURL points to PDF -->
+                <input type="hidden" name="retURL"
+                    value="https://www.aub.edu.lb/osb/executiveeducation/Documents/Fact%20Sheet-%20OEP-PRICING%20ANALYTICS.pdf">
 
+                <!-- Form fields -->
+                <div class=" validate-input form-group" data-validate="First Name is required">
+                    <span>First Name *</span>
+                    <input id="first_name" maxlength="40" name="first_name" placeholder="First Name"
+                        type="text">
                 </div>
-                <div class="form-group form-group--full validate-input" data-validate="Last Name is required">
-                    <span class="form-label">Last Name *</span>
-                    <input class="form-input" id="last_name" maxlength="80" name="last_name" placeholder="Last Name"
-                        required="" type="text" />
 
+                <div class=" validate-input form-group" data-validate="Last Name is required">
+                    <span>Last Name *</span>
+                    <input id="last_name" maxlength="80" placeholder="Last Name" name="last_name" type="text">
                 </div>
-                <div class="form-group form-group--full validate-input" data-validate="Valid email is required">
-                    <span class="form-label">Email *</span>
-                    <input class="form-input" id="email" maxlength="80" name="00N0Y00000QGklI" placeholder="Email"
-                        required="" type="email" />
 
+                <div class=" validate-input form-group" data-validate="Valid email is required">
+                    <span>Email *</span>
+                    <input placeholder="Email" id="email" maxlength="80" name="00N0Y00000QGklI" type="text">
                 </div>
-                <div class="form-group form-group--full validate-input" data-validate="Phone number is required">
-                    <span class="form-label">Mobile Number *</span>
-                    <input class="form-input" id="phone" name="intphone" required="" type="tel" />
 
+                <div class=" validate-input form-group" data-validate="Phone number is required">
+                    <span>Phone *</span>
+                    <input placeholder="Phone" id="phone" maxlength="40" required type="text">
                 </div>
-                <div class="form-group form-group--full validate-input" data-validate="Company is required">
+
+                <div class="form-group validate-input" data-validate="Company is required">
                     <span class="form-label">Company *</span>
                     <input class="form-input" id="employer" maxlength="40" name="00N0Y00000QGku0"
-                        placeholder="Company name" required="" type="text" />
-
+                        placeholder="Company name" type="text" required>
                 </div>
-                <!-- Submit Button + Loading Overlay -->
-                <div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to receive
-                    communications
-                    from AUB OSB.</div>
+
+                <div class="note-text" style="margin-top: 1rem; font-size: 0.7rem;">By submitting, you agree to
+                    receive communications from AUB OSB.</div>
+
                 <div class="form-submit">
-
                     <div class="wrap-contact100-form-btn">
-                        <button class="btn btn-submit" id="submitbtn" type="submit">DOWNLOAD BROCHURE</button>
+                        <button class="btn btn-submit" type="submit" name="submitbtn" id="submitbtn">
+                            DOWNLOAD BROCHURE</button>
                     </div>
-                    <div class="loading-overlay" id="loading-overlay">
-                        <i class="fas fa-spinner fa-pulse"></i>
-                        <span>Processing, please wait...</span>
-                    </div>
-                    <p class="form-note">
-                        Your information is secure. An admissions advisor will contact you shortly.
-                    </p>
                 </div>
 
+                <div id="loading-overlay" style="display: none; text-align: center; margin-top: 15px;">
+                    <i class="fas fa-spinner fa-pulse" style="font-size: 24px;"></i>
+                    <span>Processing, please wait...</span>
+                </div>
             </form>
             <!-- Action buttons (centered) -->
             <div class="button-group">
