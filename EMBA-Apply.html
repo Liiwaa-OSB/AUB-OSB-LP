@@ -54,7 +54,6 @@
 
         /* left column: hero content */
         .hero-content h1 {
-            white-space: nowrap;
             font-size: clamp(2rem, 3.5vw, 3.2rem);
             text-transform: uppercase;
             font-weight: 800;
@@ -297,6 +296,16 @@
             transition: 0.2s;
         }
 
+        @media (max-width: 550px) {
+            .info-card,
+            .testimonial-card {
+                padding: 1.1rem 0.8rem;
+            }
+            .faq-toggle {
+                padding: 0;
+            }
+        }
+
         .testimonial-card:hover {
             background: rgba(132, 1, 50, 0.6);
         }
@@ -325,7 +334,7 @@
         }
 
         .testimonial-card .testimonial-author .profile-img {
-            width: 44px;
+            min-width: 44px;
             height: 44px;
         }
 
@@ -377,6 +386,10 @@
         }
 
         @media (max-width: 550px) {
+            .content-section {
+                padding: 1rem;
+            }
+
             .info-card ul li {
                 font-size: 0.9rem;
             }
