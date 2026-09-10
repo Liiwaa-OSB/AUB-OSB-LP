@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>AUB OSB | Continuoud Education . Aviation - Apply</title>
+    <title>AUB OSB | Continuous Education . Aviation - Apply</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/other-programs-V4.css">
 
     <style>
+        /* ── Hero ── */
         .hero::before {
             content: '';
             position: absolute;
@@ -30,38 +31,6 @@
             background-size: cover;
             background-repeat: no-repeat;
             z-index: 0;
-        }
-
-        .hero__logos {
-            display: flex;
-            align-items: center;
-            gap: clamp(1rem, 3vw, 3rem);
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-
-        .hero__logos img {
-            height: clamp(70px, 8vw, 80px);
-            width: auto;
-            flex: 0 0 auto;
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero__logos {
-                justify-content: center;
-            }
-        }
-
-        .hero__label {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
         }
 
         .hero__title {
@@ -82,6 +51,89 @@
             opacity: 0.85;
             margin: 1rem 0 2rem;
             max-width: 600px;
+        }
+
+        /* ── Logo bar ── */
+        .hero__logos {
+            --logo-gap: 3rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--logo-gap);
+            margin-bottom: 1rem;
+        }
+
+        .logo-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+        }
+
+        .logo-item img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-height: 70px;
+            object-fit: contain;
+            /* forces every partner logo to pure white on the dark hero */
+            filter: brightness(0) invert(1);
+        }
+
+        #IATA-logo,
+        #MEA-logo {
+            /* max-height: 65px; */
+        }
+
+        /* vertical divider between logos — sits exactly in the gap */
+        .logo-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            bottom: 20%;
+            right: calc(var(--logo-gap) / -2);
+            width: 2px;
+            background: #fff;
+            border-radius: 1px;
+        }
+
+        /* tablet */
+        @media (max-width: 820px) {
+            .hero__logos {
+                --logo-gap: 2.4rem;
+            }
+
+            .logo-item img {
+                max-height: 50px;
+            }
+
+            #IATA-logo {
+                max-height: 42px;
+            }
+
+            #MEA-logo {
+                max-height: 46px;
+            }
+        }
+
+        /* mobile — logos can wrap, so dividers are removed */
+        @media (max-width: 600px) {
+            .logo-item::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .hero__logos {
+                --logo-gap: 0.8rem;
+            }
+
+            .logo-item img,
+            #IATA-logo,
+            #MEA-logo {
+                max-height: 55px;
+            }
         }
     </style>
 
@@ -107,24 +159,36 @@
     <!-- Hero Banner -->
     <section class="hero hero-left-align">
         <div class="container">
+
+            <!-- ═══ LOGO BAR ═══ -->
             <div class="hero__logos">
-                <!-- lii - take to website -->
-                <a href="https://www.aub.edu.lb/osb" target="_blank"><img src="images/AUB-OSB-LLI-Logo-white.png" /></a>
-                <a href="https://www.iata.org/" target="_blank"><img id="IATA-logo" src="images/Logo-IATA.png" /></a>
+                <!-- Logo 1: AUB OSB LLI (links to program page) -->
+                <a class="logo-item"
+                    href="https://www.aub.edu.lb/osb/lifelong_learning_institute/programs/Aviation-Certificate.html"
+                    target="_blank" rel="noopener">
+                    <img src="images/AUB-OSB-LLI-Logo-white.png"
+                        alt="AUB - Suliman S. Olayan School of Business - Lifelong Learning Institute">
+                </a>
+
+                <!-- Logo 2: IATA -->
+                <div class="logo-item">
+                    <img id="IATA-logo" src="images/Logo-IATA.png" alt="IATA">
+                </div>
+
+                <!-- Logo 3: MEA -->
+                <div class="logo-item">
+                    <img id="MEA-logo" src="images/Logo-MEA.png" alt="Middle East Airlines - Air Liban">
+                </div>
             </div>
+
             <div class="hero-content">
-                <div class="hero__label">Professional Certificate</div>
-                <h1 class="hero__title">Aviation Management</h1>
-                <div class="hero__sub">In Partnership with IATA | AUB OSB</div>
-                <p class="hero__desc">The Aviation Management Program combines academic excellence with
-                    industry-relevant training to
-                    prepare professionals for the evolving demands of the global aviation sector. It equips participants
-                    with the practical knowledge, strategic insights, and internationally aligned competencies required
-                    to excel in aviation management, safety, security, and revenue optimization.</p>
-                <!-- <p class="hero__desc" style="margin-top: 12px;">
-                    Unique & Regionally Competitive • Industry-Relevant & Future-Oriented • Comprehensive Yet Flexible •
-                    Globally Recognized
-                </p> -->
+                <h1 class="hero__title">Aviation Management <br />and Leadership</h1>
+                <div class="hero__sub">Professional Certificate in Partnership with IATA &amp; MEA</div>
+                <p class="hero__desc">The future of aviation belongs to leaders who can think globally, lead
+                    strategically,
+                    and adapt rapidly. Take off toward a future in aviation with a program designed to help you lead,
+                    innovate,
+                    and succeed.</p>
             </div>
         </div>
     </section>
@@ -154,8 +218,8 @@
                 <input type="hidden" name="00N0Y00000RODiR" value="Personal Email">
                 <input type="hidden" name="00N0Y00000RODr9" value="Personal Phone">
                 <input type="hidden" id="description" name="description">
-                <input type=hidden name="00NP500000D37Bx" id="Campaign_Name" value="">
-                <input type=hidden name="00NP500000D37IP" id="AD_Name" value="">
+                <input type="hidden" name="00NP500000D37Bx" id="Campaign_Name" value="">
+                <input type="hidden" name="00NP500000D37IP" id="AD_Name" value="">
                 <input type="hidden" name="retURL"
                     value="https://www.aub.edu.lb/osb/Landing/Pages/LLI-Aviation-Apply-ThankYou.html">
 
@@ -265,7 +329,7 @@
             <!-- Button Group -->
             <div class="button-group">
                 <a href="https://www.aub.edu.lb/osb/lifelong_learning_institute/programs/Aviation-Certificate.html"
-                    class="btn btn-primary" target="_blank">
+                    class="btn btn-primary" target="_blank" rel="noopener">
                     <i class="fas fa-globe"></i> Visit Website
                 </a>
                 <a href="LLI-Aviation-Brochure.html" class="btn btn-outline">
@@ -284,13 +348,13 @@
                 you about our programs and higher education offerings.</div>
             <div class="copyright">©2026 American University of Beirut, OSB All Rights Reserved</div>
             <div class="social-icons">
-                <a target="_blank" href="https://www.facebook.com/OSBAUB/"><i class="fab fa-facebook-f"></i></a>
-                <a target="_blank" href="https://twitter.com/aubosb"><i class="fab fa-x-twitter"></i></a>
-                <a target="_blank"
+                <a target="_blank" rel="noopener" href="https://www.facebook.com/OSBAUB/"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" rel="noopener" href="https://twitter.com/aubosb"><i class="fab fa-x-twitter"></i></a>
+                <a target="_blank" rel="noopener"
                     href="https://www.linkedin.com/company/aub-suliman-s-olayan-school-of-business-osb-/"><i
                         class="fab fa-linkedin-in"></i></a>
-                <a target="_blank" href="https://www.instagram.com/osb_aub/"><i class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://www.youtube.com/@AUBOSB"><i class="fab fa-youtube"></i></a>
+                <a target="_blank" rel="noopener" href="https://www.instagram.com/osb_aub/"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" rel="noopener" href="https://www.youtube.com/@AUBOSB"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
