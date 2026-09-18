@@ -75,71 +75,24 @@
       align-items: center;
       justify-content: center;
       flex: 0 0 auto;
+      max-width: 100%;
     }
 
     .logo-item img {
       display: block;
-      width: auto;
+      max-height: 90px;
+      width: 100%;
       height: auto;
-      max-height: 70px;
       object-fit: contain;
-      /* forces every partner logo to pure white on the dark hero */
       filter: brightness(0) invert(1);
+      transition: max-height 0.3s ease;
     }
 
-    #IATA-logo,
-    #MEA-logo {
-      /* max-height: 65px; */
-    }
-
-    /* vertical divider between logos — sits exactly in the gap */
-    .logo-item:not(:last-child)::after {
-      content: '';
+    #IATA-logo {
       position: absolute;
-      top: 20%;
-      bottom: 20%;
-      right: calc(var(--logo-gap) / -2);
-      width: 2px;
-      background: #fff;
-      border-radius: 1px;
-    }
-
-    /* tablet */
-    @media (max-width: 820px) {
-      .hero__logos {
-        --logo-gap: 2.4rem;
-      }
-
-      .logo-item img {
-        max-height: 50px;
-      }
-
-      #IATA-logo {
-        max-height: 42px;
-      }
-
-      #MEA-logo {
-        max-height: 46px;
-      }
-    }
-
-    /* mobile — logos can wrap, so dividers are removed */
-    @media (max-width: 600px) {
-      .logo-item::after {
-        display: none;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .hero__logos {
-        --logo-gap: 0.8rem;
-      }
-
-      .logo-item img,
-      #IATA-logo,
-      #MEA-logo {
-        max-height: 55px;
-      }
+      bottom: 0;
+      right: 1.5rem;
+      max-width: clamp(65px, 6vw, 100px);
     }
   </style>
 
@@ -157,26 +110,15 @@
     <div class="container">
       <!-- ═══ LOGO BAR ═══ -->
       <div class="hero__logos">
-        <!-- Logo 1: AUB OSB LLI (links to program page) -->
         <a class="logo-item"
           href="https://www.aub.edu.lb/osb/lifelong_learning_institute/programs/Aviation-Certificate.html"
           target="_blank" rel="noopener">
-          <img src="images/AUB-OSB-LLI-Logo-white.png"
+          <img src="images/AUB-OSB-LLI-MEA-Lockup.png"
             alt="AUB - Suliman S. Olayan School of Business - Lifelong Learning Institute">
         </a>
-
-        <!-- Logo 2: IATA -->
-        <div class="logo-item">
-          <img id="IATA-logo" src="images/Logo-IATA.png" alt="IATA">
-        </div>
-
-        <!-- Logo 3: MEA -->
-        <div class="logo-item">
-          <img id="MEA-logo" src="images/Logo-MEA.png" alt="Middle East Airlines - Air Liban">
-        </div>
       </div>
 
-      <div class="hero-content">
+      <div class="hero-content" style="margin-bottom: 60px;">
         <h1 class="hero__title">Aviation Management <br />and Leadership</h1>
         <div class="hero__sub">Professional Certificate in Partnership with IATA &amp; MEA</div>
         <p class="hero__desc">The future of aviation belongs to leaders who can think globally, lead
@@ -185,6 +127,7 @@
           innovate,
           and succeed.</p>
       </div>
+      <img id="IATA-logo" src="images\Logo-IATA.png" alt="IATA Logo">
     </div>
   </section>
 
