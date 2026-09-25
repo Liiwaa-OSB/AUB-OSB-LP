@@ -94,8 +94,8 @@
     <script src="js/mailchimp-subscribe.js"></script>
     <script src="build/js/intlTelInput.js"></script>
     <script src="js/phonescript.js"></script>
-    <script src="js/validator-configuration.js"></script>
-    <script src="js/validator.js"></script>
+    <script src="js/validator-configuration-v1.js"></script>
+    <script src="js/validator-v1.js"></script>
     <script src="js/universities.js"></script>
     <script src="js/university-ui.js"></script>
 
@@ -142,7 +142,7 @@
 
             <form class="form" id="myform"
                 action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post" novalidate
-                data-page-config="apply_default">
+                data-page-config="apply_aviation">
                 <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
                 <input type="hidden" name="recordType" value="0120Y000000ymGb">
@@ -214,17 +214,17 @@
 
                     <!-- University -->
                     <div class="form-group" id="university-group">
-                        <label class="form-label">University <span class="required">*</span></label>
-                        <select class="form-select" id="university" name="university" required>
+                        <label class="form-label">University</label>
+                        <select class="form-select" id="university" name="university">
                         </select>
                         <span class="error-message"></span>
                     </div>
 
                     <!-- Major -->
                     <div class="form-group" id="major-group">
-                        <label class="form-label">University Major <span class="required">*</span></label>
+                        <label class="form-label">University Major</label>
                         <input type="text" class="form-input" id="major" name="major"
-                            placeholder="e.g., Business, Engineering" required>
+                            placeholder="e.g., Business, Engineering">
                         <span class="error-message"></span>
                     </div>
 
