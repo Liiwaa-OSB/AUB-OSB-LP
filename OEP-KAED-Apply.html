@@ -360,51 +360,46 @@
     </script>
 
     <!-- DYNAMIC LEAD SOURCE TRACKING (mirrors AI supply chain, extended for KAED) -->
+
+    <!-- Script to handle source parameters -->
+    <!-- lii - doesn't capture enough data - online programs work well -->
     <script>
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
             url = url.toLowerCase();
             name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
-            var results = regex.exec(url);
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
             if (!results) return null;
             if (!results[2]) return "";
             return decodeURIComponent(results[2].replace(/\+/g, " "));
         }
-        var source = getParameterByName("source");
-        var type = getParameterByName("type");
 
-        switch (source) {
-            case "fb": var sourcetxt = "Social Media"; var sourcelbl = "Fb - KAED"; break;
-            case "gmac": var sourcetxt = "Landing Page"; var sourcelbl = "GMAC - KAED"; break;
-            case "meta": var sourcetxt = "Social Media"; var sourcelbl = "Meta MS - KAED"; break;
-            case "metaosb": var sourcetxt = "Social Media"; var sourcelbl = "Meta OSB - KAED"; break;
-            case "linosb": var sourcetxt = "Social Media"; var sourcelbl = "LinkedIn OSB - KAED"; break;
-            case "fbt": var sourcetxt = "Social Media"; var sourcelbl = "Fb Testimonials - KAED"; break;
-            case "insta": var sourcetxt = "Social Media"; var sourcelbl = "Insta - KAED"; break;
-            case "instas": var sourcetxt = "Social Media"; var sourcelbl = "Insta Stories - KAED"; break;
-            case "instat": var sourcetxt = "Social Media"; var sourcelbl = "Insta Testimonials - KAED"; break;
-            case "tw": var sourcetxt = "Social Media"; var sourcelbl = "Twitter - KAED"; break;
-            case "twt": var sourcetxt = "Social Media"; var sourcelbl = "Twitter Testimonials - KAED"; break;
-            case "lin": var sourcetxt = "Social Media"; var sourcelbl = "LinkedIn - KAED"; break;
-            case "lint": var sourcetxt = "Social Media"; var sourcelbl = "LinkedIn Testimonials - KAED"; break;
-            case "gs": var sourcetxt = "Google Ads"; var sourcelbl = "Search - KAED"; break;
-            case "mail": var sourcetxt = "Mailchimp"; var sourcelbl = "KAED Apply"; break;
-            case "mailde": var sourcetxt = "Mailchimp"; var sourcelbl = "Deadline Extended - KAED"; break;
-            case "mailnw": var sourcetxt = "Mailchimp"; var sourcelbl = "Newsweek - KAED"; break;
-            default: var sourcetxt = "Website"; var sourcelbl = "KAED - Apply"; break;
+        var utm_source = getParameterByName('source');
+        var utm_details = getParameterByName('utm_details');
+        var utm_campaign = getParameterByName('utm_campaign');
+        var utm_content = getParameterByName('utm_content');
+        var utm_placement = getParameterByName('utm_placement');
+        var utm_adsetname = getParameterByName('utm_adsetname');
+
+        if (utm_source != null) {
+            $('#lead_source').val(utm_source);
         }
-        $("#lead_source").val(sourcetxt);
-        $("#00N0Y00000QGkma").val(sourcelbl);
-    </script>
-
-    <!-- Ensure intlTelInput works -->
-    <script>
-        $(window).on('load', function () {
-            if (typeof intlTelInput !== 'undefined' && $("#phone").length && !$("#phone").data("intlTelInput")) {
-                console.log("IntlTelInput ready (KAED)");
-            }
-        });
+        if (utm_details != null) {
+            $('#00N0Y00000QGkma').val(utm_details);
+        }
+        if (utm_campaign != null) {
+            $('#Campaign_Name').val(utm_campaign);
+        }
+        if (utm_content != null) {
+            $('#AD_Name').val(utm_content);
+        }
+        if (utm_placement != null) {
+            $('#00NP500000LohFU').val(utm_placement);
+        }
+        if (utm_adsetname != null) {
+            $('#00NP500000Oxk99').val(utm_adsetname);
+        }
     </script>
 </body>
 
