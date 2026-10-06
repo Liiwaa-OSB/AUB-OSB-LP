@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>AUB OSB | Continuous Education . Aviation - Apply</title>
+    <title>AUB OSB | Continuous Education . Aviation - Application</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -137,19 +137,19 @@
     <div class="container">
         <!-- Form Card -->
         <div class="form-card">
-            <h2 class="form-card__title">Submit Form</h2>
-            <span class="form-card__subtitle">Fill in your details to start your application</span>
+            <h2 class="form-card__title">Application</h2>
+            <span class="form-card__subtitle">Fill in your details to complete your application</span>
 
             <form class="form" id="myform"
                 action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="post" novalidate
-                data-page-config="apply_aviation">
+                data-page-config="application_aviation">
                 <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
                 <input type="hidden" name="recordType" value="0120Y000000ymGb">
                 <input type="hidden" name="Campaign_ID" value="701P500000vAphzIAC">
                 <input type="hidden" name="member_status" value="Interested">
                 <input type="hidden" name="lead_source" id="lead_source" value="Website">
-                <input type="hidden" name="00N0Y00000QGkma" value="Apply Aviation">
+                <input type="hidden" name="00N0Y00000QGkma" value="Application Aviation">
                 <input type="hidden" name="00NP500000D37Bx" value="">
                 <input type="hidden" name="00NP500000D37IP" value="">
                 <input type="hidden" name="00NP500000LohFU" value="">
@@ -161,6 +161,7 @@
                 <input type="hidden" id="description" name="description">
                 <input type="hidden" name="00NP500000D37Bx" id="Campaign_Name" value="">
                 <input type="hidden" name="00NP500000D37IP" id="AD_Name" value="">
+                lii - where to go next?
                 <input type="hidden" name="retURL"
                     value="https://www.aub.edu.lb/osb/Landing/Pages/LLI-Aviation-Apply-ThankYou.html">
 
@@ -198,7 +199,7 @@
 
                     <!-- Company -->
                     <div class="form-group" id="company-group">
-                        <label class="form-label">Company</label>
+                        <label class="form-label">Company <span class="required">*</span></label>
                         <input type="text" class="form-input" id="employer" name="00N0Y00000QGku0"
                             placeholder="Your company name" required>
                         <span class="error-message"></span>
@@ -206,7 +207,7 @@
 
                     <!-- Country -->
                     <div class="form-group" id="country-group">
-                        <label class="form-label">Country of Residence</label>
+                        <label class="form-label">Country of Residence <span class="required">*</span></label>
                         <input type="text" class="form-input" id="country_residence" name="country_residence"
                             placeholder="e.g., Lebanon, USA, UAE" required>
                         <span class="error-message"></span>
@@ -214,7 +215,7 @@
 
                     <!-- University -->
                     <div class="form-group" id="university-group">
-                        <label class="form-label">University</label>
+                        <label class="form-label">University <span class="required">*</span></label>
                         <select class="form-select" id="university" name="university">
                         </select>
                         <span class="error-message"></span>
@@ -222,7 +223,7 @@
 
                     <!-- Major -->
                     <div class="form-group" id="major-group">
-                        <label class="form-label">University Major</label>
+                        <label class="form-label">University Major <span class="required">*</span></label>
                         <input type="text" class="form-input" id="major" name="major"
                             placeholder="e.g., Business, Engineering">
                         <span class="error-message"></span>
@@ -230,7 +231,7 @@
 
                     <!-- Years of Experience -->
                     <div class="form-group" id="experience-group">
-                        <label class="form-label">Years of Experience</label>
+                        <label class="form-label">Years of Experience <span class="required">*</span></label>
                         <input type="number" class="form-input" id="years_experience" name="00N0Y00000QGkuK"
                             placeholder="0-50" min="0" max="50" required>
                         <span class="error-message"></span>
@@ -238,7 +239,7 @@
 
                     <!-- How did you hear -->
                     <div class="form-group" id="hear-group">
-                        <label class="form-label">How did you hear about us?</label>
+                        <label class="form-label">How did you hear about us? <span class="required">*</span></label>
                         <select class="form-select" id="hear_about" name="hear_about" required>
                             <option value="" disabled selected>-- Select an option --</option>
                             <option value="Social Media">Social Media (Facebook, Instagram, LinkedIn, Twitter)</option>

@@ -26,10 +26,28 @@ var VALIDATOR_CONFIG = {
             { id: 'last_name', type: 'lastName', label: 'Last Name' },
             { id: 'email', type: 'email', label: 'Email' },
             { id: 'phone', type: 'phone', label: 'Phone' },
-            { id: 'employer', type: 'company', label: 'Company' },
-            { id: 'country_residence', type: 'countryResidence', label: 'Country of Residence' },
+            { id: 'employer', type: 'company', label: 'Company', required: false },
+            { id: 'country_residence', type: 'countryResidence', label: 'Country of Residence', required: false },
             { id: 'university', type: 'university', label: 'University', required: false },
             { id: 'major', type: 'major', label: 'University Major', required: false },
+            { id: 'years_experience', type: 'yearsExp', label: 'Years of Experience', required: false },
+            { id: 'hear_about', type: 'hearAbout', label: 'How did you hear about us?', required: false }
+        ],
+        descriptionFields: ['country_residence', 'university', 'major', 'hear_about'],
+        localStorageFields: ['first_name', 'last_name', 'email']
+    },
+
+    // Aviation Application Page
+    application_aviation: {
+        fields: [
+            { id: 'first_name', type: 'firstName', label: 'First Name' },
+            { id: 'last_name', type: 'lastName', label: 'Last Name' },
+            { id: 'email', type: 'email', label: 'Email' },
+            { id: 'phone', type: 'phone', label: 'Phone' },
+            { id: 'employer', type: 'company', label: 'Company' },
+            { id: 'country_residence', type: 'countryResidence', label: 'Country of Residence' },
+            { id: 'university', type: 'university', label: 'University' },
+            { id: 'major', type: 'major', label: 'University Major' },
             { id: 'years_experience', type: 'yearsExp', label: 'Years of Experience' },
             { id: 'hear_about', type: 'hearAbout', label: 'How did you hear about us?' }
         ],
