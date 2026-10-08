@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
-  <title>AUB OSB | Behavioral Finance Certificate - Thank You</title>
+  <title>AUB OSB | Aviation Management - Application Thank You</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -22,13 +22,78 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg, var(--color-black-30, rgba(0, 0, 0, 0.3)), var(--color-black-30, rgba(0, 0, 0, 0.3))), url('images/AUB-OSB-ONLINE-Behavioral-Finance-banner.jpg');
-      background-position: center center;
+      background: linear-gradient(0deg, var(--color-black-30), var(--color-black-30)),
+        url('images/AUB-OSB-Avitation-Banner.jpg');
+      background-position: 35% center;
       background-size: cover;
       background-repeat: no-repeat;
       z-index: 0;
     }
 
+    .hero__label {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero__title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .hero__sub {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .hero__desc {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      margin: 1rem 0 2rem;
+      max-width: 600px;
+    }
+
+    /* ── Logo bar ── */
+    .hero__logos {
+      --logo-gap: 3rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--logo-gap);
+      margin-bottom: 1rem;
+    }
+
+    .logo-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      max-width: 100%;
+    }
+
+    .logo-item img {
+      display: block;
+      max-height: 90px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      transition: max-height 0.3s ease;
+    }
+
+    #IATA-logo {
+      position: absolute;
+      bottom: 0;
+      right: 1.5rem;
+      max-width: clamp(60px, 6vw, 70px);
+    }
   </style>
 
   <!-- Google Tag Manager -->
@@ -37,63 +102,45 @@
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://trk.aub.edu.lb/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZDZDJJ" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-  <section class="hero">
+  <!-- Hero Banner -->
+  <section class="hero hero-left-align">
     <div class="container">
-      <div class="hero-logo text-center">
-        <a href="https://www.aub.edu.lb/osb">
-          <img src="images/AUB-OSB-Logo-white-vertical.png" alt="AUB OSB Logo"
-            onerror="this.src='https://placehold.co/140x140?text=AUB+OSB'">
+      <!-- ═══ LOGO BAR ═══ -->
+      <div class="hero__logos">
+        <a class="logo-item"
+          href="https://www.aub.edu.lb/osb/lifelong_learning_institute/programs/Aviation-Certificate.html"
+          target="_blank" rel="noopener">
+          <img src="images/AUB-OSB-LLI-MEA-Lockup.png"
+            alt="AUB - Suliman S. Olayan School of Business - Lifelong Learning Institute">
         </a>
       </div>
-      <div class="hero-content text-center">
-        <h1>Thank you for completing the form.</h1>
-        <p class="hero-tagline">
-          You've taken the first step toward advancing your expertise in Behavioral Finance. Our team
-          looks forward to supporting you throughout your learning journey.
-        </p>
+
+      <div class="hero-content" style="margin-bottom: 60px;">
+        <h1 class="hero__title">Aviation Management <br />&amp; Operational Excellence</h1>
+        <div class="hero__sub">Professional Certificate in Partnership with MEA</div>
+        <p class="hero__desc">The future of aviation belongs to leaders who can think globally, lead
+          strategically,
+          and adapt rapidly. Take off toward a future in aviation with a program designed to help you lead,
+          innovate,
+          and succeed.</p>
       </div>
+      <img id="IATA-logo" src="images\Logo-IATA-dark.png" alt="IATA Logo">
     </div>
   </section>
 
   <div class="container">
     <div class="form-card">
-
-      <!-- Action buttons - use the existing button-group class -->
-      <div class="button-group">
-        <a href="https://www.aub.edu.lb/osb/Documents/BehavioralFinanceFactsheet.pdf" class="btn btn-outline" download>
-          <i class="fas fa-download"></i> Download Brochure
-        </a>
-        <a href="https://bookings.cloud.microsoft/book/InvestmentAnalysisModernPortfolioManagementOnlineDiploma@mail.aub.edu/?ismsaljsauthenabled=true"
-          class="btn btn-outline" target="_blank">
-          <i class="fas fa-calendar-alt"></i> Schedule one-on-one meeting
-        </a>
-        <a href="https://ocp.aub.edu.lb/newapplication?program=d8fff28d-743e-4efb-a014-8f6d6614d2fc"
-          class="btn btn-primary" target="_blank">
-          <i class="fas fa-file-alt"></i> Complete Your Application Here
-        </a>
-      </div>
-
-      <div class="separator"></div>
-
       <!-- Contact section - use existing contact-section classes -->
       <div class="contact-section">
-        <p style="margin-bottom: 1rem; font-size: 1.1rem; font-weight: 500; text-align: center;">For inquiries, please
-          contact us</p>
-        <div class="contact-links">
-          <a href="tel:+9611374374,3929" class="contact-link">
-            <i class="fas fa-phone"></i>
-            <span>+961-1-374 374 ext. 3929</span>
-          </a>
-          <a href="mailto:behavioralfincert@aub.edu.lb" class="contact-link">
-            <i class="fas fa-envelope"></i>
-            <span>behavioralfincert@aub.edu.lb</span>
-          </a>
-        </div>
+        <p style="margin-bottom: 1rem; font-size: 3rem; font-weight: 500; text-align: center;">
+          Application submitted successfully!
+        </p>
+        <p style="font-size: 1.2rem; text-align: center;">
+          Please check your inbox and spam/junk folder for next steps.
+        </p>
       </div>
     </div>
   </div>

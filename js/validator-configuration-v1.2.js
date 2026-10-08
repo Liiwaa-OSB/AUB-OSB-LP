@@ -46,8 +46,8 @@ var VALIDATOR_CONFIG = {
             { id: 'phone', type: 'phone', label: 'Phone' },
             { id: 'employer', type: 'company', label: 'Company' },
             { id: 'country_residence', type: 'countryResidence', label: 'Country of Residence' },
-            { id: 'university', type: 'university', label: 'University' },
-            { id: 'major', type: 'major', label: 'University Major' },
+            { id: 'university', type: 'university', label: 'University', required: false  },
+            { id: 'major', type: 'major', label: 'University Major', required: false  },
             { id: 'years_experience', type: 'yearsExp', label: 'Years of Experience' },
             { id: 'hear_about', type: 'hearAbout', label: 'How did you hear about us?' }
         ],
