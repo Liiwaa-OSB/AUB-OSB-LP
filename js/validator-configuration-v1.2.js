@@ -19,7 +19,7 @@ var VALIDATOR_CONFIG = {
         localStorageFields: ['first_name', 'last_name', 'email']
     },
 
-    // Aviation Application Page
+    // Aviation Application Page (legacy alias)
     apply_aviation: {
         fields: [
             { id: 'first_name', type: 'firstName', label: 'First Name' },
@@ -37,7 +37,7 @@ var VALIDATOR_CONFIG = {
         localStorageFields: ['first_name', 'last_name', 'email']
     },
 
-    // Aviation Application Page
+    // Aviation Application Page (current)
     application_aviation: {
         fields: [
             { id: 'first_name', type: 'firstName', label: 'First Name' },
@@ -46,12 +46,23 @@ var VALIDATOR_CONFIG = {
             { id: 'phone', type: 'phone', label: 'Phone' },
             { id: 'employer', type: 'company', label: 'Company' },
             { id: 'country_residence', type: 'countryResidence', label: 'Country of Residence' },
-            { id: 'university', type: 'university', label: 'University', required: false  },
-            { id: 'major', type: 'major', label: 'University Major', required: false  },
+            { id: 'university', type: 'university', label: 'University' },
+            { id: 'major', type: 'major', label: 'University Major' },
             { id: 'years_experience', type: 'yearsExp', label: 'Years of Experience' },
+            { id: 'currentJobTitle', type: 'position', label: 'Employment Title' },
+            { id: 'aviationExperience', type: 'radio', label: 'Aviation-related experience' },
+            { id: 'iataCertifications', type: 'radio', label: 'IATA certifications' },
             { id: 'hear_about', type: 'hearAbout', label: 'How did you hear about us?' }
         ],
-        descriptionFields: ['country_residence', 'university', 'major', 'hear_about'],
+        descriptionFields: [
+            'country_residence',
+            'university',
+            'major',
+            'hear_about',
+            'currentJobTitle',
+            'aviationExperience',
+            'iataCertifications'
+        ],
         localStorageFields: ['first_name', 'last_name', 'email']
     },
 

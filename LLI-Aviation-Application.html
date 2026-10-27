@@ -88,6 +88,22 @@
             right: 1.5rem;
             max-width: clamp(60px, 6vw, 70px);
         }
+
+        /* ── Radio group ── */
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            padding: 0.4rem 0;
+        }
+
+        .radio-group label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 400;
+            cursor: pointer;
+        }
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -147,7 +163,7 @@
                 data-page-config="application_aviation">
                 <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
-                <input type="hidden" name="recordType" value="0120Y000000ymGb">
+                <input type="hidden" name="recordType" value="0120Y000000yifH">
                 <input type="hidden" name="Campaign_ID" value="701P500000vAphzIAC">
                 <input type="hidden" name="member_status" value="Interested">
                 <input type="hidden" name="lead_source" id="lead_source" value="Website">
@@ -232,10 +248,54 @@
 
                     <!-- Years of Experience -->
                     <div class="form-group" id="experience-group">
-                        <label class="form-label">Years of Experience <span class="required">*</span></label>
+                        <label class="form-label">Total Years of Experience<span class="required">*</span></label>
                         <input type="number" class="form-input" id="years_experience" name="00N0Y00000QGkuK"
                             placeholder="0-50" min="0" max="50" required>
                         <span class="error-message"></span>
+                    </div>
+
+                    <!-- Employment Title -->
+                    <div class="form-group" id="currentJobTitle-group">
+                        <label class="form-label" for="currentJobTitle">Employment Title <span class="required">*</span></label>
+                        <input
+                            type="text"
+                            id="currentJobTitle"
+                            name="currentJobTitle"
+                            class="form-input"
+                            placeholder="e.g., Operations Manager"
+                            required
+                        />
+                        <span class="error-message"></span>
+                    </div>
+
+                    <!-- Aviation Experience -->
+                    <div class="form-group" id="aviationExperience-group">
+                        <label class="form-label">Do you have aviation-related experience? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" id="aviationExperience" name="aviationExperience" value="Yes" required />
+                                Yes
+                            </label>
+                            <label>
+                                <input type="radio" name="aviationExperience" value="No" required />
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- IATA Certifications -->
+                    <div class="form-group" id="iataCertifications-group">
+                        <label class="form-label">Do you hold any IATA certifications? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" id="iataCertifications" name="iataCertifications" value="Yes" required />
+                                Yes
+                            </label>
+                            <label>
+                                <input type="radio" name="iataCertifications" value="No" required />
+                                No
+                            </label>
+                        </div>
                     </div>
 
                     <!-- How did you hear -->

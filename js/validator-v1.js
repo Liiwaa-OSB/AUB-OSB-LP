@@ -25,7 +25,7 @@
         // Get page config from form data attribute
         var $form = $('#myform');
         var pageConfigKey = $form.data('page-config');
-        
+
         if (!pageConfigKey) {
             console.error('Page config not specified. Add data-page-config attribute to the form.');
             return;
@@ -37,7 +37,7 @@
         }
 
         var pageConfig = VALIDATOR_CONFIG[pageConfigKey];
-        
+
         if (!pageConfig) {
             console.error('Config not found for:', pageConfigKey);
             return;
@@ -54,10 +54,30 @@
         function createErrorContainer($input) {
             var $formGroup = $input.closest('.form-group');
             $formGroup.find('.custom-error').remove();
-            var $target = $input.next('.focus-input100').length ? $input.next('.focus-input100') : $input;
+
+            var $target;
+            if ($input.is(':radio') && $input.closest('.radio-group').length) {
+                // Place the error message right after the whole radio group
+                $target = $input.closest('.radio-group');
+            } else if ($input.next('.focus-input100').length) {
+                $target = $input.next('.focus-input100');
+            } else {
+                $target = $input;
+            }
+
             var $errorSpan = $('<span class="error help-block custom-error"></span>');
             $errorSpan.insertAfter($target);
             return $errorSpan;
+        }
+
+        // ----- Helper: read the current value of a field (handles radio groups) -----
+        function getFieldValue(fieldId, config) {
+            if (config && config.type === 'radio') {
+                var checked = $('input[name="' + fieldId + '"]:checked').val();
+                return checked ? checked : '';
+            }
+            var $field = fields[fieldId];
+            return $field ? $.trim($field.val()) : '';
         }
 
         // ----- Initialize all fields from config -----
@@ -101,7 +121,7 @@
             var config = pageConfig.fields.find(function (f) { return f.id === fieldId; });
             if (!$field || !$errorSpan || !config) return true;
 
-            var val = $.trim($field.val());
+            var val = getFieldValue(fieldId, config);
             var isValid = true;
             var errorMsg = '';
 
@@ -149,6 +169,12 @@
                 case 'hearAbout':
                     if (val === '' || val === null) { isValid = false; errorMsg = 'Please select how you heard about us'; }
                     break;
+                case 'radio':
+                    if (val === '') {
+                        isValid = false;
+                        errorMsg = 'Please select an option for ' + config.label;
+                    }
+                    break;
                 default: break;
             }
 
@@ -164,6 +190,14 @@
         pageConfig.fields.forEach(function (fieldConfig) {
             var $field = fields[fieldConfig.id];
             if (!$field) return;
+
+            // Radio groups: listen on every radio sharing the same name
+            if (fieldConfig.type === 'radio') {
+                $('input[name="' + fieldConfig.id + '"]').on('change', function () {
+                    validateField(fieldConfig.id);
+                });
+                return;
+            }
 
             var event = fieldConfig.type === 'university' || fieldConfig.type === 'hearAbout' ? 'change' : 'input';
             $field.on(event, function () { validateField(fieldConfig.id); });
@@ -245,15 +279,16 @@
             var descriptionParts = [];
             if (pageConfig.descriptionFields && pageConfig.descriptionFields.length > 0) {
                 pageConfig.descriptionFields.forEach(function (fieldId) {
-                    var $field = fields[fieldId];
-                    if ($field && $field.val()) {
-                        var label = pageConfig.fields.find(function (f) { return f.id === fieldId; });
-                        var fieldName = label ? label.label : fieldId;
-                        descriptionParts.push(fieldName + ': ' + $field.val().trim());
+                    var fieldCfg = pageConfig.fields.find(function (f) { return f.id === fieldId; });
+                    if (!fieldCfg) return;
+
+                    var value = getFieldValue(fieldId, fieldCfg);
+                    if (value) {
+                        descriptionParts.push(fieldCfg.label + ': ' + value);
                     }
                 });
             }
-            
+
             // If descriptionParts is empty, set a default value for brochures
             if (descriptionParts.length === 0) {
                 $('#description').val(isBrochure ? 'Brochure Download Request' : 'No additional info');
