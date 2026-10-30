@@ -111,7 +111,7 @@
     <script src="build/js/intlTelInput.js"></script>
     <script src="js/phonescript.js"></script>
     <script src="js/validator-configuration-v1.2.js"></script>
-    <script src="js/validator-v1.js"></script>
+    <script src="js/validator-oct26.js"></script>
     <script src="js/universities.js"></script>
     <script src="js/university-ui.js"></script>
 
@@ -163,7 +163,7 @@
                 data-page-config="application_aviation">
                 <!-- Salesforce hidden fields -->
                 <input type="hidden" name="oid" value="00D0Y000001Xrwc">
-                <input type="hidden" name="recordType" value="0120Y000000yifH">
+                <input type="hidden" name="recordType" value="0120Y000000ymGb">
                 <input type="hidden" name="Campaign_ID" value="701P500000vAphzIAC">
                 <input type="hidden" name="member_status" value="Interested">
                 <input type="hidden" name="lead_source" id="lead_source" value="Website">
@@ -256,24 +256,21 @@
 
                     <!-- Employment Title -->
                     <div class="form-group" id="currentJobTitle-group">
-                        <label class="form-label" for="currentJobTitle">Employment Title <span class="required">*</span></label>
-                        <input
-                            type="text"
-                            id="currentJobTitle"
-                            name="currentJobTitle"
-                            class="form-input"
-                            placeholder="e.g., Operations Manager"
-                            required
-                        />
+                        <label class="form-label" for="currentJobTitle">Employment Title <span
+                                class="required">*</span></label>
+                        <input type="text" id="currentJobTitle" name="currentJobTitle" class="form-input"
+                            placeholder="e.g., Operations Manager" required />
                         <span class="error-message"></span>
                     </div>
 
                     <!-- Aviation Experience -->
                     <div class="form-group" id="aviationExperience-group">
-                        <label class="form-label">Do you have aviation-related experience? <span class="required">*</span></label>
+                        <label class="form-label">Do you have aviation-related experience? <span
+                                class="required">*</span></label>
                         <div class="radio-group">
                             <label>
-                                <input type="radio" id="aviationExperience" name="aviationExperience" value="Yes" required />
+                                <input type="radio" id="aviationExperience" name="aviationExperience" value="Yes"
+                                    required />
                                 Yes
                             </label>
                             <label>
@@ -281,14 +278,17 @@
                                 No
                             </label>
                         </div>
+                        <span class="error-message"></span>
                     </div>
 
                     <!-- IATA Certifications -->
                     <div class="form-group" id="iataCertifications-group">
-                        <label class="form-label">Do you hold any IATA certifications? <span class="required">*</span></label>
+                        <label class="form-label">Do you hold any IATA certifications? <span
+                                class="required">*</span></label>
                         <div class="radio-group">
                             <label>
-                                <input type="radio" id="iataCertifications" name="iataCertifications" value="Yes" required />
+                                <input type="radio" id="iataCertifications" name="iataCertifications" value="Yes"
+                                    required />
                                 Yes
                             </label>
                             <label>
@@ -296,6 +296,7 @@
                                 No
                             </label>
                         </div>
+                        <span class="error-message"></span>
                     </div>
 
                     <!-- How did you hear -->
