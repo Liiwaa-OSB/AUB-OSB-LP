@@ -112,6 +112,34 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
   <script src="js/mailchimp-subscribe.js"></script>
+
+  <!-- ChatGPT Pixel -->
+  <script>
+    !function (w, d, s, u) {
+      if (w.oaiq) return;
+      var q = function () { q.q.push(arguments) };
+      q.q = [];
+      w.oaiq = q;
+      var j = d.createElement(s);
+      j.async = 1;
+      j.src = u;
+      var f = d.getElementsByTagName(s)[0];
+      f.parentNode.insertBefore(j, f)
+    }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+
+    oaiq("init", {
+      pixelId: "3Vv4RpwAqfRYtUaM9WGiqo",
+      debug: true
+    });
+
+    // MBA application conversion
+    oaiq(
+      "measure",
+      "lead_created",
+      { type: "customer_action" }
+    );
+  </script>
+  <!-- End ChatGPT Pixel -->
 </head>
 
 
